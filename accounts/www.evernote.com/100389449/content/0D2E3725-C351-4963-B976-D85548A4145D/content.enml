@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div><div style="font-family:sans-serif;line-height:1.2;"><div><div style="margin:0px;"><div style="margin:0px;"><div style="margin:0px;"><h2 style="font-weight:bold;line-height:1.3;color:rgb(153, 0, 0);margin:0.8em 0px 0px -4%;clear:both;"><a></a>21.4. FreeBSD as a Guest on <span>VMware Fusion</span>
+      for <span>Mac OS</span>®</h2></div></div></div><p><span>VMware Fusion</span> for <span>Mac</span>® is a
+      commercial software product available for <span>Intel</span>® based <span>Apple</span>®
+      <span>Mac</span>® computers running <span>Mac OS</span>® 10.4.9 or higher.  FreeBSD is a
+      fully supported guest operating system.  Once
+      <span>VMware Fusion</span> has been installed on
+      <span>Mac OS</span>® X, the user can configure a virtual machine and then
+      install the desired guest operating system.</p><div style="margin:0px;"><div style="margin:0px;"><div style="margin:0px;"><div style="margin:0px;"><h3 style="font-weight:bold;line-height:1.3;color:rgb(153, 0, 0);margin:0.8em 0px 0px -3%;"><a></a>21.4.1. Installing FreeBSD on
+	<span>VMware Fusion</span></h3></div></div></div><p>The first step is to start
+	<span>VMware Fusion</span> which will load the
+	Virtual Machine Library.  Click <span style="font-weight:bold;">New</span>
+	to create the virtual machine:</p><div style="margin:0px;"><en-media type="image/png" hash="eddd90c704880ce2b7f918069d104950" height="402" width="624"></en-media></div><p>This will load the New Virtual Machine Assistant.  Click
+	<span style="font-weight:bold;">Continue</span> to proceed:</p><div style="margin:0px;"><en-media type="image/png" hash="3ede00a0e657866c5a40246998b3e81f" height="500" width="671"></en-media></div><p>Select <span style="font-weight:bold;">Other</span> as the
+	<span style="font-weight:bold;">Operating System</span> and either
+	<span style="font-weight:bold;">FreeBSD</span> or
+	<span style="font-weight:bold;">FreeBSD 64-bit</span>, as the
+	<span style="font-weight:bold;">Version</span> when prompted:</p><div style="margin:0px;"><en-media type="image/png" hash="c8bf96ca6d8eac65bf72ef5df6014c04" height="500" width="671"></en-media></div><p>Choose the name of the virtual machine and the directory
+	where it should be saved:</p><div style="margin:0px;"><en-media type="image/png" hash="106d6e138c406b42eef6a7e53ccf955f" height="500" width="671"></en-media></div><p>Choose the size of the Virtual Hard Disk for the virtual
+	machine:</p><div style="margin:0px;"><en-media type="image/png" hash="49f6e90bfd6fac3b58f81c1f3d8d5cc0" height="500" width="671"></en-media></div><p>Choose the method to install the virtual machine, either
+	from an <acronym>ISO</acronym> image or from a
+	<acronym>CD</acronym>/<acronym>DVD</acronym>:</p><div style="margin:0px;"><en-media type="image/png" hash="5490f96220f696a2a3bb8aa035643817" height="500" width="671"></en-media></div><p>Click <span style="font-weight:bold;">Finish</span> and the virtual
+	machine will boot:</p><div style="margin:0px;"><en-media type="image/png" hash="9d3bbd542a453f06ca5bf09655ed49b3" height="581" width="640"></en-media></div><p>Install FreeBSD as usual:</p><div style="margin:0px;"><en-media type="image/png" hash="3e414bf84d7773800cc5623410986310" height="500" width="720"></en-media></div><p>Once the install is complete, the settings of the virtual
+	machine can be modified, such as memory usage:</p><div style="margin:0.75em 3em 0.75em 1em;border-radius:4px;padding:2ex;line-height:1.3;color:rgb(34, 34, 34);background:rgb(238, 238, 238) none repeat scroll 0% 0%;border:1px solid rgb(204, 204, 204);width:90%;"><h3 style="display:inline;line-height:1;margin-right:0px;">Note: </h3><p style="margin:0.4ex 0px;display:inline-block;">The System Hardware settings of the virtual machine
+	  cannot be modified while the virtual machine is
+	  running.</p></div><div style="margin:0px;"><en-media type="image/png" hash="dd77994aeef8f41211f218304abea35c" height="500" width="721"></en-media></div><p>The number of CPUs the virtual machine will have access
+	to:</p><div style="margin:0px;"><en-media type="image/png" hash="a0fcbd1de1b434bc8e848161983d725c" height="500" width="721"></en-media></div><p>The status of the <acronym>CD-ROM</acronym> device.
+	Normally the
+	<acronym>CD</acronym>/<acronym>DVD</acronym>/<acronym>ISO</acronym>
+	is disconnected from the virtual machine when it is no longer
+	needed.</p><div style="margin:0px;"><en-media type="image/png" hash="e18799bd7bcf1f8eeb6b3557767f87b0" height="500" width="721"></en-media></div><p>The last thing to change is how the virtual machine will
+	connect to the network.  To allow connections to the virtual
+	machine from other machines besides the host, choose
+	<span style="font-weight:bold;">Connect directly to the physical network
+	  (Bridged)</span>.  Otherwise,
+	<span style="font-weight:bold;">Share the host's internet connection
+	  (NAT)</span> is preferred so that the virtual machine
+	can have access to the Internet, but the network cannot access
+	the virtual machine.</p><div style="margin:0px;"><en-media type="image/png" hash="6932667838fb1d9d0e68efc48aeaec71" height="500" width="721"></en-media></div><p>After modifying the settings, boot the newly installed
+	FreeBSD virtual machine.</p></div><div style="margin:0px;"><div style="margin:0px;"><div style="margin:0px;"><div style="margin:0px;"><h3 style="font-weight:bold;line-height:1.3;color:rgb(153, 0, 0);margin:0.8em 0px 0px -3%;"><a></a>21.4.2. Configuring FreeBSD on <span>VMware
+	  Fusion</span></h3></div></div></div><p>After FreeBSD has been successfully installed on <span>Mac OS</span>® X
+	with <span>VMware Fusion</span>, there are a
+	number of configuration steps that can be taken to optimize
+	the system for virtualized operation.</p><div style="margin:0.75em 3em 0.75em 1em;border-radius:4px;padding:2ex;line-height:1.3;color:rgb(34, 34, 34);background:rgb(238, 238, 238) none repeat scroll 0% 0%;border:1px solid rgb(204, 204, 204);width:90%;"><ol type="1" style="margin:0px 0px 0px -1em;line-height:1.2;"><li><p><strong>Set Boot Loader Variables</strong></p><p>The most important step is to reduce the
+	    <code>kern.hz</code> tunable to reduce the CPU
+	    utilization of FreeBSD under the
+	    <span>VMware Fusion</span> environment.
+	    This is accomplished by adding the following line to
+	    <code style="color:rgb(0, 122, 0);">/boot/loader.conf</code>:</p><pre style="margin:0.75em 0px;font-family:monospace;white-space:pre;overflow:auto;padding:1ex;background-color:rgb(238, 238, 238);border:1px solid rgb(204, 204, 204);border-radius:4px;">kern.hz=100</pre><p>Without this setting, an idle FreeBSD
+	    <span>VMware Fusion</span> guest will use
+	    roughly 15% of the CPU of a single processor <span>iMac</span>®.
+	    After this change, the usage will be closer to 5%.</p></li><li><p><strong>Create a New Kernel Configuration File</strong></p><p>All of the FireWire, and USB device drivers can be
+	    removed from a custom kernel configuration file.
+	    <span>VMware Fusion</span> provides a
+	    virtual network adapter used by the <a href="https://www.freebsd.org/cgi/man.cgi?query=em&amp;sektion=4&amp;manpath=freebsd-release-ports" style="color:rgb(6, 69, 173);text-decoration:underline;"><span><span>em</span>(4)</span></a> driver, so
+	    all network devices except for <a href="https://www.freebsd.org/cgi/man.cgi?query=em&amp;sektion=4&amp;manpath=freebsd-release-ports" style="color:rgb(6, 69, 173);text-decoration:underline;"><span><span>em</span>(4)</span></a> can be removed
+	    from the kernel.</p></li><li><p><strong>Configure Networking</strong></p><p>The most basic networking setup uses DHCP to connect
+	    the virtual machine to the same local area network as the
+	    host <span>Mac</span>®.  This can be accomplished by adding
+	    <code style="font-family:monospace;">ifconfig_em0="DHCP"</code> to
+	    <code style="color:rgb(0, 122, 0);">/etc/rc.conf</code>.  More advanced
+	    networking setups are described in
+	    <a href="https://www.freebsd.org/doc/handbook/advanced-networking.html" title="Chapter 30. Advanced Networking" style="color:rgb(6, 69, 173);text-decoration:underline;">Chapter 30, <em>Advanced Networking</em></a>.</p></li></ol></div></div></div></div></div></div><br/></div></en-note>

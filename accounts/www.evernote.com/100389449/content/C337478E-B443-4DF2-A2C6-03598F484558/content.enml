@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div><div><div><div><h1>7.5 Device Tree Blob (Flat Device Tree)</h1><div><div/></div></div>
+
+<p>One of the more challenging aspects of porting Linux (and U-Boot) to your new board is the recent requirement for a device tree blob (DTB). It is also referred to as a flat device tree, device tree binary, or simply device tree. Throughout this discussion, these terms are used interchangeably. The DTB is a database that represents the hardware components on a given board. It is derived from the IBM OpenFirmware specifications and has been chosen as the default mechanism to pass low-level hardware information from the bootloader to the kernel.</p>
+
+<p>Prior to the requirement for a DTB, U-Boot would pass a board information structure to the kernel, which was derived from a header file in U-Boot that had to exactly match the contents of a similar header file in the kernel. It was very difficult to keep them in sync, and it didn't scale well. This was, in part, the motivation for incorporating the flat device tree as a method to communicate low-level hardware details from the bootloader to the kernel.</p>
+
+<p>Similar to U-Boot or other low-level firmware, mastering the DTB requires complete knowledge of the underlying hardware. You can do an Internet search to find some introductory documents that describe the device tree. A great starting point is the Denx Software Engineering wiki page. References are provided at the end of this chapter.</p>
+
+<p>To begin, let's see how the DTB is used during a typical boot sequence. Listing 7-13 shows a boot sequence on a Power Architecture target using U-Boot. The Freescale MPC8548CDS system was used for this example.</p>
+
+
+
+<h4>Listing 7-13. Booting Linux with the Device Tree Blob from U-Boot</h4>
+
+<pre>=&gt; <strong>tftp $loadaddr 8548/uImage</strong>
+Speed: 1000, full duplex
+Using eTSEC0 device
+TFTP from server 192.168.11.103; our IP address is 192.168.11.18
+Filename '8548/uImage'.
+Load address: 0x600000
+Loading:  #####################################################
+          #####################################################
+done
+Bytes transferred = 1838553 (1c0dd9 hex)
+=&gt; <strong>tftp $fdtaddr 8548/dtb</strong>
+Speed: 1000, full duplex
+Using eTSEC0 device
+TFTP from server 192.168.11.103; our IP address is 192.168.11.18
+Filename '8548/dtb'.
+Load address: 0xc00000
+Loading: ##
+done
+Bytes transferred = 16384 (4000 hex)
+=&gt; <strong>bootm $loadaddr - $fdtaddr</strong>
+## Booting kernel from Legacy Image at 00600000 ...
+   Image Name:   MontaVista Linux 6/2.6.27/freesc
+   Image Type:   PowerPC Linux Kernel Image (gzip compressed)
+   Data Size:    1838489 Bytes =  1.8 MB
+   Load Address: 00000000
+   Entry Point:  00000000
+   Verifying Checksum ... OK
+## Flattened Device Tree blob at 00c00000
+   Booting using the fdt blob at 0xc00000
+   Uncompressing Kernel Image ... OK
+   Loading Device Tree to 007f9000, end 007fffff ... OK
+   &lt;... Linux begins booting here...&gt;
+...and away we go!!</pre>
+
+
+<p>The primary difference here is that we loaded two images. The large image (1.8MB) is the kernel image. The smaller image (16KB) is the flat device tree. Notice that we placed the kernel and DTB at addresses <tt>0x600000</tt> and <tt>0xc00000</tt>, respectively. All the messages from Listing 7-13 are produced by U-Boot. When we use the <tt>bootm</tt> command to boot the kernel, we add a third parameter, which tells U-Boot where we loaded the DTB.</p>
+
+<p>By now, you are probably wondering where the DTB came from. The easy answer is that it was provided as a courtesy by the board/architecture developers as part of the Linux kernel source tree. If you look at the <tt>powerpc</tt> branch of any recent Linux kernel tree, you will see a directory called <tt>.../arch/powerpc/boot/dts</tt>. This is where the &quot;source code&quot; for the DTB resides.</p>
+
+<p>The hard answer is that you must provide a DTB for your custom board. Start with something close to your platform, and modify from there. At the risk of sounding redundant, there is no easy path. You must dive in and learn the details of your hardware platform and become proficient at writing device nodes and their respective properties. Hopefully, this section will start you on your way toward that proficiency.</p>
+
+
+
+<h3>7.5.1 Device Tree Source</h3>
+
+<p>The device tree blob is &quot;compiled&quot; by a special compiler that produces the binary in the proper form for U-Boot and Linux to understand. The <tt>dtc</tt> compiler usually is provided with your embedded Linux distribution, or it can be found at <a target="_blank" href="http://jdl.com/software">http://jdl.com/software</a>. Listing 7-14 shows a snippet of the device tree source (DTS) from a recent kernel source tree.</p>
+
+
+
+<h4>Listing 7-14. Partial Device Tree Source Listing</h4>
+
+<pre>/*
+ * MPC8548 CDS Device Tree Source
+ *
+ * Copyright 2006, 2008 Freescale Semiconductor Inc.
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under  the terms of  the GNU General Public License as published by the
+ * Free Software Foundation;  either version 2 of the License, or (at your
+ * option) any later version.
+ */
+
+/dts-v1/;
+
+/ {
+    model = &quot;MPC8548CDS&quot;;
+    compatible = &quot;MPC8548CDS&quot;, &quot;MPC85xxCDS&quot;;
+    #address-cells = &lt;1&gt;;
+    #size-cells = &lt;1&gt;;
+
+    aliases {
+        ethernet0 = &amp;enet0;
+        ethernet1 = &amp;enet1;
+        ethernet2 = &amp;enet2;
+        ethernet3 = &amp;enet3;
+        serial0 = &amp;serial0;
+        serial1 = &amp;serial1;
+        pci0 = &amp;pci0;
+        pci1 = &amp;pci1;
+        pci2 = &amp;pci2;
+        rapidio0 = &amp;rio0;
+    };
+
+    cpus {
+        #address-cells = &lt;1&gt;;
+        #size-cells = &lt;0&gt;;
+
+        PowerPC,8548@0 {
+            device_type = &quot;cpu&quot;;
+            reg = &lt;0x0&gt;;
+            d-cache-line-size = &lt;32&gt;;   // 32 bytes
+            i-cache-line-size = &lt;32&gt;;   // 32 bytes
+            d-cache-size = &lt;0x8000&gt;;        // L1, 32K
+            i-cache-size = &lt;0x8000&gt;;        // L1, 32K
+            timebase-frequency = &lt;0&gt;;   //  33 MHz, from uboot
+            bus-frequency = &lt;0&gt;;    // 166 MHz
+            clock-frequency = &lt;0&gt;;  // 825 MHz, from uboot
+            next-level-cache = &lt;&amp;L2&gt;;
+        };
+    };
+
+    memory {
+        device_type = &quot;memory&quot;;
+        reg = &lt;0x0 0x8000000&gt;;  // 128M at 0x0
+    };
+
+    localbus@e0000000 {
+        #address-cells = &lt;2&gt;;
+        #size-cells = &lt;1&gt;;
+        compatible = &quot;simple-bus&quot;;
+        reg = &lt;0xe0000000 0x5000&gt;;
+        interrupt-parent = &lt;&amp;mpic&gt;;
+
+        ranges = &lt;0x0 0x0 0xff000000 0x01000000&gt;;   /*16MB Flash*/
+
+        flash@0,0 {
+            #address-cells = &lt;1&gt;;
+            #size-cells = &lt;1&gt;;
+            compatible = &quot;cfi-flash&quot;;
+            reg = &lt;0x0 0x0 0x1000000&gt;;
+            bank-width = &lt;2&gt;;
+            device-width = &lt;2&gt;;
+            partition@0x0 {
+                label = &quot;free space&quot;;
+                reg = &lt;0x00000000 0x00f80000&gt;;
+            };
+            partition@0x100000 {
+                label = &quot;bootloader&quot;;
+                reg = &lt;0x00f80000 0x00080000&gt;;
+                read-only;
+            };
+        };
+    };
+&lt;...truncated here...&gt;</pre>
+
+
+<p>This is a long listing, but it is well worth the time spent studying it. Although it may seem obvious, it is worth noting that this device tree source is specific to the Freescale MPC8548CDS Configurable Development System. Part of your job as a custom embedded Linux developer is to adopt this DTS to your own MPC8548-based system.</p>
+
+<p>Some of the data shown in Listing 7-14 is self-explanatory. The flat device tree is made up of device nodes. A device node is an entry in the device tree, usually describing a single device or bus. Each node contains a set of properties that describe it. It is, in fact, a tree structure. It can easily be represented by a familiar tree view, as shown in Listing 7-15.</p>
+
+
+
+<h4>Listing 7-15. Tree View of DTS</h4>
+
+<pre>|-/ Model: model = &quot;MPC8548CDS&quot;, etc.
+|
+|---- cpus: #address-cells = &lt;1&gt;, etc.
+|   |
+|   |----  PowerPC,8548@0, etc.
+|
+|--- Memory: device_type = &quot;memory&quot;, etc.
+|
+|----  localbus@e0000000: #address-cells = &lt;2&gt;, etc.
+|   |
+|   |---- flash@0,0: #address-cells = &lt;1&gt;, etc.
+|
+&lt;...&gt;</pre>
+
+
+<p>In the first few lines of Listing 7-14, we see the processor model and a property indicating compatibility with other processors in the same family. The first child node describes the CPU. Many of the CPU device node properties are self-explanatory. For example, we can see that the 8548 CPU has data and instruction cache line sizes of 32 bytes and that these caches are both 32KB in size (<tt>0x8000</tt> bytes.) We see a couple properties that show clock frequencies, such as <tt>timebase-frequency</tt> and <tt>clock-frequency</tt>, both of which indicate that they are set by U-Boot. That would be natural, because U-Boot configures the hardware clocks.</p>
+
+<p>The properties called <tt>address-cells</tt> and <tt>size-cells</tt> are worth explaining. A &quot;cell&quot; in this context is simply a 32-bit quantity. <tt>address-cells</tt> and <tt>size-cells</tt> simply indicate the number of cells (32-bit fields) required to specify an address (or size) in the child node.</p>
+
+<p>The <tt>memory</tt> device node offers no mysteries. From this node, it is obvious that this platform contains a single bank of memory starting at address 0, which is 128MB in size.</p>
+
+<p>For complete details of flat device tree syntax, consult the references at the end of this chapter. One of the most useful is the document produced by Power.org, found at <a target="_blank" href="http://www.power.org/resources/downloads/Power_ePAPR_APPROVED_v1.0.pdf">www.power.org/resources/downloads/Power_ePAPR_APPROVED_v1.0.pdf</a>.</p>
+
+
+
+<h3>7.5.2 Device Tree Compiler</h3>
+
+<p>Introduced earlier, the device tree compiler (<tt>dtc</tt>) converts the human-readable device tree source into the machine-readable binary that both U-Boot and the Linux kernel understand. Although a <tt>git</tt> tree is hosted on kernel.org for <tt>dtc</tt>, the device tree source has been merged into the kernel source tree and is built along with any Power Architecture kernel from the <tt>.../arch/powerpc</tt> branch.</p>
+
+<p>It is quite straightforward to use the device tree compiler. A typical command to convert source to binary looks like this:</p>
+
+<pre>$ <strong>dtc -O dtb -o myboard.dtb -b 0 myboard.dts</strong>
+</pre>
+
+<p>In this command, <tt>myboard.dts</tt> is the device tree human-readable source, and <tt>myboard.dtb</tt> is the binary created by this command invocation. The <tt>-O</tt> flag specifies the output format—in this case, the device tree blob binary. The <tt>-o</tt> flag names the output file, and the <tt>-b 0</tt> parameter specifies the physical boot CPU in the multicore case.</p>
+
+<p>Note that the <tt>dtc</tt> compiler allows you to go in both directions. The command example just shown performs a compile from source to device tree binary, whereas a command like this produces source from the binary:</p>
+
+<pre>$ <strong>dtc -I dtb -O dts mpc8548.dtb &gt;mpc8548.dts</strong>
+</pre>
+
+<p>You can also build the DTB for many well-known reference boards directly from the kernel source. The command looks similar to the following:</p>
+
+<pre>$ <strong>make ARCH=powerpc mpc8548cds.dtb</strong>
+</pre>
+
+<p>This produces a binary device tree blob from a source file with the same base name (<tt>mpc8548cds</tt>) and the <tt>dts</tt> extension. These are found in <tt>.../arch/powerpc/boot/dts</tt>. A recent kernel source tree had 120 such device tree source files for a range of Power Architecture boards.</p>
+
+
+
+<h3>7.5.3 Alternative Kernel Images Using DTB</h3>
+
+<p>Entering <tt>make ARCH=powerpc help</tt> at the top-level Linux kernel source tree outputs many lines of useful help, describing the many build targets available. Several architecture-specific targets combine the device tree blob with the kernel image. One good reason to do this is if you are trying to boot a newer kernel on a target that has an older version of U-Boot that does not support the device tree blob. On a recent Linux kernel, Listing 7-16 reproduces the <tt>powerpc</tt> targets defined for the powerpc architecture.</p>
+
+
+
+<h4>Listing 7-16. Architecture-Specific Targets for Powerpc</h4>
+
+<pre>* zImage          - Build default images selected by kernel config
+  zImage.*        - Compressed kernel image (arch/powerpc/boot/zImage.*)
+  uImage          - U-Boot native image format
+  cuImage.&lt;dt&gt;    - Backwards compatible U-Boot image for older
+                    versions which do not support device trees
+  dtbImage.&lt;dt&gt;   - zImage with an embedded device tree blob
+  simpleImage.&lt;dt&gt; - Firmware independent image.
+  treeImage.&lt;dt&gt;  - Support for older IBM 4xx firmware (not U-Boot)
+  install         - Install kernel using
+                    (your) ~/bin/installkernel or
+                    (distribution) /sbin/installkernel or
+                    install to $(INSTALL_PATH) and run lilo
+  *_defconfig     - Select default config from arch/powerpc/configs</pre>
+
+
+<p>The <tt>zImage</tt> is the default, but many targets use <tt>uImage</tt>. Notice that some of these targets have the device tree binary included in the composite kernel image. You need to decide which is most appropriate for your particular platform and application.</p>
+
+
+            </div></div></div><br/></div></en-note>

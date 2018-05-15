@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div><div><div><div><h1>Rooting Your Android Phone: Everything You Need To Know</h1><div><div></div></div></div>
+												
+							<div><a href="https://img.gawkerassets.com/img/18z4d5ud0xxnbjpg/original.jpg" target="_blank"><div><en-media type="image/jpeg" hash="488bb03c81b8674fbfbfa00e2f52d50b" alt="Rooting Your Android Phone: Everything You Need To Know" height="324" width="576"></en-media></div></a></div>
+<p>We love Android in its native form, but rooting your phone can give you the opportunity to do so much more than your phone can do out of the box — speeding it up with overclocking or customising the look of your phone with themes. Here's what you need to know about the rooting process, and where to find a guide for your phone.
+</p>
+<p><small>Title image remixed from <a href="http://www.shutterstock.com/pic.mhtml?id=127180397&amp;src=id" target="_blank">VLADGRIN</a> (Shutterstock).</small></p>
+<p>Read through the glossary below to get acquainted with important rooting terminology, then check out the FAQ for more info on your burning questions. When you're ready, check out the last section for resources on your specific device. </p>
+<h2>What Is Rooting, Exactly?</h2>
+<div><a href="https://img.gawkerassets.com/img/18z4i5vxj2w86jpg/original.jpg" target="_blank"><div><en-media type="image/jpeg" hash="f48fc7b9ece04449b0b64e63314e973b" alt="Rooting Your Android Phone: Everything You Need To Know" height="270" width="576"></en-media></div></a></div>
+<p>Rooting, for those of you that don't know, means giving yourself <strong>root permissions</strong> on your phone. It's similar to running programs as administrators in Windows, or running a command with <code>sudo</code> in Linux. You have more power and you can change more options. (Rooting requires care and responsibility, something that applies to the other well-known definition of the term in Australia as well.)</p>
+<p>With a rooted phone, you can run apps that require access to certain system settings, as well as <a href="http://www.lifehacker.com.au/2010/07/how-to-choose-the-right-android-rom-for-you" target="_blank">flash custom ROMs</a> to your phone, which add all sorts of extra features. If you're on the fence about rooting, check out our <a href="http://www.lifehacker.com.au/2013/08/top-10-reasons-to-root-your-android-phone" target="_blank">top 10 reasons to root your Android phone</a> for some motivation.</p>
+<p>There are a lot of different Android phones out there, and while some rooting methods might work for multiple phones, there is no one-size-fits-all guide for rooting every phone out there. You'll inevitably have to search for specific details for your exact phone, but there are important things you should know about rooting before you start.</p>
+<h2>Glossary of Rooting Terms</h2>
+<div><a href="https://img.gawkerassets.com/img/18ix8qpfr3iq6jpg/original.jpg" target="_blank"><div><en-media type="image/jpeg" hash="09ccc1b76b0cacc7891c2007df2258fb" alt="Rooting Your Android Phone: Everything You Need To Know" height="324" width="576"></en-media></div></a></div>
+<p>As you learn more about the rooting process, you'll run into some potentially confusing terminology. Here are some of the most important ones and what they mean.</p>
+<ul>
+<li>
+    <strong>Root</strong>: Rooting means you have <em>root access</em> to your device — that is, it can run the <code>sudo</code> command, and has enhanced privileges allowing it to run apps such as <a href="https://market.android.com/details?id=android.tether" target="_blank">Wireless Tether</a> or <a href="https://market.android.com/details?id=com.mhuang.overclocking" target="_blank">SetCPU</a>. You can root either by installing the Superuser application — which many of the below root processes include — or by flashing a custom ROM that includes root access.
+  </li>
+<li>
+    <strong>ROM</strong>: In this context, a ROM is a modified version of Android. It may contain extra features, a different look, speed enhancements, or even a version of Android that hasn't been released for your phone yet. We won't discuss ROMs in depth here, but if you want to use one once you're rooted, you can <a href="http://www.lifehacker.com.au/2010/07/how-to-choose-the-right-android-rom-for-you" target="_blank">read more about doing that here</a>.
+  </li>
+<li>
+    <strong>Kernel</strong>: A kernel is the component of your operating system that manages communications between your software and hardware. There are a lot of custom kernels out there for most phones, some of which can <a href="http://www.lifehacker.com.au/2012/02/get-better-battery-life-and-performance-on-your-android-phone-with-a-new-kernel" target="_blank">speed up your phone and increase your battery life</a>, among other things. Be careful with kernels, though, as a bad one can cause serious problems with your phone and possibly even brick it.
+  </li>
+<li>
+    <strong>Radio</strong>: Radios are part of your phone's firmware. Your radio controls your mobile data, GPS and Wi-Fi. You can sometimes find custom radios for your phone that you can flash yourself, but beware as sometimes these can cause problems.
+  </li>
+<li>
+    <strong>Flash</strong>: Flashing essentially means installing something on your device, whether it be a ROM, a <a href="http://www.lifehacker.com.au/2012/02/get-better-battery-life-and-performance-on-your-android-phone-with-a-new-kernel" target="_blank">kernel</a>, or a recovery (see below) that comes in the form of a ZIP file. Sometimes the rooting process requires flashing a ZIP file; sometimes it doesn't.
+  </li>
+<li>
+    <strong>Bootloader</strong>: Your bootloader is the lowest level of software on your phone, running all the code that's necessary to start your operating system. Most bootloaders come locked, meaning you can't flash custom recoveries or ROMs. Unlocking your bootloader doesn't root your phone directly, but it does <em>allow</em> you to root, then flash custom ROMs if you so desire.
+  </li>
+<li>
+    <strong>Recovery</strong>: Your recovery is the software on your phone that lets you make backups, flash ROMs, and perform other system-level tasks. The default recovery on your phone can't do much, but you can flash a custom recovery — such as ClockworkMod — after you've unlocked your bootloader that will give you much more control over your device. This is often an integral part of the rooting process.
+  </li>
+<li>
+    <strong>Nandroid</strong>: From most third-party recovery modules, you can make backups of your phone called nandroid backups. It's essentially a system image of your phone: Everything <em>exactly</em> how it is right now. That way, if you flash something that breaks your phone, you can just flash back to your most recent nandroid backup to return everything to normal. This is different from using an app like <a href="https://play.google.com/store/apps/details?id=com.keramidas.TitaniumBackup&amp;hl=en" target="_blank">Titanium Backup</a> that just backs up apps and/or settings — nandroid backups back up the entire system as one image. Titanium backups are best when switching between ROMs or phones.
+  </li>
+<li>
+    <strong>ADB</strong>: ADB stands for Android Debug Bridge, and it's a command line tool for your computer that can communicate with an Android device connected to it. It's part of the <a href="http://developer.android.com/sdk/index.html" target="_blank">Android Software Developers Kit (SDK)</a>. Many of the root tools you'll find use ADB, whether you're typing the commands yourself or not. Unless the instructions call for installing the SDK and running ADB commands, you won't need to mess with it — you'll just need to know that it's what most of the tools use to root your phone.
+  </li>
+<li>
+    <strong>S-OFF</strong>: HTC phones use a feature called Signature Verification in HBOOT, their bootloader. By default, your phone has S-ON, which means it blocks you from flashing radio images — the code that manages your data, Wi-Fi and GPS connections. Switching your phone to S-OFF lets you flash new radios. Rooting doesn't require S-OFF, but many rooting tools will give you S-OFF in addition to root access.
+  </li>
+<li>
+    <strong>RUU</strong>, <strong>SBF</strong>, and <strong>OPS</strong>: ROM Upgrade Utilities (for HTC phones), System Boot Files (for Motorola phones), and OPS and PIT files (for Samsung phones) are files direct from the manufacturer that change the software on your phone. RUU and SBF files are how the manufacturers deliver your over-the-air upgrades, and modders often post leaked RUU and SBF files for flashing when the updates haven't been released yet. They're also handy when <em>downgrading</em> your phone, if a rooting method isn't available for the newest software version yet. You can flash RUUs right from your HTC phone, but Motorola users will need a Windows program called <a href="http://forum.xda-developers.com/showthread.php?t=1348587" target="_blank">RSD Lite</a> to flash SBF files, and Samsung users will need a tool called <a href="http://forum.xda-developers.com/showthread.php?t=1734997" target="_blank">Odin</a> to flash OPS and PIT files (note there is a specific version of Odin for each device).
+  </li>
+</ul>
+<h2>Frequenty Asked Rooting Questions</h2>
+<div><a href="https://img.gawkerassets.com/img/18nvm3ywv3l1kjpg/original.jpg" target="_blank"><div><en-media type="image/jpeg" hash="725239c6ce1207c97b49540d1f5809c7" alt="Rooting Your Android Phone: Everything You Need To Know" height="324" width="576"></en-media></div></a></div>
+<p>People have a lot of questions about rooting, and we hear them all the time. Here are some of the most frequently asked, laid out so you don't have to ask someone else.</p>
+<p><strong>What's the difference between rooting, unlocking, and flashing a ROM?</strong> This can be confusing, since the three practices are often performed at the same time. We've detailed some of this above, but briefly: Unlocking your bootloader is usually the first step in the process and allows you to flash a custom recovery. From there, you can then give yourself root access or flash a ROM. Root access isn't required to flash a ROM, but almost all custom ROMs will come with root access built-in.</p>
+<p>Note that when we say "unlock" in this guide, we mean unlocking your bootloader — not unlocking your phone to use a different carrier, which is a completely different process and doesn't always require hacking. (In Australia, buying carrier-unlocked phones is relatively straightforward.)</p>
+<p><strong>Can I unroot my phone?</strong> Yes. If you decide you don't like being rooted, you can often find instructions on unrooting your phone as well. Usually it involves flashing an RUU, SBF, or something similar to return the phone to truly stock settings.</p>
+<p><strong>Will rooting void my warranty?</strong> The default position on this is 'Yes'. While it's not entirely clear that the position would be defensible under Australian consumer law, in most cases manufacturers won't help you out if you have unlocked your bootloader. If you need warranty service for a hardware issue, you can sometimes unroot your phone and take it in for service with no one the wiser. However, some phones have a digital "switch" that flips when you unlock your phone that is very difficult or impossible to revert, so do your research before unlocking if you want to preserve your warranty.</p>
+<p><strong>Could rooting brick my phone?</strong> It's possible, but pretty unlikely. As long as you follow instructions well, you probably won't brick anything (but we're not responsible yadda yadda yadda). Flashing custom kernels and radios is a little riskier than just rooting or flashing ROMs, but again, if you follow directions you should be OK. Keep in mind that bricking means your phone means it won't turn on or function at all — if you're stuck in a boot loop or boot straight to recovery, your phone is not bricked, and <a href="http://www.lifehacker.com.au/2011/10/ask-lh-how-do-i-fix-my-bricked-android-phone" target="_blank">it can be fixed</a>.</p>
+<p><strong>Are any phones unrootable?</strong> This is a tough question. In the past, many manufacturers have tried to make "unrootable" phones with harsher protections (such as the Droid X), but they're usually still rootable in some way, shape or form. The more likely scenario is that, if you get a new phone or a phone that had a recent update, that a root exploit isn't available yet. In that case, you may have to wait a few months before you're able to root it. This is one of the reasons we recommend <a href="http://www.lifehacker.com.au/2012/07/is-buying-the-nexus-the-only-answer-to-android-fragmentation" target="_blank">buying a Nexus</a>.</p>
+<p><strong>Will I still get over-the-air (OTA) updates? Will downloading them break my root?</strong> If you root your phone without flashing a custom ROM, then you will likely still get OTA updates from your carrier, and they will break your root. We highly recommend <em>against</em> downloading these updates, since you may not be able to re-root your phone for a while after updating.</p>
+<p>If you flash a custom ROM, you will not get OTA updates from your carrier. You may, however, get notifications for updates to your specific ROM. Those are safe to download.</p>
+<p><strong>Will rooting speed up my phone?</strong> Not on its own — all rooting does is give you root access. However, it does open up the possibility for <a href="http://www.lifehacker.com.au/2010/12/how-to-speed-up-your-old-sluggish-android-device" target="_blank">other tweaks that can speed up an old phone</a>.</p>
+<p><strong>Can you tell me how to root my [insert phone model here]?</strong> NO. Please don't email us asking this. We only own a few phones and thus probably don't know how to root yours. Check out the section below to find out where to find information on how to root your phone.</p>
+<p><strong>What should I do once I'm rooted?</strong> Glad you asked! Check out our <a href="http://www.lifehacker.com.au/2013/08/top-10-reasons-to-root-your-android-phone" target="_blank">top 10 reasons to root your Android phone</a> for some inspiration.</p>
+<h2>Where To Find Rooting Methods And Tools</h2>
+<div><a href="https://img.gawkerassets.com/img/18ixjx3spb6pmjpg/original.jpg" target="_blank"><div><en-media type="image/jpeg" hash="276ec2d94fffc17ba79f1b1f842204ad" alt="Rooting Your Android Phone: Everything You Need To Know" height="324" width="576"></en-media></div></a></div>
+<p>So now we get to the good stuff: actually rooting your phone. Unfortunately, every single phone is different, and rooting methods change every time that phone's software updates. Phones released in Australia may also require slightly different methods than their counterparts overseas. So you'll need to hunt down instructions for your particular model.</p>
+<p>Here are a few places you'll find guides, ROMs, and other information about rooting your specific phone.</p>
+<ul>
+<li>
+    <a href="http://forum.xda-developers.com/" target="_blank">The XDA Developers forums</a> are the number one place to look for information on your phone. This is where all the best hackers and tweakers gather to discuss phones, share links and guides, and create rooting tools. Head to the forums, find your device, and poke around the different subforums for your phone. You should find a number of threads that will direct you to information on how to root your phone, what ROMs and kernels are available, and more. And, when in doubt, ask the other users!
+  </li>
+<li>
+    <a href="http://androidforums.com/" target="_blank">The Phandroid forums</a> (aka Android Forums) aren't quite as popular as XDA, but they have always done a pretty good job of organising information on rooting. This is a good place to start. Head to the forum for your device and look for the "All Things Root" subforum.
+  </li>
+<li>
+    <a href="http://rootzwiki.com/index" target="_blank">RootzWiki</a> may not be as popular as it once was, but there's still good information to be had on these forums, especially pertaining to new ROMs, kernels, and other things on the development side.
+  </li>
+<li>
+    <a href="http://forums.whirlpool.net.au/forum/140" target="_blank">Whirlpool's Android forum</a> also has plenty of discussions around Android rooting, and is particularly helpful for dealing with issues relating to Australia-specific models and carrier tweaks.
+  </li>
+<li>
+    <a href="http://wiki.cyanogenmod.org/w/Main_Page" target="_blank">The CyanogenMod Wiki</a>: CyanogenMod, one of the most popular ROMs out there, has a fantastic wiki with plenty of information on different devices. Even if you don't plan on flashing CyanogenMod (or any ROM, for that matter), you can often find information on how to root your phone within their device-specific instructions on installing CyanogenMod, so it's worth checking out.
+  </li>
+</ul>
+<p>Try any or all of the above sources and see what you can find. Once you've found the forum for your phone, search around for a rooting guide or rooting tool. Make sure it's applicable to your current software version and try it out. If you have any questions, you can ask in the forums — but be sure to read as much as you can before doing so, since your question has probably already been answered elsewhere.</p>
+<p>Armed with the knowledge in this glossary and FAQ, along with the right rooting method on those forums, you should be well on your way to a better phone. Good luck!</p>
+							
+
+    
+	<div>
+		<h5>WATCH MORE: Tech News &amp; Life Hacks</h5>
+		
+		<div>
+			
+		<div><div><div><div>X</div></div></div></div></div>
+		
+	</div>
+
+						</div></div></div><br/></div></en-note>

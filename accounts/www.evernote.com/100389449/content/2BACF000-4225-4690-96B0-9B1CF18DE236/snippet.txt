@@ -1,0 +1,1 @@
+The color scheme location # On Mac OS X => ls /usr/share/vim/vim73/colors default, elflord, peachpuff, ron, pablo <— “OK" desert, koehler <— "I currently use" morning, slate, delek, evening, murphy, torte, darkblue, shine, zellner <— Don’t like # To set a color scheme, add the following line in "~/.vimrc" colorscheme desert 

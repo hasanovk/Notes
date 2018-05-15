@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="overflow-wrap:break-word;"><div style="overflow-wrap:break-word;font-family:Georgia, &quot;Times New Roman&quot;, Times, serif;font-size:16px;line-height:26px;color:rgb(17, 17, 17);background-color:rgb(83, 83, 83);"><div style="overflow-wrap:break-word;background:rgb(255, 255, 255) none repeat scroll 0% 0%;"><div style="overflow-wrap:break-word;box-sizing:border-box;"><div style="overflow-wrap:break-word;background-color:rgb(255, 255, 255);box-sizing:border-box;"><div style="overflow-wrap:break-word;font-size:16px;line-height:26px;">
+				<div style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:15px;">
+					<h1 style="padding:0px;overflow-wrap:break-word;font-weight:normal;margin:0px;font-size:26px;line-height:39px;color:rgb(17, 17, 17);">15 mysqlbinlog Command Examples for MySQL Binary Log Files</h1>
+					<div style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(136, 136, 136);font-size:13px;line-height:22px;">
+						<span style="margin:0px;padding:0px;overflow-wrap:break-word;font-style:italic;">by</span> <span style="margin:0px;padding:0px;overflow-wrap:break-word;text-transform:uppercase;letter-spacing:1px;">Ramesh Natarajan</span>
+						
+						
+						<span style="margin:0px;padding:0px;overflow-wrap:break-word;font-style:italic;">on</span> <span title="2017-08-16" style="margin:0px;padding:0px;overflow-wrap:break-word;text-transform:uppercase;letter-spacing:1px;">August 16, 2017</span>
+					</div>
+				</div>
+				<div style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<div style="margin:7px 0px 6px 0px;padding:5px;overflow-wrap:break-word;">
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;float:left;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;text-indent:0px;background:transparent none repeat scroll 0% 0%;border-style:none;float:none;line-height:normal;font-size:1px;vertical-align:baseline;display:inline-block;width:32px;height:20px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;top:0px;width:100%px;border-style:none;left:0px;visibility:visible;height:20px;"><div style="font-size: 16px; display: inline-block;"><div dir="ltr" lang="en"><div><div><a href="https://plus.google.com/share?app=110&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2017%2F08%2Fmysqlbinlog-examples%2F" target="_blank"><div dir="ltr"><span><div style="float:left;white-space:nowrap;"><div title="G+" style="border:1px solid rgba(0, 0, 0, 0.17);border-radius:2px;box-shadow:rgba(0, 0, 0, 0.05) 0px 1px 0px;box-sizing:border-box;transition:background-color 0.218s ease 0s, border-color 0.218s ease 0s, box-shadow 0.218s ease 0s;background-color:rgb(255, 255, 255);background-image:none;color:rgb(38, 38, 38);cursor:pointer;outline:medium none currentcolor;overflow:hidden;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:32px;fill:rgb(219, 68, 55);height:20px;"><div style="height:100%;width:100%;"><div style="float:left;margin:0px 0px 0 0px;"><span style="display:block;fill:rgb(219, 68, 55);"><span></span><span></span></span><div></div></div></div></div></div></span></div></a></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:2px;overflow-wrap:break-word;float:left;width:90px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;border:none;overflow:hidden;width:450px;height:21px;position:relative;"><div style="font-size: 16px; display: inline-block;"><div lang="en"><div dir="ltr" style="color:rgb(29, 33, 41);direction:ltr;margin:0px;padding:0px;unicode-bidi:embed;font-size:11px;background:transparent none repeat scroll 0% 0%;font-family:Helvetica, Arial, sans-serif;line-height:1.28;overflow:hidden;"><div style="overflow:initial;"><div style="font-family:Helvetica, Arial, sans-serif;"><div><table cellspacing="0" cellpadding="0" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;border:0px none;border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style="font-size:11px;font-family:Helvetica, Arial, sans-serif;text-align:center;padding-right:0px;padding-top:0px;padding-bottom:0px;padding-left:0px;"><div><div style="margin:0px;padding:0px;"></div></div></td></tr></tbody></table></div></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;visibility:visible;width:68px;height:20px;"><div style="font-size: 16px; display: inline-block;"><div lang="en" style="font:normal normal normal normal 11px/18px &quot;Helvetica Neue&quot;, Arial, sans-serif;color:rgb(51, 51, 51);">
+<div style="margin:0px;padding:0px;background:rgba(0, 0, 0, 0) none repeat scroll 0px 0px;">
+<div style="display:inline-block;white-space:nowrap;overflow:hidden;text-align:left;">
+  <div style="display:inline-block;vertical-align:top;max-width:100%;width:68px;"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fwww.thegeekstuff.com%2F2017%2F08%2Fmysqlbinlog-examples%2F&amp;ref_src=twsrc%5Etfw&amp;text=15%20mysqlbinlog%20Command%20Examples%20for%20MySQL%20Binary%20Log%20Files&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2017%2F08%2Fmysqlbinlog-examples%2F" style="outline:0px none currentcolor;text-decoration:none;display:inline-block;vertical-align:top;position:relative;height:20px;box-sizing:border-box;padding:1px 8px 1px 6px;background-color:rgb(27, 149, 224);color:rgb(255, 255, 255);border-radius:3px;font-weight:500;cursor:pointer;"><i style="position:relative;top:2px;display:inline-block;width:14px;height:14px;background:transparent url(&amp;quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E&amp;quot;) no-repeat scroll 0px 0px;"></i><span style="display:inline-block;vertical-align:top;margin-left:3px;white-space:nowrap;">Tweet</span></a></div>
+</div>
+
+
+
+</div></div></div></div>
+</div>
+
+</div>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><en-media type="image/png" hash="6ca96b2b1b66c8d7542dc5219e1d729c" alt="" width="351" height="288" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;float:right;margin-bottom:26px;margin-left:26px;"></en-media>In MySQL or MariaDB, anytime you make a change to the database, that particular event is logged.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For example, when you create a new table, or update data on an existing table, those events are stored in the binary logs.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Binary log is very helpful in MySQL replication, where the main server will send the data from the binary logs to the remote servers.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">You’ll also be dealing with binary log files when you are performing any kind of recovery operations in MySQL.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">mysqlbinlog command is used to view the content of the binary log in a readable user friendly format. You’ll also use the mysqlbinlog command to read the content and pipe it to other mysql utilities.<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+<span style="margin:0px;padding:0px;overflow-wrap:break-word;"></span><br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+In this tutorial, we’ll discuss the following examples using mysqlbinlog command:</p>
+<ol style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Get a List of Current Binary Logs</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Mysqlbinlog Default Behavior</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Get Entries for a Specific Database</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Disable Binary log for Recovery</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Control base-64 BINLOG in the Output</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Debug Messages in mysqlbinlog Output</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Skip First N number of Entries</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Save Output to a File</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Extract Entries starting from a Specific Position</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Extract Entries upto a Specific Position</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Flush Logs for Clean Binlog Output</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Display Only SQL Queries in the Output</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">View Entries starting from a Specific Time</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">View Entries upto a Specific Time</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Get Binary Log from a Remote Server</li>
+</ol>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">1. Get a List of Current Binary Logs</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">From mysql, execute the following show binary logs command which will display all the binary logs in your system.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysql&gt; SHOW BINARY LOGS;
++-------------------+-----------+
+| Log_name          | File_size |
++-------------------+-----------+
+| mysqld-bin.000001 |     15740 |
+| mysqld-bin.000002 |      3319 |
+..
+..
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">If you are system doesn’t have the binary logging enabled, then you’ll see the following error message.</p>
+    <center style="margin:0px;padding:0px;overflow-wrap:break-word;">
+      <div style="margin:0px;padding:0px;overflow-wrap:break-word;margin-left:2px;margin-top:10px;margin-bottom:10px;">
+
+        
+		
+
+
+<ins style="margin:0px;padding:0px;overflow-wrap:break-word;display:inline-block;width:300px;height:250px;"><ins style="margin:0;padding:0;overflow-wrap:break-word;display:inline-table;border:none;height:250px;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins style="margin:0;padding:0;overflow-wrap:break-word;display:block;border:none;height:250px;position:relative;visibility:visible;width:300px;background-color:transparent;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;left:0;position:absolute;top:0;width:300px;height:250px;"></div></ins></ins></ins>
+
+
+        
+
+	  </div>
+    </center>
+
+
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysql&gt; SHOW BINARY LOGS;
+ERROR 1381 (HY000): You are not using binary logging
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">By default, the binary log files are located under the /var/lib/mysql directory as shown below.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># ls -l /var/lib/mysql/
+-rw-rw----. 1 mysql mysql 15740 Aug 16 14:57 mysqld-bin.000001
+-rw-rw----. 1 mysql mysql  3319 Aug 16 14:57 mysqld-bin.000002
+..
+..
+</pre>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">2. Mysqlbinlog Default Behavior</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following will display the content of the specified mysql binary log file (for example: mysqld-bin.000001) in a user friendly format.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># mysqlbinlog mysqld-bin.000001
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following is the partial output of the above command:</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">/*!40019 SET @@session.max_insert_delayed_threads=0*/;
+/*!50003 SET @OLD_COMPLETION_TYPE=@@COMPLETION_TYPE,COMPLETION_TYPE=0*/;
+DELIMITER /*!*/;
+# at 4
+#170726 14:57:37 server id 1  end_log_pos 106   Start: binlog v 4, server v 5.1.73-log created 170726 14:57:37 at startup
+# Warning: this binlog is either in use or was not closed properly.
+ROLLBACK/*!*/;
+BINLOG '
+IeZ4WQ8BAAAAZgAAAGoAAAABAAQANS4xLjczLWxvZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAh5nhZEzgNAAgAEgAEBAQEEgAAUwAEGggAAAAICAgC
+'/*!*/;
+# at 106
+#170726 14:59:31 server id 1  end_log_pos 182   Query   thread_id=2     exec_time=0     error_code=0
+SET TIMESTAMP=1501095571/*!*/;
+SET @@session.pseudo_thread_id=2/*!*/;
+SET @@session.foreign_key_checks=1, @@session.sql_auto_is_null=1, @@session.unique_checks=1, @@session.autocommit=1/*!*/;
+SET @@session.sql_mode=0/*!*/;
+SET @@session.auto_increment_increment=1, @@session.auto_increment_offset=1/*!*/;
+/*!\C latin1 *//*!*/;
+SET @@session.character_set_client=8,@@session.collation_connection=8,@@session.collation_server=8/*!*/;
+..
+..
+..
+# at 14191
+#170726 15:20:38 server id 1  end_log_pos 14311         Query   thread_id=4     exec_time=0     error_code=0
+SET TIMESTAMP=1501096838/*!*/;
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;">insert into salary(name,dept) values('Ritu', 'Accounting')</strong>
+/*!*/;
+DELIMITER ;
+# End of log file
+ROLLBACK /* added by mysqlbinlog */;
+/*!50003 SET COMPLETION_TYPE=@OLD_COMPLETION_TYPE*/;
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The above command will display events that happened on all the database on that system.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Note: When you execute mysqlbinlog command, you might sometime get this error message “unknown variable default-character-set=utf8”, in that case, use the –set-charset option in the mysqlbinlog to set appropriate character set. Another option would be to add the “loose-default-character-set=utf8” to your /etc/my.cnf file under the [client] section. </p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">If you are new to MySQL, this will help: <a href="http://www.thegeekstuff.com/2017/06/install-mariadb-mysql/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">6 Steps to Install and Configure MariaDB MySQL on Linux</a></p>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">3. Get Entries for a Specific Database</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The default output of mysqlbinlog can be overwhelming, as it will display lot of data from all the statements.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Using -d option, you can also specify a database name, which will display on the events that happens on the given database.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following command will dump all the events that belongs to “crm” database into the crm-events.txt file</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog -d crm mysqld-bin.000001 &gt; crm-events.txt
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Instead of -d option, you can also use –database option as shown below.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog --database crm mysqld-bin.000001 &gt; crm-events.txt
+</pre>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">4. Disable Binary log for Recovery</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">When you are using mysqlbinlog to restore from a database crash, you don’t want your restore process to create binary logs. If it does, then you’ll be in an loop, where you’ll keep on restoring, as the restore itself will generate new binary log files.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">So, to disable the binary log when you are using the mysqlbinlog command, use the -D option as shown below:</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog -D mysqld-bin.000001
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">You can also use –disable-log-bin as shown below. The following is exactly same as the above command.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog --disable-log-bin mysqld-bin.000001 
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Note: In the output, when you specify the -D option, you’ll see the additional 2nd line in the output. i.e the one which says SQL_LOG_BIN=0.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">/*!40019 SET @@session.max_insert_delayed_threads=0*/;
+/*!32316 SET @OLD_SQL_LOG_BIN=@@SQL_LOG_BIN, SQL_LOG_BIN=0*/;
+/*!50003 SET @OLD_COMPLETION_TYPE=@@COMPLETION_TYPE,COMPLETION_TYPE=0*/;
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">This option will also be helpful when you are –to-last-log option. Also, keep in mind that you need root privilege to execute this command.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For backup and restore, you’ll typically use <a href="http://www.thegeekstuff.com/2008/09/backup-and-restore-mysql-database-using-mysqldump/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">mysqldump command</a>, but sometimes in a situation where you have to recover from a crash, mysqlbinlog is helpful.</p>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">5. Control base-64 BINLOG in the Output</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Using base64-output option, you can control the behavior of when the output statement should be base64-encoded BINLOG statements.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following are possible values for base64-output:</p>
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;list-style-type:square;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">never</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">always</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">decode-rows</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">auto (this is default)</li>
+</ul>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">never:</strong> When you specify “never” as shown below, this will display the base64-encoded BINLOG statements in the output.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog --base64-output=never mysqld-bin.000001
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">i.e When you use “never”, in the output of the mysqlbinlog command, you’ll not any lines that are similar to the following which has the base64-encoded BINLOG.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">BINLOG '
+IeZ4WQ8BAAAAZgAAABAAQANS4xLjczLWxvZwAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAh5nhZEzgNAAgAEgAEBAQEEgAAUwAEGggAAAAICAgC
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Please note that the above “never” option for the base64-output will work on binary log files when they don’t contain the row-based events.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">always:</strong> When you specify “always” option, this will display only the BINLOG entries whenever possible. So, use this only when you specifically debugging some issues.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog --base64-output=always mysqld-bin.000001
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following is the output of the above with “always”, which shows only the BINLOG entries.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">BINLOG '
+IeZ4WQ8BAAAAZgAAAGoAAAABAAQANS4xLjczLWxvZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAh5nhZEzgNAAgAEgAEBAQEEgAAUwAEGggAAAAICAgC
+'/*!*/;
+# at 106
+#170726 14:59:31 server id 1  end_log_pos 182
+BINLOG '
+k+Z4WQIBAAAATAAAALYAAAAIAAIAAAAAAAAADAAAGgAAAEAAAAEAAAAAAAAAAAYDc3RkBAgACAAI
+AHRoZWdlZWtzdHVmZgBCRUdJTg==
+'/*!*/;
+# at 182
+#170726 14:59:30 server id 1  end_log_pos 291
+BINLOG '
+kuZ4WQIBAAAAbQAAACMBAAAAAAIAAAAAAAAADAAAGgAAAEAAAAEAAAAAAAAAAAYDc3RkBAgACAAI
+AHRoZWdlZWtzdHVmZgBJTlNFUlQgSU5UTyB0IFZBTFVFUygxLCAnYXBwbGUnLCBOVUxMKQ==
+'/*!*/;
+# at 291
+#170726 14:59:30 server id 1  end_log_pos 422
+BINLOG '
+kuZ4WQIBAAAAgwAAAKYBAAAAAAIAAAAAAAAADAAAGgAAAEAAAAEAAAAAAAAAAAYDc3RkBAgACAAI
+AHRoZWdlZWtzdHVmZgBVUERBVEUgdCBTRVQgbmFtZSA9ICdwZWFyJywgZGF0ZSA9ICcyMDA5LTAx
+LTAxJyBXSEVSRSBpZCA9IDE=
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">decode-rows:</strong> This option will decode the row based events into comented SQL statements, especially when you specify –verbose option also along with it as shown below.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog --base64-output=decode-rows --verbose mysqld-bin.000001
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">auto:</strong> This is the default option. When you don’t specify any base64-decode option, then it will use auto. In that case, mysqlbinlog will print the BINLOG entries only for certain event types like row-based events and format description events.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Both the following statements are exactly the same.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog --base64-output=auto mysqld-bin.000001
+
+mysqlbinlog mysqld-bin.000001
+</pre>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">6. Debug Messages in mysqlbinlog Output</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following debug-check option will check for open file and memory use after it finish processing the given binary log file.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog --debug-check mysqld-bin.000001
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following debug-info option will display additional debugging option after it finish processing the given binary log file as shown below.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># mysqlbinlog --debug-info mysqld-bin.000001 &gt; /tmp/m.di
+
+User time 0.00, System time 0.00
+Maximum resident set size 2848, Integral resident set size 0
+Non-physical pagefaults 863, Physical pagefaults 0, Swaps 0
+Blocks in 0 out 48, Messages in 0 out 0, Signals 0
+Voluntary context switches 1, Involuntary context switches 2
+</pre>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">7. Skip First N number of Entries</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Instead of reading the whole mysql binary log file, you can also read only certain portion of it by specifying offset.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For this use -o option. -o stands for offset.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following will skip the first 10 entries in the specified mysql bin log.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog -o 10 mysqld-bin.000001
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">To make sure this works properly, give a hug number for the offset, and you’ll not see any entries. The following will skip the first 10,000 entries (events) from the log.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In this example, since this particular log file doesn’t have 10,000 entries, it it nos showing any database events in the output.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># mysqlbinlog -o 10000 mysqld-bin.000001
+/*!40019 SET @@session.max_insert_delayed_threads=0*/;
+/*!50003 SET @OLD_COMPLETION_TYPE=@@COMPLETION_TYPE,COMPLETION_TYPE=0*/;
+..
+..
+# End of log file
+ROLLBACK /* added by mysqlbinlog */;
+/*!50003 SET COMPLETION_TYPE=@OLD_COMPLETION_TYPE*/;
+</pre>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">8. Save Output to a File</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">You can use the simple Linux redirection command &gt; and store the output to a file as shown below.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog mysqld-bin.000001 &gt; output.log
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Or, you can use the -r (result file) option as shown below to store the output in a file. Please note that -r and –result-file are the same.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog -r output.log mysqld-bin.000001 
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Note: You can also specify –server-id and extract log entries that are generated by a mysql server with the given server id.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog --server-id=1 -r output.log mysqld-bin.000001 
+</pre>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">9. Extract Entries starting from a Specific Position</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Typically in mysql binary log file, you’ll see position numbers as shown below. The following is a partial output of the mysqlbinlog, where you see “15028” is a position number.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">#170726 15:38:14 server id 1  end_log_pos 15028         Query   thread_id=5     exec_time=0     error_code=0
+SET TIMESTAMP=1501097894/*!*/;
+insert into salary values(400,'Nisha','Marketing',9500)
+/*!*/;
+# at 15028
+#170726 15:38:14 server id 1  end_log_pos 15146         Query   thread_id=5     exec_time=0     error_code=0
+SET TIMESTAMP=1501097894/*!*/;
+insert into salary values(500,'Randy','Technology',6000)
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following command will start reading the binary log entries fro position number 15028.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog -j 15028 mysqld-bin.000001 &gt; from-15028.out
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">When you specify multiple binary log files in the command line, then the start position will be applied only to the first binary log in the given list.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">You can use -H option to get a hex dump of the given binary log files as shown below.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog -H mysqld-bin.000001 &gt; binlog-hex-dump.out
+</pre>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">10. Extract Entries upto a Specific Position</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Just like the previous example, you can also read entries from a mysql binary log upto a specific position as shown below.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog --stop-position=15028 mysqld-bin.000001 &gt; upto-15028.out
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The above example will stop from the binlog exactly at position 15028. When you specify multiple binary log files in the command line, then the stop position will be applied only to the last binary log in the given list.</p>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">11. Flush Logs for Clean Binlog Output</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">When a binary log was not closed properly, you’ll see a warning message in the output as shown below.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># mysqlbinlog  mysqld-bin.000001 &gt; output.log
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">As you see here, it says the binlog file was not closed properly.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># head output.log
+/*!40019 SET @@session.max_insert_delayed_threads=0*/;
+..
+..
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;"># Warning: this binlog is either in use or was not closed properly.</strong>
+..
+..
+..
+BINLOG '
+IeZ4WQ8BAAAAZgAAAGoAAAABAAQANS4xLjczLWxvZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAh5nhZEzgNAAgAEgAEBAQEEgAAUwAEGggAAAAICAgC
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">When you see that, then connect to the mysql and flush the logs as shown below.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysql&gt; flush logs;
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Once you flush the logs, and execute your mysqlbinlog command again, you’ll not see that binlog not closed properly warning message anymore in your mysqlbinlog output.</p>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">12. Display Only SQL Queries in the Output</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">By default, as you see in output of previous examples, apart from the SQL queries, you’ll also see some additional information in the mysqlbinlog output.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">If you only want the regular SQL queries and nothing else, then use the -s option as shown below.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">-s here stands for short form. You can also use –short-form option. Both the following examples are exactly the same.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog -s mysqld-bin.000001 
+
+mysqlbinlog -short-form mysqld-bin.000001  
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following is partial output of the above command. As you see here, it displays only the SQL queries from the given binary log file.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">SET TIMESTAMP=1501096106/*!*/;
+insert into employee values(400,'Nisha','Marketing',9500)
+/*!*/;
+SET TIMESTAMP=1501096106/*!*/;
+insert into employee values(500,'Randy','Technology',6000)
+..
+..
+..
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">You’ll not see entires like the following in the short-form:</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># at 1201
+#170726 15:08:26 server id 1  end_log_pos 1329  Query   thread_id=3     exec_time=0     error_code=0
+</pre>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">13. View Entries starting from a Specific Time</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following will extract only the entries that are starting from the specified time. Any entries before this time will be ignored.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog --start-datetime="2017-08-16 15:00:00" mysqld-bin.000001 
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">This is very helpful when you want to extract data from a binary file from only a specific time frame that you want to use it to recover or reconstruct certain database activities that happened within that time period.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The format of the timestamp can be anything that is understood by the MYSQL server DATETIME and TIMESTAMP types. So, you have lot of flexibility here.</p>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">14. View Entries upto a Specific Time</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Just like the previous start time example, you can also specify stop time as shown below.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog --stop-datetime="2017-08-16 15:00:00" mysqld-bin.000001 
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The above command will read the entries upto the given stop time. Any entries from the mysql binary log file that are beyond the given stop time will not be processed.</p>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">15. Get Binary Log from a Remote Server</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">From your local machine, you can also read the mysql binary logs that is located in a remote server.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For this, you need to specify the ip-address, username and password for the remote server as explained below.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Use -R option for this. -R option is same as –read-from-remote–server.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog -R -h 192.168.101.2 -p mysqld-bin.000001
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In the above:</p>
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;list-style-type:square;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">-R option instructs mysqlbinlog command to read the log file from the remote server</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">-h specify the ip-address of the remote server</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">-p This will prompt you for the password. By default, it will use “root” as the username. You can also specify an username using -u option.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">mysqld-bin.000001 This is the name of the binary log file from the remote server that we are reading here.</li>
+</ul>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following command is exactly same as the above command:</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog --read-from-remote-server --host=192.168.101.2 -p mysqld-bin.000001
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following is the partial output of the above command:</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=1*/;
+/*!40019 SET @@session.max_insert_delayed_threads=0*/;
+/*!50003 SET @OLD_COMPLETION_TYPE=@@COMPLETION_TYPE,COMPLETION_TYPE=0*/;
+DELIMITER /*!*/;
+# at 4
+#170726 13:57:37 server id 1  end_log_pos 106   Start: binlog v 4, server v 5.1.73-log created 170726 13:57:37 at startup
+ROLLBACK/*!*/;
+BINLOG '
+IeZ4WQ8BAAAAZgAAAGoAAAAAAAQANS4xLjczLWxvZwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAh5nhZEzgNAAgAEgAEBAQEEgAAUwAEGggAAAAICAgC
+'/*!*/;
+# at 106
+#170726 13:59:31 server id 1  end_log_pos 182   Query   thread_id=2     exec_time=0     error_code=0
+..
+DELIMITER ;
+# End of log file
+ROLLBACK /* added by mysqlbinlog */;
+/*!50003 SET COMPLETION_TYPE=@OLD_COMPLETION_TYPE*/;
+/*!50530 SET @@SESSION.PSEUDO_SLAVE_MODE=0*/;
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">If you specify only the -h option, you’ll get the following error message.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># mysqlbinlog -h 192.168.101.2 mysqld-bin.000001
+mysqlbinlog: File 'mysqld-bin.000001' not found (Errcode: 2)
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">When you don’t have enough privilege on the remote database, then you’ll get the following “is not allowed to connect” error message. In this case, make sure you grant proper privileges on the remote database for your local client (i.e where mysqlbinlog command is running)</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># mysqlbinlog -R --host=192.168.101.2 mysqld-bin.000001
+ERROR: Failed on connect: Host '216.172.166.27' is not allowed to connect to this MySQL server
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">If you don’t specify the proper password using the -p option, you’ll get the following “access denied” error message</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># mysqlbinlog -R --host=192.168.101.2 mysqld-bin.000001
+ERROR: Failed on connect: Access denied for user 'root'@'216.172.166.27' (using password: YES)
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following example shows that you can also use -u option to specify the username that mysqlbinlog should use to connect to the remote MySQL database. Please note that this user is mysql user (not Linux server user).</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">mysqlbinlog -R --host=192.168.101.2 -u root -p mysqld-bin.000001 
+</pre>
+<div style="margin:7px 0px 3px 0px;padding:5px;overflow-wrap:break-word;background:#F2F0E8;">
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;float:left;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;text-indent:0px;background:transparent none repeat scroll 0% 0%;border-style:none;float:none;line-height:normal;font-size:1px;vertical-align:baseline;display:inline-block;width:32px;height:20px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;top:0px;width:100%px;border-style:none;left:0px;visibility:visible;height:20px;"><div style="font-size: 16px; display: inline-block;"><div dir="ltr" lang="en"><div><div><a href="https://plus.google.com/share?app=110&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2017%2F08%2Fmysqlbinlog-examples%2F" target="_blank"><div dir="ltr"><span><div style="float:left;white-space:nowrap;"><div title="G+" style="border:1px solid rgba(0, 0, 0, 0.17);border-radius:2px;box-shadow:rgba(0, 0, 0, 0.05) 0px 1px 0px;box-sizing:border-box;transition:background-color 0.218s ease 0s, border-color 0.218s ease 0s, box-shadow 0.218s ease 0s;background-color:rgb(255, 255, 255);background-image:none;color:rgb(38, 38, 38);cursor:pointer;outline:medium none currentcolor;overflow:hidden;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:32px;fill:rgb(219, 68, 55);height:20px;"><div style="height:100%;width:100%;"><div style="float:left;margin:0px 0px 0 0px;"><span style="display:block;fill:rgb(219, 68, 55);"><span></span><span></span></span><div></div></div></div></div></div></span></div></a></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;float:left;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;visibility:visible;width:68px;height:20px;"><div style="font-size: 16px; display: inline-block;"><div lang="en" style="font:normal normal normal normal 11px/18px &quot;Helvetica Neue&quot;, Arial, sans-serif;color:rgb(51, 51, 51);">
+<div style="margin:0px;padding:0px;background:rgba(0, 0, 0, 0) none repeat scroll 0px 0px;">
+<div style="display:inline-block;white-space:nowrap;overflow:hidden;text-align:left;">
+  <div style="display:inline-block;vertical-align:top;max-width:100%;width:68px;"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fwww.thegeekstuff.com%2F2017%2F08%2Fmysqlbinlog-examples%2F&amp;ref_src=twsrc%5Etfw&amp;text=15%20mysqlbinlog%20Command%20Examples%20for%20MySQL%20Binary%20Log%20Files&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2017%2F08%2Fmysqlbinlog-examples%2F" style="outline:0px none currentcolor;text-decoration:none;display:inline-block;vertical-align:top;position:relative;height:20px;box-sizing:border-box;padding:1px 8px 1px 6px;background-color:rgb(27, 149, 224);color:rgb(255, 255, 255);border-radius:3px;font-weight:500;cursor:pointer;"><i style="position:relative;top:2px;display:inline-block;width:14px;height:14px;background:transparent url(&amp;quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E&amp;quot;) no-repeat scroll 0px 0px;"></i><span style="display:inline-block;vertical-align:top;margin-left:3px;white-space:nowrap;">Tweet</span></a></div>
+</div>
+
+
+
+</div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:2px;overflow-wrap:break-word;float:left;width:90px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;border:none;overflow:hidden;width:450px;height:21px;position:relative;"><div style="font-size: 16px; display: inline-block;"><div lang="en"><div dir="ltr" style="color:rgb(29, 33, 41);direction:ltr;margin:0px;padding:0px;unicode-bidi:embed;font-size:11px;background:transparent none repeat scroll 0% 0%;font-family:Helvetica, Arial, sans-serif;line-height:1.28;overflow:hidden;"><div style="overflow:initial;"><div style="font-family:Helvetica, Arial, sans-serif;"><div><table cellspacing="0" cellpadding="0" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;border:0px none;border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style="font-size:11px;font-family:Helvetica, Arial, sans-serif;text-align:center;padding-right:0px;padding-top:0px;padding-bottom:0px;padding-left:0px;"><div><div style="margin:0px;padding:0px;"></div></div></td></tr></tbody></table></div></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:1px;overflow-wrap:break-word;">
+&gt; <a href="http://www.thegeekstuff.com/2017/08/mysqlbinlog-examples/#commentform" rel="nofollow" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;">Add your comment</a>
+</div>
+
+</div>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">If you enjoyed this article, you might also like..</h3>
+<table style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;margin:0px;padding:0px;overflow-wrap:break-word;border-collapse:collapse;border-spacing:0px;">
+<tbody style="margin:0px;padding:0px;overflow-wrap:break-word;"><tr style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<td valign="top" style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<ol style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">50 Linux Sysadmin Tutorials</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2010/11/50-linux-commands/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">50 Most Frequently Used Linux Commands (With Examples)</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2011/12/linux-performance-monitoring-tools/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Top 25 Best Linux Performance Monitoring and Debugging Tools</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/03/15-practical-linux-find-command-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Mommy, I found it! – 15 Practical Linux Find Command Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/linux-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Linux 101 Hacks 2nd Edition eBook</a> <en-media type="image/png" hash="157b7a4a18066f2a912a9653b4bc205d" title="Linux 101 Hacks Book" alt="Linux 101 Hacks Book" width="40" height="14" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></li>
+</ol>
+</td>
+<td style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;list-style-type:square;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Awk Introduction – 7 Awk Print Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/10/unix-sed-tutorial-advanced-sed-substitution-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Advanced Sed Substitution Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/03/8-essential-vim-editor-navigation-fundamentals/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">8 Essential Vim Editor Navigation Fundamentals</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2011/06/iptables-rules-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">25 Most Frequently Used Linux IPTables Rules Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2008/08/turbocharge-putty-with-12-powerful-add-ons-software-for-geeks-3/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Turbocharge PuTTY with 12 Powerful Add-Ons</a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+<center style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<table style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;margin:0px;padding:0px;overflow-wrap:break-word;border-collapse:collapse;border-spacing:0px;">
+<tbody style="margin:0px;padding:0px;overflow-wrap:break-word;"><tr style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/bash-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="c0a4d32ca58fe39f5b170223a8c8763e" title="Bash 101 Hacks Book" alt="Bash 101 Hacks Book" width="131" height="184" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/sed-awk-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="d930f101d0481ddd0e00d12eddb4f964" title="Sed and Awk 101 Hacks Book" alt="Sed and Awk 101 Hacks Book" width="132" height="185" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/nagios-core-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="52d4cdefa0d0d7b07caf93d50a349aec" title="Nagios Core 3 Book" alt="Nagios Core 3 Book" width="132" height="185" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/vim-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="cf915abf41955498421f4ecfc3571b5c" title="Vim 101 Hacks Book" alt="Vim 101 Hacks Book" width="132" height="185" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+</tr>
+</tbody></table>
+</center>
+<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+				<span style="display:block;height:0px;clear:both;visibility:hidden;">.</span></div>
+				<p style="margin:0px;padding:0px;overflow-wrap:break-word;font-size:x-small;margin-bottom:26px;color:rgb(136, 136, 136);">
+					<span style="margin:0px;padding:0px;overflow-wrap:break-word;">Tagged as:</span>
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-backup-examples/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog Backup Examples</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-base64-output-examples/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog Base64 Output Examples</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-centos/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog CentOS</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-database-crash/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog Database Crash</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-decode-example/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog Decode Example</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-examples-debian/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog Examples Debian</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-examples-linux/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog Examples Linux</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-examples-redhat/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog Examples RedHat</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-examples-ubuntu/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog Examples Ubuntu</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-examples-windows/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog Examples Windows</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-file-not-found/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog File Not Found</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-human-readable-format/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog Human Readable Format</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-master-slave-examples/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog Master Slave Examples</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-options-example/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog Options Example</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-output-format-examples/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog Output Format Examples</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-recovery-examples/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog Recovery Examples</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-replication-examples/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog Replication Examples</a>,
+					<a href="http://www.thegeekstuff.com/tag/mysqlbinlog-unknown-variable-characterset/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">MySQLBinLog Unknown Variable CharacterSet</a>
+				</p>
+			<span style="font-size:16px;line-height:26px;display:block;height:0px;clear:both;visibility:hidden;">.</span></div></div></div></div></div></div></div><br/></div></en-note>

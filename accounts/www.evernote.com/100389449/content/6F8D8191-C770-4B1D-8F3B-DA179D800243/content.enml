@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="overflow-wrap:break-word;"><div style="overflow-wrap:break-word;font-family:Georgia, &quot;Times New Roman&quot;, Times, serif;font-size:16px;line-height:26px;color:rgb(17, 17, 17);background-color:rgb(83, 83, 83);"><div style="overflow-wrap:break-word;background:rgb(255, 255, 255) none repeat scroll 0% 0%;"><div style="overflow-wrap:break-word;box-sizing:border-box;"><div style="overflow-wrap:break-word;background-color:rgb(255, 255, 255);box-sizing:border-box;"><div style="overflow-wrap:break-word;font-size:16px;line-height:26px;">
+				<div style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:15px;">
+					<h1 style="padding:0px;overflow-wrap:break-word;font-weight:normal;margin:0px;font-size:26px;line-height:39px;color:rgb(17, 17, 17);">Unix Sed Tutorial: Printing File Lines using Address and Patterns</h1>
+					<div style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(136, 136, 136);font-size:13px;line-height:22px;">
+						<span style="margin:0px;padding:0px;overflow-wrap:break-word;font-style:italic;">by</span> <span style="margin:0px;padding:0px;overflow-wrap:break-word;text-transform:uppercase;letter-spacing:1px;">Sasikala</span>
+						
+						
+						<span style="margin:0px;padding:0px;overflow-wrap:break-word;font-style:italic;">on</span> <span title="2009-09-14" style="margin:0px;padding:0px;overflow-wrap:break-word;text-transform:uppercase;letter-spacing:1px;">September 14, 2009</span>
+					</div>
+				</div>
+				<div style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<div style="margin:7px 0px 6px 0px;padding:5px;overflow-wrap:break-word;">
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;float:left;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;text-indent:0px;background:transparent none repeat scroll 0% 0%;border-style:none;float:none;line-height:normal;font-size:1px;vertical-align:baseline;display:inline-block;width:32px;height:20px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;top:0px;width:100%px;border-style:none;left:0px;visibility:visible;height:20px;"><div style="font-size: 16px; display: inline-block;"><div dir="ltr" lang="en"><div><div><a href="https://plus.google.com/share?app=110&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F09%2Funix-sed-tutorial-printing-file-lines-using-address-and-patterns%2F" target="_blank"><div dir="ltr"><span><div style="float:left;white-space:nowrap;"><div title="G+" style="border:1px solid rgba(0, 0, 0, 0.17);border-radius:2px;box-shadow:rgba(0, 0, 0, 0.05) 0px 1px 0px;box-sizing:border-box;transition:background-color 0.218s ease 0s, border-color 0.218s ease 0s, box-shadow 0.218s ease 0s;background-color:rgb(255, 255, 255);background-image:none;color:rgb(38, 38, 38);cursor:pointer;outline:medium none currentcolor;overflow:hidden;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:32px;fill:rgb(219, 68, 55);height:20px;"><div style="height:100%;width:100%;"><div style="float:left;margin:0px 0px 0 0px;"><span style="display:block;fill:rgb(219, 68, 55);"><span></span><span></span></span><div></div></div></div></div></div></span></div></a></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:2px;overflow-wrap:break-word;float:left;width:90px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;border:none;overflow:hidden;width:450px;height:21px;position:relative;"><div style="font-size: 16px; display: inline-block;"><div lang="en"><div dir="ltr" style="color:rgb(29, 33, 41);direction:ltr;margin:0px;padding:0px;unicode-bidi:embed;font-size:11px;background:transparent none repeat scroll 0% 0%;font-family:Helvetica, Arial, sans-serif;line-height:1.28;overflow:hidden;"><div style="overflow:initial;"><div style="font-family:Helvetica, Arial, sans-serif;"><div><table cellspacing="0" cellpadding="0" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;border:0px none;border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style="font-size:11px;font-family:Helvetica, Arial, sans-serif;text-align:center;padding-right:0px;padding-top:0px;padding-bottom:0px;padding-left:0px;"><div><div style="margin:0px;padding:0px;"></div></div></td></tr></tbody></table></div></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;visibility:visible;width:68px;height:20px;"><div style="font-size: 16px; display: inline-block;"><div lang="en" style="font:normal normal normal normal 11px/18px &quot;Helvetica Neue&quot;, Arial, sans-serif;color:rgb(51, 51, 51);">
+<div style="margin:0px;padding:0px;background:rgba(0, 0, 0, 0) none repeat scroll 0px 0px;">
+<div style="display:inline-block;white-space:nowrap;overflow:hidden;text-align:left;">
+  <div style="display:inline-block;vertical-align:top;max-width:100%;width:68px;"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F09%2Funix-sed-tutorial-printing-file-lines-using-address-and-patterns%2F&amp;ref_src=twsrc%5Etfw&amp;text=Unix%20Sed%20Tutorial%3A%20Printing%20File%20Lines%20using%20Address%20and%20Patterns&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F09%2Funix-sed-tutorial-printing-file-lines-using-address-and-patterns%2F" style="outline:0px none currentcolor;text-decoration:none;display:inline-block;vertical-align:top;position:relative;height:20px;box-sizing:border-box;padding:1px 8px 1px 6px;background-color:rgb(27, 149, 224);color:rgb(255, 255, 255);border-radius:3px;font-weight:500;cursor:pointer;"><i style="position:relative;top:2px;display:inline-block;width:14px;height:14px;background:transparent url(&amp;quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E&amp;quot;) no-repeat scroll 0px 0px;"></i><span style="display:inline-block;vertical-align:top;margin-left:3px;white-space:nowrap;">Tweet</span></a></div>
+</div>
+
+
+
+</div></div></div></div>
+</div>
+
+</div>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><en-media type="image/png" hash="1decdf557352e5b75dc0ccb6c2903d50" alt="Linux Sed Tutorial - Printing File Lines" width="300" height="225" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;float:right;margin-bottom:26px;margin-left:26px;"></en-media>Let us review how to print file lines using address and patterns in this first part of sed tutorial. </p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">We’ll be posting several awesome sed tutorials with examples in the upcoming weeks.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><span style="margin:0px;padding:0px;overflow-wrap:break-word;"></span></p>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Unix Sed Introduction</h3>
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;list-style-type:square;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">sed is a “non-interactive” stream-oriented editor. Since its an “non-interactive” it can be used to automate editing if desired.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">The name sed is an abbreviation for stream editor, and the utility derives many of its commands from the ed line-editor (ed was the first UNIX text editor).</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">This allows you to edit multiple files, or to perform common editing operations without ever having to open vi or emacs.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">sed reads from a file or from its standard input, and outputs to its standard output.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">sed has two buffers which are called pattern buffer and hold buffer. Both are initially empty.</li>
+</ul>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Unix Sed Working methodology</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">This is called as one execution cycle. Cycle continues till end of file/input is reached.</p>
+<ol style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Read a entire line from stdin/file.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Removes any trailing newline.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Places the line, in its pattern buffer.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Modify the pattern buffer according to the supplied commands.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Print the pattern buffer to stdout.</li>
+</ol>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Printing Operation in Sed</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Linux Sed command allows you to print only specific lines based on the line number or pattern matches. <strong style="margin:0px;padding:0px;overflow-wrap:break-word;">“p”</strong> is a command for printing the data from the pattern buffer.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">To suppress automatic printing of pattern space use -n command with sed. sed -n option will not print anything, unless an explicit request to print is found.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">Syntax:
+# sed -n 'ADDRESS'p filename
+
+# sed -n '/PATTERN/p' filename</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Let us first create thegeekstuff.txt file that will be used in all the examples mentioned below.</p>
+    <center style="margin:0px;padding:0px;overflow-wrap:break-word;">
+      <div style="margin:0px;padding:0px;overflow-wrap:break-word;margin-left:2px;margin-top:10px;margin-bottom:10px;">
+
+        
+		
+
+
+<ins style="margin:0px;padding:0px;overflow-wrap:break-word;display:inline-block;width:300px;height:250px;"><ins style="margin:0;padding:0;overflow-wrap:break-word;display:inline-table;border:none;height:250px;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins style="margin:0;padding:0;overflow-wrap:break-word;display:block;border:none;height:250px;position:relative;visibility:visible;width:300px;background-color:transparent;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;left:0;position:absolute;top:0;width:300px;height:250px;"></div></ins></ins></ins>
+
+
+        
+
+	  </div>
+    </center>
+
+
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># cat thegeekstuff.txt
+1. Linux - Sysadmin, Scripting etc.
+2. Databases - Oracle, mySQL etc.
+3. Hardware
+4. Security (Firewall, Network, Online Security etc)
+5. Storage
+6. Cool gadgets and websites
+7. Productivity (Too many technologies to explore, not much time available)
+8. Website Design
+9. Software Development
+10.Windows- Sysadmin, reboot etc.</pre>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">5 Sed ADDRESS Format Examples</h2>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Address Format 1: NUMBER</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">This will match only Nth line in the input.<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;"><br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+# sed -n ‘N’p filename<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+</strong></p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For example, 3p prints third line of input file thegeekstuff.txt as shown below.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># sed -n '3'p thegeekstuff.txt
+3. Hardware</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Address Format 2: NUMBER1~NUMBER2</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">M~N with “p” command prints every Nth line starting from line M.<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;"><br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+# sed -n ‘M~N’p filename<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+</strong></p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For example, 3~2p prints every 2nd line starting from 3rd line as shown below.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># sed -n '3~2'p thegeekstuff.txt
+3. Hardware
+5. Storage
+7. Productivity (Too many technologies to explore, not much time available)
+9. Software Development</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Address Format 3: START,END</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">M,N with “p” command prints Mth line to Nth line.<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;"><br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+# sed -n ‘M,N’p filename<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+</strong></p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For example, 4,8p prints from 4th line to 8th line from input file thegeekstuff.txt</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># sed -n '4,8'p thegeekstuff.txt
+4. Security (Firewall, Network, Online Security etc)
+5. Storage
+6. Cool gadgets and websites
+7. Productivity (Too many technologies to explore, not much time available)
+8. Website Design</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Address Format 4: ‘$’  Last Line</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">$ with “p” command matches only the last line from the input.<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;"><br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+# sed -n ‘$’p filename<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+</strong></p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For example, $p prints only the last line as shown below.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># sed -n '$'p thegeekstuff.txt
+10.Windows- Sysadmin, reboot etc.</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Address Format 5: NUMBER,$</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">N,$ with “p” command prints from Nth line to end of file.<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;"><br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+# sed -n ‘N,$p’ filename<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+</strong></p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For example 4,$p prints from 4th line to end of file.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># sed -n '4,$p' thegeekstuff.txt
+4. Security (Firewall, Network, Online Security etc)
+5. Storage
+6. Cool gadgets and websites
+7. Productivity (Too many technologies to explore, not much time available)
+8. Website Design
+9. Software Development
+10.Windows- Sysadmin, reboot etc.</pre>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">6 Sed PATTERN Format Examples</h2>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Pattern Format 1: PATTERN</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">PATTERN could be unix regular expression. The below command prints only the line which matches the given pattern.<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;"><br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+# sed -n /PATTERN/p filename<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+</strong></p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For example, following prints the line only which matches the pattern “Sysadmin”.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># sed -n /Sysadmin/p thegeekstuff.txt
+1. Linux - Sysadmin, Scripting etc.
+10.Windows- Sysadmin, reboot etc.</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Pattern Format 2: /PATTERN/,ADDRESS</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;"><br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+# sed -n ‘/PATTERN/,Np’ filename<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+</strong></p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For example, following prints lines which matches the pattern to Nth line, from input. 3rd line matches the pattern “Hardware”, so it prints from 3rd line to 6th line.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># sed -n '/Hardware/,6p' thegeekstuff.txt
+3. Hardware
+4. Security (Firewall, Network, Online Security etc)
+5. Storage
+6. Cool gadgets and websites</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Pattern Format 3: ADDRESS,/PATTERN/</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">It prints from the Nth line of the input, to the line which matches the pattern. If the pattern doesnt match, it prints upto end of the input.<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;"><br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+# sed -n ‘N,/PATTERN/p’ filename<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+</strong></p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For example, 4th line matches the pattern “Security”, so it prints from 3rd line to 4th line.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># sed -n '3,/Security/p' thegeekstuff.txt
+3. Hardware
+4. Security (Firewall, Network, Online Security etc)</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Pattern Format 4: /PATTERN/,$</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">It prints from the line matches the given pattern to end of file.<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;"><br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+# sed -n ‘/PATTERN/,$p’ filename<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+</strong></p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># sed -n '/Website/,$p' thegeekstuff.txt
+8. Website Design
+9. Software Development
+10.Windows- Sysadmin, reboot etc.</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Pattern Format 5: /PATTERN/,+N</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">It prints the lines which matches the pattern and next N lines following the matched line.<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;"><br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+# sed -n ‘/PATTERN/,+Np’ filename<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+</strong></p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For example, following prints the 5th line which matches the pattern /Storage/ and next two lines following /Storage/.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># sed -n '/Storage/,+2p' thegeekstuff.txt
+5. Storage
+6. Cool gadgets and websites
+7. Productivity (Too many technologies to explore, not much time available)</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Pattern Format 6: /PATTERN/,/PATTERN/</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Prints the section of file between two regular expression (including the matched line ).<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;"><br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+# sed -n ‘/P1/,/P2/p’ filename<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+</strong></p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For example, 5th line matches “Storage” and 8th line matches “Design”, so it prints 5th to 8th.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"># sed -n '/Storage/,/Design/p' thegeekstuff.txt
+5. Storage
+6. Cool gadgets and websites
+7. Productivity (Too many technologies to explore, not much time available)
+8. Website Design</pre>
+<div style="margin:7px 0px 3px 0px;padding:5px;overflow-wrap:break-word;background:#F2F0E8;">
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;float:left;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;text-indent:0px;background:transparent none repeat scroll 0% 0%;border-style:none;float:none;line-height:normal;font-size:1px;vertical-align:baseline;display:inline-block;width:32px;height:20px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;top:0px;width:100%px;border-style:none;left:0px;visibility:visible;height:20px;"><div style="font-size: 16px; display: inline-block;"><div dir="ltr" lang="en"><div><div><a href="https://plus.google.com/share?app=110&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F09%2Funix-sed-tutorial-printing-file-lines-using-address-and-patterns%2F" target="_blank"><div dir="ltr"><span><div style="float:left;white-space:nowrap;"><div title="G+" style="border:1px solid rgba(0, 0, 0, 0.17);border-radius:2px;box-shadow:rgba(0, 0, 0, 0.05) 0px 1px 0px;box-sizing:border-box;transition:background-color 0.218s ease 0s, border-color 0.218s ease 0s, box-shadow 0.218s ease 0s;background-color:rgb(255, 255, 255);background-image:none;color:rgb(38, 38, 38);cursor:pointer;outline:medium none currentcolor;overflow:hidden;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:32px;fill:rgb(219, 68, 55);height:20px;"><div style="height:100%;width:100%;"><div style="float:left;margin:0px 0px 0 0px;"><span style="display:block;fill:rgb(219, 68, 55);"><span></span><span></span></span><div></div></div></div></div></div></span></div></a></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;float:left;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;visibility:visible;width:68px;height:20px;"><div style="font-size: 16px; display: inline-block;"><div lang="en" style="font:normal normal normal normal 11px/18px &quot;Helvetica Neue&quot;, Arial, sans-serif;color:rgb(51, 51, 51);">
+<div style="margin:0px;padding:0px;background:rgba(0, 0, 0, 0) none repeat scroll 0px 0px;">
+<div style="display:inline-block;white-space:nowrap;overflow:hidden;text-align:left;">
+  <div style="display:inline-block;vertical-align:top;max-width:100%;width:68px;"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F09%2Funix-sed-tutorial-printing-file-lines-using-address-and-patterns%2F&amp;ref_src=twsrc%5Etfw&amp;text=Unix%20Sed%20Tutorial%3A%20Printing%20File%20Lines%20using%20Address%20and%20Patterns&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F09%2Funix-sed-tutorial-printing-file-lines-using-address-and-patterns%2F" style="outline:0px none currentcolor;text-decoration:none;display:inline-block;vertical-align:top;position:relative;height:20px;box-sizing:border-box;padding:1px 8px 1px 6px;background-color:rgb(27, 149, 224);color:rgb(255, 255, 255);border-radius:3px;font-weight:500;cursor:pointer;"><i style="position:relative;top:2px;display:inline-block;width:14px;height:14px;background:transparent url(&amp;quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E&amp;quot;) no-repeat scroll 0px 0px;"></i><span style="display:inline-block;vertical-align:top;margin-left:3px;white-space:nowrap;">Tweet</span></a></div>
+</div>
+
+
+
+</div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:2px;overflow-wrap:break-word;float:left;width:90px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;border:none;overflow:hidden;width:450px;height:21px;position:relative;"><div style="font-size: 16px; display: inline-block;"><div lang="en"><div dir="ltr" style="color:rgb(29, 33, 41);direction:ltr;margin:0px;padding:0px;unicode-bidi:embed;font-size:11px;background:transparent none repeat scroll 0% 0%;font-family:Helvetica, Arial, sans-serif;line-height:1.28;overflow:hidden;"><div style="overflow:initial;"><div style="font-family:Helvetica, Arial, sans-serif;"><div><table cellspacing="0" cellpadding="0" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;border:0px none;border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style="font-size:11px;font-family:Helvetica, Arial, sans-serif;text-align:center;padding-right:0px;padding-top:0px;padding-bottom:0px;padding-left:0px;"><div><div style="margin:0px;padding:0px;"></div></div></td></tr></tbody></table></div></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:1px;overflow-wrap:break-word;">
+&gt; <a href="http://www.thegeekstuff.com/2009/09/unix-sed-tutorial-printing-file-lines-using-address-and-patterns/#commentform" rel="nofollow" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;">Add your comment</a>
+</div>
+
+</div>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">If you enjoyed this article, you might also like..</h3>
+<table style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;margin:0px;padding:0px;overflow-wrap:break-word;border-collapse:collapse;border-spacing:0px;">
+<tbody style="margin:0px;padding:0px;overflow-wrap:break-word;"><tr style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<td valign="top" style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<ol style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">50 Linux Sysadmin Tutorials</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2010/11/50-linux-commands/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">50 Most Frequently Used Linux Commands (With Examples)</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2011/12/linux-performance-monitoring-tools/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Top 25 Best Linux Performance Monitoring and Debugging Tools</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/03/15-practical-linux-find-command-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Mommy, I found it! – 15 Practical Linux Find Command Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/linux-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Linux 101 Hacks 2nd Edition eBook</a> <en-media type="image/png" hash="157b7a4a18066f2a912a9653b4bc205d" title="Linux 101 Hacks Book" alt="Linux 101 Hacks Book" width="40" height="14" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></li>
+</ol>
+</td>
+<td style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;list-style-type:square;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Awk Introduction – 7 Awk Print Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/10/unix-sed-tutorial-advanced-sed-substitution-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Advanced Sed Substitution Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/03/8-essential-vim-editor-navigation-fundamentals/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">8 Essential Vim Editor Navigation Fundamentals</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2011/06/iptables-rules-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">25 Most Frequently Used Linux IPTables Rules Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2008/08/turbocharge-putty-with-12-powerful-add-ons-software-for-geeks-3/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Turbocharge PuTTY with 12 Powerful Add-Ons</a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+<center style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<table style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;margin:0px;padding:0px;overflow-wrap:break-word;border-collapse:collapse;border-spacing:0px;">
+<tbody style="margin:0px;padding:0px;overflow-wrap:break-word;"><tr style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/bash-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="c0a4d32ca58fe39f5b170223a8c8763e" title="Bash 101 Hacks Book" alt="Bash 101 Hacks Book" width="131" height="184" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/sed-awk-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="d930f101d0481ddd0e00d12eddb4f964" title="Sed and Awk 101 Hacks Book" alt="Sed and Awk 101 Hacks Book" width="132" height="185" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/nagios-core-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="52d4cdefa0d0d7b07caf93d50a349aec" title="Nagios Core 3 Book" alt="Nagios Core 3 Book" width="132" height="185" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/vim-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="cf915abf41955498421f4ecfc3571b5c" title="Vim 101 Hacks Book" alt="Vim 101 Hacks Book" width="132" height="185" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+</tr>
+</tbody></table>
+</center>
+<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+				<span style="display:block;height:0px;clear:both;visibility:hidden;">.</span></div>
+				<p style="margin:0px;padding:0px;overflow-wrap:break-word;font-size:x-small;margin-bottom:26px;color:rgb(136, 136, 136);">
+					<span style="margin:0px;padding:0px;overflow-wrap:break-word;">Tagged as:</span>
+					<a href="http://www.thegeekstuff.com/tag/linux-sed-command/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Linux Sed Command</a>,
+					<a href="http://www.thegeekstuff.com/tag/sed-tips-and-tricks/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Sed Tips and Tricks</a>,
+					<a href="http://www.thegeekstuff.com/tag/unix-sed-command/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Unix Sed Command</a>
+				</p>
+			<span style="font-size:16px;line-height:26px;display:block;height:0px;clear:both;visibility:hidden;">.</span></div></div></div></div></div></div></div><br/></div></en-note>

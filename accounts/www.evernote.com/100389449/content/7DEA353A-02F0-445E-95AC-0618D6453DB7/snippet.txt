@@ -1,0 +1,1 @@
+How to enable the Action watcher? “View” -> “Show Console” and then => sublime.log_commands(True) Moving a Line Up/Down Hold “Control” + “Command” and move the line by using the arrow key. 

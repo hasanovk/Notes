@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="font-size:100%;"><div style="font-family:&quot;HelveticaNeue&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:12px;line-height:20px;color:rgb(102, 102, 102);background:rgb(244, 244, 244) url(&amp;quot;http://www.javacreed.com/wp-content/themes/PressGrid-3.3.1/images/bg/bg1.png&amp;quot;) repeat scroll 0px 0px;"><div><div style="border-radius:0px;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0%;box-shadow:none;"><div><div><div><div><div><div style="font-size:13px;background:rgb(255, 255, 255) none repeat scroll 0% 0%;"><div> <div style="margin:30px 0px 0px;padding:0px;">
+<div><span style="display:table;line-height:0;"></span>
+<div style="position:relative;float:left;width:100%;"> <en-media type="image/png" hash="e8bdf52022a1e64036482dd3c62d8a28" alt="" width="639" height="236" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;float:left;width:100%;"></en-media>
+</div>
+<span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div> <div style="margin:30px 0px;font-size:12px;">
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">GSON is a Java API, developed by Google, used to convert between Java objects and JSON objects. This article discusses and provides simple code examples using this API. More information about this API can be found at: <a href="http://sites.google.com/site/gson/" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">http://sites.google.com/site/gson/</a>.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">This is the first article from a series of articles about GSON. No GSON or JSON experience is required as this article acts as a primer for the other articles. The <a href="http://www.javacreed.com/gson-deserialiser-example/" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">second article</a> provides more examples about the use of GSON deserializer (from JSON to Java) and the <a href="http://www.javacreed.com/gson-serialiser-example/" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">third article</a> provides more examples about the GSON serializer (from Java to JSON). </p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">All code listed below is available at: <a href="https://java-creed-examples.googlecode.com/svn/gson/Simple%20Gson%20Example" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">https://java-creed-examples.googlecode.com/svn/gson/Simple%20Gson%20Example</a>. Most of the examples will not contain the whole code and may omit fragments which are not relevant to the example being discussed. The readers can download or view all code from the above link.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">The reader needs to have a basic knowledge of Java (<a href="http://docs.oracle.com/javase/tutorial/" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">tutorial</a>) and a very basic knowledge of Maven (<a href="http://maven.apache.org/" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Homepage</a>). The code listed here makes use of maven to download the GSON library. Checking out the project into Springsource Tool Suite (<a href="http://www.javacreed.com/getting_started/" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">the recommended IDE</a>) will work without having to configure anything.</p>
+<h2 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:40px;color:inherit;text-rendering:optimizelegibility;font-size:30px;">Download and Install</h2>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Before you can do any work with this API, you need to download the library (<em style="font-style:italic;">jar file</em>) and include it in the classpath. The library, together with the source and JavaDocs, can be downloaded from: <a href="http://code.google.com/p/google-gson/downloads/list" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">http://code.google.com/p/google-gson/downloads/list</a>. Once downloaded, add the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">gson-<em style="font-style:italic;">&lt;version&gt;</em>.jar</code> to the classpath. For those readers who prefer to use Maven to manage the dependencies (JAR files), add the following dependency to the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">pom.xml</code>.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">&lt;dependency&gt;
+    &lt;groupId&gt;com.google.code.gson&lt;/groupId&gt;
+    &lt;artifactId&gt;gson&lt;/artifactId&gt;
+    &lt;version&gt;2.2.4&lt;/version&gt;
+&lt;/dependency&gt;
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Change the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">&lt;version&gt;2.2.4&lt;/version&gt;</code> as required. All code examples shown in this article use the version listed above. A copy of the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">pom.xml</code> file can be found <a href="http://java-creed-examples.googlecode.com/svn/gson/Simple%20Gson%20Example/pom.xml" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">here</a>.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">If this library is to be used in a web application, make sure to have a copy saved under the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">WEB-INF/lib</code> folder. Alternatively, the library can be added to the application server and made available to the web application.</p>
+<h2 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:40px;color:inherit;text-rendering:optimizelegibility;font-size:30px;">A Simple Example</h2>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">The GSON API provides a class, <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Gson</code> (<a href="http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/Gson.html" target="_target" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>), that handles the conversions between Java and JSON objects. An instance of this class can be created by invoking the default constructor or as shown in the simple example below, using the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">GsonBuilder</code> (<a href="http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/GsonBuilder.html" target="_target" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>) class. The <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">GsonBuilder</code> class provides customisation and allows the developer to instantiate <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Gson</code> as required.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part1;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+public class SimpleExample1 {
+    public static void main(String[] args) {
+        Gson gson = new GsonBuilder().create();
+        gson.toJson("Hello", System.out);
+        gson.toJson(123, System.out);
+    }
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">In the above example, we’ve created an instance of <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Gson</code> and converted the Java <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">String</code> and <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">int</code> to JSON objects. The above code produces the following as its output to the command prompt:</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">"Hello"123</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">It’s not rocket science, but it’s a start. Note that the output of the above is all going to the command prompt. The <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">toJason()</code> method takes two parameters, the Java object to be converted to JSON and an instance of <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Appendable</code> (<a href="http://java.sun.com/javase/7/docs/api/java/lang/Appendable.html" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>). We can easily change the out to a file or network stream.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part1;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+public class SimpleExample2 {
+    public static void main(String[] args) <span style="color:red;">throws IOException</span> {
+        <span style="color:red;">Writer writer = new FileWriter("Output.json");</span>
+
+        Gson gson = new GsonBuilder().create();
+        gson.toJson("Hello", <span style="color:red;">writer</span>);
+        gson.toJson(123, <span style="color:red;">writer</span>);
+
+        <span style="color:red;">writer.close();</span>
+    }
+}
+</pre>
+<h4 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:20px;color:inherit;text-rendering:optimizelegibility;font-size:18px;">Observation</h4><div><p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">
+<strong style="font-weight:bold;">Why is the variable declared as a <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Writer</code> when the actual type is <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">FileWriter</code>?</strong><br/>
+It is a good practice to have your variables as generic as possible. In the above example, we’re only using methods defined by the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Appendable</code> and <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Writer</code> interfaces. Having the variable type more specific than required will make the code less portable and harder to maintain as we’ll see in the following example.</p>
+</div>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Note that in the above example we are not handling the steams (<code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Writer</code>) properly. Ideally the resources are closed within the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">finally</code> block (<a href="http://docs.oracle.com/javase/tutorial/essential/exceptions/finally.html" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">tutorial</a>) or used within the try-with-resources (<a href="http://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">tutorial</a>) as shown below. We’ve ignored this to keep the code as simple as possible.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">public static void main(String[] args) throws IOException {
+    <span style="color:red;">try (Writer writer = new FileWriter("Output.json")) {</span>
+        Gson gson = new GsonBuilder().create();
+        gson.toJson("Hello", writer);
+        gson.toJson(123, writer);
+    <span style="color:red;">}</span>
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">The above code produces the file: <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Output.json</code> with the JSON objects. Note that here we used the character streams and not the byte streams. We cannot use the byte streams as the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">toJson()</code> method is expecting an <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Appendable</code> instance and the byte streams are not descendants of the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Appendable</code> interface. The <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Appendable</code> interface works with characters and not bytes. Java provides the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">InputStreamReader</code> (<a href="http://java.sun.com/javase/7/docs/api/java/io/InputStreamReader.html" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>) and the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">OutputStreamWriter</code> (<a href="http://java.sun.com/javase/7/docs/api/java/io/OutputStreamWriter.html" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>) classes that convert byte streams into character streams as illustrated in the following example.<br/>
+</p><h4 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:20px;color:inherit;text-rendering:optimizelegibility;font-size:18px;">Observation</h4><div><p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">
+Note that when using the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">InputStreamReader</code> and the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">OutputStreamWriter</code> classes, make sure to provide the encoding or character set as otherwise the platform default will be used. This will make your code less portable and may produce errant behaviour is executed from another platform.</p>
+</div>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part1;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
+import java.io.Writer;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+public class SimpleExample3 {
+
+    public static void main(String[] args) throws IOException {
+        try(Writer writer = <span style="color:red;">new OutputStreamWriter(new FileOutputStream("Output.json") , "UTF-8")</span>){
+            Gson gson = new GsonBuilder().create();
+            gson.toJson("Hello", writer);
+            gson.toJson(123, writer);
+        }
+    }
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">As you can see, we only needed to change the instantiation part. The rest (expect for the imports) of the code is unchanged. This is one of the benefits of using interfaces instead of classes as variables types.</p>
+<h2 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:40px;color:inherit;text-rendering:optimizelegibility;font-size:30px;">Consuming JSON objects</h2>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Let’s say that we need to consume JSON objects and load them as Java objects. Assume that a web server will produce the following JSON when queried:</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">{
+  NAME:"Albert Attard",
+  P_LANGUAGE:"Java",
+  LOCATION:"Malta"
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">This JSON object contains three fields with their respective values. Let’s say that we need to consume the JSON object and create a Java object that represents this data. To make this example more interesting, let assume that we’re only interested in the <em style="font-style:italic;">name</em> and the <em style="font-style:italic;">location</em> fields.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">First we need to create a Java class with the fields that we want to represent (<em style="font-style:italic;">name</em> and <em style="font-style:italic;">location</em>). Let’s call the class <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Person</code>. <strong style="font-weight:bold;">The name of this class is irrelevant, but the names of the fields are not</strong>. The field names must match (including the case) with the names in JSON. Furthermore, the class must include a default constructor (even in this is set as <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">private</code>). As shown below, the fields <em style="font-style:italic;">name</em> and <em style="font-style:italic;">location</em> are in uppercase as found in JSON. The JSON field <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">P_LANGUAGE</code> is ignored as the Java object does not include a field with this name. It is understandable that the fields’ names do not follow the Java naming convention, but for the time being let’s keep things simple. More about this is discussed in <a href="http://www.javacreed.com/gson-deserialiser-example/" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">part 2</a>.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part2;
+
+public class Person {
+    private String NAME;
+    private String LOCATION;
+
+    <span style="color:rgb(63, 127, 95);">// Getters and setters are not required for this example.
+    // GSON sets the fields directly using reflection.</span>
+
+    @Override
+    public String toString() {
+        return NAME + " - " + LOCATION;
+    }
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">With the Java object ready, we can read the JSON objects and load them as Java objects as illustrated below. To simulate a real life situation, we’re using a byte stream as input. Also note that the JSON content is saved into a file (which is not usually the case) located in the resources source folder.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part2;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+public class JsonToJava {
+
+    public static void main(String[] args) throws IOException {
+        try(Reader reader = new InputStreamReader(JsonToJava.class.getResourceAsStream("/Server1.json"), "UTF-8")){
+            Gson gson = new GsonBuilder().create();
+            Person p = gson.fromJson(reader, Person.class);
+            System.out.println(p);
+        }
+    }
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">This should produce the following:</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">Albert Attard - Malta</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Gson parsed the JSON object and created an instance of the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Person</code> class which is then printed to the command prompt.</p>
+<h2 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:40px;color:inherit;text-rendering:optimizelegibility;font-size:30px;">Nested JSON Objects</h2>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Let’s take the above example one step further and include a nested object as illustrated in the following JSON code fragment.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">{
+  NAME:"Albert Attard",
+  P_LANGUAGE:"Java",
+  LOCATION:"Malta"<span style="color:red;">,
+  EXAM: {
+    SUBJECT:"Programming",
+    GRADE:4.5
+  }</span>
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Here we have an <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">EXAM</code> field which is made from two other fields: <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">SUBJECT</code> and <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">GRADE</code>. Likewise, we need to modify the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Person</code> class defined above to include the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">EXAM</code> field and create a new Java class to represent this field which will contain the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">SUBJECT</code> and <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">GRADE</code> fields.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">We first create the new class that will represent the nested object. As we discussed before, the class name is irrelevant but the fields’ names must match those define in JSON.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part3;
+
+public class Exam {
+    private String SUBJECT;
+    private double GRADE;
+
+    <span style="color:rgb(63, 127, 95);">// Getters and setters are not required for this example.
+    // GSON sets the fields directly using reflection.</span>
+
+    @Override
+    public String toString() {
+        return SUBJECT + " - " + GRADE;
+    }
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Now we can modify the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Person</code> class and include a new field with the same name as in JSON of type <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Exam</code> as shown next. Note that the following <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Person</code> class in found in a different package from the previous one.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part3;
+
+public class Person {
+
+    private String NAME;
+    private String LOCATION;
+    <span style="color:red;">private Exam EXAM;</span>
+
+    @Override
+    public String toString() {
+        return NAME + " - " + LOCATION <span style="color:red;">+ " (" + EXAM + ")"</span>;
+    }
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Note that the changes required are minimal as Gson dynamically discovers (through reflection) the class and its fields. This article does not cover reflection. For more information about reflection please refer to: <a href="http://today.java.net/pub/a/today/2008/02/12/reflection-in-action.html" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Reflection in Action</a>.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Finally, let’s try the new changes out.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part3;
+
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+public class JsonToJava {
+
+    public static void main(String[] args) throws IOException {
+        try(Reader reader = new InputStreamReader(JsonToJava.class.getResourceAsStream("/Server2.json"), "UTF-8")){
+            Gson gson = new GsonBuilder().create();
+            Person p = gson.fromJson(reader, Person.class);
+            System.out.println(p);
+        }
+    }
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">No changes were made to the class <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonToJava</code> as Gson used our model (the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Person</code> and <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Exam</code> classes) to map Json to Java.</p>
+<h2 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:40px;color:inherit;text-rendering:optimizelegibility;font-size:30px;">Conclusion</h2>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Even though it may be a new concept, JSON is very simple and straight forward. Furthermore, it is gaining popularity over the more cumbersome XML which inflates the message/data exchanged by the added XML tags. It is good to point out that JSON is a subset of JavaScript which makes it a perfect candidate for exchanging data with JavaScript based applications such as web pages. The GSON API makes it very easy to use and even though not discussed here, it provides a great deal of flexibility.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">For more GSON examples please visit the <a href="http://www.javacreed.com/gson-deserialiser-example/" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">second part</a>, where we explore more complex examples and discuss how to use the GSON deserializer to take full control over the deserialization process.</p>
+<div style="clear:both;margin:10px 0px;"><h2 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:40px;color:inherit;text-rendering:optimizelegibility;font-size:30px;">Related Posts</h2><ul style="list-style:outside none none;float:left;padding:0px;margin:0px;"><li style="line-height:20px;float:left;overflow:hidden;position:relative;text-align:center;border:1px solid rgb(221, 221, 221);padding:6px;vertical-align:bottom;box-shadow:rgba(0, 0, 0, 0.4) 0px 1px 2px;border-radius:7px;margin:5px;"><a href="http://www.javacreed.com/software-transactional-memory-example-using-multiverse/" style="cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;text-decoration:none;float:left;overflow:hidden;text-align:center;color:rgb(255, 255, 255);position:absolute;height:inherit;bottom:6px;left:6px;padding:3px;font-size:0.9em;background:rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%;vertical-align:bottom;box-shadow:rgba(0, 0, 0, 0.4) 0px 1px 2px;border-radius:7px;width:44px;">Software Transactional Memory Example using Multiverse</a></li><li style="line-height:20px;float:left;overflow:hidden;position:relative;text-align:center;border:1px solid rgb(221, 221, 221);padding:6px;vertical-align:bottom;box-shadow:rgba(0, 0, 0, 0.4) 0px 1px 2px;border-radius:7px;margin:5px;"><a href="http://www.javacreed.com/5362-2/" style="cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;text-decoration:none;float:left;overflow:hidden;text-align:center;color:rgb(255, 255, 255);position:absolute;height:inherit;bottom:6px;left:6px;padding:3px;font-size:0.9em;background:rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%;vertical-align:bottom;box-shadow:rgba(0, 0, 0, 0.4) 0px 1px 2px;border-radius:7px;width:44px;">Compress Large Text Data in Table</a></li></ul><div style="clear:both;"></div></div> </div>
+
+<div style="margin:0px -30px 20px;padding:30px;border:1px solid white;background:rgb(244, 244, 244) none repeat scroll 0% 0%;"><span style="display:table;line-height:0;"></span>
+<div style="float:left;width:80%;"><en-media type="image/png" hash="308e6c202f70b1d39097773019fc5de9" alt="Albert Attard" width="66" height="70" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;"></en-media><h3 style="margin:10px 0px;font-family:inherit;font-weight:bold;color:inherit;text-rendering:optimizelegibility;line-height:14px;font-size:14px;margin-top:0px;margin-bottom:10px;margin-left:85px;"><a href="http://www.javacreed.com/author/albert/" title="Posts by Albert Attard" rel="author" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;text-transform:capitalize;">Albert Attard</a></h3>
+<p style="margin:0px 0px 10px;margin-left:85px;font-size:12px;margin-top:5px;">Albert Attard is a Java passionate and technical lead at a research group. You can find him on <a rel="author" href="https://plus.google.com/+AlbertAttard" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Google+</a>. Over the past years Albert worked on various Java projects including traditional server/client applications, modular applications, large data handling applications and concurrent data manipulation applications to name a few. He has a BSc degree from the University of London (<a href="http://www.lon.ac.uk/" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Homepage</a>) and an MSc Information Security with the same university. His MSc thesis (<a href="http://www.amazon.com/Novel-Card-Present-Payment-Scheme-Technology/dp/3659114529" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Book</a>) received the 2012 SearchSecurity.co.UK award (<a href="http://www.computerweekly.com/feature/Royal-Holloway-2012-Designing-a-secure-contactless-payment-system" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Website</a>). </p>
+<ul style="padding:0px;margin:0px 0px 10px 25px;margin-top:10px;margin-left:85px;list-style:outside none none;"><span style="list-style:outside none none;display:table;line-height:0;"></span><li style="line-height:10px;float:left;margin-right:15px;font-size:12px;"><span>Published:</span> 69 posts</li><li style="line-height:10px;float:left;margin-right:15px;font-size:12px;"><span>Web:</span> <a href="http://www.javacreed.com/" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">http://www.javacreed.com</a></li> <span style="list-style:outside none none;display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></ul>
+</div>
+<ul style="padding:0px;margin:0px 0px 10px 25px;float:right;width:15%;text-align:right;"> <li style="line-height:20px;display:inline-block;list-style:outside none none;">
+<a href="http://www.javacreed.com/simple-gson-example/albertattard" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;float:left;width:30px;height:30px;"><en-media type="image/png" hash="de9d4671c96d012d12d062781700dc81" alt="" width="30" height="30" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;float:left;"></en-media></a>
+</li> </ul>
+<span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div> <div style="margin-top:30px;border-bottom:medium none;">  <h4 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:20px;color:inherit;text-rendering:optimizelegibility;font-size:18px;">
+30 Responses to “Simple GSON Example” </h4><hr style="margin:20px 0px;border-color:rgb(238, 238, 238) currentcolor rgb(255, 255, 255);border-style:solid none;border-width:1px 0px;border-image:none 100% / 1 / 0 stretch;"/>
+<div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+Wyatt</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">December 26, 2012</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=15#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Your post, Simple GSON Example | JAVACREED.com, is really well written and insightful. Glad I found your website, warm regards from Wyatt!</p>
+</div>
+</div></div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+Fernanda</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">April 15, 2013</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=85#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Hi Albert!</p>
+<p style="margin:0px 0px 10px;font-size:12px;">Could the Exam1 object be a Hash Map? For example, in this case, the property “attributes” could be a Hash Map where the first item would be the key e the second a value?</p>
+<p style="margin:0px 0px 10px;font-size:12px;">{“feature” : [{ “attributes” :{ “srid” : 1010101, “type” : “Point”},<br/>
+“coordinates” : [182176.64924999999,<br/>
+1679006.5104055556]<br/>
+}]<br/>
+}</p>
+<p style="margin:0px 0px 10px;font-size:12px;">Thanks!</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="f0ed87adc72b7f002dd787e13fa32b42" alt="Albert Attard" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.javacreed.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Albert Attard</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">April 15, 2013</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=86#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Yes, but not using the examples above as these are very simple and do not allow you to manipulate JSON as you need. I recommend the following article: <a href="http://www.javacreed.com/gson-deserialiser-example/" title="Gson Deserialiser Example" rel="nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Gson Deserialiser Example</a>, which describes how you can manipulate JSON as required. You can find the code examples in the <a href="https://code.google.com/p/java-creed-examples/source/browse/#svn%2Fgson%2FGsonExamples" title="SVN Repository" rel="nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">SVN Repository</a></p>
+<p style="margin:0px 0px 10px;font-size:12px;">Hope this helps. If not, please send again.</p>
+</div>
+</div></div>
+</div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/jpeg" hash="80849ba9c24be7412ba50943ef5dddfd" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+Tom Yu</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">June 17, 2013</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=187#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Awesome info but I really dislike your green header bar. It takes up so much vertical space which makes it harder to digest the content.</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="f0ed87adc72b7f002dd787e13fa32b42" alt="Albert Attard" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.javacreed.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Albert Attard</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">June 18, 2013</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=188#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">How would you do it?</p>
+</div>
+</div></div>
+</div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.fb.me/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Irwanto</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">September 6, 2013</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=298#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">hello, i’ve problem. my json field is numeric. so i can’t create variable with numeric name. please help me. thank you <img alt="🙂" src="" width="12" height="12" style="max-width:100%;height:1em;vertical-align:-0.1em;border:medium none;display:inline;box-shadow:none;width:1em;margin:0px 0.07em;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0%;padding:0px;"/></p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="f0ed87adc72b7f002dd787e13fa32b42" alt="Albert Attard" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.javacreed.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Albert Attard</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">September 7, 2013</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=300#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">You have two options:</p>
+<ul style="padding:0px;margin:0px 0px 10px 25px;">
+<li style="line-height:20px;">Use annotations: <a href="http://www.javacreed.com/gson-annotations-example/" rel="nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">http://www.javacreed.com/gson-annotations-example/</a></li>
+<li style="line-height:20px;">Create a deserialiser: <a href="http://www.javacreed.com/gson-deserialiser-example/" rel="nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">http://www.javacreed.com/gson-deserialiser-example/</a>
+</li>
+</ul>
+<p style="margin:0px 0px 10px;font-size:12px;">Hope these solve you problem. If not, post again.</p>
+</div>
+</div></div>
+</div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/jpeg" hash="4b56907b7e3da7f3155ca532f1d33c11" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+Sebastian Cheung</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">November 3, 2013</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=357#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">How to run these gson samples in STS after I have done a ‘Check Out’? Cannot seem to config to run any of the samples? Help is appreciated. Thanks a lot for your tutorials.</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="f0ed87adc72b7f002dd787e13fa32b42" alt="Albert Attard" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.javacreed.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Albert Attard</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">November 3, 2013</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=358#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Can you please give me the name of the project you checked out?</p>
+</div>
+</div></div>
+</div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+Sid</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">January 13, 2014</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=401#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">This is a very neat way to do things.<br/>
+But what if I have a JSON array of data objects?<br/>
+Can I get a set or list of data objects?</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="f0ed87adc72b7f002dd787e13fa32b42" alt="Albert Attard" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.javacreed.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Albert Attard</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">January 13, 2014</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=402#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Thank you.</p>
+<p style="margin:0px 0px 10px;font-size:12px;">I recommend you read another article about GSON titled: <a href="http://www.javacreed.com/gson-deserialiser-example/" rel="nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Gson Deserialiser Example</a>. In this article you will find more complex examples about GSON including arrays.</p>
+</div>
+</div></div>
+</div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.beltkart.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">James</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">August 1, 2014</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=598#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Hi Albert,<br/>
+I am a little lost with this – gson.toJson(“Hello”, writer);</p>
+<p style="margin:0px 0px 10px;font-size:12px;">In my JSON object there were no initial name value pair so what I am writing to the file ?</p>
+<p style="margin:0px 0px 10px;font-size:12px;">Am I missing something here ?</p>
+<p style="margin:0px 0px 10px;font-size:12px;">Regards,<br/>
+James</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="f0ed87adc72b7f002dd787e13fa32b42" alt="Albert Attard" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.javacreed.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Albert Attard</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">August 4, 2014</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=601#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Thank you for your feedback James.</p>
+<p style="margin:0px 0px 10px;font-size:12px;">You are right, the output shown in the first example is not a valid JSON. The aim of that example was to get things started and to show the readers various ways to produce JSON strings and to output these to different targets (such as: Streams, Files etc.). I will update the text to make sure I say that this is not a valid JSON, so that this example does not confuse future readers in thinking that <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">"hello"123</code> is a valid JSON string.</p>
+<p style="margin:0px 0px 10px;font-size:12px;">Regards,<br/>
+Albert</p>
+</div>
+</div></div>
+<div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+Pravash ranjan Dash</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">March 13, 2015</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=798#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Your Article is really good, there is no word to say thank you.</p>
+</div>
+</div></div>
+</div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+J-key</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">August 6, 2014</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=604#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Hi. </p>
+<p style="margin:0px 0px 10px;font-size:12px;">I have a question. This is my <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">TestVO</code>.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">class TestVO{
+   String a;
+   String b;
+   
+   public Sring toString()
+   {
+      return "TestVO[ a=" + a + ", b=" + b +"]";
+   }
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:12px;">and then, in controller its value like <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">[ TestVO[a = "test1", b="test2"], TestVO[a="111", b="222"] ]</code></p>
+<p style="margin:0px 0px 10px;font-size:12px;">I don’t know how can I transform it to <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">ArrayList</code> using Gson</p>
+<p style="margin:0px 0px 10px;font-size:12px;">please anwser me <img alt="🙂" src="" width="12" height="12" style="max-width:100%;height:1em;vertical-align:-0.1em;border:medium none;display:inline;box-shadow:none;width:1em;margin:0px 0.07em;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0%;padding:0px;"/></p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="f0ed87adc72b7f002dd787e13fa32b42" alt="Albert Attard" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.javacreed.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Albert Attard</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">August 6, 2014</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=605#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Please note that the String: “<code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">[ TestVO[a = "test1", b="test2"], TestVO[a="111", b="222"] ]</code>” is not a valid JSON, thus cannot be parsed using Gson. Please refer to the website: <a href="http://json.org/" target="_blank" rel="nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">http://json.org/</a> for more information about JSON strings.</p>
+<p style="margin:0px 0px 10px;font-size:12px;">You can change the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">toString()</code> method to return the following: <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">"['a':'" + a + "', 'b':'" + b +"']"</code> instead or use a <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">TypeAdapter</code> as described in the article: <a href="http://www.javacreed.com/gson-typeadapter-example/" title="Gson TypeAdapter Example" target="_blank" rel="nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Gson TypeAdapter Example</a>.</p>
+<p style="margin:0px 0px 10px;font-size:12px;">Hope this helps.<br/>
+Albert</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+J-Key</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">August 7, 2014</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=606#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Thank for your answer!</p>
+</div>
+</div></div>
+</div>
+</div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+Yogesh</span>
+ </span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">August 24, 2014</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=633#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Thanks for this tutorial.</p>
+</div>
+</div></div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+Beginner</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">April 2, 2015</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=818#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">I am getting NullPointerException at this line : </p>
+<p style="margin:0px 0px 10px;font-size:12px;">try(Reader reader = new InputStreamReader(JsonToJava.class.getResourceAsStream(“/Server1.json”), “UTF-8”))</p>
+<p style="margin:0px 0px 10px;font-size:12px;">What does this “/Server1.json” mean? Can’t i give full absolute path of the json file? Please enlighten me</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="f0ed87adc72b7f002dd787e13fa32b42" alt="Albert Attard" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.javacreed.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Albert Attard</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">April 2, 2015</span>
+ <span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=820#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Hi. What IDE are you using? How are you trying to run this?</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+fsdgg</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">July 18, 2015</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=1280#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Tested</p>
+</div>
+</div></div>
+</div>
+</div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+surya</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">October 16, 2015</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=2608#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Hi..!! i have generated 1000 json data files. My task is to validate this json data by writing a script in groovy. Can you please help me with that i am able to check for only one json data with the program. I am confused how to validate 1000 json data files.</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="f0ed87adc72b7f002dd787e13fa32b42" alt="Albert Attard" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.javacreed.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Albert Attard</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">October 17, 2015</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=2614#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Hi,</p>
+<p style="margin:0px 0px 10px;font-size:12px;">You can parse a collection instead of a single element. Can you please send me the JSON that you need to validate, in order to be able to assist you with your problem?</p>
+</div>
+</div></div>
+</div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+Mihaela</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">December 2, 2015</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=3000#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Hello, thank you for the great article! I am using Eclipse and I am getting NullPointerException at this line :</p>
+<p style="margin:0px 0px 10px;font-size:12px;">try(Reader reader = new InputStreamReader(JsonToJava.class.getResourceAsStream(“/Server1.json”), “UTF-8”))</p>
+<p style="margin:0px 0px 10px;font-size:12px;">I put the file Server1.json into the same folder, but it does not work. Can you help me please?</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="f0ed87adc72b7f002dd787e13fa32b42" alt="Albert Attard" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.javacreed.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Albert Attard</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">December 5, 2015</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=3030#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Hi.</p>
+<p style="margin:0px 0px 10px;font-size:12px;">Chances are that the resources are not properly set and thus the program cannot read then. Can you please change the code a bit?</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">InputStream in = JsonToJava.class.getResourceAsStream("/Server1.json");
+if(in==null) {
+  System.out.println("Did not find the file 'Server1.json' in the class path");
+  return;
+}
+
+Reader reader = new InputStreamReader(in, "UTF-8");
+</pre>
+<p style="margin:0px 0px 10px;font-size:12px;">The try with resources was removed and the code split into several steps. The if statement verifies that the resource (file: ‘Server1.json’) was read before creating the reader.</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+Mihai</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">April 20, 2016</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=3168#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Hi, I have the same error(NullPointerException) in the same place as Mihaela, and others and I can`t figure it out what is that “Server1.json” file.. I am taking some data from a database(MySQL) using JDBC, transform the data into Json and show it on the console. The Json I maked is nested, so I want to parse it to Java class, make it a single, main Json and parse it back to Json. Hope it makes sense. And I`m stuck at that NullPointerException. Can someone please help me?</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="f0ed87adc72b7f002dd787e13fa32b42" alt="Albert Attard" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.javacreed.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Albert Attard</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">April 23, 2016</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=3171#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Hi. Can you please send me your code so I can have a look?</p>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+jacob</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">May 20, 2016</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=3189#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Great GSON article!<br/>
+Would it be possible to provide updated links for the repos and the example files?<br/>
+The Google Code site is not there anymore…<br/>
+Maybe to use sth like github or bitbucket?</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="f0ed87adc72b7f002dd787e13fa32b42" alt="Albert Attard" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.javacreed.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Albert Attard</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">May 28, 2016</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=3195#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Hi.</p>
+<p style="margin:0px 0px 10px;font-size:12px;">Sorry about that. I need to upload this example to GitHub (<a href="https://github.com/javacreed" target="_blank" rel="nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">https://github.com/javacreed</a>) with the rest of the examples.</p>
+</div>
+</div></div>
+</div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+kizzle</span>
+ </span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">May 8, 2017</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/simple-gson-example/?replytocom=3416#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">@Everybody getting a nullpointer, make sure the json file in put into your src\main\resources folder!</p>
+</div>
+</div></div>
+</div>
+<div>
+<div></div>
+<div></div>
+</div> <div>
+<h3 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:40px;color:inherit;text-rendering:optimizelegibility;font-size:24px;"></h3><h4 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:20px;color:inherit;text-rendering:optimizelegibility;font-size:12px;position:relative;left:0px;">Leave a Comment</h4><hr style="margin:20px 0px;border-color:rgb(238, 238, 238) currentcolor rgb(255, 255, 255);border-style:solid none;border-width:1px 0px;border-image:none 100% / 1 / 0 stretch;"/> <small style="font-size:85%;"></small> <div style="margin:0px 0px 20px;">
+<div style="margin-bottom:10px;position:relative;margin-right:3px;width:100%;"><span style="font-size:14px;font-weight:normal;line-height:20px;display:block;margin-bottom:5px;position:absolute;top:5px;left:10px;z-index:1;color:rgb(153, 153, 153);">Comment (*)</span></div><div style="margin-bottom:10px;position:relative;margin-right:3px;width:100%;"><span style="font-size:14px;font-weight:normal;line-height:20px;display:block;margin-bottom:5px;position:absolute;top:5px;left:10px;z-index:1;color:rgb(153, 153, 153);">Name (*)</span></div>
+<div style="margin-bottom:10px;position:relative;margin-right:3px;width:100%;"><span style="font-size:14px;font-weight:normal;line-height:20px;display:block;margin-bottom:5px;position:absolute;top:5px;left:10px;z-index:1;color:rgb(153, 153, 153);">Email (*)</span>
+</div>
+<div style="margin-bottom:10px;position:relative;margin-right:3px;width:100%;"><span style="font-size:14px;font-weight:normal;line-height:20px;display:block;margin-bottom:5px;position:absolute;top:5px;left:10px;z-index:1;color:rgb(153, 153, 153);">Website</span></div>
+<p style="margin:0px 0px 10px;direction:ltr;width:100%;max-width:100%;box-sizing:border-box;display:block;"><br/><span style="position:relative;clear:both;display:table-row;">
+<span style="font-size:14px;font-weight:normal;line-height:1;display:table-cell;margin:5px 0px;vertical-align:middle;overflow-wrap:break-word;">
+<span style="float:left;min-height:1px;margin-left:20px;display:inline-block;vertical-align:middle;line-height:1;"><en-media type="image/png" hash="cf74e2d2ffd70a569bbf92a50bd47314" width="40" height="40" style="vertical-align:middle;border:0px none;height:auto;width:40px;top:0px;z-index:2;max-width:40px;"></en-media></span>
+<span style="float:left;min-height:1px;margin-left:20px;display:inline-block;vertical-align:middle;line-height:1;"> − </span>
+<span style="float:left;min-height:1px;margin-left:20px;display:inline-block;vertical-align:middle;line-height:1;"></span>
+<span style="float:left;min-height:1px;margin-left:20px;display:inline-block;vertical-align:middle;line-height:1;"> = </span>
+<span style="float:left;min-height:1px;margin-left:20px;display:inline-block;vertical-align:middle;line-height:1;">2</span>
+
+
+
+</span><span style="display:table-cell;margin:5px 0px;vertical-align:middle;line-height:1;">
+
+<span style="width:20px;height:20px;margin:0px 15px;font-size:20px;display:inline-block;line-height:1;font-family:dashicons;text-decoration:inherit;font-weight:400;font-style:normal;vertical-align:top;text-align:center;"><span style="font-size:20px;line-height:1;font-family:dashicons;font-weight:400;font-style:normal;text-align:center;display:inline-block;width:20px;height:20px;text-decoration:inherit;vertical-align:top;-moz-osx-font-smoothing:grayscale;"></span></span>
+</span></span></p><p style="margin:0px 0px 10px;"> 
+
+</p> </div>
+</div>
+</div> </div></div></div></div></div></div></div></div></div></div></div></div><br/></div></en-note>

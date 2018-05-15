@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="direction:ltr;"><div style="direction:ltr;font:normal normal normal normal 10pt Arial, sans-serif;background-color:rgb(221, 221, 221);"><div><div style="font-family:Arial, Verdana, sans-serif;color:rgb(68, 68, 68);line-height:1.6;"><div style="background:transparent url(&amp;quot;http://www.gstatic.com/sites/p/6ab6ef/system/app/themes/iceberg/lt.png&amp;quot;) repeat-y scroll left top;direction:ltr;"><div style="background:transparent url(&amp;quot;http://www.gstatic.com/sites/p/6ab6ef/system/app/themes/iceberg/rt.png&amp;quot;) repeat-y scroll right top;"><div><div><table style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;background-color:rgb(255, 255, 255);text-align:left;"><tbody><tr><td style="vertical-align:top;"><div>
+<div> </div>
+<div style="padding:5px 0px 0px 10px;padding-left:10px;padding-right:10px;padding-top:5px;padding-bottom:5px;">
+<a href="http://tutorials.section6.net/home" dir="ltr" style="color:rgb(0, 51, 204);text-decoration:underline;">Tutorial Home</a>‎ &gt; ‎
+  </div>
+<h3 align="left" style="margin:0px;padding-left:10px;padding-right:10px;font-size:1.8em;font-weight:bold;color:rgb(68, 68, 68);background:transparent none repeat scroll 0% 0%;">
+<span dir="ltr" style="outline:none;">Creating a gateway router with natd and stateful firewall in FreeBSD</span>
+</h3>
+<div style="background-color:transparent;overflow:hidden;min-height:150px;padding-bottom:5px;padding-top:15px;">
+<div>
+<table cellspacing="0" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;width:100%;table-layout:fixed;margin:0px;"><tbody><tr><td style="padding:3px;vertical-align:top;padding-left:10px;padding-right:10px;padding-top:10px;padding-bottom:10px;"><div dir="ltr"><h1 style="color:rgb(0,0,0);background-image:none;font-weight:normal;margin-top:0px;margin-right:0px;margin-bottom:0.1em;margin-left:0px;padding-top:0.5em;padding-bottom:0px;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(170,170,170);font-size:24px;line-height:1.2em;font-family:sans-serif;text-align:-webkit-auto;"><a name="TOC-1" style="color:rgb(0, 51, 204);text-decoration:underline;"></a><br/></h1><div style="color:rgb(0,0,0);font-family:sans-serif;line-height:19px;text-align:-webkit-auto;"><div style="font-size:11px;line-height:1.2em;margin-top:0px;margin-right:0px;margin-bottom:1.4em;margin-left:1em;color:rgb(125,125,125);width:auto;"></div><ul style="line-height:1.5em;list-style-type:square;margin-top:0.3em;margin-right:0px;margin-bottom:0px;margin-left:1.5em;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;"><li style="list-style-position:outside;list-style-type:square;margin-bottom:0.1em;">To set up my home freebsd box as a natd/firewall/router I used the following config settings.</li><li style="list-style-position:outside;list-style-type:square;margin-bottom:0.1em;">If done right, the whole process can be done by working with 4 files and only 1 reboot.</li></ul><h1 style="background-image:none;background-color:initial;font-weight:normal;margin-top:0px;margin-right:0px;margin-bottom:0.6em;margin-left:0px;padding-top:0.5em;padding-bottom:0.17em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(170,170,170);font-size:24px;"><a name="TOC-usr-src-sys-i386-conf-NEWKERNELCompile-a-custom-kernel-with-the-following-options:" style="color:rgb(0, 51, 204);text-decoration:underline;"></a><span><h1 style="background-color:initial;background-image:none;font-weight:normal;margin-top:0px;margin-right:0px;margin-bottom:0.6em;margin-left:0px;padding-top:0.5em;padding-bottom:0.17em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(170,170,170);font-size:24px;"><a name="TOC-usr-src-sys-i386-conf-NEWKERNEL" style="color:rgb(0, 51, 204);text-decoration:underline;"></a><span>/usr/src/sys/i386/conf/NEWKERNEL</span></h1><span style="font-size:13px;line-height:20px;">Compile a custom kernel with the following options:</span></span></h1><ul style="line-height:1.5em;list-style-type:square;margin-top:0.3em;margin-right:0px;margin-bottom:0px;margin-left:1.5em;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;"><li style="list-style-position:outside;list-style-type:square;margin-bottom:0.1em;"><a href="http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/kernelconfig-building.html" rel="nofollow" style="color:rgb(51,102,187);text-decoration:none;background-image:url('http://tutorials.section6.net/home/creating-a-gateway-router-with-natd-and-stateful-firewall-in-freebsd');background-color:initial;padding-top:0px;padding-right:13px;padding-bottom:0px;padding-left:0px;background-position:100% 50%;background-repeat:no-repeat no-repeat;">http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/kernelconfig-building.html</a></li></ul><pre style="padding-top:1em;padding-right:1em;padding-bottom:1em;padding-left:1em;border-top-width:1px;border-right-width:1px;border-bottom-width:1px;border-left-width:1px;border-top-style:dashed;border-right-style:dashed;border-bottom-style:dashed;border-left-style:dashed;border-top-color:rgb(47,111,171);border-right-color:rgb(47,111,171);border-bottom-color:rgb(47,111,171);border-left-color:rgb(47,111,171);background-color:rgb(249,249,249);line-height:1.1em;">options IPFIREWALL
+options IPFIREWALL_VERBOSE
+options IPDIVERT
+</pre><h1 style="background-image:none;background-color:initial;font-weight:normal;margin-top:0px;margin-right:0px;margin-bottom:0.6em;margin-left:0px;padding-top:0.5em;padding-bottom:0.17em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(170,170,170);font-size:24px;"><a name="TOC-etc-rc.conf" style="color:rgb(0, 51, 204);text-decoration:underline;"></a><span>/etc/rc.conf</span></h1><ul style="line-height:1.5em;list-style-type:square;margin-top:0.3em;margin-right:0px;margin-bottom:0px;margin-left:1.5em;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;"><li style="list-style-position:outside;list-style-type:square;margin-bottom:0.1em;">See /etc/default/rc.conf for a full list of options and short info about each one.</li></ul><pre style="padding-top:1em;padding-right:1em;padding-bottom:1em;padding-left:1em;border-top-width:1px;border-right-width:1px;border-bottom-width:1px;border-left-width:1px;border-top-style:dashed;border-right-style:dashed;border-bottom-style:dashed;border-left-style:dashed;border-top-color:rgb(47,111,171);border-right-color:rgb(47,111,171);border-bottom-color:rgb(47,111,171);border-left-color:rgb(47,111,171);background-color:rgb(249,249,249);line-height:1.1em;">#Public Interface
+ifconfig_fxp0="DHCP"
+#These are connected to my two workstations
+ifconfig_re0="inet 192.168.0.1 netmask 255.255.255.0"
+ifconfig_re1="inet 192.168.1.1 netmask 255.255.255.0"
+#To make sure I can route between workstations
+router_enable="YES"
+#for natd firewall magic
+gateway_enable="YES"
+natd_enable="YES"
+natd_flags="-f /etc/natd.conf"
+firewall_enable="YES"
+firewall_script="/etc/ipfw.rules"
+</pre><h1 style="background-image:none;background-color:initial;font-weight:normal;margin-top:0px;margin-right:0px;margin-bottom:0.6em;margin-left:0px;padding-top:0.5em;padding-bottom:0.17em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(170,170,170);font-size:24px;"><a name="TOC-etc-natd.conf" style="color:rgb(0, 51, 204);text-decoration:underline;"></a><span>/etc/natd.conf</span></h1><ul style="line-height:1.5em;list-style-type:square;margin-top:0.3em;margin-right:0px;margin-bottom:0px;margin-left:1.5em;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;"><li style="list-style-position:outside;list-style-type:square;margin-bottom:0.1em;">Create this file.</li></ul><pre style="padding-top:1em;padding-right:1em;padding-bottom:1em;padding-left:1em;border-top-width:1px;border-right-width:1px;border-bottom-width:1px;border-left-width:1px;border-top-style:dashed;border-right-style:dashed;border-bottom-style:dashed;border-left-style:dashed;border-top-color:rgb(47,111,171);border-right-color:rgb(47,111,171);border-bottom-color:rgb(47,111,171);border-left-color:rgb(47,111,171);background-color:rgb(249,249,249);line-height:1.1em;">#I'm using a cable modem with a dynamic IP
+dynamic yes
+interface fxp0 
+same_ports yes
+unregistered_only
+#I want to be able to log into one of my workstations via Remote Desktop from the internet
+redirect_port tcp 192.168.1.2:3389 3389
+</pre><h1 style="background-image:none;background-color:initial;font-weight:normal;margin-top:0px;margin-right:0px;margin-bottom:0.6em;margin-left:0px;padding-top:0.5em;padding-bottom:0.17em;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:rgb(170,170,170);font-size:24px;"><a name="TOC-etc-ipfw.rules" style="color:rgb(0, 51, 204);text-decoration:underline;"></a><span>/etc/ipfw.rules</span></h1><ul style="line-height:1.5em;list-style-type:square;margin-top:0.3em;margin-right:0px;margin-bottom:0px;margin-left:1.5em;padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;"><li style="list-style-position:outside;list-style-type:square;margin-bottom:0.1em;"><a href="http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/firewalls-ipfw.html" rel="nofollow" style="color:rgb(51,102,187);text-decoration:none;background-image:url('http://tutorials.section6.net/home/creating-a-gateway-router-with-natd-and-stateful-firewall-in-freebsd');background-color:initial;padding-top:0px;padding-right:13px;padding-bottom:0px;padding-left:0px;background-position:100% 50%;background-repeat:no-repeat no-repeat;">http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/firewalls-ipfw.html</a></li></ul><pre style="padding-top:1em;padding-right:1em;padding-bottom:1em;padding-left:1em;border-top-width:1px;border-right-width:1px;border-bottom-width:1px;border-left-width:1px;border-top-style:dashed;border-right-style:dashed;border-bottom-style:dashed;border-left-style:dashed;border-top-color:rgb(47,111,171);border-right-color:rgb(47,111,171);border-bottom-color:rgb(47,111,171);border-left-color:rgb(47,111,171);background-color:rgb(249,249,249);line-height:1.1em;">#!/bin/sh
+#This comes from the FreeBSD Handbook, I've modified it to fit my needs
+cmd="/sbin/ipfw add"
+skip="skipto 5000"
+pif="fxp0"
+ks="keep-state"
+dns1="IP address for one of the DNS servers I use"
+dns2="IP address for the other DNS server I use"
+ws="IP address to my webserver hosted elsewhere"
+office="IP address to my office"
+
+/sbin/ipfw -q -f flush
+
+${cmd} 0030 allow all from any to any via lo0  # exclude loopback traffic
+ 
+${cmd} 1000 divert natd ip from any to any in via ${pif}
+${cmd} 1010 check-state
+
+# Authorized outbound packets
+${cmd} 1200 ${skip} udp from any to ${dns1} 53 out via ${pif} ${ks}
+${cmd} 1210 ${skip} udp from any to ${dns2} 53 out via ${pif} ${ks}
+${cmd} 1250 ${skip} tcp from any to any out via ${pif} setup ${ks}
+${cmd} 1300 ${skip} icmp from any to any out via ${pif} ${ks}
+${cmd} 1350 ${skip} udp from any to any out via ${pif} ${ks}
+${cmd} 1450 ${skip} all from any to any via re1 #workstation 1
+${cmd} 1451 ${skip} all from any to any via re2 #workstation 2
+#Remember the RDP forward? Well I only want to be able to do it from my office, all else gets blocked.
+${cmd} 1460 ${skip} tcp from ${office} to 192.168.1.2 3389 via fxp0 setup ${ks}
+
+# Deny all inbound traffic from non-routable reserved address spaces
+${cmd} 3000 deny all from 192.168.0.0/16  to any in via ${pif}  #<a href="http://tools.ietf.org/html/rfc1918" style="color:rgb(51,102,187);text-decoration:none;background-image:url('http://tutorials.section6.net/home/creating-a-gateway-router-with-natd-and-stateful-firewall-in-freebsd');background-color:initial;padding-top:0px;padding-right:13px;padding-bottom:0px;padding-left:0px;background-position:100% 50%;background-repeat:no-repeat no-repeat;">RFC 1918</a> private IP
+${cmd} 3010 deny all from 172.16.0.0/12   to any in via ${pif}  #<a href="http://tools.ietf.org/html/rfc1918" style="color:rgb(51,102,187);text-decoration:none;background-image:url('http://tutorials.section6.net/home/creating-a-gateway-router-with-natd-and-stateful-firewall-in-freebsd');background-color:initial;padding-top:0px;padding-right:13px;padding-bottom:0px;padding-left:0px;background-position:100% 50%;background-repeat:no-repeat no-repeat;">RFC 1918</a> private IP
+${cmd} 3020 deny all from 10.0.0.0/8      to any in via ${pif}  #<a href="http://tools.ietf.org/html/rfc1918" style="color:rgb(51,102,187);text-decoration:none;background-image:url('http://tutorials.section6.net/home/creating-a-gateway-router-with-natd-and-stateful-firewall-in-freebsd');background-color:initial;padding-top:0px;padding-right:13px;padding-bottom:0px;padding-left:0px;background-position:100% 50%;background-repeat:no-repeat no-repeat;">RFC 1918</a> private IP    
+${cmd} 3030 deny all from 127.0.0.0/8     to any in via ${pif}  #loopback
+${cmd} 3040 deny all from 0.0.0.0/8       to any in via ${pif}  #loopback
+${cmd} 3050 deny all from 169.254.0.0/16  to any in via ${pif}  #DHCP auto-config
+${cmd} 3060 deny all from 192.0.2.0/24    to any in via ${pif}  #reserved for docs
+${cmd} 3070 deny all from 204.152.64.0/23 to any in via ${pif}  #Sun cluster
+${cmd} 3080 deny all from 224.0.0.0/3     to any in via ${pif}  #Class D &amp; E multicast
+
+# Authorized inbound packets
+#Pings from my webserver should be handled by this box.
+${cmd} 4100 allow icmp from ${ws} to me in via ${pif}
+${cmd} 4110 allow icmp from me to ${ws} out via ${pif}
+
+#ssh from my webserver should go to this box.
+${cmd} 4200 allow tcp from ${ws} to me 22 in via ${pif}
+${cmd} 4210 allow tcp from me 22 to ${ws} out via ${pif} 
+
+#ssh from my office should go to this box.
+${cmd} 4400 allow tcp from ${office} to me 22 in via ${pif}
+${cmd} 4410 allow tcp from me 22 to ${office} out via ${pif}
+
+#if it hasnt generated a dynamic rule, or been explicitly allowed, then deny
+${cmd} 4500 deny ip from any to any
+
+# This is skipto location for outbound stateful rules
+${cmd} 5000 divert natd ip from any to any out via ${pif}
+${cmd} 5100 allow ip from any to any</pre></div></div></td></tr></tbody></table>
+</div> 
+</div> 
+<div style="padding-left:0px;padding-right:9px;">
+<div> </div>
+<div>
+</div>
+</div>
+</div></td></tr></tbody></table></div></div></div></div></div></div></div></div></div><br/></div></en-note>

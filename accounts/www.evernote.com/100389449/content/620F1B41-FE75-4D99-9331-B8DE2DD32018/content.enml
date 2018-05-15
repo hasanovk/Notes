@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="font-family:arial, sans-serif;line-height:1.54;font-size:13px;background:rgb(255, 255, 255) none repeat scroll 0% 0%;color:rgb(68, 68, 68);"><div><div><div><div><div><div><div><div>
+          <hr/>
+
+          <span><h1 style="font-weight:bold;font-family:&quot;open sans&quot;, arial, sans-serif;margin:1.236em 0px 0.618em;line-height:1.29;font-size:20px;">Introduction</h1>
+
+<p style="margin:10px 0px;margin-top:0px;">Lesson 1. Eclipse IDE and your first Java program</p>
+
+<p style="margin:10px 0px;">Why learning Java?
+Setting the goals
+The life cycle of a Java program
+JDK and JRE
+Downloading and installing JDK
+Your first Java program: Hello World
+Compiling and running Hello World
+Java SE and EE editions</p>
+
+<p style="margin:10px 0px;">Lesson 2. Eclipse IDE and your first Java program
+Introducing Eclipse Integrated Development Environment
+Debugging Java programs
+Jarring up Java
+Different versions of Eclipse IDE</p>
+
+<p style="margin:10px 0px;">Lesson 3. Object-Oriented Programming</p>
+
+<p style="margin:10px 0px;">Classes and objects
+Data types:  primitives and wrapper classes
+Autoboxing
+First useful program
+Variable scopes</p>
+
+<p style="margin:10px 0px;">Lesson 4. Class methods
+Method arguments
+Pass by value or by reference?
+Program comments and JavaDoc
+Constructors
+The keyword this
+Basic language constructs</p>
+
+<p style="margin:10px 0px;">Lesson 5. Ancestors and descendents
+Why override methods?
+Method overloading
+Command-Line Arguments
+The keyword super
+The keyword final
+Class access levels</p>
+
+<p style="margin:10px 0px;">Lesson 6. Abstract Classes, Interfaces, and Polymorphism
+Abstract classes
+Casting
+Programming to interfaces
+Marker interfaces</p>
+
+<p style="margin:10px 0px;">Lesson 7. Practical use case for interfaces
+Raising salaries with abstract classes
+Raising salaries with interfaces</p>
+
+<p style="margin:10px 0px;">Lesson 8.  Introduction to Graphic User Interface
+Basic UI components
+Layout Managers
+Adapters
+Inner Classes
+Containers
+Developing UI for a calculator</p>
+
+<p style="margin:10px 0px;">Lesson 9. Reacting on user’s actions
+The role of events in UI
+Event listeners
+Teaching the calculator to calculate</p>
+
+<p style="margin:10px 0px;">Lesson 10. Web applications with Applets</p>
+
+<p style="margin:10px 0px;">What’s the difference between Java Applications and Applets
+Quick intro to HTML
+Embedding an applet in HTML
+Applet life cycle</p>
+
+<p style="margin:10px 0px;">Lesson 11. Developing a game with Swing</p>
+
+<p style="margin:10px 0px;">Developing a Tic-Tac-Toe applet
+Installing Apache Tomcat server
+Deploying the Tic-Tac-Toe on the server</p>
+
+<p style="margin:10px 0px;">Lesson 12. JavaFX: the future of Java applets.</p>
+
+<p style="margin:10px 0px;">JavaFX: an applet successor
+Important changes in Java SE 6 update 10
+Moving out of the Web browser</p>
+
+<p style="margin:10px 0px;">Lesson 13. Error processing: Exceptions
+Reading the Stack Trace
+The hierarchy   of exceptions
+The keywords try, catch, throws, throw, finally
+User-Defined Exceptions</p>
+
+<p style="margin:10px 0px;">Lesson 14. Data Structures and Collections</p>
+
+<p style="margin:10px 0px;">Array
+ArrayList
+Vector
+Hashtable and HashMap
+Enumeration
+Properties
+Linked Lists
+Stack</p>
+
+<p style="margin:10px 0px;">Lesson 15. Generics
+Introduction to generics
+Defining generics
+Generic methods</p>
+
+<p style="margin:10px 0px;">Lesson 16. Working with files and other streams
+Byte Streams
+Streams
+Character Streams
+Data streams
+Stream tokenizers
+Class File
+Lesson 17. Java Serialization
+How JVM’s talk to each other
+Object Streams
+What’s Java Serialization
+Interface Serializable
+Interface Externalizable</p>
+
+<p style="margin:10px 0px;">Lesson 18. Network Programming
+Reading data from the Internet
+Connecting through HTTP Proxy Servers
+How to download files from the Internet
+Developing a sample Stock Quote program
+Socket Programming
+The Stock Quote server with sockets
+How to run the Stock Quote server</p>
+
+<p style="margin:10px 0px;">Lesson 19. Sending emails with Java
+Introduction to JavaMail API
+How to sending emails to a list of people
+Develop an application to remind friends birthdays</p>
+
+<p style="margin:10px 0px;">Lesson 20. Introduction to Multithreading
+Introduction
+Class Thread
+Interface Runnable
+Thread States
+Sleeping threads
+Thread priorities</p>
+
+<p style="margin:10px 0px;">Lesson 21. Practical use cases with threads
+Race conditions and thread synchronization
+Vector vs. ArrayList
+Wait and Notify
+How to stop a thread
+My brokerage firm with threads
+What’s in the package java.util.concurrent</p>
+
+<p style="margin:10px 0px;">Lesson 22. Working With Databases Using JDBC</p>
+
+<p style="margin:10px 0px;">JDBC Driver Types
+Installing MySQL Server
+Sample JDBC Program
+Processing Result Sets
+Class ResultSetMetaData
+Scrollable Result Sets
+Class CallableStatement
+Batch Updates
+Data sources and connection pools
+My brokerage firm with DBMS</p>
+
+<p style="margin:10px 0px;">Lesson 23. GUI with Swing</p>
+
+<p style="margin:10px 0px;">Using Threads with Swing
+Displaying tabular data with  JTable
+Using Table Models
+Persisting data from JTable
+Working with TableCellRenderer Interface
+Event Dispatch thread and SwingWorker class</p>
+
+<p style="margin:10px 0px;">Lesson 24.Java Annotations
+Compiler annotation
+Annotation Processing</p>
+
+<p style="margin:10px 0px;">Lesson 25. Reflection and RMI</p>
+
+<p style="margin:10px 0px;">The Reflection API
+Remote Method Invocation
+Defining Remote Interfaces
+Implementing Remote Interfaces
+Registering Remote Objects
+Writing RMI Clients
+Finding Remote Objects
+Stubs And Skeletons
+Starting the Server and the Client
+Setting Up The Stock Server Application</p>
+
+<p style="margin:10px 0px;">Lesson 26. Java EE 6 overview
+Java EE component overview
+Java EE application server
+Servlets, JSF, Enterprise Beans
+Third-party alternatives to Java EE containers</p>
+
+<p style="margin:10px 0px;">Lesson 27. Java Servlets</p>
+
+<p style="margin:10px 0px;">Architecture of Web applications with Java servlets
+The front tier: thin or fat?
+The browser-servlet data flow
+Your first servlet
+HTTP Get and  Post requests
+Session Tracking With servlets
+Cookies
+Session Tracking API – HttpSession
+Servlets and REST protocol
+My brokerage firm with servlets
+What’s new in Servlet 3.0 specification
+Deploying servlets as WAR files</p>
+
+<p style="margin:10px 0px;">Lesson 28. Java Server Pages</p>
+
+<p style="margin:10px 0px;">Advantages of  JSP over servlets
+Embedding Java Code Into HTML
+Major JSP Tags
+Implicit JSP Objects
+Error Pages
+Stock Portfolio Project With JSP
+Deploying JSP
+Tag Libraries</p>
+
+<p style="margin:10px 0px;">Lesson 29. Two Web Applications
+Applet-Servlet Communications
+Developing a trading application with servlets
+Developing an online store with servlets</p>
+
+<p style="margin:10px 0px;">Lesson 30. Java Messaging Service</p>
+
+<p style="margin:10px 0px;">Advantages of asynchronous communication
+Point-to-point and Publish/Subscribe modes
+Message-Oriented Middleware (MOM)
+Main players in JMS API
+Types of Messages
+How to Send a Message
+How to Receive a Message
+How to Publish a Message
+How to Subscribe for a Topic
+Message Selectors</p>
+
+<p style="margin:10px 0px;">Lesson 31.Developing a trading application with JMS</p>
+
+<p style="margin:10px 0px;">Polling vs. Data push
+Bringing together MOM and Tomcat servers
+Java Naming and Directory Interface
+Naming And Directory Services
+Setting Up JNDI  Example
+Lightweight Directory Access Protocol
+Re-architecting a trading application with JMS</p>
+
+<p style="margin:10px 0px;">Lesson 32. Overview of Enterprise Beans                        Role of an EJB Container
+Session beans
+Message-Driven Beans</p>
+
+<p style="margin:10px 0px;">Lesson 33. Introduction to Java Persistense API
+Entity classes
+Primary keys
+The EntityManager
+Querying entities with JPQL
+Adding persistence to the online store</p>
+
+<p style="margin:10px 0px;">Lesson 34.  Working with Web Services
+Introduction to Web Services
+RESTful vs SOAP Web Services
+JAX-WS
+JAX-RS</p>
+
+<p style="margin:10px 0px;">Lesson 35.  Introduction to Spring Framework
+Overview of Spring Framework architecture
+Beans and dependency injection
+Web application structure with Spring Framework
+Development of a Web interface
+Persisting data in the database</p>
+
+<p style="margin:10px 0px;">Lesson 36.  Introduction to Hibernate Framework
+Introduction to Object-Relational Mapping (ORM)
+JavaBean and a mapping file
+Configuring Hibernate
+Working with EventManager class
+Lazy loading</p>
+
+<p style="margin:10px 0px;">Lesson 37. Online store with Spring and Hibernate
+Re-architecting the online store with Spring and Hibernate</p>
+
+<p style="margin:10px 0px;">Lesson 38. Technical Interviews and certifications
+How to prepare yourself for a Java technical interview
+Sample Java interview questions
+Types of Java certifications</p></span>
+        </div></div></div></div></div></div></div></div></div></div><br/></div></en-note>

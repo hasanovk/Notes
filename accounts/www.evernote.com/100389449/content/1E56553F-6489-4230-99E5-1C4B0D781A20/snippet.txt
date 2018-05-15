@@ -1,0 +1,1 @@
+cp /usr/local/share/mysql/my-medium.cnf /usr/local/etc/my.cnf 

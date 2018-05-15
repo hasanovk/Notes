@@ -1,0 +1,1 @@
+Table Book BookID INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY Title yes Authors Published Edition Category Subject Language NOT NULL DEFAULT “ ENGLISH" FileFormat Pages 

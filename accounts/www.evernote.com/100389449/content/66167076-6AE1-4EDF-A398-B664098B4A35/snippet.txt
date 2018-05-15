@@ -1,0 +1,1 @@
+FAQ UNIX # How do I send STDERR to the “Hell” (i.e. /dev/null) ? => command > /dev/null 2>&1 ( means send the error which is #2 for STDERR to the same place where the STDOUT #1 is going) STDIN #0, STDOUT #1 and STDERR #2 

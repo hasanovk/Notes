@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="box-sizing:border-box;font-size:100%;overflow-x:hidden;"><div style="box-sizing:border-box;font-family:&quot;Lato&quot;, &quot;proxima-nova&quot;, &quot;Helvetica Neue&quot;, Arial, sans-serif;font-weight:normal;color:rgb(64, 64, 64);overflow-x:hidden;background:rgb(252, 252, 252) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDoxOERBMTRGRDBFMUUxMUUzODUwMkJCOThDMEVFNURFMCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDoxOERBMTRGRTBFMUUxMUUzODUwMkJCOThDMEVFNURFMCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjE4REExNEZCMEUxRTExRTM4NTAyQkI5OEMwRUU1REUwIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjE4REExNEZDMEUxRTExRTM4NTAyQkI5OEMwRUU1REUwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+EwrlwAAAAA5JREFUeNpiMDU0BAgwAAE2AJgB9BnaAAAAAElFTkSuQmCC&amp;quot;) repeat-y scroll left center / 300px 1px;"><div style="box-sizing:border-box;"><div style="box-sizing:border-box;background:rgb(252, 252, 252) none repeat scroll 0% 0%;"><div style="box-sizing:border-box;background:rgb(252, 252, 252) none repeat scroll 0% 0%;"><div style="box-sizing:border-box;"><div style="box-sizing:border-box;"><div style="box-sizing:border-box;"><div style="box-sizing:border-box;">
+<h1 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:175%;">Setup IPsec Road-Warrior</h1>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Road Warriors are remote users who need secure access to the companies infrastructure.
+IPsec Mobile Clients offer a solution that is easy to setup with OSX (native)
+and is know to work with iOS as well as many Android devices.</p>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">For more flexibility use SSL VPN’s, OPNsense utilizes OpenVPN for this purpose.</p>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">With this example we’ll show you how to configure the Mobile Client Setup in
+OPNsense and give you configuration examples for:</p>
+<ul style="box-sizing:border-box;margin:0px;padding:0px;list-style:outside none disc;line-height:24px;margin-bottom:24px;">
+<li style="box-sizing:border-box;list-style:outside none disc;margin-left:24px;">OSX</li>
+<li style="box-sizing:border-box;list-style:outside none disc;margin-left:24px;">iOS</li>
+<li style="box-sizing:border-box;list-style:outside none disc;margin-left:24px;">Android</li>
+</ul>
+<div style="box-sizing:border-box;padding:12px;line-height:24px;margin-bottom:24px;background:rgb(231, 242, 250) none repeat scroll 0% 0%;"><span style="line-height:24px;"></span>
+<p style="box-sizing:border-box;display:block;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:1;font-family:inherit;font-size-adjust:none;font-kerning:auto;font-language-override:normal;font-feature-settings:normal;font-size:inherit;text-rendering:auto;color:rgb(255, 255, 255);margin:-12px -12px 12px;padding:6px 12px;background:rgb(106, 176, 222) none repeat scroll 0% 0%;"><span style="font-style:normal;font-variant:normal;font-weight:bold;line-height:1;font-family:inherit;font-size:inherit;color:rgb(255, 255, 255);display:inline-block;text-decoration:inherit;margin-right:4px;"></span>Note</p>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">For the sample we will use a private ip for our WAN connection.
+This requires us to disable the default block rule on wan to allow private traffic.
+To do so, go to the <strong style="box-sizing:border-box;font-weight:bold;">Interfaces-&gt;[WAN]</strong> and uncheck “Block private networks”.
+<em style="box-sizing:border-box;">(Dont forget to save and apply)</em></p>
+<en-media type="image/png" hash="23b228969b05af342379433caa290e74" alt="../../_images/block_private_networks.png" width="277" height="38" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;margin-bottom:0px;height:auto;"></en-media>
+</div>
+<hr style="box-sizing:border-box;display:block;height:1px;border-color:rgb(225, 228, 229) currentcolor currentcolor;border-style:solid none none;border-width:1px 0px 0px;border-image:none 100% / 1 / 0 stretch;margin:24px 0px;padding:0px;"/>
+<div style="box-sizing:border-box;">
+<h2 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:150%;">Sample Setup</h2>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">For the sample configuration we configure OPNsense</p>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;"><strong style="box-sizing:border-box;font-weight:bold;">Company Network with Remote Client</strong></p>
+<div style="box-sizing:border-box;"><a href="https://docs.opnsense.org/_images/nwdiag-5042d531e611eaf29c571a934720f15b87807db7.png" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;"><en-media type="image/png" hash="6a1a18e70c94ae2c16e7e2655e396159" width="810.0" height="876.0" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;height:auto;"></en-media></a></div><div style="box-sizing:border-box;">
+<h3 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:125%;">Company Network</h3>
+<div style="box-sizing:border-box;margin-bottom:24px;max-width:100%;overflow:auto;"><table border="1" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;box-sizing:border-box;border-collapse:collapse;border-spacing:0px;empty-cells:show;border:1px solid rgb(225, 228, 229);margin-bottom:0px;">
+<colgroup style="box-sizing:border-box;">
+<col width="41%" style="box-sizing:border-box;"/>
+<col width="59%" style="box-sizing:border-box;"/>
+</colgroup>
+<tbody valign="top" style="box-sizing:border-box;">
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Hostname</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">fw1</td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">WAN IP</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);">172.18.0.164</td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">LAN IP</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">192.168.1.0/24</td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">LAN DHCP Range</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);">192.168.1.100-192.168.1.200</td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;border-bottom-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">IPsec Clients</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;background-color:rgb(243, 246, 246);">10.10.0.0/24</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div style="box-sizing:border-box;">
+<h2 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:150%;">Firewall Rules Mobile Users</h2>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">To allow IPsec Tunnel Connections, the following should be allowed on WAN.</p>
+<ul style="box-sizing:border-box;margin:0px;padding:0px;list-style:outside none disc;line-height:24px;margin-bottom:24px;">
+<li style="box-sizing:border-box;list-style:outside none disc;margin-left:24px;">Protocol ESP</li>
+<li style="box-sizing:border-box;list-style:outside none disc;margin-left:24px;">UDP Traffic on Port 500 (ISAKMP)</li>
+<li style="box-sizing:border-box;list-style:outside none disc;margin-left:24px;">UDP Traffic on Port 4500 (NAT-T)</li>
+</ul>
+<a href="https://docs.opnsense.org/_images/ipsec_wan_rules.png" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;"><en-media type="image/png" hash="02bbb0ed9f6477319d68bc0a2a01f3bd" alt="../../_images/ipsec_wan_rules.png" width="709" height="138" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;height:192.0px;margin-bottom:24px;width:990.0px;"></en-media></a>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">To allow traffic passing to your LAN subnet you need to add a rule to the IPsec
+interface.</p>
+<a href="https://docs.opnsense.org/_images/ipsec_ipsec_lan_rule.png" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;"><en-media type="image/png" hash="cc68ca617a07447f20cf91b51f4303c4" alt="../../_images/ipsec_ipsec_lan_rule.png" width="709" height="29" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;height:41.0px;margin-bottom:24px;width:989.0px;"></en-media></a>
+</div>
+<div style="box-sizing:border-box;">
+<h2 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:150%;">Step 1 - Mobile Clients</h2>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">First we will need to setup the mobile clients network and authentication methods.
+Go to <strong style="box-sizing:border-box;font-weight:bold;">VPN-&gt;IPsec-&gt;Mobile Clients</strong></p>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">For our example will use the following settings:</p>
+<div style="box-sizing:border-box;">
+<h3 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:125%;">IKE Extensions</h3>
+<div style="box-sizing:border-box;margin-bottom:24px;max-width:100%;overflow:auto;"><table border="1" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;box-sizing:border-box;border-collapse:collapse;border-spacing:0px;empty-cells:show;border:1px solid rgb(225, 228, 229);margin-bottom:0px;">
+<colgroup style="box-sizing:border-box;">
+<col width="28%" style="box-sizing:border-box;"/>
+<col width="18%" style="box-sizing:border-box;"/>
+<col width="54%" style="box-sizing:border-box;"/>
+</colgroup>
+<tbody valign="top" style="box-sizing:border-box;">
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Enable</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">checked</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">check to enable mobile clients</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">User Authentication</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);">Local Database</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);"><em style="box-sizing:border-box;">For the example we use the Local Database</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Group Authentication</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">none</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">Leave on none</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;border-bottom-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Virtual Address Pool</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;">10.0.0.0/24</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;"><em style="box-sizing:border-box;">Enter the IP range for the remote clients</em></td>
+</tr>
+</tbody>
+</table></div>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">You can select other options, but we will leave them all unchecked for this
+example.</p>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;"><strong style="box-sizing:border-box;font-weight:bold;">Save</strong> your settings and select <strong style="box-sizing:border-box;font-weight:bold;">Create Phase1</strong> when it appears.
+Then enter the Mobile Client Phase 1 setting.</p>
+</div>
+</div>
+<div style="box-sizing:border-box;">
+<h2 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:150%;">Step 2 - Phase 1 Mobile Clients</h2>
+<div style="box-sizing:border-box;">
+<h3 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:125%;">Phase 1 General information</h3>
+<div style="box-sizing:border-box;margin-bottom:24px;max-width:100%;overflow:auto;"><table border="1" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;box-sizing:border-box;border-collapse:collapse;border-spacing:0px;empty-cells:show;border:1px solid rgb(225, 228, 229);margin-bottom:0px;">
+<colgroup style="box-sizing:border-box;">
+<col width="29%" style="box-sizing:border-box;"/>
+<col width="15%" style="box-sizing:border-box;"/>
+<col width="56%" style="box-sizing:border-box;"/>
+</colgroup>
+<tbody valign="top" style="box-sizing:border-box;">
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Connection method</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">default</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">default is ‘Start on traffic’</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Key Exchange version</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);">V1</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);"><em style="box-sizing:border-box;">only V1 is supported for mobile clients</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Internet Protocol</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">IPv4</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"> </td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Interface</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);">WAN</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);"><em style="box-sizing:border-box;">choose the interface connected to the internet</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;border-bottom-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Description</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;background-color:rgb(243, 246, 246);">MobileIPsec</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">freely chosen description</em></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div style="box-sizing:border-box;">
+<h3 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:125%;">Phase 1 proposal (Authentication)</h3>
+<div style="box-sizing:border-box;margin-bottom:24px;max-width:100%;overflow:auto;"><table border="1" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;box-sizing:border-box;border-collapse:collapse;border-spacing:0px;empty-cells:show;border:1px solid rgb(225, 228, 229);margin-bottom:0px;">
+<colgroup style="box-sizing:border-box;">
+<col width="31%" style="box-sizing:border-box;"/>
+<col width="25%" style="box-sizing:border-box;"/>
+<col width="44%" style="box-sizing:border-box;"/>
+</colgroup>
+<tbody valign="top" style="box-sizing:border-box;">
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Authentication method</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">Mutual PSK +Xauth</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">Using a Pre-shared Key and Login</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Negotiation mode</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);">Agressive</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);"><em style="box-sizing:border-box;">Select Aggressive</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">My identifier</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">My IP address</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">Simple identification for fixed ip</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Peer identifier</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);">User distinguished</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);"><em style="box-sizing:border-box;">Identification for peer</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">Peer identifier</em></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><a href="https://docs.opnsense.org/manual/how-tos/ipsec-road.htmlmailto:vpnuser%40example.com" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;">vpnuser<span style="box-sizing:border-box;">@</span>example<span style="box-sizing:border-box;">.</span>com</a></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">Our freely chosen identifier</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;border-bottom-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Pre-Shared Key</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;">At4aDMOAOub2NwT6gMHA</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;"><em style="box-sizing:border-box;">Random key</em>. <strong style="box-sizing:border-box;font-weight:bold;">CREATE YOUR OWN!</strong></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div style="box-sizing:border-box;">
+<h3 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:125%;">Phase 1 proposal (Algorithms)</h3>
+<div style="box-sizing:border-box;margin-bottom:24px;max-width:100%;overflow:auto;"><table border="1" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;box-sizing:border-box;border-collapse:collapse;border-spacing:0px;empty-cells:show;border:1px solid rgb(225, 228, 229);margin-bottom:0px;">
+<colgroup style="box-sizing:border-box;">
+<col width="27%" style="box-sizing:border-box;"/>
+<col width="13%" style="box-sizing:border-box;"/>
+<col width="60%" style="box-sizing:border-box;"/>
+</colgroup>
+<tbody valign="top" style="box-sizing:border-box;">
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Encryption algorithm</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">AES</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">For our sample we will Use AES/256 bits</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Hash algoritm</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);">SHA1</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);"><em style="box-sizing:border-box;">SHA1 for compatibility, you can try a stronger hash</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">DH key group</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">1024 bit</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">1024 bit for compatibility, you can try stronger group</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;border-bottom-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Lifetime</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;">28800 sec</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;"><em style="box-sizing:border-box;">lifetime before renegotiation</em></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div style="box-sizing:border-box;">
+<h3 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:125%;">Advanced Options</h3>
+<div style="box-sizing:border-box;margin-bottom:24px;max-width:100%;overflow:auto;"><table border="1" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;box-sizing:border-box;border-collapse:collapse;border-spacing:0px;empty-cells:show;border:1px solid rgb(225, 228, 229);margin-bottom:0px;">
+<colgroup style="box-sizing:border-box;">
+<col width="27%" style="box-sizing:border-box;"/>
+<col width="13%" style="box-sizing:border-box;"/>
+<col width="60%" style="box-sizing:border-box;"/>
+</colgroup>
+<tbody valign="top" style="box-sizing:border-box;">
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Disable Rekey</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">Unchecked</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">Renegotiate when connection is about to expire</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Disable Reauth</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);">Unchecked</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);"><em style="box-sizing:border-box;">For IKEv2 only re-authenticate peer on rekeying</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">NAT Traversal</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">Enabled</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">Enable for IKEv1</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;border-bottom-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Dead Peer Detection</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;">Unchecked</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;"> </td>
+</tr>
+</tbody>
+</table></div>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Save your setting by pressing:</p>
+<a href="https://docs.opnsense.org/_images/btn_save.png" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;"><en-media type="image/png" hash="072707d82e1d9952ac24f80380ae45eb" alt="../../_images/btn_save.png" width="58" height="37" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;height:37.0px;margin-bottom:24px;width:58.0px;"></en-media></a>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Now you should see the following screen:</p>
+<a href="https://docs.opnsense.org/_images/ipsec_road_vpn_p1a.png" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;"><en-media type="image/png" hash="8437352fc741bb3767648c3fcff338b0" alt="../../_images/ipsec_road_vpn_p1a.png" width="709" height="60" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;height:114.0px;margin-bottom:24px;width:1337.0px;"></en-media></a>
+</div>
+</div>
+<div style="box-sizing:border-box;">
+<h2 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:150%;">Step 3 - Phase 2 Mobile Clients</h2>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Press the button that says ‘+ Show 0 Phase-2 entries’</p>
+<a href="https://docs.opnsense.org/_images/ipsec_s2s_vpn_p1a_show_p2.png" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;"><en-media type="image/png" hash="d58595c3e34dd6f480f70dc6b383b450" alt="../../_images/ipsec_s2s_vpn_p1a_show_p2.png" width="143" height="24" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;height:24.0px;margin-bottom:24px;width:143.0px;"></en-media></a>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">You will see an empty list:</p>
+<a href="https://docs.opnsense.org/_images/ipsec_s2s_vpn_p1a_p2_empty.png" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;"><en-media type="image/png" hash="297cfc69a2559b748a89a5fc887d5b6b" alt="../../_images/ipsec_s2s_vpn_p1a_p2_empty.png" width="709" height="39" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;height:69.0px;margin-bottom:24px;width:1271.0px;"></en-media></a>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Now press the <em style="box-sizing:border-box;">+</em> at the right of this list to add a Phase 2 entry.</p>
+<div style="box-sizing:border-box;">
+<h3 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:125%;">General information</h3>
+<div style="box-sizing:border-box;margin-bottom:24px;max-width:100%;overflow:auto;"><table border="1" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;box-sizing:border-box;border-collapse:collapse;border-spacing:0px;empty-cells:show;border:1px solid rgb(225, 228, 229);margin-bottom:0px;">
+<colgroup style="box-sizing:border-box;">
+<col width="33%" style="box-sizing:border-box;"/>
+<col width="26%" style="box-sizing:border-box;"/>
+<col width="41%" style="box-sizing:border-box;"/>
+</colgroup>
+<tbody valign="top" style="box-sizing:border-box;">
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Mode</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">Tunnel IPv4</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">Select Tunnel mode</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;border-bottom-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Description</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;">MobileIPsecP2</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;"><em style="box-sizing:border-box;">Freely chosen description</em></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div style="box-sizing:border-box;">
+<h3 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:125%;">Local Network</h3>
+<div style="box-sizing:border-box;margin-bottom:24px;max-width:100%;overflow:auto;"><table border="1" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;box-sizing:border-box;border-collapse:collapse;border-spacing:0px;empty-cells:show;border:1px solid rgb(225, 228, 229);margin-bottom:0px;">
+<colgroup style="box-sizing:border-box;">
+<col width="32%" style="box-sizing:border-box;"/>
+<col width="25%" style="box-sizing:border-box;"/>
+<col width="42%" style="box-sizing:border-box;"/>
+</colgroup>
+<tbody valign="top" style="box-sizing:border-box;">
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;border-bottom-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Local Network</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;background-color:rgb(243, 246, 246);">LAN subnet</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">Route the local LAN subnet</em></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div style="box-sizing:border-box;">
+<h3 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:125%;">Phase 2 proposal (SA/Key Exchange)</h3>
+<div style="box-sizing:border-box;margin-bottom:24px;max-width:100%;overflow:auto;"><table border="1" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;box-sizing:border-box;border-collapse:collapse;border-spacing:0px;empty-cells:show;border:1px solid rgb(225, 228, 229);margin-bottom:0px;">
+<colgroup style="box-sizing:border-box;">
+<col width="33%" style="box-sizing:border-box;"/>
+<col width="15%" style="box-sizing:border-box;"/>
+<col width="52%" style="box-sizing:border-box;"/>
+</colgroup>
+<tbody valign="top" style="box-sizing:border-box;">
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Protocol</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">ESP</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">Choose ESP for encryption</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Encryption algorithms</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);">AES / 256</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);"><em style="box-sizing:border-box;">For the sample we use AES 256</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Hash algorithms</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">SHA1</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">You may also try stronger SHA512</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">PFS Key group</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);">off</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);"><em style="box-sizing:border-box;">Enable a group fro stronger security</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;border-bottom-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Lifetime</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;background-color:rgb(243, 246, 246);">3600 sec</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;background-color:rgb(243, 246, 246);"> </td>
+</tr>
+</tbody>
+</table></div>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Save your setting by pressing:</p>
+<a href="https://docs.opnsense.org/_images/btn_save.png" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;"><en-media type="image/png" hash="072707d82e1d9952ac24f80380ae45eb" alt="../../_images/btn_save.png" width="58" height="37" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;height:37.0px;margin-bottom:24px;width:58.0px;"></en-media></a>
+<hr style="box-sizing:border-box;display:block;height:1px;border-color:rgb(225, 228, 229) currentcolor currentcolor;border-style:solid none none;border-width:1px 0px 0px;border-image:none 100% / 1 / 0 stretch;margin:24px 0px;padding:0px;"/>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Enable IPsec, Select:</p>
+<a href="https://docs.opnsense.org/_images/ipsec_s2s_vpn_p1a_enable.png" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;"><en-media type="image/png" hash="48f6869429090d00d328dbfe89c38310" alt="../../_images/ipsec_s2s_vpn_p1a_enable.png" width="130" height="40" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;height:40.0px;margin-bottom:24px;width:130.0px;"></en-media></a>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Save:</p>
+<a href="https://docs.opnsense.org/_images/btn_save.png" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;"><en-media type="image/png" hash="072707d82e1d9952ac24f80380ae45eb" alt="../../_images/btn_save.png" width="58" height="37" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;height:37.0px;margin-bottom:24px;width:58.0px;"></en-media></a>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">And Apply changes:</p>
+<a href="https://docs.opnsense.org/_images/ipsec_s2s_vpn_p1a_apply.png" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;"><en-media type="image/png" hash="477fd6e8763bdce9d89cbc39a0d23a33" alt="../../_images/ipsec_s2s_vpn_p1a_apply.png" width="709" height="42" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;height:76.0px;margin-bottom:24px;width:1297.0px;"></en-media></a>
+<hr style="box-sizing:border-box;display:block;height:1px;border-color:rgb(225, 228, 229) currentcolor currentcolor;border-style:solid none none;border-width:1px 0px 0px;border-image:none 100% / 1 / 0 stretch;margin:24px 0px;padding:0px;"/>
+<a href="https://docs.opnsense.org/_images/ipsec_s2s_vpn_p1a_success.png" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;"><en-media type="image/png" hash="974513e16b3cbfc5947c5caf204937de" alt="../../_images/ipsec_s2s_vpn_p1a_success.png" width="709" height="32" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;height:58.0px;margin-bottom:24px;width:1298.0px;"></en-media></a>
+</div>
+</div>
+<hr style="box-sizing:border-box;display:block;height:1px;border-color:rgb(225, 228, 229) currentcolor currentcolor;border-style:solid none none;border-width:1px 0px 0px;border-image:none 100% / 1 / 0 stretch;margin:24px 0px;padding:0px;"/>
+<div style="box-sizing:border-box;">
+<h2 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:150%;">Step 4 - Add IPsec Users</h2>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">For this example we will create a new user who may access the mobile IPsec vpn.</p>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Go to <strong style="box-sizing:border-box;font-weight:bold;">System-&gt;Access-&gt;Users</strong> and press the <strong style="box-sizing:border-box;font-weight:bold;">+</strong> sign in the lower right corner
+to add a new user.</p>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Enter the following into the form:</p>
+<div style="box-sizing:border-box;margin-bottom:24px;max-width:100%;overflow:auto;"><table border="1" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;box-sizing:border-box;border-collapse:collapse;border-spacing:0px;empty-cells:show;border:1px solid rgb(225, 228, 229);margin-bottom:0px;">
+<colgroup style="box-sizing:border-box;">
+<col width="60%" style="box-sizing:border-box;"/>
+<col width="40%" style="box-sizing:border-box;"/>
+</colgroup>
+<tbody valign="top" style="box-sizing:border-box;">
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">User Name</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">expert</td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;border-bottom-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Password</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;">&amp;test!9T</td>
+</tr>
+</tbody>
+</table></div>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;"><strong style="box-sizing:border-box;font-weight:bold;">Save</strong> this user and reopen in edit mode to add privileges.</p>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Add privilege <strong style="box-sizing:border-box;font-weight:bold;">User - VPN - IPsec xauth Dialin</strong> by pressing the <strong style="box-sizing:border-box;font-weight:bold;">+</strong> under
+<strong style="box-sizing:border-box;font-weight:bold;">Effective Privileges</strong>.</p>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;"><strong style="box-sizing:border-box;font-weight:bold;">Save</strong> to apply.</p>
+</div>
+<hr style="box-sizing:border-box;display:block;height:1px;border-color:rgb(225, 228, 229) currentcolor currentcolor;border-style:solid none none;border-width:1px 0px 0px;border-image:none 100% / 1 / 0 stretch;margin:24px 0px;padding:0px;"/>
+<div style="box-sizing:border-box;">
+<h2 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:150%;">Step 5 - Configure Client</h2>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">To illustrate the client setup we will look at the configuration under OSX, including
+some screenshots. The configurations for Android and iOS will be settings only.</p>
+<div style="box-sizing:border-box;padding:12px;line-height:24px;margin-bottom:24px;background:rgb(231, 242, 250) none repeat scroll 0% 0%;"><span style="line-height:24px;"></span>
+<p style="box-sizing:border-box;display:block;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;line-height:1;font-family:inherit;font-size-adjust:none;font-kerning:auto;font-language-override:normal;font-feature-settings:normal;font-size:inherit;text-rendering:auto;color:rgb(255, 255, 255);margin:-12px -12px 12px;padding:6px 12px;background:rgb(106, 176, 222) none repeat scroll 0% 0%;"><span style="font-style:normal;font-variant:normal;font-weight:bold;line-height:1;font-family:inherit;font-size:inherit;color:rgb(255, 255, 255);display:inline-block;text-decoration:inherit;margin-right:4px;"></span>Note</p>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;margin-bottom:0px;">Configuration samples listed here where created using latest OSX, iOS and
+Android devices on time of publication in February 2016.</p>
+</div>
+</div>
+<div style="box-sizing:border-box;">
+<h2 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:150%;">Configure OSX Client</h2>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Start with opening your network settings (System Preferences -&gt; Network) and
+Add a new network by pressing the + in the lower left corner.</p>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Now select <strong style="box-sizing:border-box;font-weight:bold;">VPN</strong> and <strong style="box-sizing:border-box;font-weight:bold;">Cisco IPSec</strong>, give your connection a name and press <strong style="box-sizing:border-box;font-weight:bold;">Create</strong>.</p>
+<a href="https://docs.opnsense.org/_images/osx-ipsec-new.png" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;"><en-media type="image/png" hash="64039e483a5104920375d5f6d1826e11" alt="../../_images/osx-ipsec-new.png" width="413" height="196" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;height:196.0px;margin-bottom:24px;width:413.0px;"></en-media></a>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Now enter the details for our connection:</p>
+<a href="https://docs.opnsense.org/_images/osx-ipsec-conf1.png" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;"><en-media type="image/png" hash="7b2037225a9422f4af4fabfa2afff004" alt="../../_images/osx-ipsec-conf1.png" width="441" height="399" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;height:399.0px;margin-bottom:24px;width:441.0px;"></en-media></a>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Next press <strong style="box-sizing:border-box;font-weight:bold;">Authentication Settings</strong> to add the group name and pre-shared key.</p>
+<a href="https://docs.opnsense.org/_images/osx-ipsec-conf2.png" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;"><en-media type="image/png" hash="fc212eb99e68d0890a2ae4010479aa7b" alt="../../_images/osx-ipsec-conf2.png" width="368" height="193" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;height:193.0px;margin-bottom:24px;width:368.0px;"></en-media></a>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Press <strong style="box-sizing:border-box;font-weight:bold;">OK</strong> to save these settings and then <strong style="box-sizing:border-box;font-weight:bold;">Apply</strong> to apply them.</p>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Now test the connection by selecting it from the list and hit <strong style="box-sizing:border-box;font-weight:bold;">Connect</strong>.</p>
+<a href="https://docs.opnsense.org/_images/osx-ipsec-connected.png" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;"><en-media type="image/png" hash="c8c197de1977097b80a75aa3de612af8" alt="../../_images/osx-ipsec-connected.png" width="431" height="87" style="box-sizing:border-box;border:0px none;vertical-align:middle;max-width:100%;height:87.0px;margin-bottom:24px;width:431.0px;"></en-media></a>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;"><strong style="box-sizing:border-box;font-weight:bold;">Done</strong></p>
+</div>
+<div style="box-sizing:border-box;">
+<h2 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:150%;">Configure iOS Client</h2>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">To add a VPN connection on an iOS device go to <strong style="box-sizing:border-box;font-weight:bold;">Setting-&gt;General-&gt;VPN</strong>.
+Select <strong style="box-sizing:border-box;font-weight:bold;">Add VPN Configuration</strong> chose <strong style="box-sizing:border-box;font-weight:bold;">IPsec</strong> and use the Following Settings:</p>
+<div style="box-sizing:border-box;margin-bottom:24px;max-width:100%;overflow:auto;"><table border="1" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;box-sizing:border-box;border-collapse:collapse;border-spacing:0px;empty-cells:show;border:1px solid rgb(225, 228, 229);margin-bottom:0px;">
+<colgroup style="box-sizing:border-box;">
+<col width="29%" style="box-sizing:border-box;"/>
+<col width="26%" style="box-sizing:border-box;"/>
+<col width="45%" style="box-sizing:border-box;"/>
+</colgroup>
+<tbody valign="top" style="box-sizing:border-box;">
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Description</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">IPsec OPNsense</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">Freely chosen description</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Server</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);">172.18.0.164</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);"><em style="box-sizing:border-box;">Our server address</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Account</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">expert</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">Username of the remote account</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Password</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);">&amp;test!9T</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);"><em style="box-sizing:border-box;">Leave blank to be prompted every time</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">IPsec-id</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><a href="https://docs.opnsense.org/manual/how-tos/ipsec-road.htmlmailto:vpnuser%40example.com" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;">vpnuser<span style="box-sizing:border-box;">@</span>example<span style="box-sizing:border-box;">.</span>com</a></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">The peer identity we chose</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;border-bottom-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Preshared IPsec-key</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;">At4aDMOAOub2NwT6gMHA</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;"><em style="box-sizing:border-box;">Our PSK</em></td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div style="box-sizing:border-box;">
+<h2 style="box-sizing:border-box;margin-top:0px;font-weight:700;font-family:&quot;Roboto Slab&quot;, &quot;ff-tisa-web-pro&quot;, &quot;Georgia&quot;, Arial, sans-serif;font-size:150%;">Configure Android Client</h2>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">To add a VPN connection on an Android device go to <strong style="box-sizing:border-box;font-weight:bold;">Settings -&gt; Connections -&gt;
+more networks</strong> , select <strong style="box-sizing:border-box;font-weight:bold;">VPN</strong>. Press the <strong style="box-sizing:border-box;font-weight:bold;">+</strong> in the top right corner to add
+a new vpn connection.</p>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;">Use the Following Settings:</p>
+<div style="box-sizing:border-box;margin-bottom:24px;max-width:100%;overflow:auto;"><table border="1" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;box-sizing:border-box;border-collapse:collapse;border-spacing:0px;empty-cells:show;border:1px solid rgb(225, 228, 229);margin-bottom:0px;">
+<colgroup style="box-sizing:border-box;">
+<col width="33%" style="box-sizing:border-box;"/>
+<col width="29%" style="box-sizing:border-box;"/>
+<col width="37%" style="box-sizing:border-box;"/>
+</colgroup>
+<tbody valign="top" style="box-sizing:border-box;">
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Name</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">IPsec OPNsense</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">Freely chosen name</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">Type</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);">IPSec Xauth PSK</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);"><em style="box-sizing:border-box;">As configured in OPNsense</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Server address</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);">172.18.0.164</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">Our server address</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;"><strong style="box-sizing:border-box;font-weight:bold;">IPsec-id</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);"><a href="https://docs.opnsense.org/manual/how-tos/ipsec-road.htmlmailto:vpnuser%40example.com" style="box-sizing:border-box;color:rgb(41, 128, 185);text-decoration:none;cursor:pointer;">vpnuser<span style="box-sizing:border-box;">@</span>example<span style="box-sizing:border-box;">.</span>com</a></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;background-color:transparent;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);"><em style="box-sizing:border-box;">The peer identity we chose</em></td>
+</tr>
+<tr style="box-sizing:border-box;"><td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-left-width:0px;border-bottom-width:0px;background-color:rgb(243, 246, 246);"><strong style="box-sizing:border-box;font-weight:bold;">Preshared IPsec-key</strong></td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;background-color:rgb(243, 246, 246);">At4aDMOAOub2NwT6gMHA</td>
+<td style="box-sizing:border-box;white-space:nowrap;vertical-align:middle;font-size:90%;margin:0px;overflow:visible;padding:8px 16px;border-bottom:1px solid rgb(225, 228, 229);border-left:1px solid rgb(225, 228, 229);border-bottom-width:0px;background-color:rgb(243, 246, 246);"><em style="box-sizing:border-box;">Our PSK</em></td>
+</tr>
+</tbody>
+</table></div>
+<p style="box-sizing:border-box;line-height:24px;margin:0px 0px 24px;font-size:16px;"><strong style="box-sizing:border-box;font-weight:bold;">Save</strong> and try connecting. To connect enter Username and Password for the user
+<em style="box-sizing:border-box;">expert</em> we created in this example.</p>
+</div>
+</div></div></div></div></div></div></div></div></div></div><br/></div></en-note>

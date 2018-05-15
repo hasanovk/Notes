@@ -1,0 +1,1 @@
+Installation # Make sure that you have brew installed. If not read my note on the brew => brew install tmux # Copy the configuration file to the $HOME directory => cp /usr/local/share/tmux/example_tmux.conf ~/.tmux.conf 

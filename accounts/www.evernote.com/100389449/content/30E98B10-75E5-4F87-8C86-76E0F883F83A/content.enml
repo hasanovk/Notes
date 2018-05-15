@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="font-size:14px;"><div style="background-color:rgb(255, 255, 255);color:rgb(0, 51, 102);font-family:Arial,Helvetica,sans-serif;font-weight:normal;"><div><div style="padding-bottom:1em;margin-left:30px;"><h1 style="padding:0.2em;margin:0px;border:1px solid rgb(64, 88, 113);background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-size:22px;font-weight:bold;">Upgrading to 2.4 from 2.2</h1>
+<div style="padding:0px;margin:0.2em 0.2em 1em 0px;">
+<p style="line-height:1.3em;font-size:13px;text-align:right;background-color:inherit;color:rgb(204, 204, 204);margin:0px;padding:0px;"><span style="background-color:inherit;color:rgb(0, 51, 102);">Available Languages: </span><a href="https://httpd.apache.org/docs/trunk/en/upgrading.html" title="English" style="color:rgb(0, 115, 199);background-color:inherit;text-decoration:none;font-weight:bold;"> en </a> |
+<a href="https://httpd.apache.org/docs/trunk/fr/upgrading.html" hreflang="fr" rel="alternate" title="Français" style="color:rgb(0, 115, 199);background-color:inherit;text-decoration:none;font-weight:bold;"> fr </a></p>
+</div>
+
+  <p style="line-height:1.3em;">In order to assist folks upgrading, we maintain a document
+  describing information critical to existing Apache HTTP Server users. These
+  are intended to be brief notes, and you should be able to find
+  more information in either the <a href="https://httpd.apache.org/docs/trunk/new_features_2_4.html" style="color:rgb(0, 115, 199);background-color:inherit;">New Features</a> document, or in
+  the <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">src/CHANGES</code> file.  Application and module developers
+  can find a summary of API changes in the <a href="https://httpd.apache.org/docs/trunk/developer/new_api_2_4.html" style="color:rgb(0, 115, 199);background-color:inherit;">API updates</a> overview.</p>
+
+  <p style="line-height:1.3em;">This document describes changes in server behavior that might
+  require you to change your configuration or how you use the server
+  in order to continue using 2.4 as you are currently using 2.2.
+  To take advantage of new features in 2.4, see the New Features
+  document.</p>
+
+  <p style="line-height:1.3em;">This document describes only the changes from 2.2 to 2.4.  If you
+  are upgrading from version 2.0, you should also consult the <a href="http://httpd.apache.org/docs/2.2/upgrading.html" style="color:rgb(0, 115, 199);background-color:inherit;">2.0 to 2.2
+  upgrading document.</a></p>
+
+</div>
+<div style="position:absolute;top:5.5em;right:1em;padding:4px;width:13.5em;background-color:rgb(240, 240, 240);color:inherit;margin:0px 0px 1em 30px;margin-left:0px;margin-top:40px;"><ul style="list-style-type:disc;margin:0px 0px 0px 0.5em;padding:0px;margin-left:0px;padding-left:15px;"><li style="line-height:1.3em;font-size:13px;list-style-type:square;margin:0.4em 0px 2px;padding:0px;list-style-position:outside;"> <a href="https://httpd.apache.org/docs/trunk/upgrading.html#compile-time" style="color:rgb(0, 115, 199);background-color:inherit;">Compile-Time Configuration Changes</a></li>
+<li style="line-height:1.3em;font-size:13px;list-style-type:square;margin:0.4em 0px 2px;padding:0px;list-style-position:outside;"> <a href="https://httpd.apache.org/docs/trunk/upgrading.html#run-time" style="color:rgb(0, 115, 199);background-color:inherit;">Run-Time Configuration Changes</a></li>
+<li style="line-height:1.3em;font-size:13px;list-style-type:square;margin:0.4em 0px 2px;padding:0px;list-style-position:outside;"> <a href="https://httpd.apache.org/docs/trunk/upgrading.html#misc" style="color:rgb(0, 115, 199);background-color:inherit;">Misc Changes</a></li>
+<li style="line-height:1.3em;font-size:13px;list-style-type:square;margin:0.4em 0px 2px;padding:0px;list-style-position:outside;"> <a href="https://httpd.apache.org/docs/trunk/upgrading.html#third-party" style="color:rgb(0, 115, 199);background-color:inherit;">Third Party Modules</a></li>
+<li style="line-height:1.3em;font-size:13px;list-style-type:square;margin:0.4em 0px 2px;padding:0px;list-style-position:outside;"> <a href="https://httpd.apache.org/docs/trunk/upgrading.html#commonproblems" style="color:rgb(0, 115, 199);background-color:inherit;">Common problems when upgrading</a></li>
+</ul><h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;padding:0px;font-size:15px;margin:1em 0px 0.3em 0.5em;">See also</h3><ul style="list-style-type:disc;margin:0px 0px 15px;padding:0px;padding-left:15px;"><li style="line-height:1.3em;font-size:13px;list-style-type:square;margin:0.4em 0px 2px;padding:0px;list-style-position:outside;"><a href="https://httpd.apache.org/docs/trunk/new_features_2_4.html" style="color:rgb(0, 115, 199);background-color:inherit;">Overview of new features in
+  Apache HTTP Server 2.4</a></li><li style="line-height:1.3em;font-size:13px;list-style-type:square;margin:0.4em 0px 2px;padding:0px;list-style-position:outside;"><a href="https://httpd.apache.org/docs/trunk/upgrading.html#comments_section" style="color:rgb(0, 115, 199);background-color:inherit;">Comments</a></li></ul></div>
+<div style="width:30px;padding:0px 0px 0px 30px;margin:0px;"><a href="https://httpd.apache.org/docs/trunk/upgrading.html#page-header" style="color:rgb(0, 115, 199);background-color:inherit;"><en-media type="image/gif" hash="52886f148b21767072a507411e0d58e2" alt="top" width="11" height="11" style="margin-top:0.5em;vertical-align:bottom;width:11px;height:11px;border-style:none;"></en-media></a></div>
+<div style="margin:-1.2em 0px 0px 60px;padding:0px;">
+<h2 style="padding:0.2em 0px 0.2em 0.7em;margin:0px 0px 0.5em;text-decoration:none;font-size:18px;font-weight:bold;background-color:rgb(64, 88, 113);color:rgb(255, 255, 255);"><a name="compile-time" style="color:inherit;background-color:inherit;text-decoration:none;">Compile-Time Configuration Changes</a></h2>
+    
+
+    <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">The compilation process is very similar to the one used in
+    version 2.2.  Your old <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">configure</code> command line (as
+    found in <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">build/config.nice</code> in the installed server
+    directory) can be used in most cases.  There are some changes in
+    the default settings.  Some details of changes:</p>
+
+    <ul style="margin-bottom:1em;list-style-type:disc;">
+      <li style="line-height:1.3em;">These modules have been removed: mod_authn_default,
+      mod_authz_default, mod_mem_cache.  If you were using
+      mod_mem_cache in 2.2, look at <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_cache_disk.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_cache_disk</a></code> in
+      2.4.</li>
+
+      <li style="line-height:1.3em;">All load balancing implementations have been moved to
+      individual, self-contained mod_proxy submodules, e.g.
+      <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_lbmethod_bybusyness.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_lbmethod_bybusyness</a></code>.  You might need
+      to build and load any of these that your configuration
+      uses.</li>
+
+      <li style="line-height:1.3em;">Platform support has been removed for BeOS, TPF, and
+      even older platforms such as A/UX, Next, and Tandem.  These were
+      believed to be broken anyway.</li>
+
+      <li style="line-height:1.3em;">configure: dynamic modules (DSO) are built by default</li>
+
+      <li style="line-height:1.3em;">configure: By default, only a basic set of modules is loaded. The
+      other <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;">LoadModule</code> directives are commented
+      out in the configuration file.</li>
+
+      <li style="line-height:1.3em;">configure: the "most" module set gets built by default</li>
+
+      <li style="line-height:1.3em;">configure: the "reallyall" module set adds developer modules
+      to the "all" set</li>
+    </ul>
+
+  </div><div style="width:30px;padding:0px 0px 0px 30px;margin:0px;"><a href="https://httpd.apache.org/docs/trunk/upgrading.html#page-header" style="color:rgb(0, 115, 199);background-color:inherit;"><en-media type="image/gif" hash="52886f148b21767072a507411e0d58e2" alt="top" width="11" height="11" style="margin-top:0.5em;vertical-align:bottom;width:11px;height:11px;border-style:none;"></en-media></a></div>
+<div style="margin:-1.2em 0px 0px 60px;padding:0px;">
+<h2 style="padding:0.2em 0px 0.2em 0.7em;margin:0px 0px 0.5em;text-decoration:none;font-size:18px;font-weight:bold;background-color:rgb(64, 88, 113);color:rgb(255, 255, 255);"><a name="run-time" style="color:inherit;background-color:inherit;text-decoration:none;">Run-Time Configuration Changes</a></h2>
+    
+    <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">There have been significant changes in authorization configuration,
+    and other minor configuration changes, that could require changes to your 2.2
+    configuration files before using them for 2.4.</p>
+
+    <h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;font-size:16px;margin:1.3em 0px 0.4em;padding:0px;"><a name="authz" style="color:inherit;background-color:inherit;text-decoration:none;">Authorization</a></h3>
+      
+
+      <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">Any configuration file that uses authorization will likely
+      need changes.</p>
+
+    <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">You should review the <a href="https://httpd.apache.org/docs/trunk/howto/auth.html" style="color:rgb(0, 115, 199);background-color:inherit;">Authentication,
+    Authorization and Access Control Howto</a>, especially the section
+    <a href="https://httpd.apache.org/docs/trunk/howto/auth.html#beyond" style="color:rgb(0, 115, 199);background-color:inherit;">Beyond just authorization</a>
+    which explains the new mechanisms for controlling the order in
+    which the authorization directives are applied.</p>
+
+    <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">Directives that control how authorization modules respond when they don't match
+    the authenticated user have been removed: This includes
+    AuthzLDAPAuthoritative, AuthzDBDAuthoritative, AuthzDBMAuthoritative,
+    AuthzGroupFileAuthoritative, AuthzUserAuthoritative,
+    and AuthzOwnerAuthoritative.   These directives have been replaced by the
+    more expressive <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_authz_core.html#requireany" style="color:rgb(40, 127, 0);background-color:inherit;">RequireAny</a></code>,
+    <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_authz_core.html#requirenone" style="color:rgb(40, 127, 0);background-color:inherit;">RequireNone</a></code>, and
+    <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_authz_core.html#requireall" style="color:rgb(40, 127, 0);background-color:inherit;">RequireAll</a></code>.</p>
+
+    <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">If you use <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_authz_dbm.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_authz_dbm</a></code>, you must port your
+    configuration to use <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">Require dbm-group ...</code> in place
+    of <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">Require group ...</code>.</p>
+
+    <h4 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;font-size:14px;margin:1.3em 0px 0.2em;padding:0px;"><a name="access" style="color:inherit;background-color:inherit;text-decoration:none;">Access control</a></h4>
+      
+
+      <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">In 2.2, access control based on client hostname, IP address,
+      and other characteristics of client requests was done using the
+      directives <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_access_compat.html#order" style="color:rgb(40, 127, 0);background-color:inherit;">Order</a></code>, <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_access_compat.html#allow" style="color:rgb(40, 127, 0);background-color:inherit;">Allow</a></code>, <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_access_compat.html#deny" style="color:rgb(40, 127, 0);background-color:inherit;">Deny</a></code>, and <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_access_compat.html#satisfy" style="color:rgb(40, 127, 0);background-color:inherit;">Satisfy</a></code>.</p>
+
+      <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">In 2.4, such access control is done in the same way as other
+      authorization checks, using the new module
+      <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_authz_host.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_authz_host</a></code>.  The old access control idioms
+      should be replaced by the new authentication mechanisms,
+      although for compatibility with old configurations, the new
+      module <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_access_compat.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_access_compat</a></code> is provided.</p>
+
+      <div style="background-color:rgb(238, 238, 238);color:rgb(0, 51, 102);padding:0.5em;margin:1em 2em 1em 1em;"><h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;padding:0px;font-size:14px;margin:0px 0px 0.5em;text-align:left;">Mixing old and new directives</h3>
+      <p style="line-height:1.3em;margin:0.5em 0px 0px;padding:0px;">Mixing old directives like <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_access_compat.html#order" style="color:rgb(40, 127, 0);background-color:inherit;">Order</a></code>, <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_access_compat.html#allow" style="color:rgb(40, 127, 0);background-color:inherit;">Allow</a></code> or <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_access_compat.html#deny" style="color:rgb(40, 127, 0);background-color:inherit;">Deny</a></code> with new ones like
+      <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_authz_core.html#require" style="color:rgb(40, 127, 0);background-color:inherit;">Require</a></code> is technically possible 
+      but discouraged. <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_access_compat.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_access_compat</a></code> was created to support 
+      configurations containing only old directives to facilitate the 2.4 upgrade. 
+      Please check the examples below to get a better idea about issues that might arise.
+      </p>
+      </div>
+
+      <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">Here are some examples of old and new ways to do the same
+      access control.</p>
+
+      <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">In this example, there is no authentication and all requests are denied.</p>
+      <div style="background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0.5em;margin:1em 2em 1em 1em;"><h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;padding:0px;font-size:14px;margin:0px 0px 0.5em;text-align:left;">2.2 configuration:</h3><pre style="font-family:&quot;Courier New&quot;,Courier,monospace;border:medium none;overflow-x:auto;overflow-y:hidden;background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0px;margin:0px;font-size:13px;"><span style="color:rgb(17, 34, 136);font-weight:bold;">Order</span><span style="color:rgb(0, 0, 0);"> deny</span><span style="color:rgb(102, 102, 0);">,</span><span style="color:rgb(0, 0, 0);">allow
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Deny</span><span style="color:rgb(0, 0, 0);"> from all</span></pre>
+</div>
+      <div style="background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0.5em;margin:1em 2em 1em 1em;"><h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;padding:0px;font-size:14px;margin:0px 0px 0.5em;text-align:left;">2.4 configuration:</h3><pre style="font-family:&quot;Courier New&quot;,Courier,monospace;border:medium none;overflow-x:auto;overflow-y:hidden;background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0px;margin:0px;font-size:13px;"><span style="color:rgb(17, 34, 136);font-weight:bold;">Require</span><span style="color:rgb(0, 0, 0);"> all denied</span></pre>
+</div>
+
+      <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">In this example, there is no authentication and all requests are allowed.</p>
+      <div style="background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0.5em;margin:1em 2em 1em 1em;"><h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;padding:0px;font-size:14px;margin:0px 0px 0.5em;text-align:left;">2.2 configuration:</h3><pre style="font-family:&quot;Courier New&quot;,Courier,monospace;border:medium none;overflow-x:auto;overflow-y:hidden;background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0px;margin:0px;font-size:13px;"><span style="color:rgb(17, 34, 136);font-weight:bold;">Order</span><span style="color:rgb(0, 0, 0);"> allow</span><span style="color:rgb(102, 102, 0);">,</span><span style="color:rgb(0, 0, 0);">deny
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Allow</span><span style="color:rgb(0, 0, 0);"> from all</span></pre>
+</div>
+      <div style="background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0.5em;margin:1em 2em 1em 1em;"><h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;padding:0px;font-size:14px;margin:0px 0px 0.5em;text-align:left;">2.4 configuration:</h3><pre style="font-family:&quot;Courier New&quot;,Courier,monospace;border:medium none;overflow-x:auto;overflow-y:hidden;background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0px;margin:0px;font-size:13px;"><span style="color:rgb(17, 34, 136);font-weight:bold;">Require</span><span style="color:rgb(0, 0, 0);"> all granted</span></pre>
+</div>
+
+      <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">In the following example, there is no authentication and all hosts in the example.org domain
+      are allowed access; all other hosts are denied access.</p>
+
+      <div style="background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0.5em;margin:1em 2em 1em 1em;"><h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;padding:0px;font-size:14px;margin:0px 0px 0.5em;text-align:left;">2.2 configuration:</h3><pre style="font-family:&quot;Courier New&quot;,Courier,monospace;border:medium none;overflow-x:auto;overflow-y:hidden;background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0px;margin:0px;font-size:13px;"><span style="color:rgb(17, 34, 136);font-weight:bold;">Order</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(17, 34, 136);font-weight:bold;">Deny</span><span style="color:rgb(102, 102, 0);">,</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Allow</span><span style="color:rgb(0, 0, 0);">
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Deny</span><span style="color:rgb(0, 0, 0);"> from all
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Allow</span><span style="color:rgb(0, 0, 0);"> from example</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">org</span></pre>
+</div>
+      <div style="background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0.5em;margin:1em 2em 1em 1em;"><h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;padding:0px;font-size:14px;margin:0px 0px 0.5em;text-align:left;">2.4 configuration:</h3><pre style="font-family:&quot;Courier New&quot;,Courier,monospace;border:medium none;overflow-x:auto;overflow-y:hidden;background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0px;margin:0px;font-size:13px;"><span style="color:rgb(17, 34, 136);font-weight:bold;">Require</span><span style="color:rgb(0, 0, 0);"> host example</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">org</span></pre>
+</div>
+
+      <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">In the following example, mixing old and new directives leads to 
+      unexpected results.</p>
+ 
+      <div style="background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0.5em;margin:1em 2em 1em 1em;"><h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;padding:0px;font-size:14px;margin:0px 0px 0.5em;text-align:left;">Mixing old and new directives: NOT WORKING AS EXPECTED</h3><pre style="font-family:&quot;Courier New&quot;,Courier,monospace;border:medium none;overflow-x:auto;overflow-y:hidden;background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0px;margin:0px;font-size:13px;"><span style="color:rgb(17, 34, 136);font-weight:bold;">DocumentRoot</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(0, 102, 0);">"/var/www/html"</span><span style="color:rgb(0, 0, 0);">
+
+</span><span style="color:rgb(102, 102, 0);">&lt;</span><span style="color:rgb(136, 34, 17);font-weight:bold;">Directory</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(0, 102, 0);">"/"</span><span style="color:rgb(102, 102, 0);">&gt;</span><span style="color:rgb(0, 0, 0);">
+    </span><span style="color:rgb(17, 34, 136);font-weight:bold;">AllowOverride</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(68, 0, 68);">None</span><span style="color:rgb(0, 0, 0);">
+    </span><span style="color:rgb(17, 34, 136);font-weight:bold;">Order</span><span style="color:rgb(0, 0, 0);"> deny</span><span style="color:rgb(102, 102, 0);">,</span><span style="color:rgb(0, 0, 0);">allow
+    </span><span style="color:rgb(17, 34, 136);font-weight:bold;">Deny</span><span style="color:rgb(0, 0, 0);"> from all
+</span><span style="color:rgb(102, 102, 0);">&lt;/</span><span style="color:rgb(136, 34, 17);font-weight:bold;">Directory</span><span style="color:rgb(102, 102, 0);">&gt;</span><span style="color:rgb(0, 0, 0);">
+
+</span><span style="color:rgb(102, 102, 0);">&lt;</span><span style="color:rgb(136, 34, 17);font-weight:bold;">Location</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(0, 102, 0);">"/server-status"</span><span style="color:rgb(102, 102, 0);">&gt;</span><span style="color:rgb(0, 0, 0);">
+    </span><span style="color:rgb(17, 34, 136);font-weight:bold;">SetHandler</span><span style="color:rgb(0, 0, 0);"> server-status
+    </span><span style="color:rgb(17, 34, 136);font-weight:bold;">Require</span><span style="color:rgb(0, 0, 0);"> local
+</span><span style="color:rgb(102, 102, 0);">&lt;/</span><span style="color:rgb(136, 34, 17);font-weight:bold;">Location</span><span style="color:rgb(102, 102, 0);">&gt;</span><span style="color:rgb(0, 0, 0);">
+
+access</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">log </span><span style="color:rgb(102, 102, 0);">-</span><span style="color:rgb(0, 0, 0);"> GET </span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">server-status </span><span style="color:rgb(0, 119, 119);">403</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(0, 119, 119);">127.0</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 119, 119);">0.1</span><span style="color:rgb(0, 0, 0);">
+error</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">log </span><span style="color:rgb(102, 102, 0);">-</span><span style="color:rgb(0, 0, 0);"> AH01797</span><span style="color:rgb(102, 102, 0);">:</span><span style="color:rgb(0, 0, 0);"> client denied by server configuration</span><span style="color:rgb(102, 102, 0);">:</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">var</span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">www</span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">html</span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">server-status</span></pre>
+</div>
+      <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">Why httpd denies access to servers-status even if the configuration seems to allow it?
+        Because <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_access_compat.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_access_compat</a></code> directives take precedence
+        over the <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_authz_host.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_authz_host</a></code> one in this configuration 
+        <a href="https://httpd.apache.org/docs/trunk/sections.html#merging" style="color:rgb(0, 115, 199);background-color:inherit;">merge</a> scenario.</p>
+
+      <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">This example conversely works as expected:</p>
+
+      <div style="background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0.5em;margin:1em 2em 1em 1em;"><h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;padding:0px;font-size:14px;margin:0px 0px 0.5em;text-align:left;">Mixing old and new directives: WORKING AS EXPECTED</h3><pre style="font-family:&quot;Courier New&quot;,Courier,monospace;border:medium none;overflow-x:auto;overflow-y:hidden;background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0px;margin:0px;font-size:13px;"><span style="color:rgb(17, 34, 136);font-weight:bold;">DocumentRoot</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(0, 102, 0);">"/var/www/html"</span><span style="color:rgb(0, 0, 0);">
+
+</span><span style="color:rgb(102, 102, 0);">&lt;</span><span style="color:rgb(136, 34, 17);font-weight:bold;">Directory</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(0, 102, 0);">"/"</span><span style="color:rgb(102, 102, 0);">&gt;</span><span style="color:rgb(0, 0, 0);">
+    </span><span style="color:rgb(17, 34, 136);font-weight:bold;">AllowOverride</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(68, 0, 68);">None</span><span style="color:rgb(0, 0, 0);">
+    </span><span style="color:rgb(17, 34, 136);font-weight:bold;">Require</span><span style="color:rgb(0, 0, 0);"> all denied
+</span><span style="color:rgb(102, 102, 0);">&lt;/</span><span style="color:rgb(136, 34, 17);font-weight:bold;">Directory</span><span style="color:rgb(102, 102, 0);">&gt;</span><span style="color:rgb(0, 0, 0);">
+
+</span><span style="color:rgb(102, 102, 0);">&lt;</span><span style="color:rgb(136, 34, 17);font-weight:bold;">Location</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(0, 102, 0);">"/server-status"</span><span style="color:rgb(102, 102, 0);">&gt;</span><span style="color:rgb(0, 0, 0);">
+    </span><span style="color:rgb(17, 34, 136);font-weight:bold;">SetHandler</span><span style="color:rgb(0, 0, 0);"> server-status
+    </span><span style="color:rgb(17, 34, 136);font-weight:bold;">Order</span><span style="color:rgb(0, 0, 0);"> deny</span><span style="color:rgb(102, 102, 0);">,</span><span style="color:rgb(0, 0, 0);">allow
+    </span><span style="color:rgb(17, 34, 136);font-weight:bold;">Deny</span><span style="color:rgb(0, 0, 0);"> from all
+    </span><span style="color:rgb(17, 34, 136);font-weight:bold;">Allow</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(68, 0, 68);">From</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(0, 119, 119);">127.0</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 119, 119);">0.1</span><span style="color:rgb(0, 0, 0);">
+</span><span style="color:rgb(102, 102, 0);">&lt;/</span><span style="color:rgb(136, 34, 17);font-weight:bold;">Location</span><span style="color:rgb(102, 102, 0);">&gt;</span><span style="color:rgb(0, 0, 0);">
+
+access</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">log </span><span style="color:rgb(102, 102, 0);">-</span><span style="color:rgb(0, 0, 0);"> GET </span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">server-status </span><span style="color:rgb(0, 119, 119);">200</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(0, 119, 119);">127.0</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 119, 119);">0.1</span></pre>
+</div> 
+      <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">So even if mixing configuration is still
+        possible, please try to avoid it when upgrading: either keep old directives and then migrate
+        to the new ones on a later stage or just migrate everything in bulk.  
+      </p>
+    
+
+     <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">In many configurations with authentication, where the value of the
+     <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;">Satisfy</code> was the default of <em style="font-style:italic;">ALL</em>, snippets
+     that simply disabled host-based access control are omitted:</p>
+
+      <div style="background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0.5em;margin:1em 2em 1em 1em;"><h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;padding:0px;font-size:14px;margin:0px 0px 0.5em;text-align:left;">2.2 configuration:</h3><pre style="font-family:&quot;Courier New&quot;,Courier,monospace;border:medium none;overflow-x:auto;overflow-y:hidden;background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0px;margin:0px;font-size:13px;"><span style="color:rgb(17, 34, 136);font-weight:bold;">Order</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(17, 34, 136);font-weight:bold;">Deny</span><span style="color:rgb(102, 102, 0);">,</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Allow</span><span style="color:rgb(0, 0, 0);">
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Deny</span><span style="color:rgb(0, 0, 0);"> from all
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthBasicProvider</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(68, 0, 68);">File</span><span style="color:rgb(0, 0, 0);">
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthUserFile</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">example</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">com</span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">conf</span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">users</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">passwd
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthName</span><span style="color:rgb(0, 0, 0);"> secure
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Require</span><span style="color:rgb(0, 0, 0);"> valid-user</span></pre>
+</div>
+      <div style="background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0.5em;margin:1em 2em 1em 1em;"><h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;padding:0px;font-size:14px;margin:0px 0px 0.5em;text-align:left;">2.4 configuration:</h3><pre style="font-family:&quot;Courier New&quot;,Courier,monospace;border:medium none;overflow-x:auto;overflow-y:hidden;background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0px;margin:0px;font-size:13px;"><span style="color:rgb(196, 109, 52);"># No replacement needed</span><span style="color:rgb(0, 0, 0);">
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthBasicProvider</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(68, 0, 68);">File</span><span style="color:rgb(0, 0, 0);">
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthUserFile</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">example</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">com</span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">conf</span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">users</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">passwd
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthName</span><span style="color:rgb(0, 0, 0);"> secure
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Require</span><span style="color:rgb(0, 0, 0);"> valid-user</span></pre>
+</div>
+
+     <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">In configurations where both authentication and access control were meaningfully combined, the 
+        access control directives should be migrated. This example allows requests meeting <em style="font-style:italic;">both</em> criteria:</p>
+      <div style="background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0.5em;margin:1em 2em 1em 1em;"><h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;padding:0px;font-size:14px;margin:0px 0px 0.5em;text-align:left;">2.2 configuration:</h3><pre style="font-family:&quot;Courier New&quot;,Courier,monospace;border:medium none;overflow-x:auto;overflow-y:hidden;background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0px;margin:0px;font-size:13px;"><span style="color:rgb(17, 34, 136);font-weight:bold;">Order</span><span style="color:rgb(0, 0, 0);"> allow</span><span style="color:rgb(102, 102, 0);">,</span><span style="color:rgb(0, 0, 0);">deny
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Deny</span><span style="color:rgb(0, 0, 0);"> from all
+</span><span style="color:rgb(196, 109, 52);"># Satisfy ALL is the default</span><span style="color:rgb(0, 0, 0);">
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Satisfy</span><span style="color:rgb(0, 0, 0);"> ALL
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Allow</span><span style="color:rgb(0, 0, 0);"> from </span><span style="color:rgb(0, 119, 119);">127.0</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 119, 119);">0.1</span><span style="color:rgb(0, 0, 0);">
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthBasicProvider</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(68, 0, 68);">File</span><span style="color:rgb(0, 0, 0);">
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthUserFile</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">example</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">com</span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">conf</span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">users</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">passwd
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthName</span><span style="color:rgb(0, 0, 0);"> secure
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Require</span><span style="color:rgb(0, 0, 0);"> valid-user</span></pre>
+</div>
+      <div style="background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0.5em;margin:1em 2em 1em 1em;"><h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;padding:0px;font-size:14px;margin:0px 0px 0.5em;text-align:left;">2.4 configuration:</h3><pre style="font-family:&quot;Courier New&quot;,Courier,monospace;border:medium none;overflow-x:auto;overflow-y:hidden;background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0px;margin:0px;font-size:13px;"><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthBasicProvider</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(68, 0, 68);">File</span><span style="color:rgb(0, 0, 0);">
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthUserFile</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">example</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">com</span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">conf</span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">users</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">passwd
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthName</span><span style="color:rgb(0, 0, 0);"> secure
+</span><span style="color:rgb(102, 102, 0);">&lt;</span><span style="color:rgb(136, 34, 17);font-weight:bold;">RequireAll</span><span style="color:rgb(102, 102, 0);">&gt;</span><span style="color:rgb(0, 0, 0);">
+  </span><span style="color:rgb(17, 34, 136);font-weight:bold;">Require</span><span style="color:rgb(0, 0, 0);"> valid-user
+  </span><span style="color:rgb(17, 34, 136);font-weight:bold;">Require</span><span style="color:rgb(0, 0, 0);"> ip </span><span style="color:rgb(0, 119, 119);">127.0</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 119, 119);">0.1</span><span style="color:rgb(0, 0, 0);">
+</span><span style="color:rgb(102, 102, 0);">&lt;/</span><span style="color:rgb(136, 34, 17);font-weight:bold;">RequireAll</span><span style="color:rgb(102, 102, 0);">&gt;</span></pre>
+</div>
+
+     <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">In configurations where both authentication and access control were meaningfully combined, the 
+        access control directives should be migrated. This example allows requests meeting <em style="font-style:italic;">either</em> criteria:</p>
+      <div style="background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0.5em;margin:1em 2em 1em 1em;"><h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;padding:0px;font-size:14px;margin:0px 0px 0.5em;text-align:left;">2.2 configuration:</h3><pre style="font-family:&quot;Courier New&quot;,Courier,monospace;border:medium none;overflow-x:auto;overflow-y:hidden;background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0px;margin:0px;font-size:13px;"><span style="color:rgb(17, 34, 136);font-weight:bold;">Order</span><span style="color:rgb(0, 0, 0);"> allow</span><span style="color:rgb(102, 102, 0);">,</span><span style="color:rgb(0, 0, 0);">deny
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Deny</span><span style="color:rgb(0, 0, 0);"> from all
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Satisfy</span><span style="color:rgb(0, 0, 0);"> any
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Allow</span><span style="color:rgb(0, 0, 0);"> from </span><span style="color:rgb(0, 119, 119);">127.0</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 119, 119);">0.1</span><span style="color:rgb(0, 0, 0);">
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthBasicProvider</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(68, 0, 68);">File</span><span style="color:rgb(0, 0, 0);">
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthUserFile</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">example</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">com</span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">conf</span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">users</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">passwd
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthName</span><span style="color:rgb(0, 0, 0);"> secure
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Require</span><span style="color:rgb(0, 0, 0);"> valid-user</span></pre>
+</div>
+      <div style="background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0.5em;margin:1em 2em 1em 1em;"><h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;padding:0px;font-size:14px;margin:0px 0px 0.5em;text-align:left;">2.4 configuration:</h3><pre style="font-family:&quot;Courier New&quot;,Courier,monospace;border:medium none;overflow-x:auto;overflow-y:hidden;background-color:rgb(229, 236, 243);color:rgb(0, 0, 0);padding:0px;margin:0px;font-size:13px;"><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthBasicProvider</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(68, 0, 68);">File</span><span style="color:rgb(0, 0, 0);">
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthUserFile</span><span style="color:rgb(0, 0, 0);"> </span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">example</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">com</span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">conf</span><span style="color:rgb(102, 102, 0);">/</span><span style="color:rgb(0, 0, 0);">users</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 0, 0);">passwd
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">AuthName</span><span style="color:rgb(0, 0, 0);"> secure
+</span><span style="color:rgb(196, 109, 52);"># Implicitly &lt;RequireAny&gt;</span><span style="color:rgb(0, 0, 0);">
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Require</span><span style="color:rgb(0, 0, 0);"> valid-user
+</span><span style="color:rgb(17, 34, 136);font-weight:bold;">Require</span><span style="color:rgb(0, 0, 0);"> ip </span><span style="color:rgb(0, 119, 119);">127.0</span><span style="color:rgb(102, 102, 0);">.</span><span style="color:rgb(0, 119, 119);">0.1</span></pre>
+</div>
+
+    
+
+    <h3 style="background-color:inherit;color:rgb(0, 51, 102);text-decoration:none;font-weight:bold;font-size:16px;margin:1.3em 0px 0.4em;padding:0px;"><a name="config" style="color:inherit;background-color:inherit;text-decoration:none;">Other configuration changes</a></h3>
+      
+
+      <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">Some other small adjustments may be necessary for particular
+      configurations as discussed below.</p>
+
+      <ul style="margin-bottom:1em;list-style-type:disc;">
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;">MaxRequestsPerChild</code> has been renamed to
+        <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mpm_common.html#maxconnectionsperchild" style="color:rgb(40, 127, 0);background-color:inherit;">MaxConnectionsPerChild</a></code>,
+        describes more accurately what it does. The old name is still
+        supported.</li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;">MaxClients</code> has been renamed to
+        <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mpm_common.html#maxrequestworkers" style="color:rgb(40, 127, 0);background-color:inherit;">MaxRequestWorkers</a></code>,
+        which describes more accurately what it does. For async MPMs, like
+        <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/event.html" style="color:rgb(139, 69, 19);background-color:inherit;">event</a></code>, the maximum number of clients is not
+        equivalent than the number of worker threads. The old name is still
+        supported.</li>
+
+        <li style="line-height:1.3em;">The <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/core.html#defaulttype" style="color:rgb(40, 127, 0);background-color:inherit;">DefaultType</a></code>
+        directive no longer has any effect, other than to emit a
+        warning if it's used with any value other than
+        <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">none</code>.  You need to use other configuration
+        settings to replace it in 2.4.
+        </li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/core.html#allowoverride" style="color:rgb(40, 127, 0);background-color:inherit;">AllowOverride</a></code> now
+        defaults to <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">None</code>.</li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/core.html#enablesendfile" style="color:rgb(40, 127, 0);background-color:inherit;">EnableSendfile</a></code> now
+        defaults to Off.</li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/core.html#fileetag" style="color:rgb(40, 127, 0);background-color:inherit;">FileETag</a></code> now
+        defaults to "MTime Size" (without INode).</li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_dav_fs.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_dav_fs</a></code>: The format of the <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_dav_fs.html#davlockdb" style="color:rgb(40, 127, 0);background-color:inherit;">DavLockDB</a></code> file has changed for
+        systems with inodes.  The old <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_dav_fs.html#davlockdb" style="color:rgb(40, 127, 0);background-color:inherit;">DavLockDB</a></code> file must be deleted on
+        upgrade.
+        </li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/core.html#keepalive" style="color:rgb(40, 127, 0);background-color:inherit;">KeepAlive</a></code> only
+        accepts values of <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">On</code> or <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">Off</code>.
+        Previously, any value other than "Off" or "0" was treated as
+        "On".</li>
+
+        <li style="line-height:1.3em;">Directives AcceptMutex, LockFile, RewriteLock, SSLMutex,
+        SSLStaplingMutex, and WatchdogMutexPath have been replaced
+        with a single <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/core.html#mutex" style="color:rgb(40, 127, 0);background-color:inherit;">Mutex</a></code>
+        directive.  You will need to evaluate any use of these removed
+        directives in your 2.2 configuration to determine if they can
+        just be deleted or will need to be replaced using <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/core.html#mutex" style="color:rgb(40, 127, 0);background-color:inherit;">Mutex</a></code>.</li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_cache.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_cache</a></code>: <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_cache.html#cacheignoreurlsessionidentifiers" style="color:rgb(40, 127, 0);background-color:inherit;">CacheIgnoreURLSessionIdentifiers</a></code>
+        now does an exact match against the query string instead of a
+        partial match.  If your configuration was using partial
+        strings, e.g. using <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">sessionid</code> to match
+        <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">/someapplication/image.gif;jsessionid=123456789</code>,
+        then you will need to change to the full string
+        <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">jsessionid</code>.
+        </li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_cache.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_cache</a></code>: The second parameter to
+        <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_cache.html#cacheenable" style="color:rgb(40, 127, 0);background-color:inherit;">CacheEnable</a></code> only
+        matches forward proxy content if it begins with the correct
+        protocol. In 2.2 and earlier, a parameter of '/' matched all
+        content.</li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_ldap.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_ldap</a></code>: <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_ldap.html#ldaptrustedclientcert" style="color:rgb(40, 127, 0);background-color:inherit;">LDAPTrustedClientCert</a></code> is now
+        consistently a per-directory setting only.  If you use this
+        directive, review your configuration to make sure it is
+        present in all the necessary directory contexts.</li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_filter.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_filter</a></code>: <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_filter.html#filterprovider" style="color:rgb(40, 127, 0);background-color:inherit;">FilterProvider</a></code> syntax has changed and
+        now uses a boolean expression to determine if a filter is applied.
+        </li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_include.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_include</a></code>:
+            <ul style="margin-bottom:1em;list-style-type:square;">
+            <li style="line-height:1.3em;">The <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">#if expr</code> element now uses the new <a href="https://httpd.apache.org/docs/trunk/expr.html" style="color:rgb(0, 115, 199);background-color:inherit;">expression parser</a>. The old syntax can be
+            restored with the new directive <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_include.html#ssilegacyexprparser" style="color:rgb(40, 127, 0);background-color:inherit;">SSILegacyExprParser</a></code>.
+            </li>
+            <li style="line-height:1.3em;">An SSI* config directive in directory scope no longer causes
+            all other per-directory SSI* directives to be reset to their
+            default values.</li>
+            </ul>
+        </li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_charset_lite.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_charset_lite</a></code>: The <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">DebugLevel</code>
+        option has been removed in favour of per-module <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/core.html#loglevel" style="color:rgb(40, 127, 0);background-color:inherit;">LogLevel</a></code> configuration.
+        </li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_ext_filter.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_ext_filter</a></code>: The <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">DebugLevel</code>
+        option has been removed in favour of per-module <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/core.html#loglevel" style="color:rgb(40, 127, 0);background-color:inherit;">LogLevel</a></code> configuration.
+        </li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_proxy_scgi.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_proxy_scgi</a></code>: The default setting for
+        <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">PATH_INFO</code> has changed from httpd 2.2, and
+        some web applications will no longer operate properly with
+        the new <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">PATH_INFO</code> setting.  The previous setting
+        can be restored by configuring the <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">proxy-scgi-pathinfo</code>
+        variable.</li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_ssl.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_ssl</a></code>: CRL based revocation checking
+        now needs to be explicitly configured through <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_ssl.html#sslcarevocationcheck" style="color:rgb(40, 127, 0);background-color:inherit;">SSLCARevocationCheck</a></code>.
+        </li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_substitute.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_substitute</a></code>: The maximum line length is now
+        limited to 1MB.
+        </li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_reqtimeout.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_reqtimeout</a></code>: If the module is loaded, it
+        will now set some default timeouts.</li>
+
+        <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_dumpio.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_dumpio</a></code>: <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;">DumpIOLogLevel</code>
+        is no longer supported.  Data is always logged at <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/core.html#loglevel" style="color:rgb(40, 127, 0);background-color:inherit;">LogLevel</a></code> <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">trace7</code>.</li>
+
+        <li style="line-height:1.3em;">On Unix platforms, piped logging commands configured using
+        either <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/core.html#errorlog" style="color:rgb(40, 127, 0);background-color:inherit;">ErrorLog</a></code> or
+        <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_log_config.html#customlog" style="color:rgb(40, 127, 0);background-color:inherit;">CustomLog</a></code> were invoked using
+        <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">/bin/sh -c</code> in 2.2 and earlier.  In 2.4 and later,
+        piped logging commands are executed directly.  To restore the
+        old behaviour, see the <a href="https://httpd.apache.org/docs/trunk/logs.html#piped" style="color:rgb(0, 115, 199);background-color:inherit;">piped logging
+        documentation</a>.</li>
+
+      </ul>
+    
+  </div><div style="width:30px;padding:0px 0px 0px 30px;margin:0px;"><a href="https://httpd.apache.org/docs/trunk/upgrading.html#page-header" style="color:rgb(0, 115, 199);background-color:inherit;"><en-media type="image/gif" hash="52886f148b21767072a507411e0d58e2" alt="top" width="11" height="11" style="margin-top:0.5em;vertical-align:bottom;width:11px;height:11px;border-style:none;"></en-media></a></div>
+<div style="margin:-1.2em 0px 0px 60px;padding:0px;">
+<h2 style="padding:0.2em 0px 0.2em 0.7em;margin:0px 0px 0.5em;text-decoration:none;font-size:18px;font-weight:bold;background-color:rgb(64, 88, 113);color:rgb(255, 255, 255);"><a name="misc" style="color:inherit;background-color:inherit;text-decoration:none;">Misc Changes</a></h2>
+    
+
+    <ul style="margin-bottom:1em;list-style-type:disc;">
+      <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_autoindex.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_autoindex</a></code>: will now extract titles and
+      display descriptions for .xhtml files, which were previously
+      ignored.</li>
+
+      <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_ssl.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_ssl</a></code>: The default format of the <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">*_DN</code>
+      variables has changed. The old format can still be used with the new
+      <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">LegacyDNStringFormat</code> argument to <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_ssl.html#ssloptions" style="color:rgb(40, 127, 0);background-color:inherit;">SSLOptions</a></code>. The SSLv2 protocol is
+      no longer supported. <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_ssl.html#sslproxycheckpeercn" style="color:rgb(40, 127, 0);background-color:inherit;">SSLProxyCheckPeerCN
+	  </a></code> and <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_ssl.html#sslproxycheckpeerexpire" style="color:rgb(40, 127, 0);background-color:inherit;">SSLProxyCheckPeerExpire
+	  </a></code> now default to On, causing proxy requests to HTTPS hosts
+	  with bad or outdated certificates to fail with a 502 status code (Bad
+	  gateway)</li>
+
+      <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;"><a href="https://httpd.apache.org/docs/trunk/programs/htpasswd.html" style="color:rgb(0, 115, 199);background-color:inherit;">htpasswd</a></code> now uses MD5 hash by default on
+      all platforms.</li>
+
+      <li style="line-height:1.3em;">The <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/core.html#namevirtualhost" style="color:rgb(40, 127, 0);background-color:inherit;">NameVirtualHost</a></code>
+      directive no longer has any effect, other than to emit a
+      warning.  Any address/port combination appearing in multiple
+      virtual hosts is implicitly treated as a name-based virtual host.
+      </li>
+
+      <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_deflate.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_deflate</a></code> will now skip compression if it knows
+      that the size overhead added by the compression is larger than the data
+      to be compressed.
+      </li>
+
+      <li style="line-height:1.3em;">Multi-language error documents from 2.2.x may not work unless
+      they are adjusted to the new syntax of <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_include.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_include</a></code>'s
+      <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">#if expr=</code> element or the directive
+      <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_include.html#ssilegacyexprparser" style="color:rgb(40, 127, 0);background-color:inherit;">SSILegacyExprParser</a></code> is
+      enabled for the directory containing the error documents.
+      </li>
+
+      <li style="line-height:1.3em;">The functionality provided by <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">mod_authn_alias</code>
+      in previous versions (i.e., the <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_authn_core.html#authnprovideralias" style="color:rgb(40, 127, 0);background-color:inherit;">AuthnProviderAlias</a></code> directive)
+      has been moved into <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_authn_core.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_authn_core</a></code>.
+      </li>
+
+      <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_cgid.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_cgid</a></code> uses the servers <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/core.html#timeout" style="color:rgb(40, 127, 0);background-color:inherit;">Timeout</a></code> to limit the length of time to wait for CGI output.
+      This timeout can be overridden with <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_cgid.html#cgidscripttimeout" style="color:rgb(40, 127, 0);background-color:inherit;">
+      CGIDScriptTImeout</a></code>.
+      </li>
+
+    </ul>
+
+  </div><div style="width:30px;padding:0px 0px 0px 30px;margin:0px;"><a href="https://httpd.apache.org/docs/trunk/upgrading.html#page-header" style="color:rgb(0, 115, 199);background-color:inherit;"><en-media type="image/gif" hash="52886f148b21767072a507411e0d58e2" alt="top" width="11" height="11" style="margin-top:0.5em;vertical-align:bottom;width:11px;height:11px;border-style:none;"></en-media></a></div>
+<div style="margin:-1.2em 0px 0px 60px;padding:0px;">
+<h2 style="padding:0.2em 0px 0.2em 0.7em;margin:0px 0px 0.5em;text-decoration:none;font-size:18px;font-weight:bold;background-color:rgb(64, 88, 113);color:rgb(255, 255, 255);"><a name="third-party" style="color:inherit;background-color:inherit;text-decoration:none;">Third Party Modules</a></h2>
+    
+    <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">All modules must be recompiled for 2.4 before being loaded.</p>
+
+    <p style="line-height:1.3em;margin:0px 0px 1em;padding:0px;">Many third-party modules designed for version 2.2 will
+    otherwise work unchanged with the Apache HTTP Server version 2.4.
+    Some will require changes; see the <a href="https://httpd.apache.org/docs/trunk/developer/new_api_2_4.html" style="color:rgb(0, 115, 199);background-color:inherit;">API
+    update</a> overview.</p>
+  </div><div style="width:30px;padding:0px 0px 0px 30px;margin:0px;"><a href="https://httpd.apache.org/docs/trunk/upgrading.html#page-header" style="color:rgb(0, 115, 199);background-color:inherit;"><en-media type="image/gif" hash="52886f148b21767072a507411e0d58e2" alt="top" width="11" height="11" style="margin-top:0.5em;vertical-align:bottom;width:11px;height:11px;border-style:none;"></en-media></a></div>
+<div style="margin:-1.2em 0px 0px 60px;padding:0px;">
+<h2 style="padding:0.2em 0px 0.2em 0.7em;margin:0px 0px 0.5em;text-decoration:none;font-size:18px;font-weight:bold;background-color:rgb(64, 88, 113);color:rgb(255, 255, 255);"><a name="commonproblems" style="color:inherit;background-color:inherit;text-decoration:none;">Common problems when upgrading</a></h2>
+    
+    <ul style="margin-bottom:1em;list-style-type:disc;"><li style="line-height:1.3em;">Startup errors:
+    <ul style="margin-bottom:1em;list-style-type:square;">
+      <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">Invalid command 'User', perhaps misspelled or defined by a module not included in the server configuration</code> - load module <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_unixd.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_unixd</a></code></li>
+      <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">Invalid command 'Require', perhaps misspelled or defined by a module not included in the server configuration</code>, or
+<code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">Invalid command 'Order', perhaps misspelled or defined by a module not included in the server configuration</code>
+ - load module <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_access_compat.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_access_compat</a></code>, or update configuration to 2.4 authorization directives.</li>
+      <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">Ignoring deprecated use of DefaultType in line NN of /path/to/httpd.conf</code> - remove <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/core.html#defaulttype" style="color:rgb(40, 127, 0);background-color:inherit;">DefaultType</a></code>
+      and replace with other configuration settings.</li>
+      <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">Invalid command 'AddOutputFilterByType', perhaps misspelled
+      or defined by a module not included in the server configuration
+      </code> - <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_filter.html#addoutputfilterbytype" style="color:rgb(40, 127, 0);background-color:inherit;">AddOutputFilterByType</a></code>
+      has moved from the core to mod_filter, which must be loaded.</li>
+    </ul></li>
+    <li style="line-height:1.3em;">Errors serving requests:
+    <ul style="margin-bottom:1em;list-style-type:square;">
+      <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">configuration error:  couldn't check user: /path</code> -
+      load module <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(139, 69, 19);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/mod_authn_core.html" style="color:rgb(139, 69, 19);background-color:inherit;">mod_authn_core</a></code>.</li>
+      <li style="line-height:1.3em;"><code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">.htaccess</code> files aren't being processed - Check for an
+      appropriate <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;color:rgb(40, 127, 0);background-color:inherit;"><a href="https://httpd.apache.org/docs/trunk/mod/core.html#allowoverride" style="color:rgb(40, 127, 0);background-color:inherit;">AllowOverride</a></code> directive;
+      the default changed to <code style="font-family:&quot;Courier New&quot;,Courier,monospace;font-size:1em;">None</code> in 2.4.</li>
+    </ul>
+    </li>
+</ul>
+  </div></div></div></div></div><br/></div></en-note>

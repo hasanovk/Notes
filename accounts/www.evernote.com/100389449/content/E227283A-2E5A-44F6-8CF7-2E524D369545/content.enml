@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="color:rgb(0, 0, 0);background:rgb(233, 233, 233) none repeat scroll 0% 0%;"><div style="font:normal normal normal normal 13px/1.231 arial, helvetica, clean, sans-serif;min-width:650px;font-size:13px;color:rgb(62, 62, 62);line-height:1.23;font-family:Tahoma, Calibri, Verdana, Geneva, sans-serif;"><div style="background:rgb(255, 255, 255) none repeat scroll 0% 0%;border-radius:5px;"><div><ol><li style="list-style:outside none none;color:rgb(62, 62, 62);"><div style="background:rgb(242, 246, 248) none repeat scroll 0% 0%;"><div style="background:rgb(250, 250, 250) none repeat scroll 0% 0%;"><div style="overflow:auto;font:normal normal normal normal 13px Verdana, Arial, Tahoma, Calibri, Geneva, sans-serif;color:rgb(51, 51, 51);">
+				
+				
+				<h2 style="margin:0px;font-size:100%;font-weight:normal;padding:10px 10px 10px 0px;display:block;font:normal normal bold normal 14px Tahoma, Calibri, Verdana, Geneva, sans-serif;border-bottom:1px solid rgb(200, 200, 200);padding-bottom:5px;margin-bottom:5px;">
+					<en-media type="image/png" hash="0378007ecb87fc64aa45732f773f877a" alt="Lightbulb" title="Lightbulb" width="16" height="16" style="border:0px none;"></en-media> How to install/remove different Desktop/Window Manager in Kali Linux 1.x
+				</h2>
+				
+
+
+						
+							
+							<div style="padding:0px;margin:0px;display:block;clear:both;">
+
+<ins style="text-decoration:none;display:inline-block;width:234px;height:60px;"><ins style="text-decoration:none;display:inline-table;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:234px;background-color:transparent;"><ins style="text-decoration:none;display:block;border:none;height:60px;margin:0;padding:0;position:relative;visibility:visible;width:234px;background-color:transparent;"><div style="left:0;position:absolute;top:0;width:234px;height:60px;"></div></ins></ins></ins>
+</div>
+						
+						
+				<div style="margin:0px;padding:0px;display:block;">
+					<div style="margin:0px;padding:0px;">
+						<blockquote style="margin:0px;padding:0px;overflow:hidden;overflow-wrap:break-word;">
+							----<br/>
+<b>## XFCE Desktop ##</b><br/>
+----<br/>
+# How to install XFCE Desktop Environment in Kali Linux:<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get install kali-defaults kali-root-login desktop-base xfce4 xfce4-places-plugin xfce4-goodies</pre>
+</div># How to remove XFCE in Kali Linux:<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get remove xfce4 xfce4-places-plugin xfce4-goodies</pre>
+</div>----<br/>
+<b> ## KDE Desktop ##</b><br/>
+----<br/>
+# How to install KDE Plasma Desktop Environment in Kali Linux:<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get install kali-defaults kali-root-login desktop-base kde-plasma-desktop</pre>
+</div># How to install Netbook KDE Plasma Desktop Environment in Kali Linux:<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get install kali-defaults kali-root-login desktop-base kde-plasma-netbook</pre>
+</div># How to install Standard Debian selected packages and frameworks in Kali Linux:<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get install kali-defaults kali-root-login desktop-base kde-standard</pre>
+</div># How to install KDE Full Install in Kali Linux:<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get install kali-defaults kali-root-login desktop-base kde-full</pre>
+</div># How to remove KDE on Kali Linux:<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get remove kde-plasma-desktop kde-plasma-netbook kde-standard</pre>
+</div>----<br/>
+<b> ## LXDE Desktop ##</b><br/>
+----<br/>
+# How to install LXDE Desktop Environment in Kali Linux:<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get install lxde-core lxde kali-defaults kali-root-login desktop-base</pre>
+</div># How to remove LXDE on Kali Linux:<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get remove lxde-core lxde</pre>
+</div>----<br/>
+<b> ## GNOME Desktop ##</b><br/>
+----<br/>
+# How to install GNOME on Kali Linux:<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get install gnome-core kali-defaults kali-root-login desktop-base</pre>
+</div># How to remove GNOME on Kali Linux:<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get remove gnome-core</pre>
+</div>----<br/>
+<b> ## Cinnamon Desktop ##</b><br/>
+----<br/>
+# How to install Cinnamon Desktop Environment in Kali Linux:<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get install kali-defaults kali-root-login desktop-base cinnamon</pre>
+</div># How to remove Cinnamon Desktop Environment in Kali Linux:<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get remove cinnamon</pre>
+</div>----<br/>
+<b> ## MATE Desktop ##</b><br/>
+----<br/>
+# How to install MATE Desktop Environment in Kali Linux:<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> echo "deb http://repo.mate-desktop.org/debian wheezy main" &gt;&gt; /etc/apt/sources.list &amp;&amp; apt-get update</pre>
+</div><div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get --yes --quiet --allow-unauthenticated install mate-archive-keyring</pre>
+</div># This installs the base packages<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get install kali-defaults kali-root-login desktop-base mate-core</pre>
+</div># Or this to install mate-core and more extras<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get install kali-defaults kali-root-login desktop-base mate-desktop-environment</pre>
+</div># Or this to install mate-core + mate-desktop-environment and even more extras.<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get install kali-defaults kali-root-login desktop-base mate-desktop-environment-extra</pre>
+</div># How to remove MATE Desktop Environment in Kali Linux:<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> apt-get remove mate-core</pre>
+</div>Now the only problem is MATE doesn't show the nice Kali Linux Menu. Fix posted by <a href="http://www.binarytides.com/install-mate-desktop-kali-linux/" target="_blank" style="color:rgb(65, 115, 148);text-decoration:none;">Silver Moon</a><br/>
+<br/>
+To fix this edit the following file.<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:36px;"> leafpad /etc/xdg/menus/mate-applications.menu</pre>
+</div>In the file go down to the section named Internet and add the following line<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">HTML Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:4*12px};"><i><span style="color:#000080;">&lt;!-- Kali Linux Menu --&gt;</span></i>
+<span style="color:#000080;">&lt;MergeFile type=<span style="color:#0000FF;">"path"</span>&gt;</span>applications-merged/kali-applications.menu<span style="color:#000080;">&lt;/MergeFile&gt;</span></pre>
+</div>So it should look something like this<br/>
+<div style="padding:0px;margin:5px 20px 20px;display:block;">
+	<div style="margin:0px;padding:0px;">HTML Code:</div>
+	<pre style="font-family:monospace;line-height:100%;margin-bottom:1em;margin:0px;padding:6px;border:1px inset;text-align:left;overflow:scroll;direction:ltr;background:rgb(242, 246, 248) none repeat-x scroll 0% 0%;font-size:12px;height:16*12px};">.....
+ <i><span style="color:#000080;">&lt;!-- Internet --&gt;</span></i>
+  <span style="color:#000080;">&lt;Menu&gt;</span>
+    <span style="color:#000080;">&lt;Name&gt;</span>Internet<span style="color:#000080;">&lt;/Name&gt;</span>
+    <span style="color:#000080;">&lt;Directory&gt;</span>mate-network.directory<span style="color:#000080;">&lt;/Directory&gt;</span>
+    <span style="color:#000080;">&lt;Include&gt;</span>
+      <span style="color:#000080;">&lt;And&gt;</span>
+        <span style="color:#000080;">&lt;Category&gt;</span>Network<span style="color:#000080;">&lt;/Category&gt;</span>
+      <span style="color:#000080;">&lt;/And&gt;</span>
+    <span style="color:#000080;">&lt;/Include&gt;</span>
+  <span style="color:#000080;">&lt;/Menu&gt;</span>   <i><span style="color:#000080;">&lt;!-- End Internet --&gt;</span></i>
+<i><span style="color:#000080;">&lt;!-- Kali Linux  --&gt;</span></i>    
+  <span style="color:#000080;">&lt;MergeFile type=<span style="color:#0000FF;">"path"</span>&gt;</span>applications-merged/kali-applications.menu<span style="color:#000080;">&lt;/MergeFile&gt;</span>
+.....</pre>
+</div>Now save the file, Logout and Login back. The "Kali Linux" menu should display fine in Mate desktop's application menu.<br/>
+<a href="http://www.blackmoreops.com/?p=9" target="_blank" style="color:rgb(65, 115, 148);text-decoration:none;">Credits</a>
+						</blockquote>
+					</div>
+
+					
+				</div>
+			</div></div></div></li></ol></div></div></div></div></div><br/></div></en-note>

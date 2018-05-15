@@ -1,0 +1,1 @@
+Commands => apt-cache search <pkg_name> => apt-cache show <pkg_name> 

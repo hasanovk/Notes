@@ -1,0 +1,921 @@
+2018/05/15 03:55:00:591 I|*   14036 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/15 04:55:00:129 I|*   14053 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/15 05:54:56:323 I|*   14065 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/15 06:55:04:191 I|*   14079 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/15 06:55:52:022 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/15 06:55:52:022 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/15 06:55:52:328 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/15 06:55:52:328 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/15 08:03:21:423 E|*** 14079 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1009 \"The Internet connection appears to be offline.\" UserInfo={NSUnderlyingError=0x7f8f037808b0 {Error Domain=kCFErrorDomainCFNetwork Code=-1009 \"The Internet connection appears to be offline.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=The Internet connection appears to be offline.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=The Internet connection appears to be offline.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/15 08:03:21:439 E|*** 14079 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1009 \"The Internet connection appears to be offline.\" UserInfo={NSUnderlyingError=0x7f8f037808b0 {Error Domain=kCFErrorDomainCFNetwork Code=-1009 \"The Internet connection appears to be offline.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=The Internet connection appears to be offline.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=The Internet connection appears to be offline.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/15 08:03:26:352 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/15 08:03:26:353 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/15 08:03:26:391 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/15 08:03:38:691 I|*   14080 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/15 08:03:43:343 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/15 08:03:43:344 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/15 08:42:27:714 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/15 08:42:27:714 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/15 09:01:59:391 I|*   14151 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/15 09:09:11:259 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/15 09:09:11:259 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=0 usn=93 | <ENMacNoteMO 0x7f8f0350d270> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702 <ENCommonEditorWebView: 0x7f8f09ab4c00>
+2018/05/15 09:09:11:259 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p12 <ENCommonEditorWebView: 0x7f8f09ab4c00>
+2018/05/15 09:09:11:259 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=0 usn=93 <ENCommonEditorWebView: 0x7f8f09ab4c00> <ENMacNoteMO 0x7f8f0350d270> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702
+2018/05/15 09:09:11:432 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7f8f0350d270> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702
+2018/05/15 09:09:11:469 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/15 09:09:11:469 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7f8f096a26a0> MOID:0xb200002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p712> GUID:[local] Title:VPN Ports Account:(null) USN:0 Hash:<3d0a245d e80855c4 96df01cb 8d0d141d> Length:6992 <ENCommonEditorWebView: 0x7f8f05e30050>
+2018/05/15 09:09:11:469 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p712 <ENCommonEditorWebView: 0x7f8f05e30050>
+2018/05/15 09:09:11:469 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7f8f05e30050> <ENMacNoteMO 0x7f8f096a26a0> MOID:0xb200002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p712> GUID:[local] Title:VPN Ports Account:(null) USN:0 Hash:<3d0a245d e80855c4 96df01cb 8d0d141d> Length:6992
+2018/05/15 09:09:11:497 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7f8f096a26a0> MOID:0xb200002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p712> GUID:[local] Title:VPN Ports Account:(null) USN:0 Hash:<3d0a245d e80855c4 96df01cb 8d0d141d> Length:6992
+2018/05/15 09:09:11:508 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/15 09:09:11:508 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7f8f09d251d0> MOID:0xae80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p698> GUID:[local] Title:KFH Phones Account:(null) USN:0 Hash:<969f5902 f8b49592 8f462027 5bceade5> Length:745 <ENCommonEditorWebView: 0x7f8f0a312680>
+2018/05/15 09:09:11:508 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p698 <ENCommonEditorWebView: 0x7f8f0a312680>
+2018/05/15 09:09:11:508 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7f8f0a312680> <ENMacNoteMO 0x7f8f09d251d0> MOID:0xae80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p698> GUID:[local] Title:KFH Phones Account:(null) USN:0 Hash:<969f5902 f8b49592 8f462027 5bceade5> Length:745
+2018/05/15 09:09:11:513 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Loaded noteID 0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> but editor is now using (null) <ENCommonEditorWebView: 0x7f8f09ab4c00>
+2018/05/15 09:09:11:628 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Loaded noteID 0xb200002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p712> but editor is now using (null) <ENCommonEditorWebView: 0x7f8f05e30050>
+2018/05/15 09:09:11:628 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7f8f0a312680> <ENMacNoteMO 0x7f8f09d251d0> MOID:0xae80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p698> GUID:[local] Title:KFH Phones Account:(null) USN:0 Hash:<969f5902 f8b49592 8f462027 5bceade5> Length:745
+2018/05/15 09:09:42:461 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7f8f09d251d0> MOID:0xae80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p698> GUID:[local] Title:KFH Phones Account:(null) USN:0 Hash:<969f5902 f8b49592 8f462027 5bceade5> Length:745
+2018/05/15 09:27:03:262 I|*   main  -[ENAppController applicationShouldTerminate:] | Terminate requested.
+2018/05/15 09:27:03:262 I|*   main  -[ENAccountController(SignOut) shutDownWithType:completion:] | +++++++ Starting shut down due to app termination for <ENAccountController: 0x7f8f05a3cef0> / 100389449-personal-www.evernote.com...
+2018/05/15 09:27:03:265 I|*   main  -[ENAccountController(SignOut) finishShutDown:completion:] | Finishing shut down due to app termination for <ENAccountController: 0x7f8f05a3cef0> / 100389449-personal-www.evernote.com...
+2018/05/15 09:27:03:266 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=0 usn=4438 <ENNotePrintingWebView: 0x7f8f05e09f70> <ENMacNoteMO 0x7f8f0707d240> MOID:0xc700002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p796> GUID:3c9436fe-1814-4dba-a6b0-fd3449917d22 Title:GSON Deserialiser Example | Java Creed Account:(null) USN:4438 Hash:<1806cf83 8865fc7e dac5f938 b736f24c> Length:126371
+2018/05/15 09:27:03:267 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=0 usn=4438 <ENNotePrintingWebView: 0x7f8f092c9b60> <ENMacNoteMO 0x7f8f0707d240> MOID:0xc700002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p796> GUID:3c9436fe-1814-4dba-a6b0-fd3449917d22 Title:GSON Deserialiser Example | Java Creed Account:(null) USN:4438 Hash:<1806cf83 8865fc7e dac5f938 b736f24c> Length:126371
+2018/05/15 09:27:03:268 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=0 usn=4424 <ENNotePrintingWebView: 0x7f8f05ae8b40> <ENMacNoteMO 0x7f8f099562d0> MOID:0xc740002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p797> GUID:a1c26c3b-a19e-431b-b101-f07bf6e55c7d Title:GSON Serialiser Example | Java Creed Account:(null) USN:4424 Hash:<2f284966 30e3bb0b e03cb1b3 a8a6ab87> Length:136796
+2018/05/15 09:27:03:269 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENNotePrintingWebView: 0x7f8f09093730> <ENMacNoteMO 0x7f8f0674f9f0> MOID:0xc680002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p794> GUID:[local] Title:Jenkins Account:(null) USN:0 Hash:<6e6312b0 34c92b4a 634ed6e7 4a1991c4> Length:1728
+2018/05/15 09:27:03:270 I|*   main  -[ENEvernoteAccount closeAccountAndLogout:completion:] | Closing <ENEvernoteAccount: 0x7f8f036810c0> / 100389449-personal-www.evernote.com / 1
+2018/05/15 09:27:03:270 I|*   14197 -[ENCoreMessageService(CoreData) cdBlockAndSaveLocalStore]_block_invoke | Saving core message store
+2018/05/15 09:27:03:270 I|*   14197 -[ENEvernoteAccount _closeAccountAndLogout:synchronously:completion:] | Flushing local note store queue <ENEvernoteAccount: 0x7f8f036810c0> / 100389449-personal-www.evernote.com / 1
+2018/05/15 09:27:03:277 I|*   main  -[ENAppController applicationShouldTerminate:] | Waiting for 1 closes to complete before termination.
+2018/05/15 09:27:03:289 I|*   main  -[ENEvernoteAccount tearDown] | Closed <ENEvernoteAccount: 0x7f8f036810c0> / 100389449-personal-www.evernote.com / 2
+2018/05/15 09:27:03:289 I|*   main  -[ENAccountContext(ContextManagement) unregisterClient:shouldLogout:completion:] | Unregister client <ENEvernoteAccount: 0x7f8f036810c0> / 100389449-personal-www.evernote.com / 2 0
+2018/05/15 09:27:03:289 I|*   14197 -[ENCacheManager stop] | self=<ENCacheManager: 0x7f8f034b8740>
+2018/05/15 09:27:03:289 I|*   main  -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:27:03:290 I|*   main  -[ENAppController applicationShouldTerminate:]_block_invoke | One account synced for terminate, 0 remaining.
+2018/05/15 09:27:03:290 I|*   main  -[ENAppController applicationShouldTerminate:] | -----------------------------  Quitting: Evernote Mac/456448 7.1 (en-CA); MacOS/10.11.6;  ------------------------------
+2018/05/15 09:27:03:290 I|*   main  -[ENAppController applicationShouldTerminate:] | Replying to terminate.  Code: 1
+2018/05/15 09:35:54:757 I|*   main  +[ENAppController initialize]_block_invoke | ------------------------------  Starting: Evernote Mac/456448 7.1 (en-CA); MacOS/10.11.6;  ------------------------------
+2018/05/15 09:35:54:757 I|*   main  +[ENAppController initialize]_block_invoke | app bundle path = /Applications/Evernote.app
+2018/05/15 09:35:54:926 I|*   main  -[ENAppController(Helper) setupHelperIPC] | Evernote client registered for IPC
+2018/05/15 09:35:54:939 E|*** main  -[ENAppController(Helper) refreshHelperPreferences] | Evernote was not able to access EvernoteHelper via IPC
+2018/05/15 09:35:55:153 I|*   cona  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/15 09:35:55:153 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/15 09:35:55:153 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/15 09:35:55:153 I|*   cona  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/15 09:35:55:194 I|*   main  -[ENAppController(SignIn) signInWithAuthResult:profile:openIdToAssociate:type:userIgnoredBusinessSSO:switchPrimaryAccount:completion:] | +++++++ Fetching account store: hkarshi/100389449/s561/Evernote
+2018/05/15 09:35:55:220 I|*   main  -[ENAccountContext init] | self=0x7f97c9cd51b0
+2018/05/15 09:35:55:231 I|*   main  -[ENAccountLimits rebuildSizeMapWithUser:] | Updating size limits based on privilege: 0
+2018/05/15 09:35:55:232 I|*   main  -[ENAccountLimits rebuildFeatureMapWithUser:] | Updating features based on service level: 1
+2018/05/15 09:35:55:232 I|*   main  -[ENAccountLimits rebuildSizeMapWithUser:] | Updating size limits based on service level: 1
+2018/05/15 09:35:55:232 I|*   main  -[ENUser updateWithEDAMUserObject:edamSubscriptionInfo:serviceLevelLimits:isCached:] | User Service Level is Evernote Basic
+2018/05/15 09:35:55:232 I|*   main  -[ENAccountLimits rebuildSizeMapWithUser:] | Updating size limits based on privilege: 0
+2018/05/15 09:35:55:233 I|*   main  -[ENAccountLimits rebuildSizeMapWithUser:] | Updating size limits based on privilege: 0
+2018/05/15 09:35:55:233 I|*   main  -[ENSyncEngine init] | self=0x7f97c9f79460
+2018/05/15 09:35:55:288 I|*   14211 +[EDAMUserAgent clientVersionString] | Client name: Evernote Mac/456448 (en-CA, DDL); MacOS/10.11.6;
+2018/05/15 09:35:55:288 I|*   14211 +[EDAMHTTPClient clientVersionString] | Client name: Evernote Mac/456448 (en-CA, DDL); MacOS/10.11.6;
+2018/05/15 09:35:55:320 I|*   main  +[ENEvernoteAccountFactory accountsWithConfiguration:migrationDelgate:completion:]_block_invoke | ENEvernoteAccountFactory
+2018/05/15 09:35:55:320 I|*   main  -[ENAccountContext(ContextManagement) registerClient:] | Register client <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 1
+2018/05/15 09:35:55:322 I|*   main  -[ENEvernoteAccount(Sync) setupSync] | first sync 0 <ENMacNotebookMO: 0x7f97c9d6cfc0> (entity: ENNotebook; id: 0x80000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p2> ; data: <fault>) <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0
+2018/05/15 09:35:55:322 I|*   main  -[ENCacheManager initWithAccountContext:listenForStartNotifications:] | <ENAccountContext: 0x7f97c9cd51b0 ID: 100389449> YES self=0x7f97c9d93380
+2018/05/15 09:35:55:323 I|*   main  +[ENEvernoteAccountFactory _accountsWithAccountContext:] | Created <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0
+2018/05/15 09:35:55:494 E|*** main  -[ENCoreDataLocalStore objectWithID:] | Unable to fetch object!
+2018/05/15 09:35:55:494 I|*   main  -[ENCoreDataLocalStore objectWithID:] | objectID=0x100000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p4>, request=<NSFetchRequest: 0x7f97c9f73510> (entity: ENNotebook; predicate: (SELF == <ENMacNotebookMO: 0x7f97c9f00ec0> (entity: ENNotebook; id: 0x100000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p4> ; data: <fault>)); sortDescriptors: ((null)); type: NSManagedObjectResultType; ), object=<ENMacNotebookMO: 0x7f97c9f00ec0> (entity: ENNotebook; id: 0x100000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p4> ; data: <fault>)
+2018/05/15 09:35:55:495 E|*** main  -[ENCoreDataLocalStore objectWithID:] | Unable to fetch object!
+2018/05/15 09:35:55:495 I|*   main  -[ENCoreDataLocalStore objectWithID:] | objectID=0x180000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p6>, request=<NSFetchRequest: 0x7f97c9ff4790> (entity: ENNotebook; predicate: (SELF == <ENMacNotebookMO: 0x7f97c9f74440> (entity: ENNotebook; id: 0x180000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p6> ; data: <fault>)); sortDescriptors: ((null)); type: NSManagedObjectResultType; ), object=<ENMacNotebookMO: 0x7f97c9f74440> (entity: ENNotebook; id: 0x180000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p6> ; data: <fault>)
+2018/05/15 09:35:55:495 E|*** main  -[ENCoreDataLocalStore objectWithID:] | Unable to fetch object!
+2018/05/15 09:35:55:495 I|*   main  -[ENCoreDataLocalStore objectWithID:] | objectID=0x240000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p9>, request=<NSFetchRequest: 0x7f97c9fcbb40> (entity: ENNotebook; predicate: (SELF == <ENMacNotebookMO: 0x7f97c9fcc560> (entity: ENNotebook; id: 0x240000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p9> ; data: <fault>)); sortDescriptors: ((null)); type: NSManagedObjectResultType; ), object=<ENMacNotebookMO: 0x7f97c9fcc560> (entity: ENNotebook; id: 0x240000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p9> ; data: <fault>)
+2018/05/15 09:35:55:495 E|*** main  -[ENCoreDataLocalStore objectWithID:] | Unable to fetch object!
+2018/05/15 09:35:55:495 I|*   main  -[ENCoreDataLocalStore objectWithID:] | objectID=0x140000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p5>, request=<NSFetchRequest: 0x7f97c9fcd710> (entity: ENNotebook; predicate: (SELF == <ENMacNotebookMO: 0x7f97c9fcd390> (entity: ENNotebook; id: 0x140000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p5> ; data: <fault>)); sortDescriptors: ((null)); type: NSManagedObjectResultType; ), object=<ENMacNotebookMO: 0x7f97c9fcd390> (entity: ENNotebook; id: 0x140000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p5> ; data: <fault>)
+2018/05/15 09:35:55:495 E|*** main  -[ENLinkCollectionController loadObjectsFromPreferencesRepresentation:] | could not load ["LocalObject","x-coredata:\/\/6B042D32-6611-46E6-A847-601106F4A699\/ENNotebook\/p12"] into recent notebooks: maximum size reached (0)
+2018/05/15 09:35:55:496 E|*** main  -[ENLinkCollectionController loadObjectsFromPreferencesRepresentation:] | could not load ["LocalObject","x-coredata:\/\/6B042D32-6611-46E6-A847-601106F4A699\/ENNotebook\/p34"] into recent notebooks: maximum size reached (0)
+2018/05/15 09:35:55:496 E|*** main  -[ENLinkCollectionController loadObjectsFromPreferencesRepresentation:] | could not load ["LocalObject","x-coredata:\/\/6B042D32-6611-46E6-A847-601106F4A699\/ENNotebook\/p29"] into recent notebooks: maximum size reached (0)
+2018/05/15 09:35:55:496 E|*** main  -[ENLinkCollectionController loadObjectsFromPreferencesRepresentation:] | could not load ["LocalObject","x-coredata:\/\/6B042D32-6611-46E6-A847-601106F4A699\/ENNotebook\/p24"] into recent notebooks: maximum size reached (0)
+2018/05/15 09:35:55:496 E|*** main  -[ENLinkCollectionController loadObjectsFromPreferencesRepresentation:] | could not load ["LocalObject","x-coredata:\/\/6B042D32-6611-46E6-A847-601106F4A699\/ENTag\/p2"] into suggested tags: maximum size reached (0)
+2018/05/15 09:35:55:496 E|*** main  -[ENLinkCollectionController loadObjectsFromPreferencesRepresentation:] | could not load ["LocalObject","x-coredata:\/\/6B042D32-6611-46E6-A847-601106F4A699\/ENTag\/p3"] into suggested tags: maximum size reached (0)
+2018/05/15 09:35:55:500 I|*   main  -[ENSpotlightIndexer rebuildIfNecessary:didRebuild:] | Starts the rebuild check for Spotlight indexer
+2018/05/15 09:35:55:506 E|*** 14211 -[ENAccountContext(ServiceConfig) checkServiceEnabledFeatures:completion:]_block_invoke | Exception: <EDAMUserException: 0x7f97cc0611d0; errorCode = PERMISSION_DENIED; parameter = authenticationToken;>
+2018/05/15 09:35:55:523 I|*   main  -[ENSpotlightIndexer rebuildIfNecessary:didRebuild:] | Spotlight Indexer: Missing link to store file:/Users/khasanov/Library/CoreData/com.evernote.Evernote/6B042D32-6611-46E6-A847-601106F4A699/.support/store-file
+2018/05/15 09:35:55:525 E|*** main  -[ENSpotlightIndexer rebuildIfNecessary:didRebuild:] | Spotlight Indexer: could not link store file; error: Error Domain=NSCocoaErrorDomain Code=516 "The file “store-file” couldn’t be saved in the folder “.support” because a file with the same name already exists." UserInfo={NSFilePath=/Users/khasanov/Library/CoreData/com.evernote.Evernote/6B042D32-6611-46E6-A847-601106F4A699/.support/store-file, NSUnderlyingError=0x7f97cc14bac0 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+2018/05/15 09:35:55:601 I|*   main  -[ENCartAbandonmentController checkShouldShowCartAbandonmentMessage] | CA: checking...
+2018/05/15 09:35:55:607 I|*   main  -[ENTierSelectionEligibilityController initWithAccountController:skuHelper:idleTimer:sendPromotionCooldownInterval:workProvider:persistedState:] | Temporarily suppressing tier selection due to application start mechanism
+2018/05/15 09:35:55:625 I|*   main  -[ENTierSelectionEligibilityController startCheckEligibilityTimer] | Waiting for 7199.999379 seconds before checking TSD eligibility with the service
+2018/05/15 09:35:55:658 E|*** 14210 -[ENAccountContext(ServiceConfig) checkServiceEnabledFeatures:completion:]_block_invoke | Exception: <EDAMUserException: 0x7f97cc23b5d0; errorCode = PERMISSION_DENIED; parameter = authenticationToken;>
+2018/05/15 09:35:55:690 I|*   main  -[ENAccountController(SignIn) signInWithOpenIdToAssociate:] | Signing in...
+2018/05/15 09:35:55:853 I|*   main  -[ENAccountController(SignIn) signInWithOpenIdToAssociate:] | Sign-in complete.
+2018/05/15 09:35:56:280 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/15 09:35:56:320 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=0 usn=93 | <ENMacNoteMO 0x7f97cc315d10> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702 <ENCommonEditorWebView: 0x7f97cd2bfc40>
+2018/05/15 09:35:56:320 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p12 <ENCommonEditorWebView: 0x7f97cd2bfc40>
+2018/05/15 09:35:56:320 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=0 usn=93 <ENCommonEditorWebView: 0x7f97cd2bfc40> <ENMacNoteMO 0x7f97cc315d10> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702
+2018/05/15 09:35:56:636 I|*   main  -[ENIncentiveManager refreshIncentive]_block_invoke | Removed current incentive
+2018/05/15 09:35:56:642 I|*   main  -[ENCartAbandonmentController checkShouldShowCartAbandonmentMessage]_block_invoke | CA: not showing because no TSE happened recently between (-1209600.000000) and (-86400.000000)
+2018/05/15 09:35:56:679 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7f97cc315d10> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702
+2018/05/15 09:35:56:738 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/15 09:35:56:738 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7f97cc1e3930> MOID:0xb200002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p712> GUID:[local] Title:VPN Ports Account:(null) USN:0 Hash:<3d0a245d e80855c4 96df01cb 8d0d141d> Length:6992 <ENCommonEditorWebView: 0x7f97cd50df30>
+2018/05/15 09:35:56:739 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p712 <ENCommonEditorWebView: 0x7f97cd50df30>
+2018/05/15 09:35:56:739 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7f97cd50df30> <ENMacNoteMO 0x7f97cc1e3930> MOID:0xb200002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p712> GUID:[local] Title:VPN Ports Account:(null) USN:0 Hash:<3d0a245d e80855c4 96df01cb 8d0d141d> Length:6992
+2018/05/15 09:35:56:767 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7f97cc1e3930> MOID:0xb200002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p712> GUID:[local] Title:VPN Ports Account:(null) USN:0 Hash:<3d0a245d e80855c4 96df01cb 8d0d141d> Length:6992
+2018/05/15 09:35:56:799 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/15 09:35:56:799 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7f97cc1e2b30> MOID:0xae80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p698> GUID:[local] Title:KFH Phones Account:(null) USN:0 Hash:<969f5902 f8b49592 8f462027 5bceade5> Length:745 <ENCommonEditorWebView: 0x7f97cd616e00>
+2018/05/15 09:35:56:799 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p698 <ENCommonEditorWebView: 0x7f97cd616e00>
+2018/05/15 09:35:56:800 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7f97cd616e00> <ENMacNoteMO 0x7f97cc1e2b30> MOID:0xae80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p698> GUID:[local] Title:KFH Phones Account:(null) USN:0 Hash:<969f5902 f8b49592 8f462027 5bceade5> Length:745
+2018/05/15 09:35:56:872 I|*   main  -[ENCoreMessageService setupServiceWithSenderUser:messageStoreDirectory:syncEngine:authHelper:readWriteLocalStore:serviceReachable:contactIntegrationManagerEnabled:]_block_invoke | CoreMessage local model ready
+2018/05/15 09:35:56:881 I|*   main  -[ENContactIntegrationManager reloadContacts] | Extractor type=3 is disconnected, try to deactivate all contacts from it
+2018/05/15 09:35:56:882 I|*   14211 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/15 09:35:56:909 I|*   14211 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:35:56:910 I|*   14211 -[ENSyncEngine logNetworkStatus] | reachability currentReachabilityStatus=WiFi
+2018/05/15 09:35:56:910 I|*   14211 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:] | account IDs (
+    "<null>"
+) / <ENSyncEngine: 0x7f97c9f79460>
+2018/05/15 09:35:56:910 I|*   14211 -[ENCacheManager stop] | self=<ENCacheManager: 0x7f97c9d93380>
+2018/05/15 09:35:56:910 I|*   14211 -[ENSyncEngine _syncStarted] | Sync started.
+2018/05/15 09:35:56:910 I|*   14211 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:]_block_invoke | Contacting Evernote server...
+2018/05/15 09:35:56:963 I|*   14211 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f97cc201920> Evaluated script version: mac.180
+2018/05/15 09:35:56:984 I|*   14211 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f97cc201920> Evaluated script version: mac.180
+2018/05/15 09:35:56:996 I|*   14211 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing personal account...
+2018/05/15 09:35:57:063 I|*   14211 -[ENSyncEngine serverSyncState]_block_invoke | sessionCount=22
+2018/05/15 09:35:57:134 I|*   14211 -[ENSyncEngine isFullSyncRequiredWithServerWithServerSyncState:] |   current update count: 4444
+2018/05/15 09:35:57:234 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Loaded noteID 0xb200002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p712> but editor is now using (null) <ENCommonEditorWebView: 0x7f97cd50df30>
+2018/05/15 09:35:57:234 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7f97cd616e00> <ENMacNoteMO 0x7f97cc1e2b30> MOID:0xae80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p698> GUID:[local] Title:KFH Phones Account:(null) USN:0 Hash:<969f5902 f8b49592 8f462027 5bceade5> Length:745
+2018/05/15 09:35:57:234 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Loaded noteID 0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> but editor is now using (null) <ENCommonEditorWebView: 0x7f97cd2bfc40>
+2018/05/15 09:35:57:386 I|*   14211 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing shared notes
+2018/05/15 09:35:57:388 I|*   14211 -[ENSyncEngine _syncStoppedWithErrors:delegate:] | Sync complete. No errors.
+2018/05/15 09:35:57:388 I|*   14211 -[ENAccountContext syncEngineDidStop:] | 
+2018/05/15 09:35:57:388 I|*   14211 -[ENGoogleCredentialManager needsRefreshWithUpdatedDate:usingScopes:] | lastQueried >= userUpdated
+2018/05/15 09:35:57:873 I|*   14211 -[ENContactIntegrationManager _enqueueContactExtraction:]_block_invoke | Extractor type=1 will extract contacts
+2018/05/15 09:35:57:873 I|*   14211 -[ENEvernoteContactExtractor extractContacts] | Begin extracting Evernote contacts
+2018/05/15 09:35:57:873 I|*   14211 -[ENEvernoteContactExtractor extractContacts] | End fetching Evernote contacts
+2018/05/15 09:35:58:240 I|*   14211 -[ENContactIntegrationManager _enqueueContactExtraction:]_block_invoke | Extractor type=2 will extract contacts
+2018/05/15 09:35:58:240 I|*   14211 -[ENAddressBookMacContactExtractor extractContacts] | Begin extracting Address Book contacts
+2018/05/15 09:35:58:385 I|*   14211 -[ENAddressBookMacContactExtractor extractContacts] | End fetching Address Book contacts
+2018/05/15 09:35:59:389 I|*   main  -[ENCacheManager startWithBackground:] | self=<ENCacheManager: 0x7f97c9d93380>
+2018/05/15 09:35:59:393 I|*   14210 -[ENCacheManager checkFileSystemIntegrity] | File system appears to be in good shape. expected=760, actual=805
+2018/05/15 09:35:59:397 I|*   14210 -[ENCacheManager _recalculateStatistics]_block_invoke | totalSize=68185917 (65 MB), cachedSize=68185917 (65 MB), uncachedSize=0 (Zero KB)
+2018/05/15 09:35:59:399 I|*   14210 -[ENCacheManager findNotesToDownloadUsingBackgroundTransfers:] | Starting all operations
+2018/05/15 09:35:59:401 I|*   14210 -[ENCacheManager fetchNextBatchOfDownloadOperationsUsingBackgroundTransfers:]_block_invoke | Processing 0 notes
+2018/05/15 09:35:59:948 I|*   14210 -[ENCacheManager stop] | self=<ENCacheManager: 0x7f97c9d93380>
+2018/05/15 09:36:02:155 I|*   14211 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f97cc201920> Evaluated script version: mac.180
+2018/05/15 09:50:16:439 E|*** main  -[ENLinkCollectionController insertObject:atArrangedObjectIndex:] | Could not find insert point for link: <ENMacNotebookMO 0x7f97c9d6cfc0> MOID:0x80000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p2> GUID:9591f67d-32dd-4727-9a8e-187101952549 Name:REMOTE Notes Account:(null) USN:185, inserting at end
+2018/05/15 09:50:16:440 I|*   main  -[ENLinkCollectionController saveWithCompletion:] | Saving in local pref 'recentNotebooks' with 5 items, previously 8 items
+2018/05/15 09:50:16:470 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7f97cc1e2b30> MOID:0xae80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p698> GUID:[local] Title:KFH Phones Account:(null) USN:0 Hash:<969f5902 f8b49592 8f462027 5bceade5> Length:745
+2018/05/15 09:50:16:558 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/15 09:50:16:558 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=0 usn=4035 | <ENMacNoteMO 0x7f97cc1e2530> MOID:0xad00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p692> GUID:1936a7bc-ad3a-48f4-b4a2-602427beb7d6 Title:Tutorial: Continuous Delivery with Docker and Jenkins Account:(null) USN:4035 Hash:<ac269ddf 6960ca12 30c2cab3 37b2c20d> Length:45802 <ENCommonEditorWebView: 0x7f97cd646090>
+2018/05/15 09:50:16:558 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p692 <ENCommonEditorWebView: 0x7f97cd646090>
+2018/05/15 09:50:16:558 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=0 usn=4035 <ENCommonEditorWebView: 0x7f97cd646090> <ENMacNoteMO 0x7f97cc1e2530> MOID:0xad00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p692> GUID:1936a7bc-ad3a-48f4-b4a2-602427beb7d6 Title:Tutorial: Continuous Delivery with Docker and Jenkins Account:(null) USN:4035 Hash:<ac269ddf 6960ca12 30c2cab3 37b2c20d> Length:45802
+2018/05/15 09:50:16:723 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7f97cd646090> <ENMacNoteMO 0x7f97cc1e2530> MOID:0xad00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p692> GUID:1936a7bc-ad3a-48f4-b4a2-602427beb7d6 Title:Tutorial: Continuous Delivery with Docker and Jenkins Account:(null) USN:4035 Hash:<ac269ddf 6960ca12 30c2cab3 37b2c20d> Length:45802
+2018/05/15 09:50:31:219 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7f97cc1e2530> MOID:0xad00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p692> GUID:1936a7bc-ad3a-48f4-b4a2-602427beb7d6 Title:Tutorial: Continuous Delivery with Docker and Jenkins Account:(null) USN:4035 Hash:<ac269ddf 6960ca12 30c2cab3 37b2c20d> Length:45802
+2018/05/15 09:50:39:279 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cc213080> MOID:0xad00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p692> GUID:1936a7bc-ad3a-48f4-b4a2-602427beb7d6 Title:Tutorial: Continuous Delivery with Docker and Jenkins Account:(null) USN:4035 Hash:<ac269ddf 6960ca12 30c2cab3 37b2c20d> Length:45802 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:279 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cc5c1a70> MOID:0xc2c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p779> GUID:3b52bce2-ba78-4226-8bf9-07365d44f03e Title:The Good and the Bad of Node.js Web App Development Account:(null) USN:4329 Hash:<46dba70b 5e77611a 7a0ab88b d97f4331> Length:42290 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:279 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97c9c1b160> MOID:0xb300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p716> GUID:63f45af1-2f0d-4953-aa18-7fcf4ec5c274 Title:Stop Building Websites and Start Building Smart Sites Account:(null) USN:4132 Hash:<2f21e356 b8fd8bb7 1f7c1246 2976ad16> Length:72210 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:279 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cc448260> MOID:0xbe00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p760> GUID:36a0820e-b611-4103-a05a-f216332cbd8f Title:Sonim XP7 Hard reset, Factory Reset and Password Recovery Account:(null) USN:4219 Hash:<7bd42c0e 8cb5beef 70ef6fb9 6d05cfc3> Length:189560 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:279 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cc267c00> MOID:0xc6c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p795> GUID:01c99c93-cc23-4071-b255-4e618a403dd3 Title:Simple GSON Example | Java Creed Account:(null) USN:4363 Hash:<b756df9b ee9f90c3 43cc301b 0f56eb43> Length:117417 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:279 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cc46d280> MOID:0xbc80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p754> GUID:b7d07ea9-9a5a-4ca2-88c3-633ae6daab16 Title:Setup IPsec Road-Warrior — OPNsense Wiki & Documentation documentation Account:(null) USN:4189 Hash:<bbb463d2 86291975 eea7d25c 63d2131d> Length:119048 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:279 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cd47ad90> MOID:0xc080002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p770> GUID:babba70f-a6eb-4593-a55e-f5fb4de1a6d1 Title:Run an SSH server on your Android with Termux Account:(null) USN:4321 Hash:<30a46013 59ffad7e a8d6628f 4177b9eb> Length:11850 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:279 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cc06d320> MOID:0xc480002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p786> GUID:35a25259-17cf-4dfc-b3a9-f6af6a959f40 Title:Read-Write JSON file using PHP | KodeCrash Account:(null) USN:4359 Hash:<61dff6a3 c92072be 8255a4dc a69492ae> Length:24643 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:279 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cc698740> MOID:0xc5c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p791> GUID:1be31f1b-502b-4c16-8369-385a77d86f02 Title:Pretty Diff - Guide, The DOM Explained, Quick and Simple Account:(null) USN:4362 Hash:<7c22583d 1c5ee89c 4abdc458 67a6006f> Length:102292 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:279 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cc6a7fc0> MOID:0xc300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p780> GUID:ef0f6b7d-322d-40ac-82a7-3ba6db2103a8 Title:PF and Networking tutorial AsiaBSDCon 2018 Account:(null) USN:4357 Hash:<a26f642f e61ea478 b2e76083 0eb9f11c> Length:3648 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:279 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cc399a70> MOID:0xbc40002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p753> GUID:7a20a877-c40d-4915-a676-aeace0c889a2 Title:mcsaky/opengts-devel Dockerfile - Docker Store Account:(null) USN:4157 Hash:<86a69474 d36b7afe 530a0419 53a319ce> Length:11342 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:337 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/15 09:50:39:337 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=0 usn=4035 | <ENMacNoteMO 0x7f97cc1e2530> MOID:0xad00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p692> GUID:1936a7bc-ad3a-48f4-b4a2-602427beb7d6 Title:Tutorial: Continuous Delivery with Docker and Jenkins Account:(null) USN:4035 Hash:<ac269ddf 6960ca12 30c2cab3 37b2c20d> Length:45802 <ENCommonEditorWebView: 0x7f97c9d14fc0>
+2018/05/15 09:50:39:337 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p692 <ENCommonEditorWebView: 0x7f97c9d14fc0>
+2018/05/15 09:50:39:337 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=0 usn=4035 <ENCommonEditorWebView: 0x7f97c9d14fc0> <ENMacNoteMO 0x7f97cc1e2530> MOID:0xad00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p692> GUID:1936a7bc-ad3a-48f4-b4a2-602427beb7d6 Title:Tutorial: Continuous Delivery with Docker and Jenkins Account:(null) USN:4035 Hash:<ac269ddf 6960ca12 30c2cab3 37b2c20d> Length:45802
+2018/05/15 09:50:39:409 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cd24a7f0> MOID:0xc440002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p785> GUID:3667398a-df39-4012-bc2f-a6b852689561 Title:KFH_Forms Account:(null) USN:4358 Hash:<88a6ed13 319616f4 9d2170f4 9daa5b20> Length:284 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:410 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cc6a1a70> MOID:0xa900002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p676> GUID:089b8f3e-cd8a-486b-9954-47be197324b6 Title:Job Description Account:(null) USN:4034 Hash:<08da9e92 c5580fcd 1130401f b183f11e> Length:1212 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:414 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cc579df0> MOID:0xc040002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p769> GUID:e46c88d9-dff3-4a7e-abb2-a9934fcfd318 Title:How to Use the Linux Command Line on Android With Termux Account:(null) USN:4247 Hash:<f1ba7c1e 11452744 d1ee0e59 6eb88c4e> Length:293457 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:414 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cd203c20> MOID:0xbd80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p758> GUID:de8b9c30-4bdc-48a5-b3d8-511db0e97fb5 Title:How to update the software on my Sonim XP5520 BOLT using the Sonim Software Update Tool Account:(null) USN:4218 Hash:<4cc558c4 c720acb1 b963f645 7894e293> Length:52382 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:415 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cd6b5be0> MOID:0xc700002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p796> GUID:3c9436fe-1814-4dba-a6b0-fd3449917d22 Title:GSON Deserialiser Example | Java Creed Account:(null) USN:4438 Hash:<1806cf83 8865fc7e dac5f938 b736f24c> Length:126371 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:415 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cd335500> MOID:0xb040002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p705> GUID:f4fe9436-74c9-4a9e-b057-7a80e9d068c1 Title:Creating a gateway router with natd and stateful firewall in FreeBSD - Tutorials Account:(null) USN:4131 Hash:<aa78ecfb 5229c19b 4df3b56e 66b8471c> Length:14561 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:416 I|*   14256 -[ENMacEvernoteAccountDecorator(NoteDeletion) trashNotes:fromSource:]_block_invoke | User requested to move note to trash <ENMacNoteMO 0x7f97cc17e650> MOID:0xc180002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p774> GUID:a8675bb0-c945-45f8-896e-269bca643d69 Title:A tmux Primer Account:(null) USN:4415 Hash:<7f1d8778 f545ab47 e768b06d c9ea06fc> Length:77185 from source shortcut/menu/button item in note nab
+2018/05/15 09:50:39:416 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cc213080> MOID:0xad00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p692> GUID:1936a7bc-ad3a-48f4-b4a2-602427beb7d6 Title:Tutorial: Continuous Delivery with Docker and Jenkins Account:(null) USN:4035 Hash:<ac269ddf 6960ca12 30c2cab3 37b2c20d> Length:45802
+2018/05/15 09:50:39:417 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cc5c1a70> MOID:0xc2c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p779> GUID:3b52bce2-ba78-4226-8bf9-07365d44f03e Title:The Good and the Bad of Node.js Web App Development Account:(null) USN:4329 Hash:<46dba70b 5e77611a 7a0ab88b d97f4331> Length:42290
+2018/05/15 09:50:39:418 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97c9c1b160> MOID:0xb300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p716> GUID:63f45af1-2f0d-4953-aa18-7fcf4ec5c274 Title:Stop Building Websites and Start Building Smart Sites Account:(null) USN:4132 Hash:<2f21e356 b8fd8bb7 1f7c1246 2976ad16> Length:72210
+2018/05/15 09:50:39:418 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cc448260> MOID:0xbe00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p760> GUID:36a0820e-b611-4103-a05a-f216332cbd8f Title:Sonim XP7 Hard reset, Factory Reset and Password Recovery Account:(null) USN:4219 Hash:<7bd42c0e 8cb5beef 70ef6fb9 6d05cfc3> Length:189560
+2018/05/15 09:50:39:418 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cc267c00> MOID:0xc6c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p795> GUID:01c99c93-cc23-4071-b255-4e618a403dd3 Title:Simple GSON Example | Java Creed Account:(null) USN:4363 Hash:<b756df9b ee9f90c3 43cc301b 0f56eb43> Length:117417
+2018/05/15 09:50:39:418 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cc46d280> MOID:0xbc80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p754> GUID:b7d07ea9-9a5a-4ca2-88c3-633ae6daab16 Title:Setup IPsec Road-Warrior — OPNsense Wiki & Documentation documentation Account:(null) USN:4189 Hash:<bbb463d2 86291975 eea7d25c 63d2131d> Length:119048
+2018/05/15 09:50:39:418 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cd47ad90> MOID:0xc080002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p770> GUID:babba70f-a6eb-4593-a55e-f5fb4de1a6d1 Title:Run an SSH server on your Android with Termux Account:(null) USN:4321 Hash:<30a46013 59ffad7e a8d6628f 4177b9eb> Length:11850
+2018/05/15 09:50:39:418 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cc06d320> MOID:0xc480002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p786> GUID:35a25259-17cf-4dfc-b3a9-f6af6a959f40 Title:Read-Write JSON file using PHP | KodeCrash Account:(null) USN:4359 Hash:<61dff6a3 c92072be 8255a4dc a69492ae> Length:24643
+2018/05/15 09:50:39:418 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cc698740> MOID:0xc5c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p791> GUID:1be31f1b-502b-4c16-8369-385a77d86f02 Title:Pretty Diff - Guide, The DOM Explained, Quick and Simple Account:(null) USN:4362 Hash:<7c22583d 1c5ee89c 4abdc458 67a6006f> Length:102292
+2018/05/15 09:50:39:418 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cc6a7fc0> MOID:0xc300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p780> GUID:ef0f6b7d-322d-40ac-82a7-3ba6db2103a8 Title:PF and Networking tutorial AsiaBSDCon 2018 Account:(null) USN:4357 Hash:<a26f642f e61ea478 b2e76083 0eb9f11c> Length:3648
+2018/05/15 09:50:39:418 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cc399a70> MOID:0xbc40002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p753> GUID:7a20a877-c40d-4915-a676-aeace0c889a2 Title:mcsaky/opengts-devel Dockerfile - Docker Store Account:(null) USN:4157 Hash:<86a69474 d36b7afe 530a0419 53a319ce> Length:11342
+2018/05/15 09:50:39:418 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cd24a7f0> MOID:0xc440002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p785> GUID:3667398a-df39-4012-bc2f-a6b852689561 Title:KFH_Forms Account:(null) USN:4358 Hash:<88a6ed13 319616f4 9d2170f4 9daa5b20> Length:284
+2018/05/15 09:50:39:418 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cc6a1a70> MOID:0xa900002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p676> GUID:089b8f3e-cd8a-486b-9954-47be197324b6 Title:Job Description Account:(null) USN:4034 Hash:<08da9e92 c5580fcd 1130401f b183f11e> Length:1212
+2018/05/15 09:50:39:418 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cc579df0> MOID:0xc040002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p769> GUID:e46c88d9-dff3-4a7e-abb2-a9934fcfd318 Title:How to Use the Linux Command Line on Android With Termux Account:(null) USN:4247 Hash:<f1ba7c1e 11452744 d1ee0e59 6eb88c4e> Length:293457
+2018/05/15 09:50:39:419 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cd203c20> MOID:0xbd80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p758> GUID:de8b9c30-4bdc-48a5-b3d8-511db0e97fb5 Title:How to update the software on my Sonim XP5520 BOLT using the Sonim Software Update Tool Account:(null) USN:4218 Hash:<4cc558c4 c720acb1 b963f645 7894e293> Length:52382
+2018/05/15 09:50:39:419 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cd6b5be0> MOID:0xc700002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p796> GUID:3c9436fe-1814-4dba-a6b0-fd3449917d22 Title:GSON Deserialiser Example | Java Creed Account:(null) USN:4438 Hash:<1806cf83 8865fc7e dac5f938 b736f24c> Length:126371
+2018/05/15 09:50:39:420 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cd335500> MOID:0xb040002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p705> GUID:f4fe9436-74c9-4a9e-b057-7a80e9d068c1 Title:Creating a gateway router with natd and stateful firewall in FreeBSD - Tutorials Account:(null) USN:4131 Hash:<aa78ecfb 5229c19b 4df3b56e 66b8471c> Length:14561
+2018/05/15 09:50:39:420 I|*   14256 -[ENCoreDataLocalStore trashNotes:] | Moving note to trash <ENMacNoteMO 0x7f97cc17e650> MOID:0xc180002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p774> GUID:a8675bb0-c945-45f8-896e-269bca643d69 Title:A tmux Primer Account:(null) USN:4415 Hash:<7f1d8778 f545ab47 e768b06d c9ea06fc> Length:77185
+2018/05/15 09:50:39:450 I|*   main  -[ENLinkCollectionController saveWithCompletion:] | Saving in local pref 'recentNotes' with 5 items, previously 7 items
+2018/05/15 09:50:39:543 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7f97c9d14fc0> <ENMacNoteMO 0x7f97cc1e2530> MOID:0xad00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p692> GUID:1936a7bc-ad3a-48f4-b4a2-602427beb7d6 Title:Tutorial: Continuous Delivery with Docker and Jenkins Account:(null) USN:4035 Hash:<ac269ddf 6960ca12 30c2cab3 37b2c20d> Length:45802
+2018/05/15 09:50:39:830 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7f97cc1e2530> MOID:0xad00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p692> GUID:1936a7bc-ad3a-48f4-b4a2-602427beb7d6 Title:Tutorial: Continuous Delivery with Docker and Jenkins Account:(null) USN:4035 Hash:<ac269ddf 6960ca12 30c2cab3 37b2c20d> Length:45802
+2018/05/15 09:50:41:683 I|*   14257 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:41:684 I|*   14257 -[ENSyncEngine logNetworkStatus] | reachability currentReachabilityStatus=WiFi
+2018/05/15 09:50:41:684 I|*   14257 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:] | account IDs (
+    "<null>"
+) / <ENSyncEngine: 0x7f97c9f79460>
+2018/05/15 09:50:41:684 I|*   14258 -[ENCacheManager stop] | self=<ENCacheManager: 0x7f97c9d93380>
+2018/05/15 09:50:41:684 I|*   14258 -[ENSyncEngine _syncStarted] | Sync started.
+2018/05/15 09:50:41:684 I|*   14258 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:]_block_invoke | Contacting Evernote server...
+2018/05/15 09:50:41:685 I|*   14258 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing personal account...
+2018/05/15 09:50:41:685 I|*   14257 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:41:686 I|*   14256 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:41:687 I|*   14256 -[ENEvernoteAccount(Sync) addSyncOperation:] | <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 Cancelling sync due to high priority operation: <ENSingleNoteSyncOp: 0x7f97cd6b8e20> id: x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p786 guid: (null) linked guid: (null) sync: up
+2018/05/15 09:50:41:687 I|*   14256 -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:50:41:689 I|*   14257 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:41:689 I|*   14257 -[ENEvernoteAccount(Sync) addSyncOperation:] | <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 Cancelling sync due to high priority operation: <ENSingleNoteSyncOp: 0x7f97cc0f4590> id: x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p758 guid: (null) linked guid: (null) sync: up
+2018/05/15 09:50:41:689 I|*   14257 -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:50:41:692 I|*   14258 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:41:692 I|*   14258 -[ENEvernoteAccount(Sync) addSyncOperation:] | <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 Cancelling sync due to high priority operation: <ENSingleNoteSyncOp: 0x7f97cd29c4e0> id: x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p705 guid: (null) linked guid: (null) sync: up
+2018/05/15 09:50:41:692 I|*   14258 -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:50:41:701 I|*   14256 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:41:701 I|*   14256 -[ENEvernoteAccount(Sync) addSyncOperation:] | <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 Cancelling sync due to high priority operation: <ENSingleNoteSyncOp: 0x7f97cd431f90> id: x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p791 guid: (null) linked guid: (null) sync: up
+2018/05/15 09:50:41:701 I|*   14256 -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:50:41:710 I|*   14257 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:41:710 I|*   14257 -[ENEvernoteAccount(Sync) addSyncOperation:] | <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 Cancelling sync due to high priority operation: <ENSingleNoteSyncOp: 0x7f97cd6b1cf0> id: x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p753 guid: (null) linked guid: (null) sync: up
+2018/05/15 09:50:41:710 I|*   14257 -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:50:41:713 I|*   14258 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:41:713 I|*   14258 -[ENEvernoteAccount(Sync) addSyncOperation:] | <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 Cancelling sync due to high priority operation: <ENSingleNoteSyncOp: 0x7f97cc16ff50> id: x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p676 guid: (null) linked guid: (null) sync: up
+2018/05/15 09:50:41:713 I|*   14258 -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:50:41:719 I|*   14256 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:41:719 I|*   14256 -[ENEvernoteAccount(Sync) addSyncOperation:] | <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 Cancelling sync due to high priority operation: <ENSingleNoteSyncOp: 0x7f97cc19a330> id: x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p770 guid: (null) linked guid: (null) sync: up
+2018/05/15 09:50:41:719 I|*   14256 -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:50:41:931 I|*   14258 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: KFH_Forms 3667398a-df39-4012-bc2f-a6b852689561 4358
+2018/05/15 09:50:42:295 I|*   14258 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: PF and Networking tutorial AsiaBSDCon 2018 ef0f6b7d-322d-40ac-82a7-3ba6db2103a8 4357
+2018/05/15 09:50:42:472 I|*   14258 -[ENSyncEngine serverSyncState]_block_invoke | sessionCount=1
+2018/05/15 09:50:42:543 I|*   14258 -[ENSyncEngine refreshUserInfo] | Updating user info...
+2018/05/15 09:50:42:904 I|*   main  -[ENAccountLimits rebuildFeatureMapWithUser:] | Updating features based on service level: 1
+2018/05/15 09:50:42:904 I|*   main  -[ENAccountLimits rebuildSizeMapWithUser:] | Updating size limits based on service level: 1
+2018/05/15 09:50:42:905 I|*   main  -[ENUser updateWithEDAMUserObject:edamSubscriptionInfo:serviceLevelLimits:isCached:] | User Service Level is Evernote Basic
+2018/05/15 09:50:42:905 I|*   14258 -[ENSyncEngine updatePremiumCommerceWithUserInfo:] | Can show in-app purchasing: 1, eligible services: {(
+    3,
+    2
+)}
+2018/05/15 09:50:42:905 I|*   14258 -[ENSyncEngine isFullSyncRequiredWithServerWithServerSyncState:] |   current update count: 4444
+2018/05/15 09:50:42:906 I|*   14258 -[ENSyncEngine _syncStoppedWithErrors:delegate:] | Sync complete. No errors.
+2018/05/15 09:50:42:906 I|*   14258 -[ENAccountContext syncEngineDidStop:] | 
+2018/05/15 09:50:42:906 I|*   14258 -[ENSyncEngine(ChunkDownloader) syncChunkDownloaderWithFullSyncAtUSN:incrementalSyncAtUSN:chunkSize:] | incrementalSyncAtUSN=4444, fullSyncAtUSN=4444
+2018/05/15 09:50:42:906 I|*   14256 -[ENGoogleCredentialManager needsRefreshWithUpdatedDate:usingScopes:] | lastQueried >= userUpdated
+2018/05/15 09:50:45:104 I|*   main  -[ENCacheManager startWithBackground:] | self=<ENCacheManager: 0x7f97c9d93380>
+2018/05/15 09:50:45:106 I|*   14258 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:45:107 I|*   14258 -[ENSyncEngine logNetworkStatus] | reachability currentReachabilityStatus=WiFi
+2018/05/15 09:50:45:107 I|*   14258 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:] | account IDs (
+    "<null>"
+) / <ENSyncEngine: 0x7f97c9f79460>
+2018/05/15 09:50:45:107 I|*   14257 -[ENCacheManager stop] | self=<ENCacheManager: 0x7f97c9d93380>
+2018/05/15 09:50:45:110 I|*   14256 -[ENCacheManager checkFileSystemIntegrity] | File system appears to be in good shape. expected=760, actual=805
+2018/05/15 09:50:45:114 I|*   14256 -[ENCacheManager _recalculateStatistics]_block_invoke | totalSize=68185917 (65 MB), cachedSize=68185917 (65 MB), uncachedSize=0 (Zero KB)
+2018/05/15 09:50:45:116 I|*   14256 -[ENCacheManager findNotesToDownloadUsingBackgroundTransfers:] | Starting all operations
+2018/05/15 09:50:45:118 I|*   14256 -[ENCacheManager fetchNextBatchOfDownloadOperationsUsingBackgroundTransfers:]_block_invoke | Processing 0 notes
+2018/05/15 09:50:45:119 I|*   14257 -[ENSyncEngine _syncStarted] | Sync started.
+2018/05/15 09:50:45:119 I|*   14257 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:]_block_invoke | Contacting Evernote server...
+2018/05/15 09:50:45:119 I|*   14257 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing personal account...
+2018/05/15 09:50:45:256 I|*   14257 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL:"http://www.kodecrash.com/wp-content/themes/twentyeleven/images/comment-arrow.png" in attributes:{
+    src = "\"http://www.kodecrash.com/wp-content/themes/twentyeleven/images/comment-arrow.png\"";
+}
+2018/05/15 09:50:45:257 I|*   14257 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: Read-Write JSON file using PHP | KodeCrash 35a25259-17cf-4dfc-b3a9-f6af6a959f40 4359
+2018/05/15 09:50:45:653 I|*   14257 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL:# in attributes:{
+    href = "#";
+    rel = nofollow;
+    style = "box-sizing:border-box;background:transparent none repeat scroll 0% 0%;color:rgb(0, 102, 164);text-decoration:none;position:relative;display:block;width:35px;height:38px;line-height:38px;padding-right:1px;text-align:center;font-size:1.3em;";
+    title = "Print this article";
+}
+2018/05/15 09:50:45:653 I|*   14257 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL:# in attributes:{
+    href = "#";
+    rel = nofollow;
+    style = "box-sizing:border-box;background:transparent none repeat scroll 0% 0%;color:rgb(0, 102, 164);text-decoration:none;position:relative;display:block;width:35px;height:38px;padding-right:1px;text-align:center;font-size:1.3em;padding-top:0px;line-height:40px;";
+    title = "Show steps";
+}
+2018/05/15 09:50:45:654 I|*   14257 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL:# in attributes:{
+    href = "#";
+    rel = nofollow;
+    style = "box-sizing:border-box;background:transparent none repeat scroll 0% 0%;color:rgb(0, 102, 164);text-decoration:none;position:relative;display:block;width:35px;height:38px;line-height:38px;padding-right:1px;text-align:center;font-size:1.3em;";
+    title = "Print this article";
+}
+2018/05/15 09:50:45:654 I|*   14257 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL:# in attributes:{
+    href = "#";
+    rel = nofollow;
+    style = "box-sizing:border-box;background:transparent none repeat scroll 0% 0%;color:rgb(0, 102, 164);text-decoration:none;position:relative;display:block;width:35px;height:38px;padding-right:1px;text-align:center;font-size:1.3em;padding-top:0px;line-height:40px;";
+    title = "Show steps";
+}
+2018/05/15 09:50:45:656 I|*   14258 -[ENCacheManager stop] | self=<ENCacheManager: 0x7f97c9d93380>
+2018/05/15 09:50:45:656 I|*   14257 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL:# in attributes:{
+    href = "#";
+    style = "box-sizing:border-box;background:transparent none repeat scroll 0% 0%;color:rgb(0, 84, 154);text-decoration:none;";
+}
+2018/05/15 09:50:45:656 I|*   14257 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL:# in attributes:{
+    href = "#";
+    style = "box-sizing:border-box;background:transparent none repeat scroll 0% 0%;color:rgb(0, 84, 154);text-decoration:none;";
+}
+2018/05/15 09:50:45:659 I|*   14257 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL:# in attributes:{
+    href = "#";
+    style = "box-sizing:border-box;background:transparent none repeat scroll 0% 0%;text-decoration:none;color:rgb(255, 255, 255);display:block;width:48px;height:48px;border-radius:50%;background-color:rgb(0, 84, 154);margin:0px 5px 5px 0px;position:relative;cursor:default;";
+}
+2018/05/15 09:50:45:661 I|*   14257 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: How to update the software on my Sonim XP5520 BOLT using the Sonim Software Update Tool de8b9c30-4bdc-48a5-b3d8-511db0e97fb5 4218
+2018/05/15 09:50:45:959 I|*   14257 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: Creating a gateway router with natd and stateful firewall in FreeBSD - Tutorials f4fe9436-74c9-4a9e-b057-7a80e9d068c1 4131
+2018/05/15 09:50:46:242 I|*   14257 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: Pretty Diff - Guide, The DOM Explained, Quick and Simple 1be31f1b-502b-4c16-8369-385a77d86f02 4362
+2018/05/15 09:50:46:646 I|*   14257 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: mcsaky/opengts-devel Dockerfile - Docker Store 7a20a877-c40d-4915-a676-aeace0c889a2 4157
+2018/05/15 09:50:46:961 I|*   14257 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: Job Description 089b8f3e-cd8a-486b-9954-47be197324b6 4034
+2018/05/15 09:50:47:179 I|*   14257 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: Run an SSH server on your Android with Termux babba70f-a6eb-4593-a55e-f5fb4de1a6d1 4321
+2018/05/15 09:50:47:339 I|*   14257 -[ENSyncEngine serverSyncState]_block_invoke | sessionCount=0
+2018/05/15 09:50:47:409 I|*   14257 -[ENSyncEngine isFullSyncRequiredWithServerWithServerSyncState:] |   current update count: 4444
+2018/05/15 09:50:47:410 I|*   14258 -[ENSyncEngine(ChunkDownloader) syncChunkDownloaderWithFullSyncAtUSN:incrementalSyncAtUSN:chunkSize:] | incrementalSyncAtUSN=4444, fullSyncAtUSN=4444
+2018/05/15 09:50:47:410 I|*   14258 -[ENSyncEngine(ChunkDownloader) getSyncChunkAfterUSN:fullSyncOnly:chunkSize:isBackground:] |  current USN 4444 full sync 0
+2018/05/15 09:50:47:410 I|*   14258 -[ENSyncEngine(ChunkDownloader) serverSyncChunkWithFilter:usn:chunkSize:sessionIdentifier:] | <EDAMSyncChunkFilter: 0x7f97cc0ebd40; includeNotes = 1; includeNoteResources = 1; includeNoteAttributes = 1; includeNotebooks = 1; includeTags = 1; includeSearches = 1; includeResources = 1; includeLinkedNotebooks = 1; includeExpunged = 1; includeNoteApplicationDataFullMap = 1; includeResourceApplicationDataFullMap = 1; includeNoteResourceApplicationDataFullMap = 1; includePreferences = 1; includeSharedNotes = 1; includeNotesSharedWithMe = (null); includeLinkedAccounts = (null); omitSharedNotebooks = (null); requireNoteContentClass = (null); notebookGuids = (null); inAccountUserId = (null); includeWorkspaces = 1; includeWorkspacesContent = 1; includeWorkspacesWithoutMembership = (null); workspaceGuids = (null);>
+2018/05/15 09:50:47:486 I|*   14258 -[ENSyncEngine(ChunkDownloader) syncChunkDownloaderWithFullSyncAtUSN:incrementalSyncAtUSN:chunkSize:] | Downloaded sync chunk (currentUSN=4444, chunkHighUSN=4454, updateCount=4454, chunkSize=10)
+2018/05/15 09:50:47:486 I|*   14257 -[ENSyncEngine(Notes) syncNotes:retryOnError:ignoreClientUUIDs:] | Syncing 9 notes...
+2018/05/15 09:50:47:487 I|*   14257 -[ENSyncEngine(Resources) syncResources:] | Syncing 1 resources...
+2018/05/15 09:50:47:488 I|*   14257 -[ENSyncEngine postProcessChunk:withIncrementalSyncUSN:] | processed sync chunk with high USN 4454 account at USN 4454 and incremental USN 4444
+2018/05/15 09:50:47:489 I|*   14257 -[ENSyncEngine(Tags) processLocalTagChanges] | Processing local tag changes...
+2018/05/15 09:50:47:490 I|*   14257 -[ENSyncEngine(Searches) processLocalSearchChanges] | Processing local search changes...
+2018/05/15 09:50:47:490 I|*   14257 -[ENSyncEngine(LinkedNotebooks) processLocalLinkedNotebookChanges] | Processing local linked notebook changes...
+2018/05/15 09:50:47:490 I|*   14257 -[ENSyncEngine(Workspaces) processLocalWorkspaceChanges] | Processing local workspace changes...
+2018/05/15 09:50:47:491 I|*   14257 -[ENSyncEngine(Notebooks) processLocalNotebookChanges] | Processing local notebook changes...
+2018/05/15 09:50:47:491 I|*   14257 -[ENSyncEngine(SharedNotebooks) processLocalSharedNotebookChanges] | Processing local shared notebook changes...
+2018/05/15 09:50:47:492 I|*   14257 -[ENSyncEngine(Notes) processLocalNoteChanges] | Processing local note changes...
+2018/05/15 09:50:47:493 I|*   14257 -[ENSyncEngine(Notes) processLocalNoteChanges] | 9 notes to update/create
+2018/05/15 09:50:47:577 I|*   14257 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: Tutorial: Continuous Delivery with Docker and Jenkins 1936a7bc-ad3a-48f4-b4a2-602427beb7d6 4035
+2018/05/15 09:50:48:949 I|*   main  -[ENAppController applicationShouldTerminate:] | Terminate requested.
+2018/05/15 09:50:48:949 I|*   main  -[ENAccountController(SignOut) shutDownWithType:completion:] | +++++++ Starting shut down due to app termination for <ENAccountController: 0x7f97cc21e020> / 100389449-personal-www.evernote.com...
+2018/05/15 09:50:48:977 I|*   main  -[ENAccountController(SignOut) finishShutDown:completion:] | Finishing shut down due to app termination for <ENAccountController: 0x7f97cc21e020> / 100389449-personal-www.evernote.com...
+2018/05/15 09:50:48:978 I|*   main  -[ENEvernoteAccount closeAccountAndLogout:completion:] | Closing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1
+2018/05/15 09:50:48:978 I|*   14258 -[ENCoreMessageService(CoreData) cdBlockAndSaveLocalStore]_block_invoke | Saving core message store
+2018/05/15 09:50:48:978 I|*   14258 -[ENEvernoteAccount _closeAccountAndLogout:synchronously:completion:] | Flushing local note store queue <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1
+2018/05/15 09:50:48:985 I|*   main  -[ENAppController applicationShouldTerminate:] | Waiting for 1 closes to complete before termination.
+2018/05/15 09:50:48:985 I|*   main  -[ENAppController applicationShouldTerminate:] | Showing quit modal due to sync in account <ENAccountController: 0x7f97cc21e020> / 100389449-personal-www.evernote.com
+2018/05/15 09:50:49:067 I|*   14258 -[ENEvernoteAccount _closeAccountAndLogout:synchronously:completion:]_block_invoke | Need to sync local changes <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1
+2018/05/15 09:50:49:068 I|*   14258 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:49:152 I|*   14257 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL:# in attributes:{
+    href = "#";
+    style = "box-sizing:border-box;background-color:transparent;transition:color 350ms ease 0s, outline-color 350ms ease 0s;outline-color:transparent;color:rgb(255, 255, 255);font-size:1rem;font-weight:400;text-transform:none;font-family:Apercu, sans-serif;display:inline-block;padding:26px 15px;height:88px;outline:0px none currentcolor;text-decoration:none;letter-spacing:0px;";
+}
+2018/05/15 09:50:49:153 I|*   14257 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL:# in attributes:{
+    href = "#";
+    style = "box-sizing:border-box;background-color:transparent;transition:color 350ms ease 0s, outline-color 350ms ease 0s;outline-color:transparent;color:rgb(255, 255, 255);font-size:1rem;font-weight:400;text-transform:none;font-family:Apercu, sans-serif;display:inline-block;padding:26px 15px;height:88px;outline:0px none currentcolor;text-decoration:none;letter-spacing:0px;";
+}
+2018/05/15 09:50:49:154 I|*   14257 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL:# in attributes:{
+    href = "#";
+    style = "box-sizing:border-box;background-color:transparent;transition:color 350ms ease 0s, outline-color 350ms ease 0s;outline-color:transparent;color:rgb(255, 255, 255);font-size:1rem;font-weight:400;text-transform:none;font-family:Apercu, sans-serif;display:inline-block;padding:26px 15px;height:88px;outline:0px none currentcolor;text-decoration:none;letter-spacing:0px;";
+}
+2018/05/15 09:50:49:161 I|*   14257 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: Stop Building Websites and Start Building Smart Sites 63f45af1-2f0d-4953-aa18-7fcf4ec5c274 4132
+2018/05/15 09:50:50:200 I|*   14257 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: Setup IPsec Road-Warrior — OPNsense Wiki & Documentation documentation b7d07ea9-9a5a-4ca2-88c3-633ae6daab16 4189
+2018/05/15 09:50:52:306 I|*   main  -[ENAppController showQuitNowAlert:] | User chose Quit Now during termination.  Attempting to cancel any outstanding syncs.
+2018/05/15 09:50:52:306 I|*   main  -[ENAppController cancelAllAccountSyncing:] | Stopping the sync of account <ENAccountController: 0x7f97cc21e020> / 100389449-personal-www.evernote.com
+2018/05/15 09:50:52:306 I|*   main  -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:50:53:854 I|*   14257 -[ENSyncEngine _syncStoppedWithErrors:delegate:] | Sync complete. No errors.
+2018/05/15 09:50:53:855 I|*   14257 -[ENAccountContext syncEngineDidStop:] | 
+2018/05/15 09:50:53:855 I|*   14257 -[ENGoogleCredentialManager needsRefreshWithUpdatedDate:usingScopes:] | lastQueried >= userUpdated
+2018/05/15 09:50:56:030 I|*   main  -[ENCacheManager startWithBackground:] | self=<ENCacheManager: 0x7f97c9d93380>
+2018/05/15 09:50:56:046 I|*   14258 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:56:046 I|*   14258 -[ENSyncEngine logNetworkStatus] | reachability currentReachabilityStatus=WiFi
+2018/05/15 09:50:56:046 I|*   14258 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:] | account IDs (
+    "<null>"
+) / <ENSyncEngine: 0x7f97c9f79460>
+2018/05/15 09:50:56:047 I|*   14257 -[ENCacheManager stop] | self=<ENCacheManager: 0x7f97c9d93380>
+2018/05/15 09:50:56:051 I|*   14257 -[ENCacheManager _recalculateStatistics]_block_invoke | totalSize=68185917 (65 MB), cachedSize=68185917 (65 MB), uncachedSize=0 (Zero KB)
+2018/05/15 09:50:56:053 I|*   14257 -[ENCacheManager findNotesToDownloadUsingBackgroundTransfers:] | Starting all operations
+2018/05/15 09:50:56:056 I|*   14257 -[ENCacheManager fetchNextBatchOfDownloadOperationsUsingBackgroundTransfers:]_block_invoke | Processing 0 notes
+2018/05/15 09:50:56:056 I|*   14257 -[ENSyncEngine _syncStarted] | Sync started.
+2018/05/15 09:50:56:056 I|*   14257 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:]_block_invoke | Contacting Evernote server...
+2018/05/15 09:50:56:056 I|*   14257 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing personal account...
+2018/05/15 09:50:56:119 I|*   14257 -[ENSyncEngine serverSyncState]_block_invoke | sessionCount=0
+2018/05/15 09:50:56:189 I|*   14257 -[ENSyncEngine isFullSyncRequiredWithServerWithServerSyncState:] |   current update count: 4454
+2018/05/15 09:50:56:190 I|*   14257 -[ENSyncEngine(ChunkDownloader) syncChunkDownloaderWithFullSyncAtUSN:incrementalSyncAtUSN:chunkSize:] | incrementalSyncAtUSN=4454, fullSyncAtUSN=4454
+2018/05/15 09:50:56:190 I|*   14257 -[ENSyncEngine(ChunkDownloader) getSyncChunkAfterUSN:fullSyncOnly:chunkSize:isBackground:] |  current USN 4454 full sync 0
+2018/05/15 09:50:56:190 I|*   14257 -[ENSyncEngine(ChunkDownloader) serverSyncChunkWithFilter:usn:chunkSize:sessionIdentifier:] | <EDAMSyncChunkFilter: 0x7f97c9d14dc0; includeNotes = 1; includeNoteResources = 1; includeNoteAttributes = 1; includeNotebooks = 1; includeTags = 1; includeSearches = 1; includeResources = 1; includeLinkedNotebooks = 1; includeExpunged = 1; includeNoteApplicationDataFullMap = 1; includeResourceApplicationDataFullMap = 1; includeNoteResourceApplicationDataFullMap = 1; includePreferences = 1; includeSharedNotes = 1; includeNotesSharedWithMe = (null); includeLinkedAccounts = (null); omitSharedNotebooks = (null); requireNoteContentClass = (null); notebookGuids = (null); inAccountUserId = (null); includeWorkspaces = 1; includeWorkspacesContent = 1; includeWorkspacesWithoutMembership = (null); workspaceGuids = (null);>
+2018/05/15 09:50:56:331 I|*   14257 -[ENSyncEngine(ChunkDownloader) syncChunkDownloaderWithFullSyncAtUSN:incrementalSyncAtUSN:chunkSize:] | Downloaded sync chunk (currentUSN=4454, chunkHighUSN=4480, updateCount=4480, chunkSize=26)
+2018/05/15 09:50:56:331 I|*   14257 -[ENSyncEngine(Notes) syncNotes:retryOnError:ignoreClientUUIDs:] | Syncing 3 notes...
+2018/05/15 09:50:56:332 I|*   14257 -[ENSyncEngine(Resources) syncResources:] | Syncing 23 resources...
+2018/05/15 09:50:56:333 I|*   14257 -[ENSyncEngine postProcessChunk:withIncrementalSyncUSN:] | processed sync chunk with high USN 4480 account at USN 4480 and incremental USN 4454
+2018/05/15 09:50:56:334 I|*   14257 -[ENSyncEngine(Tags) processLocalTagChanges] | Processing local tag changes...
+2018/05/15 09:50:56:335 I|*   14257 -[ENSyncEngine(Searches) processLocalSearchChanges] | Processing local search changes...
+2018/05/15 09:50:56:335 I|*   14257 -[ENSyncEngine(LinkedNotebooks) processLocalLinkedNotebookChanges] | Processing local linked notebook changes...
+2018/05/15 09:50:56:335 I|*   14257 -[ENSyncEngine(Workspaces) processLocalWorkspaceChanges] | Processing local workspace changes...
+2018/05/15 09:50:56:336 I|*   14257 -[ENSyncEngine(Notebooks) processLocalNotebookChanges] | Processing local notebook changes...
+2018/05/15 09:50:56:336 I|*   14257 -[ENSyncEngine(SharedNotebooks) processLocalSharedNotebookChanges] | Processing local shared notebook changes...
+2018/05/15 09:50:56:337 I|*   14257 -[ENSyncEngine(Notes) processLocalNoteChanges] | Processing local note changes...
+2018/05/15 09:50:56:337 I|*   14257 -[ENSyncEngine(Notes) processLocalNoteChanges] | 6 notes to update/create
+2018/05/15 09:50:56:438 I|*   14257 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: Sonim XP7 Hard reset, Factory Reset and Password Recovery 36a0820e-b611-4103-a05a-f216332cbd8f 4219
+2018/05/15 09:50:56:596 I|*   14258 -[ENCacheManager stop] | self=<ENCacheManager: 0x7f97c9d93380>
+2018/05/15 09:50:59:201 I|*   14257 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: How to Use the Linux Command Line on Android With Termux e46c88d9-dff3-4a7e-abb2-a9934fcfd318 4247
+2018/05/15 09:50:59:677 I|*   14258 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:59:677 I|*   14258 -[ENEvernoteAccount(Sync) addSyncOperation:] | <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 Cancelling sync due to high priority operation: <ENSingleNoteSyncOp: 0x7f97cd30fa30> id: x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p795 guid: (null) linked guid: (null) sync: up
+2018/05/15 09:50:59:677 I|*   14258 -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:50:59:677 I|*   14258 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:59:677 I|*   14258 -[ENEvernoteAccount(Sync) addSyncOperation:] | <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 Cancelling sync due to high priority operation: <ENSingleNoteSyncOp: 0x7f97cc5d0d40> id: x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p779 guid: (null) linked guid: (null) sync: up
+2018/05/15 09:50:59:677 I|*   14258 -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:50:59:694 I|*   14258 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:59:694 I|*   14258 -[ENEvernoteAccount(Sync) addSyncOperation:] | <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 Cancelling sync due to high priority operation: <ENSingleNoteSyncOp: 0x7f97c9e2f040> id: x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p774 guid: (null) linked guid: (null) sync: up
+2018/05/15 09:50:59:694 I|*   14258 -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:50:59:696 I|*   14257 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:59:696 I|*   14257 -[ENEvernoteAccount(Sync) addSyncOperation:] | <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 Cancelling sync due to high priority operation: <ENSingleNoteSyncOp: 0x7f97cd6b2130> id: x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p796 guid: (null) linked guid: (null) sync: up
+2018/05/15 09:50:59:697 I|*   14257 -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:50:59:703 I|*   14258 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:59:703 I|*   14258 -[ENEvernoteAccount(Sync) addSyncOperation:] | <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 Cancelling sync due to high priority operation: <ENSingleNoteSyncOp: 0x7f97cc15ee00> id: x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p760 guid: (null) linked guid: (null) sync: up
+2018/05/15 09:50:59:703 I|*   14258 -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:50:59:706 I|*   14258 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:59:706 I|*   14258 -[ENEvernoteAccount(Sync) addSyncOperation:] | <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 Cancelling sync due to high priority operation: <ENSingleNoteSyncOp: 0x7f97cd6b8630> id: x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p692 guid: (null) linked guid: (null) sync: up
+2018/05/15 09:50:59:706 I|*   14258 -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:50:59:716 I|*   14257 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:59:716 I|*   14257 -[ENEvernoteAccount(Sync) addSyncOperation:] | <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 Cancelling sync due to high priority operation: <ENSingleNoteSyncOp: 0x7f97cd52cd10> id: x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p769 guid: (null) linked guid: (null) sync: up
+2018/05/15 09:50:59:716 I|*   14257 -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:50:59:722 I|*   14258 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:59:722 I|*   14258 -[ENEvernoteAccount(Sync) addSyncOperation:] | <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 Cancelling sync due to high priority operation: <ENSingleNoteSyncOp: 0x7f97cc2c74c0> id: x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p754 guid: (null) linked guid: (null) sync: up
+2018/05/15 09:50:59:722 I|*   14258 -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:50:59:724 I|*   14258 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 with account IDs (
+    "<null>"
+)
+2018/05/15 09:50:59:724 I|*   14258 -[ENEvernoteAccount(Sync) addSyncOperation:] | <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 1 Cancelling sync due to high priority operation: <ENSingleNoteSyncOp: 0x7f97cd3a9d10> id: x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p716 guid: (null) linked guid: (null) sync: up
+2018/05/15 09:50:59:724 I|*   14258 -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:51:07:288 I|*   14257 -[ENSyncEngine _syncStoppedWithErrors:delegate:] | Sync complete. No errors.
+2018/05/15 09:51:07:288 I|*   14257 -[ENAccountContext syncEngineDidStop:] | 
+2018/05/15 09:51:07:288 I|*   14257 -[ENGoogleCredentialManager needsRefreshWithUpdatedDate:usingScopes:] | lastQueried >= userUpdated
+2018/05/15 09:51:07:290 I|*   main  -[ENEvernoteAccount tearDown] | Closed <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 2
+2018/05/15 09:51:07:290 I|*   main  -[ENAccountContext(ContextManagement) unregisterClient:shouldLogout:completion:] | Unregister client <ENEvernoteAccount: 0x7f97c9d45f60> / 100389449-personal-www.evernote.com / 2 0
+2018/05/15 09:51:07:290 I|*   14257 -[ENCacheManager stop] | self=<ENCacheManager: 0x7f97c9d93380>
+2018/05/15 09:51:07:290 I|*   main  -[ENSyncEngine cancel] | sync should cancel
+2018/05/15 09:51:07:290 I|*   main  -[ENAppController applicationShouldTerminate:]_block_invoke | One account synced for terminate, 0 remaining.
+2018/05/15 09:51:07:291 I|*   main  -[ENAppController applicationShouldTerminate:] | -----------------------------  Quitting: Evernote Mac/456448 7.1 (en-CA); MacOS/10.11.6;  ------------------------------
+2018/05/15 09:51:07:291 I|*   main  -[ENAppController applicationShouldTerminate:] | Replying to terminate.  Code: 1
+2018/05/15 09:56:32:820 I|*   main  +[ENAppController initialize]_block_invoke | ------------------------------  Starting: Evernote Mac/456448 7.1 (en-CA); MacOS/10.11.6;  ------------------------------
+2018/05/15 09:56:32:820 I|*   main  +[ENAppController initialize]_block_invoke | app bundle path = /Applications/Evernote.app
+2018/05/15 09:56:32:995 I|*   main  -[ENAppController(Helper) setupHelperIPC] | Evernote client registered for IPC
+2018/05/15 09:56:33:008 E|*** main  -[ENAppController(Helper) refreshHelperPreferences] | Evernote was not able to access EvernoteHelper via IPC
+2018/05/15 09:56:33:194 I|*   cona  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/15 09:56:33:194 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/15 09:56:33:195 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/15 09:56:33:195 I|*   cona  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/15 09:56:33:222 I|*   main  -[ENAppController(SignIn) signInWithAuthResult:profile:openIdToAssociate:type:userIgnoredBusinessSSO:switchPrimaryAccount:completion:] | +++++++ Fetching account store: hkarshi/100389449/s561/Evernote
+2018/05/15 09:56:33:223 I|*   main  -[ENAccountContext init] | self=0x7ffdab5c31b0
+2018/05/15 09:56:33:224 I|*   main  -[ENAccountLimits rebuildSizeMapWithUser:] | Updating size limits based on privilege: 0
+2018/05/15 09:56:33:224 I|*   main  -[ENAccountLimits rebuildFeatureMapWithUser:] | Updating features based on service level: 1
+2018/05/15 09:56:33:224 I|*   main  -[ENAccountLimits rebuildSizeMapWithUser:] | Updating size limits based on service level: 1
+2018/05/15 09:56:33:224 I|*   main  -[ENUser updateWithEDAMUserObject:edamSubscriptionInfo:serviceLevelLimits:isCached:] | User Service Level is Evernote Basic
+2018/05/15 09:56:33:225 I|*   main  -[ENAccountLimits rebuildSizeMapWithUser:] | Updating size limits based on privilege: 0
+2018/05/15 09:56:33:225 I|*   main  -[ENAccountLimits rebuildSizeMapWithUser:] | Updating size limits based on privilege: 0
+2018/05/15 09:56:33:226 I|*   main  -[ENSyncEngine init] | self=0x7ffdab5cf650
+2018/05/15 09:56:33:248 I|*   14275 +[EDAMUserAgent clientVersionString] | Client name: Evernote Mac/456448 (en-CA, DDL); MacOS/10.11.6;
+2018/05/15 09:56:33:248 I|*   14275 +[EDAMHTTPClient clientVersionString] | Client name: Evernote Mac/456448 (en-CA, DDL); MacOS/10.11.6;
+2018/05/15 09:56:33:279 I|*   main  +[ENEvernoteAccountFactory accountsWithConfiguration:migrationDelgate:completion:]_block_invoke | ENEvernoteAccountFactory
+2018/05/15 09:56:33:279 I|*   main  -[ENAccountContext(ContextManagement) registerClient:] | Register client <ENEvernoteAccount: 0x7ffdab5a2b50> / 100389449-personal-www.evernote.com / 0 1
+2018/05/15 09:56:33:283 I|*   main  -[ENEvernoteAccount(Sync) setupSync] | first sync 0 <ENMacNotebookMO: 0x7ffdab4a8110> (entity: ENNotebook; id: 0x80000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p2> ; data: <fault>) <ENEvernoteAccount: 0x7ffdab5a2b50> / 100389449-personal-www.evernote.com / 0
+2018/05/15 09:56:33:283 I|*   main  -[ENCacheManager initWithAccountContext:listenForStartNotifications:] | <ENAccountContext: 0x7ffdab5c31b0 ID: 100389449> YES self=0x7ffdab40b2a0
+2018/05/15 09:56:33:284 I|*   main  +[ENEvernoteAccountFactory _accountsWithAccountContext:] | Created <ENEvernoteAccount: 0x7ffdab5a2b50> / 100389449-personal-www.evernote.com / 0
+2018/05/15 09:56:33:350 E|*** 14275 -[ENAccountContext(ServiceConfig) checkServiceEnabledFeatures:completion:]_block_invoke | Exception: <EDAMUserException: 0x7ffdab40b360; errorCode = PERMISSION_DENIED; parameter = authenticationToken;>
+2018/05/15 09:56:33:382 E|*** main  -[ENCoreDataLocalStore objectWithID:] | Unable to fetch object!
+2018/05/15 09:56:33:382 I|*   main  -[ENCoreDataLocalStore objectWithID:] | objectID=0x100000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p4>, request=<NSFetchRequest: 0x7ffdad931b10> (entity: ENNotebook; predicate: (SELF == <ENMacNotebookMO: 0x7ffdad931a40> (entity: ENNotebook; id: 0x100000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p4> ; data: <fault>)); sortDescriptors: ((null)); type: NSManagedObjectResultType; ), object=<ENMacNotebookMO: 0x7ffdad931a40> (entity: ENNotebook; id: 0x100000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p4> ; data: <fault>)
+2018/05/15 09:56:33:382 E|*** main  -[ENCoreDataLocalStore objectWithID:] | Unable to fetch object!
+2018/05/15 09:56:33:382 I|*   main  -[ENCoreDataLocalStore objectWithID:] | objectID=0x180000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p6>, request=<NSFetchRequest: 0x7ffdad934220> (entity: ENNotebook; predicate: (SELF == <ENMacNotebookMO: 0x7ffdad9341a0> (entity: ENNotebook; id: 0x180000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p6> ; data: <fault>)); sortDescriptors: ((null)); type: NSManagedObjectResultType; ), object=<ENMacNotebookMO: 0x7ffdad9341a0> (entity: ENNotebook; id: 0x180000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p6> ; data: <fault>)
+2018/05/15 09:56:33:383 E|*** main  -[ENCoreDataLocalStore objectWithID:] | Unable to fetch object!
+2018/05/15 09:56:33:383 I|*   main  -[ENCoreDataLocalStore objectWithID:] | objectID=0x240000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p9>, request=<NSFetchRequest: 0x7ffdad935390> (entity: ENNotebook; predicate: (SELF == <ENMacNotebookMO: 0x7ffdad935310> (entity: ENNotebook; id: 0x240000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p9> ; data: <fault>)); sortDescriptors: ((null)); type: NSManagedObjectResultType; ), object=<ENMacNotebookMO: 0x7ffdad935310> (entity: ENNotebook; id: 0x240000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p9> ; data: <fault>)
+2018/05/15 09:56:33:383 E|*** main  -[ENCoreDataLocalStore objectWithID:] | Unable to fetch object!
+2018/05/15 09:56:33:383 I|*   main  -[ENCoreDataLocalStore objectWithID:] | objectID=0x140000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p5>, request=<NSFetchRequest: 0x7ffdad9361f0> (entity: ENNotebook; predicate: (SELF == <ENMacNotebookMO: 0x7ffdad935a10> (entity: ENNotebook; id: 0x140000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p5> ; data: <fault>)); sortDescriptors: ((null)); type: NSManagedObjectResultType; ), object=<ENMacNotebookMO: 0x7ffdad935a10> (entity: ENNotebook; id: 0x140000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p5> ; data: <fault>)
+2018/05/15 09:56:33:383 E|*** main  -[ENLinkCollectionController loadObjectsFromPreferencesRepresentation:] | could not load ["Notebook","9591f67d-32dd-4727-9a8e-187101952549"] into recent notebooks: maximum size reached (0)
+2018/05/15 09:56:33:383 E|*** main  -[ENLinkCollectionController loadObjectsFromPreferencesRepresentation:] | could not load ["LocalObject","x-coredata:\/\/6B042D32-6611-46E6-A847-601106F4A699\/ENTag\/p2"] into suggested tags: maximum size reached (0)
+2018/05/15 09:56:33:384 E|*** main  -[ENLinkCollectionController loadObjectsFromPreferencesRepresentation:] | could not load ["LocalObject","x-coredata:\/\/6B042D32-6611-46E6-A847-601106F4A699\/ENTag\/p3"] into suggested tags: maximum size reached (0)
+2018/05/15 09:56:33:388 I|*   main  -[ENSpotlightIndexer rebuildIfNecessary:didRebuild:] | Starts the rebuild check for Spotlight indexer
+2018/05/15 09:56:33:394 I|*   main  -[ENSpotlightIndexer rebuildIfNecessary:didRebuild:] | Spotlight Indexer: Missing link to store file:/Users/khasanov/Library/CoreData/com.evernote.Evernote/6B042D32-6611-46E6-A847-601106F4A699/.support/store-file
+2018/05/15 09:56:33:394 E|*** main  -[ENSpotlightIndexer rebuildIfNecessary:didRebuild:] | Spotlight Indexer: could not link store file; error: Error Domain=NSCocoaErrorDomain Code=516 "The file “store-file” couldn’t be saved in the folder “.support” because a file with the same name already exists." UserInfo={NSFilePath=/Users/khasanov/Library/CoreData/com.evernote.Evernote/6B042D32-6611-46E6-A847-601106F4A699/.support/store-file, NSUnderlyingError=0x7ffdab7c2c60 {Error Domain=NSPOSIXErrorDomain Code=17 "File exists"}}
+2018/05/15 09:56:33:433 I|*   main  -[ENUXPCartAbandonmentInputsGenerator startCheckForCartAbandonment] | CA: not checking because last checked at 2018-05-15 13:35:55 +0000 (1237.831334 ago).
+2018/05/15 09:56:33:434 I|*   main  -[ENTierSelectionEligibilityController initWithAccountController:skuHelper:idleTimer:sendPromotionCooldownInterval:workProvider:persistedState:] | Temporarily suppressing tier selection due to application start mechanism
+2018/05/15 09:56:33:435 I|*   main  -[ENTierSelectionEligibilityController startCheckEligibilityTimer] | Waiting for 7199.999461 seconds before checking TSD eligibility with the service
+2018/05/15 09:56:33:448 E|*** 14275 -[ENAccountContext(ServiceConfig) checkServiceEnabledFeatures:completion:]_block_invoke | Exception: <EDAMUserException: 0x7ffdad9207d0; errorCode = PERMISSION_DENIED; parameter = authenticationToken;>
+2018/05/15 09:56:33:473 I|*   main  -[ENAccountController(SignIn) signInWithOpenIdToAssociate:] | Signing in...
+2018/05/15 09:56:33:585 I|*   main  -[ENAccountController(SignIn) signInWithOpenIdToAssociate:] | Sign-in complete.
+2018/05/15 09:56:34:091 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/15 09:56:34:106 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=0 usn=93 | <ENMacNoteMO 0x7ffdadc67030> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702 <ENCommonEditorWebView: 0x7ffdadeda260>
+2018/05/15 09:56:34:106 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p12 <ENCommonEditorWebView: 0x7ffdadeda260>
+2018/05/15 09:56:34:106 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=0 usn=93 <ENCommonEditorWebView: 0x7ffdadeda260> <ENMacNoteMO 0x7ffdadc67030> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702
+2018/05/15 09:56:34:424 I|*   main  -[ENIncentiveManager refreshIncentive]_block_invoke | Removed current incentive
+2018/05/15 09:56:34:458 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7ffdadc67030> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702
+2018/05/15 09:56:34:488 I|*   main  -[ENCoreMessageService setupServiceWithSenderUser:messageStoreDirectory:syncEngine:authHelper:readWriteLocalStore:serviceReachable:contactIntegrationManagerEnabled:]_block_invoke | CoreMessage local model ready
+2018/05/15 09:56:34:489 I|*   main  -[ENContactIntegrationManager shouldRefetchForContactExtractor:] | contactExtractor type=1 has not reached next refresh time point 2018-05-16 13:35:57 +0000
+2018/05/15 09:56:34:489 I|*   main  -[ENContactIntegrationManager reloadContacts] | Extractor type=3 is disconnected, try to deactivate all contacts from it
+2018/05/15 09:56:34:490 I|*   14275 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/15 09:56:34:507 I|*   14275 -[ENNoteIndexHelper scheduleForMassSpotlightReindexing:] | 18 notes need spotlight re-indexing for store 6B042D32-6611-46E6-A847-601106F4A699
+2018/05/15 09:56:34:509 I|*   14275 -[ENNoteIndexHelper scheduleForMassSpotlightReindexing:] | Mass Spotlight Reindexing started: 18 notes scheduled for reindexing, opQueue.operationCount = 1, opQueue.maxConcurrentOperationCount = 2
+2018/05/15 09:56:34:510 I|*   14275 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7ffdab5a2b50> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:56:34:511 I|*   14275 -[ENSyncEngine logNetworkStatus] | reachability currentReachabilityStatus=WiFi
+2018/05/15 09:56:34:511 I|*   14275 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:] | account IDs (
+    "<null>"
+) / <ENSyncEngine: 0x7ffdab5cf650>
+2018/05/15 09:56:34:511 I|*   14275 -[ENCacheManager stop] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:56:34:511 I|*   14275 -[ENSyncEngine _syncStarted] | Sync started.
+2018/05/15 09:56:34:511 I|*   14275 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:]_block_invoke | Contacting Evernote server...
+2018/05/15 09:56:34:513 I|*   14275 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7ffdab5a2b50> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:56:34:525 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Loaded noteID 0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> but editor is now using (null) <ENCommonEditorWebView: 0x7ffdadeda260>
+2018/05/15 09:56:34:526 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:526 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:526 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:526 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:526 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:526 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:526 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:526 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:526 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:526 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:526 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:527 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:527 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:527 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:527 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:527 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:527 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:527 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:527 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:527 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:527 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:527 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:527 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:527 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:527 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:527 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:528 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:528 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:528 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:528 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:528 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:528 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:528 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:528 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:528 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:528 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:528 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:528 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:529 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:529 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:529 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:529 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:529 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:529 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:529 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:529 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:529 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:529 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:529 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:529 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:529 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:530 I|*   14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory needs to be rebuilt: (null)
+2018/05/15 09:56:34:530 E|*** 14275 +[ENFileUtils createDirectoryIfNecessary:] | Can't create a nil directory!
+2018/05/15 09:56:34:530 E|*** 14275 -[ENSpotlightIndexer rebuildDirectoryIfNecessary:didRebuild:] | Spotlight Indexer: directory could not be built: (null)
+2018/05/15 09:56:34:573 I|*   14275 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7ffdad872c00> Evaluated script version: mac.180
+2018/05/15 09:56:34:589 I|*   14275 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing personal account...
+2018/05/15 09:56:34:596 I|*   14275 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7ffdad872c00> Evaluated script version: mac.180
+2018/05/15 09:56:34:740 I|*   14275 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL: in attributes:{
+    alt = "\Ud83d\Ude42";
+    height = 12;
+    src = "";
+    style = "max-width:100%;height:1em;vertical-align:-0.1em;border:medium none;display:inline;box-shadow:none;width:1em;margin:0px 0.07em;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0%;padding:0px;";
+    width = 12;
+}
+2018/05/15 09:56:34:744 I|*   14275 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL: in attributes:{
+    alt = "\Ud83d\Ude42";
+    height = 12;
+    src = "";
+    style = "max-width:100%;height:1em;vertical-align:-0.1em;border:medium none;display:inline;box-shadow:none;width:1em;margin:0px 0.07em;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0%;padding:0px;";
+    width = 12;
+}
+2018/05/15 09:56:34:751 I|*   14275 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: Simple GSON Example | Java Creed 01c99c93-cc23-4071-b255-4e618a403dd3 4363
+2018/05/15 09:56:35:073 W|**  14275 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Abort updating note since it's change on service: Simple GSON Example | Java Creed 01c99c93-cc23-4071-b255-4e618a403dd3 4363 4530
+2018/05/15 09:56:35:073 W|**  14275 -[ENSyncEngine(Notes) handleNoteConflictBetweenLocalNoteWithID:andServerNote:] | The server note and local note appear to be out of sync [guid: 01c99c93-cc23-4071-b255-4e618a403dd3] 'Simple GSON Example | Java Creed'
+2018/05/15 09:56:35:301 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:]_block_invoke | lastServerDataHash <b756df9b ee9f90c3 43cc301b 0f56eb43>
+2018/05/15 09:56:35:302 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:] | server enml unchanged from last downsync
+2018/05/15 09:56:35:303 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:] | client enml unchanged from last sync
+2018/05/15 09:56:35:303 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:] | client did not change nor did server using client enml
+2018/05/15 09:56:35:303 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:] | Resolving ENML conflict with policy 2
+2018/05/15 09:56:35:303 W|**  14275 -[ENSyncEngine(Notes) localKeyPathForEDAMAttributeKey:] | No local key path for server attribute: sharedWithBusiness
+2018/05/15 09:56:35:303 W|**  14275 -[ENSyncEngine(Notes) localKeyPathForEDAMAttributeKey:] | No local key path for server attribute: conflictSourceNoteGuid
+2018/05/15 09:56:35:304 W|**  14275 -[ENSyncEngine(Notes) handleUploadConflictBetweenLocalNoteWithID:andServerNote:] | resolving upload conflict with policy 2
+2018/05/15 09:56:35:403 I|*   14275 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL: in attributes:{
+    alt = "\Ud83d\Ude42";
+    height = 12;
+    src = "";
+    style = "max-width:100%;height:1em;vertical-align:-0.1em;border:medium none;display:inline;box-shadow:none;width:1em;margin:0px 0.07em;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0%;padding:0px;";
+    width = 12;
+}
+2018/05/15 09:56:35:407 I|*   14275 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL: in attributes:{
+    alt = "\Ud83d\Ude42";
+    height = 12;
+    src = "";
+    style = "max-width:100%;height:1em;vertical-align:-0.1em;border:medium none;display:inline;box-shadow:none;width:1em;margin:0px 0.07em;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0%;padding:0px;";
+    width = 12;
+}
+2018/05/15 09:56:35:414 I|*   14275 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: Simple GSON Example | Java Creed 01c99c93-cc23-4071-b255-4e618a403dd3 4530
+2018/05/15 09:56:35:535 I|*   14275 -[ENNoteIndexHelper operationToReportProgressWithDependency:message:]_block_invoke | Mass Spotlight Reindexing finished: 18 notes reindexed
+2018/05/15 09:56:35:624 I|*   14275 -[ENContactIntegrationManager _enqueueContactExtraction:]_block_invoke | Extractor type=2 will extract contacts
+2018/05/15 09:56:35:624 I|*   14275 -[ENAddressBookMacContactExtractor extractContacts] | Begin extracting Address Book contacts
+2018/05/15 09:56:35:774 I|*   14275 -[ENAddressBookMacContactExtractor extractContacts] | End fetching Address Book contacts
+2018/05/15 09:56:36:244 I|*   14275 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL:# in attributes:{
+    href = "#";
+    style = "text-decoration:none;color:rgb(0, 192, 235);overflow-wrap:break-word;display:inline-block;width:42px;height:42px;margin:-4px 0px 0px 20px;border-radius:50%;overflow:hidden;vertical-align:middle;margin-left:15px;";
+}
+2018/05/15 09:56:36:250 I|*   14275 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: The Good and the Bad of Node.js Web App Development 3b52bce2-ba78-4226-8bf9-07365d44f03e 4329
+2018/05/15 09:56:36:395 W|**  14275 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Abort updating note since it's change on service: The Good and the Bad of Node.js Web App Development 3b52bce2-ba78-4226-8bf9-07365d44f03e 4329 4539
+2018/05/15 09:56:36:395 W|**  14275 -[ENSyncEngine(Notes) handleNoteConflictBetweenLocalNoteWithID:andServerNote:] | The server note and local note appear to be out of sync [guid: 3b52bce2-ba78-4226-8bf9-07365d44f03e] 'The Good and the Bad of Node.js Web App Development'
+2018/05/15 09:56:36:758 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:]_block_invoke | lastServerDataHash <46dba70b 5e77611a 7a0ab88b d97f4331>
+2018/05/15 09:56:36:758 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:] | server enml unchanged from last downsync
+2018/05/15 09:56:36:758 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:] | client enml unchanged from last sync
+2018/05/15 09:56:36:758 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:] | client did not change nor did server using client enml
+2018/05/15 09:56:36:758 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:] | Resolving ENML conflict with policy 2
+2018/05/15 09:56:36:759 W|**  14275 -[ENSyncEngine(Notes) handleUploadConflictBetweenLocalNoteWithID:andServerNote:] | resolving upload conflict with policy 2
+2018/05/15 09:56:36:858 I|*   14275 -[ENMLWriter validateURLAttribute:inAttributes:] | Unable to validate URL:# in attributes:{
+    href = "#";
+    style = "text-decoration:none;color:rgb(0, 192, 235);overflow-wrap:break-word;display:inline-block;width:42px;height:42px;margin:-4px 0px 0px 20px;border-radius:50%;overflow:hidden;vertical-align:middle;margin-left:15px;";
+}
+2018/05/15 09:56:36:864 I|*   14275 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: The Good and the Bad of Node.js Web App Development 3b52bce2-ba78-4226-8bf9-07365d44f03e 4539
+2018/05/15 09:56:38:867 I|*   14275 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: A tmux Primer a8675bb0-c945-45f8-896e-269bca643d69 4415
+2018/05/15 09:56:39:105 W|**  14275 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Abort updating note since it's change on service: A tmux Primer a8675bb0-c945-45f8-896e-269bca643d69 4415 4554
+2018/05/15 09:56:39:105 W|**  14275 -[ENSyncEngine(Notes) handleNoteConflictBetweenLocalNoteWithID:andServerNote:] | The server note and local note appear to be out of sync [guid: a8675bb0-c945-45f8-896e-269bca643d69] 'A tmux Primer'
+2018/05/15 09:56:39:311 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:]_block_invoke | lastServerDataHash <7f1d8778 f545ab47 e768b06d c9ea06fc>
+2018/05/15 09:56:39:311 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:] | server enml unchanged from last downsync
+2018/05/15 09:56:39:312 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:] | client enml unchanged from last sync
+2018/05/15 09:56:39:312 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:] | client did not change nor did server using client enml
+2018/05/15 09:56:39:312 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:] | Resolving ENML conflict with policy 2
+2018/05/15 09:56:39:312 W|**  14275 -[ENSyncEngine(Notes) handleUploadConflictBetweenLocalNoteWithID:andServerNote:] | resolving upload conflict with policy 2
+2018/05/15 09:56:39:408 I|*   14275 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: A tmux Primer a8675bb0-c945-45f8-896e-269bca643d69 4554
+2018/05/15 09:56:39:726 I|*   14275 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7ffdad872c00> Evaluated script version: mac.180
+2018/05/15 09:56:40:148 I|*   14275 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: GSON Deserialiser Example | Java Creed 3c9436fe-1814-4dba-a6b0-fd3449917d22 4438
+2018/05/15 09:56:40:410 W|**  14275 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Abort updating note since it's change on service: GSON Deserialiser Example | Java Creed 3c9436fe-1814-4dba-a6b0-fd3449917d22 4438 4558
+2018/05/15 09:56:40:410 W|**  14275 -[ENSyncEngine(Notes) handleNoteConflictBetweenLocalNoteWithID:andServerNote:] | The server note and local note appear to be out of sync [guid: 3c9436fe-1814-4dba-a6b0-fd3449917d22] 'GSON Deserialiser Example | Java Creed'
+2018/05/15 09:56:40:574 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:]_block_invoke | lastServerDataHash <1806cf83 8865fc7e dac5f938 b736f24c>
+2018/05/15 09:56:40:574 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:] | server enml unchanged from last downsync
+2018/05/15 09:56:40:575 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:] | client enml unchanged from last sync
+2018/05/15 09:56:40:575 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:] | client did not change nor did server using client enml
+2018/05/15 09:56:40:575 I|*   14275 -[ENSyncEngine(Notes) resolveENMLForConflictWithLocalNoteID:localENML:serverNote:serverENML:] | Resolving ENML conflict with policy 2
+2018/05/15 09:56:40:576 W|**  14275 -[ENSyncEngine(Notes) handleUploadConflictBetweenLocalNoteWithID:andServerNote:] | resolving upload conflict with policy 2
+2018/05/15 09:56:40:676 I|*   14275 -[ENSyncEngine(Notes) updateServerNoteFromLocalNoteWithID:resourceFileMap:attemptRetry:]_block_invoke | Updating note on service: GSON Deserialiser Example | Java Creed 3c9436fe-1814-4dba-a6b0-fd3449917d22 4558
+2018/05/15 09:56:41:765 W|**  14275 -[ENSingleNoteSyncOp upSyncNoteWithEdamClient:]_block_invoke | No need to up sync note <ENMacNoteMO 0x7ffdadb39480> MOID:0xbe00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p760> GUID:36a0820e-b611-4103-a05a-f216332cbd8f Title:Sonim XP7 Hard reset, Factory Reset and Password Recovery Account:(null) USN:4481 Hash:<7bd42c0e 8cb5beef 70ef6fb9 6d05cfc3> Length:189560
+2018/05/15 09:56:41:765 W|**  14275 -[ENSingleNoteSyncOp upSyncNoteWithEdamClient:]_block_invoke | No need to up sync note <ENMacNoteMO 0x7ffdadad6bc0> MOID:0xad00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p692> GUID:1936a7bc-ad3a-48f4-b4a2-602427beb7d6 Title:Tutorial: Continuous Delivery with Docker and Jenkins Account:(null) USN:4455 Hash:<ac269ddf 6960ca12 30c2cab3 37b2c20d> Length:45802
+2018/05/15 09:56:41:765 W|**  14275 -[ENSingleNoteSyncOp upSyncNoteWithEdamClient:]_block_invoke | No need to up sync note <ENMacNoteMO 0x7ffdaeb28d90> MOID:0xc040002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p769> GUID:e46c88d9-dff3-4a7e-abb2-a9934fcfd318 Title:How to Use the Linux Command Line on Android With Termux Account:(null) USN:4491 Hash:<f1ba7c1e 11452744 d1ee0e59 6eb88c4e> Length:293457
+2018/05/15 09:56:41:765 W|**  14275 -[ENSingleNoteSyncOp upSyncNoteWithEdamClient:]_block_invoke | No need to up sync note <ENMacNoteMO 0x7ffdaea431c0> MOID:0xbc80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p754> GUID:b7d07ea9-9a5a-4ca2-88c3-633ae6daab16 Title:Setup IPsec Road-Warrior — OPNsense Wiki & Documentation documentation Account:(null) USN:4465 Hash:<bbb463d2 86291975 eea7d25c 63d2131d> Length:119048
+2018/05/15 09:56:41:765 W|**  14275 -[ENSingleNoteSyncOp upSyncNoteWithEdamClient:]_block_invoke | No need to up sync note <ENMacNoteMO 0x7ffdada5dbf0> MOID:0xb300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p716> GUID:63f45af1-2f0d-4953-aa18-7fcf4ec5c274 Title:Stop Building Websites and Start Building Smart Sites Account:(null) USN:4461 Hash:<2f21e356 b8fd8bb7 1f7c1246 2976ad16> Length:72210
+2018/05/15 09:56:41:766 I|*   14275 -[ENSyncEngine serverSyncState]_block_invoke | sessionCount=0
+2018/05/15 09:56:41:837 I|*   14275 -[ENSyncEngine isFullSyncRequiredWithServerWithServerSyncState:] |   current update count: 4480
+2018/05/15 09:56:41:838 I|*   14275 -[ENSyncEngine(ChunkDownloader) syncChunkDownloaderWithFullSyncAtUSN:incrementalSyncAtUSN:chunkSize:] | incrementalSyncAtUSN=4480, fullSyncAtUSN=4480
+2018/05/15 09:56:41:838 I|*   14275 -[ENSyncEngine(ChunkDownloader) getSyncChunkAfterUSN:fullSyncOnly:chunkSize:isBackground:] |  current USN 4480 full sync 0
+2018/05/15 09:56:41:838 I|*   14275 -[ENSyncEngine(ChunkDownloader) serverSyncChunkWithFilter:usn:chunkSize:sessionIdentifier:] | <EDAMSyncChunkFilter: 0x7ffdadd7b9c0; includeNotes = 1; includeNoteResources = 1; includeNoteAttributes = 1; includeNotebooks = 1; includeTags = 1; includeSearches = 1; includeResources = 1; includeLinkedNotebooks = 1; includeExpunged = 1; includeNoteApplicationDataFullMap = 1; includeResourceApplicationDataFullMap = 1; includeNoteResourceApplicationDataFullMap = 1; includePreferences = 1; includeSharedNotes = 1; includeNotesSharedWithMe = (null); includeLinkedAccounts = (null); omitSharedNotebooks = (null); requireNoteContentClass = (null); notebookGuids = (null); inAccountUserId = (null); includeWorkspaces = 1; includeWorkspacesContent = 1; includeWorkspacesWithoutMembership = (null); workspaceGuids = (null);>
+2018/05/15 09:56:42:014 I|*   14275 -[ENSyncEngine(ChunkDownloader) syncChunkDownloaderWithFullSyncAtUSN:incrementalSyncAtUSN:chunkSize:] | Downloaded sync chunk (currentUSN=4480, chunkHighUSN=4599, updateCount=4599, chunkSize=84)
+2018/05/15 09:56:42:014 I|*   14275 -[ENSyncEngine(Notes) syncNotes:retryOnError:ignoreClientUUIDs:] | Syncing 6 notes...
+2018/05/15 09:56:42:015 I|*   14275 -[ENSyncEngine(Resources) syncResources:] | Syncing 78 resources...
+2018/05/15 09:56:42:019 I|*   14275 -[ENSyncEngine postProcessChunk:withIncrementalSyncUSN:] | processed sync chunk with high USN 4599 account at USN 4599 and incremental USN 4480
+2018/05/15 09:56:42:023 I|*   14275 -[ENSyncEngine _synchronizeServerChanges:localChanges:] | Performing additional incremental sync...
+2018/05/15 09:56:42:023 I|*   14275 -[ENSyncEngine serverSyncState]_block_invoke | sessionCount=0
+2018/05/15 09:56:42:090 E|*** main  -[ENLinkCollectionController insertObject:atArrangedObjectIndex:] | Could not find insert point for link: <ENMacNotebookMO 0x7ffdad92d5f0> MOID:0x540000b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNotebook/p21> GUID:[local] Name:KFH Inc. Account:(null) USN:0, inserting at end
+2018/05/15 09:56:42:091 I|*   main  -[ENLinkCollectionController saveWithCompletion:] | Saving in local pref 'recentNotebooks' with 5 items, previously 5 items
+2018/05/15 09:56:42:094 I|*   14275 -[ENSyncEngine isFullSyncRequiredWithServerWithServerSyncState:] |   current update count: 4599
+2018/05/15 09:56:42:170 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/15 09:56:42:170 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7ffdadc69830> MOID:0x1640002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p89> GUID:[local] Title:Physics Theory Account:(null) USN:0 Hash:<0aea731a c3926b05 766c565a 96f5b06a> Length:643 <ENCommonEditorWebView: 0x7ffdaef3e510>
+2018/05/15 09:56:42:171 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p89 <ENCommonEditorWebView: 0x7ffdaef3e510>
+2018/05/15 09:56:42:171 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7ffdaef3e510> <ENMacNoteMO 0x7ffdadc69830> MOID:0x1640002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p89> GUID:[local] Title:Physics Theory Account:(null) USN:0 Hash:<0aea731a c3926b05 766c565a 96f5b06a> Length:643
+2018/05/15 09:56:42:209 I|*   14275 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing shared notes
+2018/05/15 09:56:42:220 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7ffdaef3e510> <ENMacNoteMO 0x7ffdadc69830> MOID:0x1640002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p89> GUID:[local] Title:Physics Theory Account:(null) USN:0 Hash:<0aea731a c3926b05 766c565a 96f5b06a> Length:643
+2018/05/15 09:56:42:576 I|*   14275 -[ENSyncEngine _syncStoppedWithErrors:delegate:] | Sync complete. No errors.
+2018/05/15 09:56:42:576 I|*   14275 -[ENAccountContext syncEngineDidStop:] | 
+2018/05/15 09:56:42:576 I|*   14275 -[ENGoogleCredentialManager needsRefreshWithUpdatedDate:usingScopes:] | lastQueried >= userUpdated
+2018/05/15 09:56:44:771 I|*   main  -[ENCacheManager startWithBackground:] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:56:44:772 I|*   14275 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7ffdab5a2b50> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:56:44:772 I|*   14275 -[ENSyncEngine logNetworkStatus] | reachability currentReachabilityStatus=WiFi
+2018/05/15 09:56:44:773 I|*   14275 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:] | account IDs (
+    "<null>"
+) / <ENSyncEngine: 0x7ffdab5cf650>
+2018/05/15 09:56:44:773 I|*   14275 -[ENCacheManager stop] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:56:44:776 I|*   14275 -[ENCacheManager checkFileSystemIntegrity] | File system appears to be in good shape. expected=760, actual=805
+2018/05/15 09:56:44:780 I|*   14275 -[ENCacheManager _recalculateStatistics]_block_invoke | totalSize=68185917 (65 MB), cachedSize=68185917 (65 MB), uncachedSize=0 (Zero KB)
+2018/05/15 09:56:44:781 I|*   14275 -[ENCacheManager findNotesToDownloadUsingBackgroundTransfers:] | Starting all operations
+2018/05/15 09:56:44:783 I|*   14275 -[ENCacheManager fetchNextBatchOfDownloadOperationsUsingBackgroundTransfers:]_block_invoke | Processing 0 notes
+2018/05/15 09:56:44:784 I|*   14275 -[ENSyncEngine _syncStarted] | Sync started.
+2018/05/15 09:56:44:784 I|*   14275 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:]_block_invoke | Contacting Evernote server...
+2018/05/15 09:56:44:784 I|*   14275 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing personal account...
+2018/05/15 09:56:44:844 I|*   14275 -[ENSyncEngine serverSyncState]_block_invoke | sessionCount=0
+2018/05/15 09:56:44:914 I|*   14275 -[ENSyncEngine isFullSyncRequiredWithServerWithServerSyncState:] |   current update count: 4599
+2018/05/15 09:56:44:917 I|*   14275 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing shared notes
+2018/05/15 09:56:44:919 I|*   14275 -[ENSyncEngine _syncStoppedWithErrors:delegate:] | Sync complete. No errors.
+2018/05/15 09:56:44:919 I|*   14275 -[ENAccountContext syncEngineDidStop:] | 
+2018/05/15 09:56:44:919 I|*   14275 -[ENGoogleCredentialManager needsRefreshWithUpdatedDate:usingScopes:] | lastQueried >= userUpdated
+2018/05/15 09:56:45:324 I|*   14275 -[ENCacheManager stop] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:56:47:112 I|*   main  -[ENCacheManager startWithBackground:] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:56:47:116 I|*   14275 -[ENCacheManager _recalculateStatistics]_block_invoke | totalSize=68185917 (65 MB), cachedSize=68185917 (65 MB), uncachedSize=0 (Zero KB)
+2018/05/15 09:56:47:118 I|*   14275 -[ENCacheManager findNotesToDownloadUsingBackgroundTransfers:] | Starting all operations
+2018/05/15 09:56:47:120 I|*   14275 -[ENCacheManager fetchNextBatchOfDownloadOperationsUsingBackgroundTransfers:]_block_invoke | Processing 0 notes
+2018/05/15 09:56:47:672 I|*   14275 -[ENCacheManager stop] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:56:49:724 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7ffdadc69830> MOID:0x1640002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p89> GUID:[local] Title:Physics Theory Account:(null) USN:0 Hash:<0aea731a c3926b05 766c565a 96f5b06a> Length:643
+2018/05/15 09:56:49:762 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/15 09:56:49:763 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=726 | <ENMacNoteMO 0x7ffdad92cc10> MOID:0x37c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p223> GUID:[local] Title:Morning Thoughts Account:(null) USN:726 Hash:<ff36dd52 64e23269 6c76f970 82f9e914> Length:4232 <ENCommonEditorWebView: 0x7ffdaee08550>
+2018/05/15 09:56:49:763 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p223 <ENCommonEditorWebView: 0x7ffdaee08550>
+2018/05/15 09:56:49:763 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=726 <ENCommonEditorWebView: 0x7ffdaee08550> <ENMacNoteMO 0x7ffdad92cc10> MOID:0x37c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p223> GUID:[local] Title:Morning Thoughts Account:(null) USN:726 Hash:<ff36dd52 64e23269 6c76f970 82f9e914> Length:4232
+2018/05/15 09:56:49:865 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7ffdaee08550> <ENMacNoteMO 0x7ffdad92cc10> MOID:0x37c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p223> GUID:[local] Title:Morning Thoughts Account:(null) USN:726 Hash:<ff36dd52 64e23269 6c76f970 82f9e914> Length:4232
+2018/05/15 09:56:55:308 I|*   14276 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7ffdab5a2b50> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:56:55:309 I|*   14276 -[ENSyncEngine logNetworkStatus] | reachability currentReachabilityStatus=WiFi
+2018/05/15 09:56:55:309 I|*   14276 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:] | account IDs (
+    "<null>"
+) / <ENSyncEngine: 0x7ffdab5cf650>
+2018/05/15 09:56:55:309 I|*   14275 -[ENCacheManager stop] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:56:55:309 I|*   14275 -[ENSyncEngine _syncStarted] | Sync started.
+2018/05/15 09:56:55:309 I|*   14275 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:]_block_invoke | Contacting Evernote server...
+2018/05/15 09:56:55:309 I|*   14275 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing personal account...
+2018/05/15 09:56:55:309 W|**  14275 -[ENSingleNoteSyncOp upSyncNoteWithEdamClient:]_block_invoke | No need to up sync note <ENMacNoteMO 0x7ffdad9cb590> MOID:0xc6c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p795> GUID:01c99c93-cc23-4071-b255-4e618a403dd3 Title:Simple GSON Example | Java Creed Account:(null) USN:4565 Hash:<b756df9b ee9f90c3 43cc301b 0f56eb43> Length:117417
+2018/05/15 09:56:55:384 I|*   14275 -[ENSyncEngine serverSyncState]_block_invoke | sessionCount=0
+2018/05/15 09:56:55:458 I|*   14275 -[ENSyncEngine isFullSyncRequiredWithServerWithServerSyncState:] |   current update count: 4599
+2018/05/15 09:56:55:461 I|*   14275 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing shared notes
+2018/05/15 09:56:55:463 I|*   14275 -[ENSyncEngine _syncStoppedWithErrors:delegate:] | Sync complete. No errors.
+2018/05/15 09:56:55:464 I|*   14275 -[ENAccountContext syncEngineDidStop:] | 
+2018/05/15 09:56:55:464 I|*   14277 -[ENGoogleCredentialManager needsRefreshWithUpdatedDate:usingScopes:] | lastQueried >= userUpdated
+2018/05/15 09:56:55:536 W|**  14277 -[ENConnectedServicesController updateConnectedServicesForced:]_block_invoke_2 | scoped google token not exist in service <EDAMNotFoundException: 0x7ffdaee691d0; identifier = OAuthCredential; key = 1;>
+2018/05/15 09:56:55:606 W|**  14275 -[ENConnectedServicesController updateConnectedServicesForced:]_block_invoke_2 | connected service token does not exist on service <EDAMNotFoundException: 0x7ffdadc27280; identifier = OAuthCredential; key = 7;>
+2018/05/15 09:56:55:677 W|**  14277 -[ENConnectedServicesController updateConnectedServicesForced:]_block_invoke_2 | connected service token does not exist on service <EDAMNotFoundException: 0x7ffdadcef960; identifier = OAuthCredential; key = 4;>
+2018/05/15 09:56:56:725 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4243 bytes:
+2018/05/15 09:56:56:728 I|*   main  -[ENLinkCollectionController saveWithCompletion:] | Saving in local pref 'recentNotes' with 3 items, previously 5 items
+2018/05/15 09:56:56:731 I|*   main  -[ENLinkCollectionController saveWithCompletion:] | Saving in local pref 'recentNotes' with 4 items, previously 3 items
+2018/05/15 09:56:56:855 I|*   14275 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7ffdab5a2b50> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:56:56:855 I|*   14275 -[ENSyncEngine logNetworkStatus] | reachability currentReachabilityStatus=WiFi
+2018/05/15 09:56:56:856 I|*   14275 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:] | account IDs (
+    "<null>"
+) / <ENSyncEngine: 0x7ffdab5cf650>
+2018/05/15 09:56:56:856 I|*   14277 -[ENCacheManager stop] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:56:56:856 I|*   14277 -[ENSyncEngine _syncStarted] | Sync started.
+2018/05/15 09:56:56:856 I|*   14277 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:]_block_invoke | Contacting Evernote server...
+2018/05/15 09:56:56:856 I|*   14277 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing personal account...
+2018/05/15 09:56:56:859 W|**  14277 -[ENSingleNoteSyncOp upSyncNoteWithEdamClient:]_block_invoke | No need to up sync note <ENMacNoteMO 0x7ffdaea7c620> MOID:0xc2c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p779> GUID:3b52bce2-ba78-4226-8bf9-07365d44f03e Title:The Good and the Bad of Node.js Web App Development Account:(null) USN:4574 Hash:<46dba70b 5e77611a 7a0ab88b d97f4331> Length:42290
+2018/05/15 09:56:56:927 I|*   14277 -[ENSyncEngine serverSyncState]_block_invoke | sessionCount=0
+2018/05/15 09:56:57:000 I|*   14277 -[ENSyncEngine isFullSyncRequiredWithServerWithServerSyncState:] |   current update count: 4599
+2018/05/15 09:56:57:003 I|*   14277 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing shared notes
+2018/05/15 09:56:57:006 I|*   14277 -[ENSyncEngine _syncStoppedWithErrors:delegate:] | Sync complete. No errors.
+2018/05/15 09:56:57:006 I|*   14277 -[ENAccountContext syncEngineDidStop:] | 
+2018/05/15 09:56:57:006 I|*   14275 -[ENGoogleCredentialManager needsRefreshWithUpdatedDate:usingScopes:] | lastQueried >= userUpdated
+2018/05/15 09:56:57:663 I|*   main  -[ENCacheManager startWithBackground:] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:56:57:668 I|*   14277 -[ENCacheManager _recalculateStatistics]_block_invoke | totalSize=68185917 (65 MB), cachedSize=68185917 (65 MB), uncachedSize=0 (Zero KB)
+2018/05/15 09:56:57:670 I|*   14277 -[ENCacheManager findNotesToDownloadUsingBackgroundTransfers:] | Starting all operations
+2018/05/15 09:56:57:672 I|*   14277 -[ENCacheManager fetchNextBatchOfDownloadOperationsUsingBackgroundTransfers:]_block_invoke | Processing 0 notes
+2018/05/15 09:56:58:222 I|*   14275 -[ENCacheManager stop] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:56:58:714 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4245 bytes:
+2018/05/15 09:56:59:196 I|*   main  -[ENCacheManager startWithBackground:] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:56:59:201 I|*   14277 -[ENCacheManager _recalculateStatistics]_block_invoke | totalSize=68185917 (65 MB), cachedSize=68185917 (65 MB), uncachedSize=0 (Zero KB)
+2018/05/15 09:56:59:203 I|*   14277 -[ENCacheManager findNotesToDownloadUsingBackgroundTransfers:] | Starting all operations
+2018/05/15 09:56:59:205 I|*   14277 -[ENCacheManager fetchNextBatchOfDownloadOperationsUsingBackgroundTransfers:]_block_invoke | Processing 0 notes
+2018/05/15 09:56:59:315 I|*   14277 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7ffdab5a2b50> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:56:59:315 I|*   14277 -[ENSyncEngine logNetworkStatus] | reachability currentReachabilityStatus=WiFi
+2018/05/15 09:56:59:315 I|*   14277 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:] | account IDs (
+    "<null>"
+) / <ENSyncEngine: 0x7ffdab5cf650>
+2018/05/15 09:56:59:315 I|*   14277 -[ENCacheManager stop] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:56:59:315 I|*   14277 -[ENSyncEngine _syncStarted] | Sync started.
+2018/05/15 09:56:59:316 I|*   14277 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:]_block_invoke | Contacting Evernote server...
+2018/05/15 09:56:59:316 I|*   14277 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing personal account...
+2018/05/15 09:56:59:316 W|**  14277 -[ENSingleNoteSyncOp upSyncNoteWithEdamClient:]_block_invoke | No need to up sync note <ENMacNoteMO 0x7ffdaea22360> MOID:0xc180002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p774> GUID:a8675bb0-c945-45f8-896e-269bca643d69 Title:A tmux Primer Account:(null) USN:4589 Hash:<7f1d8778 f545ab47 e768b06d c9ea06fc> Length:77185
+2018/05/15 09:56:59:386 I|*   14277 -[ENSyncEngine serverSyncState]_block_invoke | sessionCount=0
+2018/05/15 09:56:59:456 I|*   14277 -[ENSyncEngine isFullSyncRequiredWithServerWithServerSyncState:] |   current update count: 4599
+2018/05/15 09:56:59:460 I|*   14277 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing shared notes
+2018/05/15 09:56:59:462 I|*   14277 -[ENSyncEngine _syncStoppedWithErrors:delegate:] | Sync complete. No errors.
+2018/05/15 09:56:59:462 I|*   14277 -[ENAccountContext syncEngineDidStop:] | 
+2018/05/15 09:56:59:462 I|*   14275 -[ENGoogleCredentialManager needsRefreshWithUpdatedDate:usingScopes:] | lastQueried >= userUpdated
+2018/05/15 09:56:59:755 I|*   14275 -[ENCacheManager stop] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:57:00:579 I|*   14277 -[ENEvernoteAccount(Sync) syncWithOptions:checkTimers:completion:] | syncing <ENEvernoteAccount: 0x7ffdab5a2b50> / 100389449-personal-www.evernote.com / 0 with account IDs (
+    "<null>"
+)
+2018/05/15 09:57:00:579 I|*   14277 -[ENSyncEngine logNetworkStatus] | reachability currentReachabilityStatus=WiFi
+2018/05/15 09:57:00:580 I|*   14277 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:] | account IDs (
+    "<null>"
+) / <ENSyncEngine: 0x7ffdab5cf650>
+2018/05/15 09:57:00:580 I|*   14275 -[ENCacheManager stop] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:57:00:580 I|*   14275 -[ENSyncEngine _syncStarted] | Sync started.
+2018/05/15 09:57:00:580 I|*   14275 -[ENSyncEngine syncIgnoringNetworkPreference:forcingAuthRefresh:localChangeIds:accountIds:syncDelegate:completion:]_block_invoke | Contacting Evernote server...
+2018/05/15 09:57:00:580 I|*   14275 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing personal account...
+2018/05/15 09:57:00:580 W|**  14275 -[ENSingleNoteSyncOp upSyncNoteWithEdamClient:]_block_invoke | No need to up sync note <ENMacNoteMO 0x7ffdad942930> MOID:0xc700002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p796> GUID:3c9436fe-1814-4dba-a6b0-fd3449917d22 Title:GSON Deserialiser Example | Java Creed Account:(null) USN:4593 Hash:<1806cf83 8865fc7e dac5f938 b736f24c> Length:126371
+2018/05/15 09:57:00:651 I|*   14275 -[ENSyncEngine serverSyncState]_block_invoke | sessionCount=0
+2018/05/15 09:57:00:721 I|*   14275 -[ENSyncEngine isFullSyncRequiredWithServerWithServerSyncState:] |   current update count: 4599
+2018/05/15 09:57:00:724 I|*   14275 -[ENSyncEngine _synchronizeAccountsWithIds:processServerChanges:processLocalChanges:] | Synchronizing shared notes
+2018/05/15 09:57:00:726 I|*   14275 -[ENSyncEngine _syncStoppedWithErrors:delegate:] | Sync complete. No errors.
+2018/05/15 09:57:00:726 I|*   14275 -[ENAccountContext syncEngineDidStop:] | 
+2018/05/15 09:57:00:726 I|*   14277 -[ENGoogleCredentialManager needsRefreshWithUpdatedDate:usingScopes:] | lastQueried >= userUpdated
+2018/05/15 09:57:01:462 I|*   main  -[ENCacheManager startWithBackground:] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:57:01:477 I|*   14277 -[ENCacheManager _recalculateStatistics]_block_invoke | totalSize=68185917 (65 MB), cachedSize=68185917 (65 MB), uncachedSize=0 (Zero KB)
+2018/05/15 09:57:01:479 I|*   14277 -[ENCacheManager findNotesToDownloadUsingBackgroundTransfers:] | Starting all operations
+2018/05/15 09:57:01:481 I|*   14277 -[ENCacheManager fetchNextBatchOfDownloadOperationsUsingBackgroundTransfers:]_block_invoke | Processing 0 notes
+2018/05/15 09:57:02:030 I|*   14276 -[ENCacheManager stop] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:57:02:727 I|*   main  -[ENCacheManager startWithBackground:] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:57:02:731 I|*   14275 -[ENCacheManager _recalculateStatistics]_block_invoke | totalSize=68185917 (65 MB), cachedSize=68185917 (65 MB), uncachedSize=0 (Zero KB)
+2018/05/15 09:57:02:733 I|*   14275 -[ENCacheManager findNotesToDownloadUsingBackgroundTransfers:] | Starting all operations
+2018/05/15 09:57:02:735 I|*   14275 -[ENCacheManager fetchNextBatchOfDownloadOperationsUsingBackgroundTransfers:]_block_invoke | Processing 0 notes
+2018/05/15 09:57:03:283 I|*   14276 -[ENCacheManager stop] | self=<ENCacheManager: 0x7ffdab40b2a0>
+2018/05/15 09:57:13:714 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4282 bytes:
+2018/05/15 09:57:19:715 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4295 bytes:
+2018/05/15 09:57:22:712 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4297 bytes:
+2018/05/15 09:57:33:713 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4306 bytes:
+2018/05/15 09:57:44:715 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4309 bytes:
+2018/05/15 09:57:47:716 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4313 bytes:
+2018/05/15 09:57:53:713 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4321 bytes:
+2018/05/15 09:58:03:713 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4335 bytes:
+2018/05/15 09:58:07:711 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4341 bytes:
+2018/05/15 09:58:11:711 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4347 bytes:
+2018/05/15 09:58:13:347 I|*   main  +[NSString(NSStringAdditions) stringFromData:textEncodingName:] | Archive encoding name: 'UTF-8'
+2018/05/15 09:58:13:352 I|*   main  -[ENMLConverter parseHTMLFragment:usedHTMLTidy:] | HTML fragment has no XML declaration and no DOCTYPE declaration.
+2018/05/15 09:58:13:352 I|*   main  -[ENMLConverter parseHTMLFragment:usedHTMLTidy:] | Parse failed w/o HTML tidy.
+2018/05/15 09:58:13:353 I|*   main  +[NSString(NSStringAdditions) stringFromData:textEncodingName:] | Archive encoding name: 'UTF-8'
+2018/05/15 09:58:39:345 I|*   main  +[ENMLPasteboardUtils chooseTypeFromPasteboard:dragInfo:plainTextOnly:] | Offered pasteboard types: (
+    NSStringPboardType,
+    "public.utf8-plain-text"
+)
+2018/05/15 09:58:39:346 I|*   main  +[ENMLPasteboardUtils chooseTypeFromPasteboard:dragInfo:plainTextOnly:] | Using 'NSStringPboardType'
+2018/05/15 09:58:40:710 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4346 bytes:
+2018/05/15 09:58:43:710 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4347 bytes:
+2018/05/15 09:58:47:709 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4351 bytes:
+2018/05/15 09:58:50:710 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4357 bytes:
+2018/05/15 09:58:54:710 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4359 bytes:
+2018/05/15 09:59:06:709 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 4376 bytes:
+2018/05/15 09:59:43:345 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7ffdad92cc10> MOID:0x37c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p223> GUID:[local] Title:Morning Thoughts Account:(null) USN:726 Hash:<d6323331 59e19506 9cdd0a97 9c7ea2a4> Length:4376
+2018/05/15 10:01:15:131 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/15 10:01:15:132 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=0 usn=93 | <ENMacNoteMO 0x7ffdadc67030> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702 <ENCommonEditorWebView: 0x7ffdadd09910>
+2018/05/15 10:01:15:132 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p12 <ENCommonEditorWebView: 0x7ffdadd09910>
+2018/05/15 10:01:15:133 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=0 usn=93 <ENCommonEditorWebView: 0x7ffdadd09910> <ENMacNoteMO 0x7ffdadc67030> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702
+2018/05/15 10:01:15:333 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7ffdadc67030> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702
+2018/05/15 10:01:15:386 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/15 10:01:15:386 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7ffdadd01a30> MOID:0x1640002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p89> GUID:[local] Title:Physics Theory Account:(null) USN:0 Hash:<0aea731a c3926b05 766c565a 96f5b06a> Length:643 <ENCommonEditorWebView: 0x7ffdaedd1310>
+2018/05/15 10:01:15:386 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p89 <ENCommonEditorWebView: 0x7ffdaedd1310>
+2018/05/15 10:01:15:386 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7ffdaedd1310> <ENMacNoteMO 0x7ffdadd01a30> MOID:0x1640002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p89> GUID:[local] Title:Physics Theory Account:(null) USN:0 Hash:<0aea731a c3926b05 766c565a 96f5b06a> Length:643
+2018/05/15 10:01:15:413 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7ffdadd01a30> MOID:0x1640002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p89> GUID:[local] Title:Physics Theory Account:(null) USN:0 Hash:<0aea731a c3926b05 766c565a 96f5b06a> Length:643
+2018/05/15 10:01:15:444 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/15 10:01:15:444 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=726 | <ENMacNoteMO 0x7ffdad92cc10> MOID:0x37c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p223> GUID:[local] Title:Morning Thoughts Account:(null) USN:726 Hash:<d6323331 59e19506 9cdd0a97 9c7ea2a4> Length:4376 <ENCommonEditorWebView: 0x7ffdab619500>
+2018/05/15 10:01:15:444 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p223 <ENCommonEditorWebView: 0x7ffdab619500>
+2018/05/15 10:01:15:444 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=726 <ENCommonEditorWebView: 0x7ffdab619500> <ENMacNoteMO 0x7ffdad92cc10> MOID:0x37c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p223> GUID:[local] Title:Morning Thoughts Account:(null) USN:726 Hash:<d6323331 59e19506 9cdd0a97 9c7ea2a4> Length:4376
+2018/05/15 10:01:15:561 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Loaded noteID 0x1640002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p89> but editor is now using (null) <ENCommonEditorWebView: 0x7ffdaedd1310>
+2018/05/15 10:01:15:561 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7ffdab619500> <ENMacNoteMO 0x7ffdad92cc10> MOID:0x37c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p223> GUID:[local] Title:Morning Thoughts Account:(null) USN:726 Hash:<d6323331 59e19506 9cdd0a97 9c7ea2a4> Length:4376
+2018/05/15 10:01:15:561 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Loaded noteID 0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> but editor is now using (null) <ENCommonEditorWebView: 0x7ffdadd09910>
+2018/05/15 10:01:21:194 I|*   main  -[ENLinkCollectionController saveWithCompletion:] | Saving in local pref 'recentNotebooks' with 6 items, previously 5 items
+2018/05/15 10:01:21:220 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7ffdad92cc10> MOID:0x37c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p223> GUID:[local] Title:Morning Thoughts Account:(null) USN:726 Hash:<d6323331 59e19506 9cdd0a97 9c7ea2a4> Length:4376
+2018/05/15 10:01:21:277 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/15 10:01:21:277 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=2273 | <ENMacNoteMO 0x7ffdadd8b240> MOID:0x8380002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p526> GUID:[local] Title:Top DevOps Interview Questions You Must Prepare For in 2017 | Edureka Blog Account:(null) USN:2273 Hash:<08e6c2c2 670cc26c 3cadf5c4 b56d8d7f> Length:93011 <ENCommonEditorWebView: 0x7ffdaeda7040>
+2018/05/15 10:01:21:277 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p526 <ENCommonEditorWebView: 0x7ffdaeda7040>
+2018/05/15 10:01:21:277 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=2273 <ENCommonEditorWebView: 0x7ffdaeda7040> <ENMacNoteMO 0x7ffdadd8b240> MOID:0x8380002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p526> GUID:[local] Title:Top DevOps Interview Questions You Must Prepare For in 2017 | Edureka Blog Account:(null) USN:2273 Hash:<08e6c2c2 670cc26c 3cadf5c4 b56d8d7f> Length:93011
+2018/05/15 10:01:21:395 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7ffdaeda7040> <ENMacNoteMO 0x7ffdadd8b240> MOID:0x8380002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p526> GUID:[local] Title:Top DevOps Interview Questions You Must Prepare For in 2017 | Edureka Blog Account:(null) USN:2273 Hash:<08e6c2c2 670cc26c 3cadf5c4 b56d8d7f> Length:93011
+2018/05/15 10:01:24:507 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7ffdadd8b240> MOID:0x8380002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p526> GUID:[local] Title:Top DevOps Interview Questions You Must Prepare For in 2017 | Edureka Blog Account:(null) USN:2273 Hash:<08e6c2c2 670cc26c 3cadf5c4 b56d8d7f> Length:93011
+2018/05/15 10:01:24:544 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/15 10:01:24:545 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7ffdadd7bb20> MOID:0x1740002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p93> GUID:[local] Title:Git Account:(null) USN:0 Hash:<ea1a8290 dc9ebc0a 4341977b f3c86068> Length:35298 <ENCommonEditorWebView: 0x7ffdaede2c00>
+2018/05/15 10:01:24:545 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p93 <ENCommonEditorWebView: 0x7ffdaede2c00>
+2018/05/15 10:01:24:545 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7ffdaede2c00> <ENMacNoteMO 0x7ffdadd7bb20> MOID:0x1740002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p93> GUID:[local] Title:Git Account:(null) USN:0 Hash:<ea1a8290 dc9ebc0a 4341977b f3c86068> Length:35298
+2018/05/15 10:01:24:639 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7ffdaede2c00> <ENMacNoteMO 0x7ffdadd7bb20> MOID:0x1740002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p93> GUID:[local] Title:Git Account:(null) USN:0 Hash:<ea1a8290 dc9ebc0a 4341977b f3c86068> Length:35298
+2018/05/15 10:01:49:383 I|*   main  +[NSString(NSStringAdditions) stringFromData:textEncodingName:] | Archive encoding name: 'UTF-8'
+2018/05/15 10:01:49:383 I|*   main  -[ENMLConverter parseHTMLFragment:usedHTMLTidy:] | HTML fragment has no XML declaration and no DOCTYPE declaration.
+2018/05/15 10:01:49:383 I|*   main  -[ENMLConverter parseHTMLFragment:usedHTMLTidy:] | Parse failed w/o HTML tidy.
+2018/05/15 10:01:49:384 I|*   main  +[NSString(NSStringAdditions) stringFromData:textEncodingName:] | Archive encoding name: 'UTF-8'
+2018/05/15 10:02:14:011 I|*   main  +[NSString(NSStringAdditions) stringFromData:textEncodingName:] | Archive encoding name: 'UTF-8'
+2018/05/15 10:02:14:011 I|*   main  -[ENMLConverter parseHTMLFragment:usedHTMLTidy:] | HTML fragment has no XML declaration and no DOCTYPE declaration.
+2018/05/15 10:02:14:011 I|*   main  -[ENMLConverter parseHTMLFragment:usedHTMLTidy:] | Parse failed w/o HTML tidy.
+2018/05/15 10:02:14:012 I|*   main  +[NSString(NSStringAdditions) stringFromData:textEncodingName:] | Archive encoding name: 'UTF-8'

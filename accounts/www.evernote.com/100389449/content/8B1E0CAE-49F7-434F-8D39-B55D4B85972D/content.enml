@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="overflow-wrap:break-word;"><div style="overflow-wrap:break-word;font-family:Georgia, &quot;Times New Roman&quot;, Times, serif;font-size:16px;line-height:26px;color:rgb(17, 17, 17);background-color:rgb(83, 83, 83);"><div style="overflow-wrap:break-word;background:rgb(255, 255, 255) none repeat scroll 0% 0%;"><div style="overflow-wrap:break-word;box-sizing:border-box;"><div style="overflow-wrap:break-word;background-color:rgb(255, 255, 255);box-sizing:border-box;"><div style="overflow-wrap:break-word;font-size:16px;line-height:26px;">
+				<div style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:15px;">
+					<h1 style="padding:0px;overflow-wrap:break-word;font-weight:normal;margin:0px;font-size:26px;line-height:39px;color:rgb(17, 17, 17);">7 Nginx Rewrite Rule Examples with Reg-Ex and Flags</h1>
+					<div style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(136, 136, 136);font-size:13px;line-height:22px;">
+						<span style="margin:0px;padding:0px;overflow-wrap:break-word;font-style:italic;">by</span> <span style="margin:0px;padding:0px;overflow-wrap:break-word;text-transform:uppercase;letter-spacing:1px;">Ramesh Natarajan</span>
+						
+						
+						<span style="margin:0px;padding:0px;overflow-wrap:break-word;font-style:italic;">on</span> <span title="2017-08-01" style="margin:0px;padding:0px;overflow-wrap:break-word;text-transform:uppercase;letter-spacing:1px;">August 1, 2017</span>
+					</div>
+				</div>
+				<div style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<div style="margin:7px 0px 6px 0px;padding:5px;overflow-wrap:break-word;">
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;float:left;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;text-indent:0px;background:transparent none repeat scroll 0% 0%;border-style:none;float:none;line-height:normal;font-size:1px;vertical-align:baseline;display:inline-block;width:32px;height:20px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;top:0px;width:100%px;border-style:none;left:0px;visibility:visible;height:20px;"><div style="font-size: 16px; display: inline-block;"><div dir="ltr" lang="en"><div><div><a href="https://plus.google.com/share?app=110&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2017%2F08%2Fnginx-rewrite-examples%2F" target="_blank"><div dir="ltr"><span><div style="float:left;white-space:nowrap;"><div title="G+" style="border:1px solid rgba(0, 0, 0, 0.17);border-radius:2px;box-shadow:rgba(0, 0, 0, 0.05) 0px 1px 0px;box-sizing:border-box;transition:background-color 0.218s ease 0s, border-color 0.218s ease 0s, box-shadow 0.218s ease 0s;background-color:rgb(255, 255, 255);background-image:none;color:rgb(38, 38, 38);cursor:pointer;outline:medium none currentcolor;overflow:hidden;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:32px;fill:rgb(219, 68, 55);height:20px;"><div style="height:100%;width:100%;"><div style="float:left;margin:0px 0px 0 0px;"><span style="display:block;fill:rgb(219, 68, 55);"><span></span><span></span></span><div></div></div></div></div></div></span></div></a></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:2px;overflow-wrap:break-word;float:left;width:90px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;border:none;overflow:hidden;width:450px;height:21px;position:relative;"><div style="font-size: 16px; display: inline-block;"><div lang="en"><div dir="ltr" style="color:rgb(29, 33, 41);direction:ltr;margin:0px;padding:0px;unicode-bidi:embed;font-size:11px;background:transparent none repeat scroll 0% 0%;font-family:Helvetica, Arial, sans-serif;line-height:1.28;overflow:hidden;"><div style="overflow:initial;"><div style="font-family:Helvetica, Arial, sans-serif;"><div><table cellspacing="0" cellpadding="0" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;border:0px none;border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style="font-size:11px;font-family:Helvetica, Arial, sans-serif;text-align:center;padding-right:0px;padding-top:0px;padding-bottom:0px;padding-left:0px;"><div><div style="margin:0px;padding:0px;"></div></div></td></tr></tbody></table></div></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;visibility:visible;width:68px;height:20px;"><div style="font-size: 16px; display: inline-block;"><div lang="en" style="font:normal normal normal normal 11px/18px &quot;Helvetica Neue&quot;, Arial, sans-serif;color:rgb(51, 51, 51);">
+<div style="margin:0px;padding:0px;background:rgba(0, 0, 0, 0) none repeat scroll 0px 0px;">
+<div style="display:inline-block;white-space:nowrap;overflow:hidden;text-align:left;">
+  <div style="display:inline-block;vertical-align:top;max-width:100%;width:68px;"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fwww.thegeekstuff.com%2F2017%2F08%2Fnginx-rewrite-examples%2F&amp;ref_src=twsrc%5Etfw&amp;text=7%20Nginx%20Rewrite%20Rule%20Examples%20with%20Reg-Ex%20and%20Flags&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2017%2F08%2Fnginx-rewrite-examples%2F" style="outline:0px none currentcolor;text-decoration:none;display:inline-block;vertical-align:top;position:relative;height:20px;box-sizing:border-box;padding:1px 8px 1px 6px;background-color:rgb(27, 149, 224);color:rgb(255, 255, 255);border-radius:3px;font-weight:500;cursor:pointer;"><i style="position:relative;top:2px;display:inline-block;width:14px;height:14px;background:transparent url(&amp;quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E&amp;quot;) no-repeat scroll 0px 0px;"></i><span style="display:inline-block;vertical-align:top;margin-left:3px;white-space:nowrap;">Tweet</span></a></div>
+</div>
+
+
+
+</div></div></div></div>
+</div>
+
+</div>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><en-media type="image/png" hash="78a8794173b792c416e1b5468f0f28d5" alt="Nginx Rewrite" width="351" height="290" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;float:right;margin-bottom:26px;margin-left:26px;"></en-media>Ability to change (rewrite) incoming URL into a different URL based on your criteria is an essential feature for any webserver.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Nginx rewrite is very powerful and flexible.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In this tutorial, we’ll explain the following examples on nginx rewrite:</p>
+<ol style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Nginx Rewrite Example Using $1, $2, ..</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Creating Controller File Using Nginx Rewrite</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Rewrite Break Flag in Location Context</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Adding Question Mark to Nginx Rewrite Replacement String</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">If Context and Rewrite Directive</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Nginx Rewrite Flags Examples</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Capture Nginx Rewrite Hits in Error Log File</li>
+</ol>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><span style="margin:0px;padding:0px;overflow-wrap:break-word;"></span><br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+The following is the syntax of nginx rewrite:</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">rewrite reg-ex replacement [flag];
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In the above:</p>
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;list-style-type:square;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">rewrite directive is part of the ngx_http_rewrite_module module.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">reg-ex – This is a PCRE regular expression that you’ll specify here. This will be used to match the incoming request URI.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">replacement – If the reqeust URI matches the reg-ex, then Nginx will use this replacement string to change the request URI accordingly</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">flag – This will decide whether further process of the rewrite directives is required or not. This is explained in details in one of the examples below.</li>
+</ul>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In nginx, the rewrite directive can be specified inside any one of the following three contexts: server, location, if</p>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">1. Nginx Rewrite Example Using $1, $2, ..</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following is an example of Nginx rewrite directive:</p>
+    <center style="margin:0px;padding:0px;overflow-wrap:break-word;">
+      <div style="margin:0px;padding:0px;overflow-wrap:break-word;margin-left:2px;margin-top:10px;margin-bottom:10px;">
+
+        
+		
+
+
+<ins style="margin:0px;padding:0px;overflow-wrap:break-word;display:inline-block;width:300px;height:250px;"><ins style="margin:0;padding:0;overflow-wrap:break-word;display:inline-table;border:none;height:250px;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins style="margin:0;padding:0;overflow-wrap:break-word;display:block;border:none;height:250px;position:relative;visibility:visible;width:300px;background-color:transparent;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;left:0;position:absolute;top:0;width:300px;height:250px;"></div></ins></ins></ins>
+
+
+        
+
+	  </div>
+    </center>
+
+
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">rewrite ^(/data/.*)/geek/(\w+)\.?.*$ $1/linux/$2.html last;
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For example:</p>
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;list-style-type:square;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">url/data/distro/geek/test.php will get rewritten as url/data/distro/linux/test.html</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">In this example, when you call the original URL with test.php from the browser, it will get rewritten based on the above rewrite rule and will serve test.html page from /data/distro/linux/</li>
+</ul>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In the above rewrite rule:</p>
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;list-style-type:square;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">$1 and $2 will capture the appropriate strings from the original URL that doesn’t change</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">$1 in the replacement string will match whatever is inside the 1st parenthesis ( ) in the reg-ex. In our example, $1 is /data/</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Similarly $2 will match whatever is inside the 2nd parenthesis ( ) in the reg-ex. So, $2 is (\w+), which is any word that comes after the /geek/ in the original URL. In our example, $2 is test</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">last – This flag will make sure to stop the search of rewrite directive in the current location or block and use the changed URI (i.e rewritten URI) and look for new location for any further rewrite directives that matches.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">*$ – This indicates the extension in the original URL. Please note that here, the extension from the original URL will be replaced by .html in the replaced URL by rewrite. So, even though you call .php in the original URL, it will only serve the .html file in the rewritten URL.</li>
+</ul>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">While Nginx rewrite rules does similar things like Apache, there are still lot of differences in terms of how you write a rewrite rule in Nginx.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Also, if you are new to Nginx, this might help to understand the basics: <a href="http://www.thegeekstuff.com/2013/11/nginx-vs-apache/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Nginx Vs Apache: Nginx Basic Architecture and Scalability</a></p>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">2. Creating Controller File Using Nginx Rewrite</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Using rewrite, you can route many incoming original URL to a master controller template that will serve those request.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following rewrite example explains this.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">rewrite ^/linux/(.*)$ /linux.php?distro=$1 last;
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In the above example, when you call thegeekstuff.com/linux/centos URL, it will get rewritten using the above rule and it will serve the page with this rewritten URL: thegeekstuff.com/linux.php?distro=centos</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">As you see above, any URL that has matches the pattern here (i.e /linux/ in the URL) will be served by linux.php, but the last portion in the original incoming URL will be used as an value for the distro argument in the linux.php controller.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">So, the above rewrite rule will transform the incoming URL like this:</p>
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;list-style-type:square;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">linux/centos becomes linux.php?distro=centos</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">linux/debian becomes linux.php?distro=debian</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">linux/redhat becomes linux.php?distro=redhat</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">etc.</li>
+</ul>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Similar to previous example, we are using $1 in the replacement string to capture anything that is inside the 1st parenthesis ( ) in the reg-ex. In this case, this is the last part of the original incoming URL.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">We are also using the last flag here to instruct nginx to stop search for further rewrite directives in the current-block and move-on to the next matching location for further search.</p>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">3. Rewrite Break Flag in Location Context</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In this example, we’ve placed the rewrite condition inside location directive.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In this example, the location directive is /data/, which also matches the $1 in the replacement string given below.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">location /data/ {
+    rewrite ^(/data/.*)/geek/(\w+)\.?.*$ $1/linux/$2.html break;
+    return  403;
+}
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">This is what would’ve happened if you used “last” flag above:</p>
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;list-style-type:square;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">So, if you had “last” as the flag, after the initial rewrite of the URL, Nginx will typically look for the next rewrite directive for the new URL.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">In that case, Nginx will keep redirecting to the same location data and keep processing the same rewrite rule for maximum of 10 times, and finally it will return the 500 error code.</li>
+</ul>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Since, we don’t want the above behavior, we’ve used “break” as the flag here which will just stop processing the rewrite blocks any further.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">To use rewrite directive effectively inside location context, you need to understand the details of how location works: <a href="http://www.thegeekstuff.com/2017/05/nginx-location-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">13 Nginx Location Directive Examples including Regular Expression Modifiers</a></p>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">4. Adding Question Mark to Nginx Rewrite Replacement String</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">If a replacement string includes the new request arguments, the previous request arguments are appended after them. If you don’t want this behavior, putting a question mark at the end of a replacement string avoids having them appended.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In the following example, in the replacement string portion there is no question mark at the end. i.e No question mark after $1</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">rewrite ^/linux/(.*)$ /linux.php?distro=$1 last;
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In the above example, when the replacement string include the incoming request arguments, then the arguments from the previous request are appended after them.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Some times, you probably don’t want that append to happen. In that case, use ? as shown below.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In the following example, in the replacement string portion of the Nginx rewrite, we’ve added ? at the end. i.e There is a question mark after $1</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">rewrite ^/linux/(.*)$ /linux.php?distro=$1? last;
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In the above example, replacement string include the incoming request arguments, then the arguments from the previous request are NOT appended after them.</p>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">5. If Context and Rewrite Directive</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following few examples illustrates that we can use rewrite inside the if directive.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">You can do a conditional rewrite based by doing some if condition comparison using variables like $scheme, $http_host, $http_user_agent, etc, as shown below:</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">if ($scheme = "http") {
+  rewrite ^ http://www.thegeekstuff.com$uri permanent;
+}
+
+if ($http_host = thegeekstuff.com) {
+  rewrite  (.*)  http://www.thegeekstuff.com$1;
+}
+
+if ($http_user_agent = MSIE) {
+    rewrite ^(.*)$ /pdf/$1 break;
+}
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Please note that there are better ways to achieve the end-result of the above examples. The above examples are just given to show that we can add rewrite directive inside if statement in the nginx config file.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Please note that you can also set the value of the following two parameters to either on or off in your nginx config file:</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">server_name_in_redirect on 
+port_in_redirect off
+</pre>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">6. Nginx Rewrite Flags Examples</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following are the 4 different Nginx Rewrite directive flags that you can use.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">last:</strong> This flag will stop the processing of the rewrite directives in the current set, and will start at the new location that matches the changed URL.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">rewrite ^(/data/.*)/geek/(\w+)\.?.*$ $1/linux/$2.html last;
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">break:</strong> This flag will stop the processing of the rewrite directives in the current set.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">rewrite ^(/data/.*)/geek/(\w+)\.?.*$ $1/linux/$2.html break;
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">redirect:</strong> This flag will do a temporary redirection using 302 HTTP code. This is mainly used when the replacement string is not http, or https, or $scheme</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">permanent:</strong> This flag will do a permanent redirection using 301 HTTP code</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">rewrite ^ http://www.thegeekstuff.com$uri permanent;
+</pre>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">7. Capture Nginx Rewrite Hits in Error Log File</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">By default, anytime Nginx does successful rewrite, it doesn’t log it in the error.log.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Initially when you are writing complex rewrite rules, you really want to make sure that Nginx is doing the rewrite as per your requirement.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For this, you should enable the rewrite log, which will write a log entry anytime nginx does a successful rewrite using any one of the rewrite directive in the configuration file.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">For this, use the rewrite_log directive and set it to on.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Add the following two lines to your nginx default.conf:</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">error_log /var/log/nginx/error.log notice;
+rewrite_log on;
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In the above:</p>
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;list-style-type:square;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">The first line indicates the location of the error_log file where we want to write the rewrite messages. Please note that a rewrite message is of type notice. So, you have to add “note” at the end of this line as shown above.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">rewrite_log on – This line enables logging of all the directives of ngx_http_rewrite_module modules to the error_log file.</li>
+</ul>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">After the above change, you’ll started seeing lines like this which clearly shows which specific rewrite rule was used in translating the incoming URL. This also will show the final translated URL in the log entry.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">[notice] 14385#14385: *1 "^(/data/.*)/geek/(\w+)\.?.*$" matches "/data/distro/geek/test", client: 192.168.101.1, server: localhost, request: "GET /data/distro/geek/test HTTP/1.1", host: "192.168.101.10"
+[notice] 14385#14385: *1 rewritten data: "/data/distro/linux/test.html", args: "", client: 192.168.101.1, server: localhost, request: "GET /data/distro/geek/test HTTP/1.1", host: "192.168.101.10"
+</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In the above:</p>
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;list-style-type:square;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">The 1st line shows two things 1) Incoming URL 2) Rewrite rule used</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">In the 1st line, it shows the incoming URL (i.e the request). In this example, the request is: “GET /data/distro/geek/test”</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">In the 1st line, it also shows the Nginx rewrite rule that matched this incoming request. In this example, the rewrite rule used by nginx is: “^(/data/.*)/geek/(\w+)\.?.*$”</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">In the 2nd line, it shows the rewritten translated URL that was used by Nginx after applying the rewrite rule. In this example, the translated rewritten URL is: /data/distro/linux/test.html</li>
+</ul>
+<div style="margin:7px 0px 3px 0px;padding:5px;overflow-wrap:break-word;background:#F2F0E8;">
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;float:left;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;text-indent:0px;background:transparent none repeat scroll 0% 0%;border-style:none;float:none;line-height:normal;font-size:1px;vertical-align:baseline;display:inline-block;width:32px;height:20px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;top:0px;width:100%px;border-style:none;left:0px;visibility:visible;height:20px;"><div style="font-size: 16px; display: inline-block;"><div dir="ltr" lang="en"><div><div><a href="https://plus.google.com/share?app=110&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2017%2F08%2Fnginx-rewrite-examples%2F" target="_blank"><div dir="ltr"><span><div style="float:left;white-space:nowrap;"><div title="G+" style="border:1px solid rgba(0, 0, 0, 0.17);border-radius:2px;box-shadow:rgba(0, 0, 0, 0.05) 0px 1px 0px;box-sizing:border-box;transition:background-color 0.218s ease 0s, border-color 0.218s ease 0s, box-shadow 0.218s ease 0s;background-color:rgb(255, 255, 255);background-image:none;color:rgb(38, 38, 38);cursor:pointer;outline:medium none currentcolor;overflow:hidden;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:32px;fill:rgb(219, 68, 55);height:20px;"><div style="height:100%;width:100%;"><div style="float:left;margin:0px 0px 0 0px;"><span style="display:block;fill:rgb(219, 68, 55);"><span></span><span></span></span><div></div></div></div></div></div></span></div></a></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;float:left;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;visibility:visible;width:68px;height:20px;"><div style="font-size: 16px; display: inline-block;"><div lang="en" style="font:normal normal normal normal 11px/18px &quot;Helvetica Neue&quot;, Arial, sans-serif;color:rgb(51, 51, 51);">
+<div style="margin:0px;padding:0px;background:rgba(0, 0, 0, 0) none repeat scroll 0px 0px;">
+<div style="display:inline-block;white-space:nowrap;overflow:hidden;text-align:left;">
+  <div style="display:inline-block;vertical-align:top;max-width:100%;width:68px;"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fwww.thegeekstuff.com%2F2017%2F08%2Fnginx-rewrite-examples%2F&amp;ref_src=twsrc%5Etfw&amp;text=7%20Nginx%20Rewrite%20Rule%20Examples%20with%20Reg-Ex%20and%20Flags&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2017%2F08%2Fnginx-rewrite-examples%2F" style="outline:0px none currentcolor;text-decoration:none;display:inline-block;vertical-align:top;position:relative;height:20px;box-sizing:border-box;padding:1px 8px 1px 6px;background-color:rgb(27, 149, 224);color:rgb(255, 255, 255);border-radius:3px;font-weight:500;cursor:pointer;"><i style="position:relative;top:2px;display:inline-block;width:14px;height:14px;background:transparent url(&amp;quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E&amp;quot;) no-repeat scroll 0px 0px;"></i><span style="display:inline-block;vertical-align:top;margin-left:3px;white-space:nowrap;">Tweet</span></a></div>
+</div>
+
+
+
+</div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:2px;overflow-wrap:break-word;float:left;width:90px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;border:none;overflow:hidden;width:450px;height:21px;position:relative;"><div style="font-size: 16px; display: inline-block;"><div lang="en"><div dir="ltr" style="color:rgb(29, 33, 41);direction:ltr;margin:0px;padding:0px;unicode-bidi:embed;font-size:11px;background:transparent none repeat scroll 0% 0%;font-family:Helvetica, Arial, sans-serif;line-height:1.28;overflow:hidden;"><div style="overflow:initial;"><div style="font-family:Helvetica, Arial, sans-serif;"><div><table cellspacing="0" cellpadding="0" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;border:0px none;border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style="font-size:11px;font-family:Helvetica, Arial, sans-serif;text-align:center;padding-right:0px;padding-top:0px;padding-bottom:0px;padding-left:0px;"><div><div style="margin:0px;padding:0px;"></div></div></td></tr></tbody></table></div></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:1px;overflow-wrap:break-word;">
+&gt; <a href="http://www.thegeekstuff.com/2017/08/nginx-rewrite-examples/#commentform" rel="nofollow" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;">Add your comment</a>
+</div>
+
+</div>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">If you enjoyed this article, you might also like..</h3>
+<table style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;margin:0px;padding:0px;overflow-wrap:break-word;border-collapse:collapse;border-spacing:0px;">
+<tbody style="margin:0px;padding:0px;overflow-wrap:break-word;"><tr style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<td valign="top" style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<ol style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">50 Linux Sysadmin Tutorials</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2010/11/50-linux-commands/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">50 Most Frequently Used Linux Commands (With Examples)</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2011/12/linux-performance-monitoring-tools/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Top 25 Best Linux Performance Monitoring and Debugging Tools</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/03/15-practical-linux-find-command-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Mommy, I found it! – 15 Practical Linux Find Command Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/linux-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Linux 101 Hacks 2nd Edition eBook</a> <en-media type="image/png" hash="157b7a4a18066f2a912a9653b4bc205d" title="Linux 101 Hacks Book" alt="Linux 101 Hacks Book" width="40" height="14" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></li>
+</ol>
+</td>
+<td style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;list-style-type:square;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Awk Introduction – 7 Awk Print Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/10/unix-sed-tutorial-advanced-sed-substitution-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Advanced Sed Substitution Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/03/8-essential-vim-editor-navigation-fundamentals/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">8 Essential Vim Editor Navigation Fundamentals</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2011/06/iptables-rules-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">25 Most Frequently Used Linux IPTables Rules Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2008/08/turbocharge-putty-with-12-powerful-add-ons-software-for-geeks-3/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Turbocharge PuTTY with 12 Powerful Add-Ons</a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+<center style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<table style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;margin:0px;padding:0px;overflow-wrap:break-word;border-collapse:collapse;border-spacing:0px;">
+<tbody style="margin:0px;padding:0px;overflow-wrap:break-word;"><tr style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/bash-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="c0a4d32ca58fe39f5b170223a8c8763e" title="Bash 101 Hacks Book" alt="Bash 101 Hacks Book" width="131" height="184" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/sed-awk-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="d930f101d0481ddd0e00d12eddb4f964" title="Sed and Awk 101 Hacks Book" alt="Sed and Awk 101 Hacks Book" width="132" height="185" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/nagios-core-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="52d4cdefa0d0d7b07caf93d50a349aec" title="Nagios Core 3 Book" alt="Nagios Core 3 Book" width="132" height="185" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/vim-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="cf915abf41955498421f4ecfc3571b5c" title="Vim 101 Hacks Book" alt="Vim 101 Hacks Book" width="132" height="185" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+</tr>
+</tbody></table>
+</center>
+<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+				<span style="display:block;height:0px;clear:both;visibility:hidden;">.</span></div>
+				<p style="margin:0px;padding:0px;overflow-wrap:break-word;font-size:x-small;margin-bottom:26px;color:rgb(136, 136, 136);">
+					<span style="margin:0px;padding:0px;overflow-wrap:break-word;">Tagged as:</span>
+					<a href="http://www.thegeekstuff.com/tag/nginx-rewrite-break-examples/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Nginx Rewrite Break Examples</a>,
+					<a href="http://www.thegeekstuff.com/tag/nginx-rewrite-error-log/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Nginx Rewrite Error Log</a>,
+					<a href="http://www.thegeekstuff.com/tag/nginx-rewrite-examples-centos/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Nginx Rewrite Examples CentOS</a>,
+					<a href="http://www.thegeekstuff.com/tag/nginx-rewrite-examples-debian/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Nginx Rewrite Examples Debian</a>,
+					<a href="http://www.thegeekstuff.com/tag/nginx-rewrite-examples-linux/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Nginx Rewrite Examples Linux</a>,
+					<a href="http://www.thegeekstuff.com/tag/nginx-rewrite-examples-redhat/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Nginx Rewrite Examples RedHat</a>,
+					<a href="http://www.thegeekstuff.com/tag/nginx-rewrite-examples-ubuntu/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Nginx Rewrite Examples Ubuntu</a>,
+					<a href="http://www.thegeekstuff.com/tag/nginx-rewrite-examples-windows/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Nginx Rewrite Examples Windows</a>,
+					<a href="http://www.thegeekstuff.com/tag/nginx-rewrite-if-context/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Nginx Rewrite If Context</a>,
+					<a href="http://www.thegeekstuff.com/tag/nginx-rewrite-last-examples/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Nginx Rewrite Last Examples</a>,
+					<a href="http://www.thegeekstuff.com/tag/nginx-rewrite-location-examples/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Nginx Rewrite Location Examples</a>,
+					<a href="http://www.thegeekstuff.com/tag/nginx-rewrite-module-examples/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Nginx Rewrite Module Examples</a>,
+					<a href="http://www.thegeekstuff.com/tag/nginx-rewrite-permanent-examples/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Nginx Rewrite Permanent Examples</a>,
+					<a href="http://www.thegeekstuff.com/tag/nginx-rewrite-redirect-examples/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Nginx Rewrite Redirect Examples</a>,
+					<a href="http://www.thegeekstuff.com/tag/nginx-rewrite-service-examples/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Nginx Rewrite Service Examples</a>
+				</p>
+			<span style="font-size:16px;line-height:26px;display:block;height:0px;clear:both;visibility:hidden;">.</span></div></div></div></div></div></div></div><br/></div></en-note>

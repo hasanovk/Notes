@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="overflow-wrap:break-word;"><div style="overflow-wrap:break-word;font-family:Georgia, &quot;Times New Roman&quot;, Times, serif;font-size:16px;line-height:26px;color:rgb(17, 17, 17);background-color:rgb(83, 83, 83);"><div style="overflow-wrap:break-word;background:rgb(255, 255, 255) none repeat scroll 0% 0%;"><div style="overflow-wrap:break-word;box-sizing:border-box;"><div style="overflow-wrap:break-word;background-color:rgb(255, 255, 255);box-sizing:border-box;"><div style="overflow-wrap:break-word;font-size:16px;line-height:26px;">
+				<div style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:15px;">
+					<h1 style="padding:0px;overflow-wrap:break-word;font-weight:normal;margin:0px;font-size:26px;line-height:39px;color:rgb(17, 17, 17);">Unix Sed Tutorial : 7 Examples for Sed Hold and Pattern Buffer Operations</h1>
+					<div style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(136, 136, 136);font-size:13px;line-height:22px;">
+						<span style="margin:0px;padding:0px;overflow-wrap:break-word;font-style:italic;">by</span> <span style="margin:0px;padding:0px;overflow-wrap:break-word;text-transform:uppercase;letter-spacing:1px;">Sasikala</span>
+						
+						
+						<span style="margin:0px;padding:0px;overflow-wrap:break-word;font-style:italic;">on</span> <span title="2009-12-09" style="margin:0px;padding:0px;overflow-wrap:break-word;text-transform:uppercase;letter-spacing:1px;">December 9, 2009</span>
+					</div>
+				</div>
+				<div style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<div style="margin:7px 0px 6px 0px;padding:5px;overflow-wrap:break-word;">
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;float:left;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;text-indent:0px;background:transparent none repeat scroll 0% 0%;border-style:none;float:none;line-height:normal;font-size:1px;vertical-align:baseline;display:inline-block;width:32px;height:20px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;top:0px;width:100%px;border-style:none;left:0px;visibility:visible;height:20px;"><div style="font-size: 16px; display: inline-block;"><div dir="ltr" lang="en"><div><div><a href="https://plus.google.com/share?app=110&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F12%2Funix-sed-tutorial-7-examples-for-sed-hold-and-pattern-buffer-operations%2F" target="_blank"><div dir="ltr"><span><div style="float:left;white-space:nowrap;"><div title="G+" style="border:1px solid rgba(0, 0, 0, 0.17);border-radius:2px;box-shadow:rgba(0, 0, 0, 0.05) 0px 1px 0px;box-sizing:border-box;transition:background-color 0.218s ease 0s, border-color 0.218s ease 0s, box-shadow 0.218s ease 0s;background-color:rgb(255, 255, 255);background-image:none;color:rgb(38, 38, 38);cursor:pointer;outline:medium none currentcolor;overflow:hidden;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:32px;fill:rgb(219, 68, 55);height:20px;"><div style="height:100%;width:100%;"><div style="float:left;margin:0px 0px 0 0px;"><span style="display:block;fill:rgb(219, 68, 55);"><span></span><span></span></span><div></div></div></div></div></div></span></div></a></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:2px;overflow-wrap:break-word;float:left;width:90px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;border:none;overflow:hidden;width:450px;height:21px;position:relative;"><div style="font-size: 16px; display: inline-block;"><div lang="en"><div dir="ltr" style="color:rgb(29, 33, 41);direction:ltr;margin:0px;padding:0px;unicode-bidi:embed;font-size:11px;background:transparent none repeat scroll 0% 0%;font-family:Helvetica, Arial, sans-serif;line-height:1.28;overflow:hidden;"><div style="overflow:initial;"><div style="font-family:Helvetica, Arial, sans-serif;"><div><table cellspacing="0" cellpadding="0" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;border:0px none;border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style="font-size:11px;font-family:Helvetica, Arial, sans-serif;text-align:center;padding-right:0px;padding-top:0px;padding-bottom:0px;padding-left:0px;"><div><div style="margin:0px;padding:0px;"></div></div></td></tr></tbody></table></div></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;visibility:visible;width:68px;height:20px;"><div style="font-size: 16px; display: inline-block;"><div lang="en" style="font:normal normal normal normal 11px/18px &quot;Helvetica Neue&quot;, Arial, sans-serif;color:rgb(51, 51, 51);">
+<div style="margin:0px;padding:0px;background:rgba(0, 0, 0, 0) none repeat scroll 0px 0px;">
+<div style="display:inline-block;white-space:nowrap;overflow:hidden;text-align:left;">
+  <div style="display:inline-block;vertical-align:top;max-width:100%;width:68px;"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F12%2Funix-sed-tutorial-7-examples-for-sed-hold-and-pattern-buffer-operations%2F&amp;ref_src=twsrc%5Etfw&amp;text=Unix%20Sed%20Tutorial%20%3A%207%20Examples%20for%20Sed%20Hold%20and%20Pattern%20Buffer%20Operations&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F12%2Funix-sed-tutorial-7-examples-for-sed-hold-and-pattern-buffer-operations%2F" style="outline:0px none currentcolor;text-decoration:none;display:inline-block;vertical-align:top;position:relative;height:20px;box-sizing:border-box;padding:1px 8px 1px 6px;background-color:rgb(27, 149, 224);color:rgb(255, 255, 255);border-radius:3px;font-weight:500;cursor:pointer;"><i style="position:relative;top:2px;display:inline-block;width:14px;height:14px;background:transparent url(&amp;quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E&amp;quot;) no-repeat scroll 0px 0px;"></i><span style="display:inline-block;vertical-align:top;margin-left:3px;white-space:nowrap;">Tweet</span></a></div>
+</div>
+
+
+
+</div></div></div></div>
+</div>
+
+</div>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><en-media type="image/png" hash="ccde6fc9896196e93f76348f5e1d2318" title="Linux Sed Command Examples" alt="Linux Sed Command Examples" width="300" height="225" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;float:right;margin-bottom:26px;margin-left:26px;"></en-media>This article is part of the on-going <a href="http://www.thegeekstuff.com/tag/sed-tips-and-tricks/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Unix Sed Tips and Tricks</a> series.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In our previous sed articles we learned  — <a href="http://www.thegeekstuff.com/2009/09/unix-sed-tutorial-printing-file-lines-using-address-and-patterns/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;"> sed printing</a>, <a href="http://www.thegeekstuff.com/2009/09/unix-sed-tutorial-delete-file-lines-using-address-and-patterns/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">sed deletion</a>, <a href="http://www.thegeekstuff.com/2009/09/unix-sed-tutorial-replace-text-inside-a-file-using-substitute-command/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">sed substitute </a>, <a href="http://www.thegeekstuff.com/2009/10/unix-sed-tutorial-how-to-write-to-a-file-using-sed/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">sed file write</a>, <a href="http://www.thegeekstuff.com/2009/10/unix-sed-tutorial-how-to-execute-multiple-sed-commands/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">sed multiple commands</a>, <a href="http://www.thegeekstuff.com/2009/11/unix-sed-tutorial-multi-line-file-operation-with-6-practical-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">sed multi-line operation</a>, and <a href="http://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">sed manipulate file lines</a>.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In our <a href="http://www.thegeekstuff.com/2009/09/unix-sed-tutorial-printing-file-lines-using-address-and-patterns/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">first part</a> of sed tutorial we learned that sed has two buffers — <strong style="margin:0px;padding:0px;overflow-wrap:break-word;">sed pattern buffer</strong> and <strong style="margin:0px;padding:0px;overflow-wrap:break-word;">sed hold buffer</strong>. So far we have talked only about pattern buffer.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In this article let us review how to use sed hold and pattern buffer using <strong style="margin:0px;padding:0px;overflow-wrap:break-word;">7 practical sed examples</strong>.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><span style="margin:0px;padding:0px;overflow-wrap:break-word;"></span></p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">As its name implies, <strong style="margin:0px;padding:0px;overflow-wrap:break-word;">sed hold buffer</strong> is used to save all or part of the <strong style="margin:0px;padding:0px;overflow-wrap:break-word;">sed pattern space</strong> for subsequent retrieval. The contents of the pattern space can be copied to the hold space, then back again. No operations are performed directly on the hold space. sed provides a set of hold and get functions to handle these movements.</p>
+<h4 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;">Sed h function</h4>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The h (hold) function copies the contents of the pattern space into a holding area (also called as <strong style="margin:0px;padding:0px;overflow-wrap:break-word;">sed hold space</strong>), destroying any previous contents of the holding area.</p>
+    <center style="margin:0px;padding:0px;overflow-wrap:break-word;">
+      <div style="margin:0px;padding:0px;overflow-wrap:break-word;margin-left:2px;margin-top:10px;margin-bottom:10px;">
+
+        
+		
+
+
+<ins style="margin:0px;padding:0px;overflow-wrap:break-word;display:inline-block;width:300px;height:250px;"><ins style="margin:0;padding:0;overflow-wrap:break-word;display:inline-table;border:none;height:250px;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins style="margin:0;padding:0;overflow-wrap:break-word;display:block;border:none;height:250px;position:relative;visibility:visible;width:300px;background-color:transparent;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;left:0;position:absolute;top:0;width:300px;height:250px;"><div style="font-size: 16px; display: inline-block;"><div><div><div style="width:300px;height:250px;position:relative;"><div style="font-size: 16px; display: inline-block;"><div><div style="width:100%;height:100%;display:table;text-align:center;background:transparent;"><div style="margin:0px;padding:0px;display:table-cell;"><div style="margin:0px;padding:0px;display:inline-block;height:250px;width:300px;overflow:hidden;position:relative;"><a target="_top" href="https://www.googleadservices.com/pagead/aclk?sa=L&amp;ai=CNlKtonExWu2AHcyxgwbK_owoqp__lk7evNX-pwbb2R4QASCigdcLYP2AgIDoA6AB9dTG5gPIAQKoAwHIA8kEqgTpAU_Q82uigOZb3S9jLV5ua0NnnKLjh7k6p45YPW8fgr0jiXwj3Ld1qc2aWDd5Mmcr9ux7AfgI5yzRM9Y-HQ8c8T4vY8EDTtNwP3UDlUrBqTxNX1QYmwA7TYWVQc_PpDTKuI_EEadprKWlX6fcR2C54tu3cfo3xyb9tRXJ9PURvPqryAIDwCbh93d5BjxrW8pyGjbdWNDnBqecOwBtj16pczms8NIyxQ3_Na2iGzhQmBPZgXsADiEsttkyZeZGCNbGDaZMY9bVafVQCv34AdpcecFOKEvXk2RIPWuhRR1tWyTT68bV-5gkeuwboAYCgAfzqrkZqAemvhvYBwHSCAcIgAEQARgCsQlNN_9wUcO5aoAKAdgTCg&amp;num=1&amp;cid=CAASEuRo9fFnDizrxeF2fU5-opyljQ&amp;sig=AOD64_1W2NBcxVOlPYDxw9No3FDTgJJOBg&amp;client=ca-pub-8090601437064582&amp;adurl=https://Airtable.com%3Ftry%3Dcreativeteams%26utm_source%3Dgoogledisp%26utm_campaign%3Dartichoke_102517%26utm_term%3D%26utm_content%3D228573118219_handcal_3025%26utm_extra2%3Dnone" style="color:rgb(0, 0, 0);"><en-media type="image/jpeg" hash="e62e05602560fd8af3b7062b7f196383" alt="" width="300" height="250" border="0"></en-media></a><div dir="ltr" style="margin:0px;padding:0px;display:block;height:15px;overflow:hidden;position:absolute;right:16px;top:0px;text-rendering:geometricprecision;width:15px;z-index:9020;cursor:pointer;"><div style="margin:0px;padding:0px;display:block;height:15px;width:15px;position:absolute;right:0px;top:0px;"><span style="display:block;"><span style="fill-opacity:1;fill:rgb(205, 204, 204);stroke:none;"></span><span style="fill-opacity:1;fill:rgb(0, 174, 205);stroke:none;display:block;"><span></span><span></span></span></span></div></div><div style="margin:0px;padding:0px;background-image:url(&amp;quot;https://tpc.googlesyndication.com/pagead/images/x_button_blue2.svg&amp;quot;);background-repeat:no-repeat;background-position:right top;cursor:pointer;height:15px;width:15px;z-index:9020;position:absolute;right:0px;top:0px;"></div><div style="margin:0px;padding:0px;"></div><div style="display:none;position:relative;"><div style="font-size: 16px; display: inline-block;"><div>
+<div>
+
+
+
+</div></div></div></div></div></div><div style="position:absolute;"></div><div style="margin:0px;padding:0px;bottom:0;right:0;width:86px;height:250px;background:initial !important;position:absolute !important;max-width:100% !important;max-height:100% !important;pointer-events:none !important;image-rendering:-moz-crisp-edges !important;z-index:2147483647;background-image:url('https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-8090601437064582&amp;output=html&amp;h=250&amp;slotname=8643685131&amp;adk=1962350338&amp;adf=580022113&amp;w=300&amp;lmt=1513189793&amp;format=300x250&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F12%2Funix-sed-tutorial-7-examples-for-sed-hold-and-pattern-buffer-operations%2F&amp;flash=27.0.0&amp;avail_w=579&amp;wgl=1&amp;adsid=NT&amp;dt=1513189793342&amp;bpp=4&amp;bdt=392&amp;fdt=457&amp;idt=501&amp;shv=r20171206&amp;cbv=r20170110&amp;saldr=aa&amp;prev_fmts=728x90&amp;correlator=2924535746017&amp;frm=20&amp;ga_vid=900984125.1513188984&amp;ga_sid=1513188984&amp;ga_hid=259134464&amp;ga_fc=1&amp;pv=1&amp;icsg=2&amp;nhd=1&amp;dssz=2&amp;mdo=0&amp;mso=0&amp;u_tz=-300&amp;u_his=1&amp;u_java=0&amp;u_h=1440&amp;u_w=2560&amp;u_ah=1369&amp;u_aw=2560&amp;u_cd=24&amp;u_nplug=1&amp;u_nmime=2&amp;adx=415&amp;ady=1009&amp;biw=1470&amp;bih=1245&amp;abxe=1&amp;eid=4089042%2C21061122%2C191880502&amp;oid=3&amp;nmo=1&amp;rx=0&amp;eae=0&amp;fc=528&amp;brdim=%2C%2C328%2C49%2C2560%2C23%2C1470%2C1337%2C1470%2C1245&amp;vis=1&amp;rsz=%7C%7CeE%7C&amp;abl=CS&amp;ppjl=f&amp;pfx=0&amp;fu=16&amp;bc=1&amp;ifi=2&amp;xpc=eQyKfnZvUw&amp;p=http%3A//www.thegeekstuff.com&amp;dtd=523data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACsAAAAWBAMAAACrl3iAAAAABlBMVEUAAAD+AciWmZzWAAAAAnRSTlMAApidrBQAAAB2SURBVBjTbZCJDcAgDAPNBt5/2oo4ziMalQjUq7kG+K+jQqw6AYy3HOv24pqHaJLRL+rTpiaN6iPbJtgmVQof3kg2nsy+V5OwE+UyCGkAZZLO1Qks47qiRQTlpk1PjnP/l3Lt3lPQHu8E/dGg+4KdTQfznaDxDy1TBZ4sB9g3AAAAAElFTkSuQmCC&amp;apos;') !important;"></div> <div style="height:0px;width:0px;position:absolute;"><div style="font-size: 16px; display: inline-block;"><div><div></div></div></div></div></div></div></div></div></div></div></div></div></ins></ins></ins>
+
+
+        
+
+	  </div>
+    </center>
+
+
+<h4 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;">Sed H function</h4>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The H function appends the contents of the pattern space to the contents of the holding area. The former and new contents are separated by a newline.</p>
+<h4 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;">Sed g function</h4>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The g function copies the contents of the holding area into the pattern space, destroying the previous contents of the pattern space.</p>
+<h4 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;">Sed G function</h4>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The G function appends the contents of the holding area to the contents of the pattern space. The former and new contents are separated by a newline. The maximum number of addresses is two.</p>
+<h4 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;">Sed x function</h4>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The exchange function interchanges the contents of the pattern space and the holding area. The maximum number of addresses is two.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Now let us see some examples to learn about the above commands.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Let us first create thegeekstuff.txt file that will be used in the examples mentioned below.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">$ cat thegeekstuff.txt
+#Linux
+        Administration
+        Scripting
+        Tips and Tricks
+
+#Windows
+        Administration
+
+#Database
+        Mysql
+        Oracle
+        Queries
+        Procedures</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">1. Double Space a File Content Using Sed Command</h3>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">$sed 'G' thegeekstuff.txt
+#Linux
+
+        Administration
+
+        Scripting
+
+        Tips and Tricks
+
+#Windows
+
+        Administration
+
+#Database
+
+        Mysql
+
+        Oracle
+
+        Queries
+
+        Procedures 
+
+$</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In this example,</p>
+<ol style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Sed reads a line and places it in the pattern buffer.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">G command appends the hold buffer to the pattern buffer separated by \n. so one newline will be appended with the pattern space content.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Similarly, If you want to triple space a file, append hold buffer content to the pattern buffer twice. (G;G)</li>
+</ol>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">2. Print File Content in Reverse Order Using Sed Command</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Print the lines of a file in reverse order (similar to <a href="http://www.thegeekstuff.com/2009/10/file-manipulation-examples-using-tac-rev-paste-and-join-unix-commands/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">tac command</a> that we discussed earlier).</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">$sed -n '1!G;h;$p' thegeekstuff.txt
+        Procedures
+        Queries
+        Oracle
+        Mysql
+#Database
+
+        Administration
+#Windows
+
+        Tips and Tricks
+        Scripting
+        Administration
+#Linux</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In this example,</p>
+<ol style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">First line will be placed into the hold space as it is.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">From the 2nd line onwards, just append the hold space content with the pattern space. (Remember 2nd line is in pattern space, and 1st line is in hold space).</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Now 1st and 2nd line got reversed and move this to the hold space.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Repeat the above steps till last line.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Once the last line is reached, just append the hold space content with the pattern space and print the pattern space.</li>
+</ol>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">3. Print a Paragraph (Only if it contains given pattern) Using Sed Command</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In thegeekstuff.txt print paragraph only if it contains the pattern “Administration”.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">$ sed -e '/./{H;$!d;}' -e 'x;/Administration/!d' thegeekstuff.txt 
+
+Linux
+        Administration
+        Scripting
+        Tips and Tricks
+
+Windows
+        Administration</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In this example,</p>
+<ol style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Till the empty line comes, keep appending the non empty lines into the hold space</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">When empty line comes i.e paragraph ends, exchange the data between pattern and hold space. So that whole paragraph will be available in pattern space.<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+Check if pattern “Administration” is available, if yes don’t delete it i.e print the pattern space</li>
+</ol>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">4. Print the line immediately before a pattern match using Sed Command</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Print only the line immediately before,the pattern “Mysql”.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">$ sed -n '/Mysql/{g;1!p;};h' thegeekstuff.txt
+#Database</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In this example,</p>
+<ol style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">For each cycle, place the line into hold buffer, if it doesn’t match with the pattern “Mysql”.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">If the line matches with the pattern, get the data from the hold space(previous line) using g command and print it.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">In case, if the first line matches with the pattern “Mysql”,anyway hold space will be empty.(There is no previous line to the first line).So first line should not get printed(1!p)</li>
+</ol>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">5. Delete the last line of each paragraph using Sed Command</h3>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">$ sed -n -e '/^$/{x;d}' -e '/./x;p' thegeekstuff.txt 
+
+#Linux
+        Administration
+        Scripting
+
+#Windows
+
+#Database
+        Mysql
+        Oracle
+        Queries</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In this example,</p>
+<ol style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">If the line is not empty,then exchange the line between pattern and hold space. So first line will be placed in the hold space.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">When next non empty line comes, exchange the pattern space and hold space, and print the pattern space. i.e first non empty line will be printed and 2nd line goes to hold. And in next cycle, 2nd non empty line is printed when 3rd line goes to hold and goes on like this.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"> When empty line comes (previous line to the empty line will be available in hold buffer) just exchange pattern and hold space, and delete the line (last line of the paragraph) and start the next cycle.</li>
+</ol>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">6. For each line, append the previous line to the end of it using Sed Command</h3>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">$ sed 'H;x;s/^\(.*\)\n\(.*\)/\2\1/' thegeekstuff.txt
+#Linux
+        Administration#Linux
+        Scripting        Administration
+        Tips and Tricks        Scripting
+        Tips and Tricks
+#Windows
+        Administration#Windows
+        Administration
+#Database
+        Mysql#Database
+        Oracle        Mysql
+        Queries Oracle
+        Procedures                      Queries</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In this example,</p>
+<ol style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Place the first line in Hold buffer.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">When the second line comes, append to Hold space (first line)</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Then exchange pattern and hold buffer. So now pattern space will have first and second line separated by \n, Hold space will have only second line.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"> So interchange the lines in the pattern space.</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"> The above steps happens till the end of the file</li>
+</ol>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">7. Prepend tag of every block to every line of that block</h3>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">$ sed '
+/^#/{
+h
+d
+}
+G
+s/^\(.*\)\n#\(.*\)/\2 \1/' thegeekstuff.txt
+Linux         Administration
+Linux         Scripting
+Linux         Tips and Tricks
+Linux
+Windows         Administration
+Windows
+Database         Mysql
+Database        Oracle
+Database        Queries
+Database        Procedures</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In this example,</p>
+<ol style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">When the first line of a block is met (beginning with #)
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-left:26px;list-style-type:square;margin-bottom:0px;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"> keep that line to the Hold Space via command `h’</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">Then delete using ‘d’ to start another cycle.</li>
+</ul>
+</li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;">For the rest lines of a block, Command `G’ appends the tag line from the Hold Space and substitute command interchanges tag and lines properly.</li>
+</ol>
+<div style="margin:7px 0px 3px 0px;padding:5px;overflow-wrap:break-word;background:#F2F0E8;">
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;float:left;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;text-indent:0px;background:transparent none repeat scroll 0% 0%;border-style:none;float:none;line-height:normal;font-size:1px;vertical-align:baseline;display:inline-block;width:32px;height:20px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;top:0px;width:100%px;border-style:none;left:0px;visibility:visible;height:20px;"><div style="font-size: 16px; display: inline-block;"><div dir="ltr" lang="en"><div><div><a href="https://plus.google.com/share?app=110&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F12%2Funix-sed-tutorial-7-examples-for-sed-hold-and-pattern-buffer-operations%2F" target="_blank"><div dir="ltr"><span><div style="float:left;white-space:nowrap;"><div title="G+" style="border:1px solid rgba(0, 0, 0, 0.17);border-radius:2px;box-shadow:rgba(0, 0, 0, 0.05) 0px 1px 0px;box-sizing:border-box;transition:background-color 0.218s ease 0s, border-color 0.218s ease 0s, box-shadow 0.218s ease 0s;background-color:rgb(255, 255, 255);background-image:none;color:rgb(38, 38, 38);cursor:pointer;outline:medium none currentcolor;overflow:hidden;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:32px;fill:rgb(219, 68, 55);height:20px;"><div style="height:100%;width:100%;"><div style="float:left;margin:0px 0px 0 0px;"><span style="display:block;fill:rgb(219, 68, 55);"><span></span><span></span></span><div></div></div></div></div></div></span></div></a></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;float:left;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;visibility:visible;width:68px;height:20px;"><div style="font-size: 16px; display: inline-block;"><div lang="en" style="font:normal normal normal normal 11px/18px &quot;Helvetica Neue&quot;, Arial, sans-serif;color:rgb(51, 51, 51);">
+<div style="margin:0px;padding:0px;background:rgba(0, 0, 0, 0) none repeat scroll 0px 0px;">
+<div style="display:inline-block;white-space:nowrap;overflow:hidden;text-align:left;">
+  <div style="display:inline-block;vertical-align:top;max-width:100%;width:68px;"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F12%2Funix-sed-tutorial-7-examples-for-sed-hold-and-pattern-buffer-operations%2F&amp;ref_src=twsrc%5Etfw&amp;text=Unix%20Sed%20Tutorial%20%3A%207%20Examples%20for%20Sed%20Hold%20and%20Pattern%20Buffer%20Operations&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F12%2Funix-sed-tutorial-7-examples-for-sed-hold-and-pattern-buffer-operations%2F" style="outline:0px none currentcolor;text-decoration:none;display:inline-block;vertical-align:top;position:relative;height:20px;box-sizing:border-box;padding:1px 8px 1px 6px;background-color:rgb(27, 149, 224);color:rgb(255, 255, 255);border-radius:3px;font-weight:500;cursor:pointer;"><i style="position:relative;top:2px;display:inline-block;width:14px;height:14px;background:transparent url(&amp;quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E&amp;quot;) no-repeat scroll 0px 0px;"></i><span style="display:inline-block;vertical-align:top;margin-left:3px;white-space:nowrap;">Tweet</span></a></div>
+</div>
+
+
+
+</div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:2px;overflow-wrap:break-word;float:left;width:90px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;border:none;overflow:hidden;width:450px;height:21px;position:relative;"><div style="font-size: 16px; display: inline-block;"><div lang="en"><div dir="ltr" style="color:rgb(29, 33, 41);direction:ltr;margin:0px;padding:0px;unicode-bidi:embed;font-size:11px;background:transparent none repeat scroll 0% 0%;font-family:Helvetica, Arial, sans-serif;line-height:1.28;overflow:hidden;"><div style="overflow:initial;"><div style="font-family:Helvetica, Arial, sans-serif;"><div><table cellspacing="0" cellpadding="0" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;border:0px none;border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style="font-size:11px;font-family:Helvetica, Arial, sans-serif;text-align:center;padding-right:0px;padding-top:0px;padding-bottom:0px;padding-left:0px;"><div><div style="margin:0px;padding:0px;"></div></div></td></tr></tbody></table></div></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:1px;overflow-wrap:break-word;">
+&gt; <a href="http://www.thegeekstuff.com/2009/12/unix-sed-tutorial-7-examples-for-sed-hold-and-pattern-buffer-operations/#commentform" rel="nofollow" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;">Add your comment</a>
+</div>
+
+</div>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">If you enjoyed this article, you might also like..</h3>
+<table style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;margin:0px;padding:0px;overflow-wrap:break-word;border-collapse:collapse;border-spacing:0px;">
+<tbody style="margin:0px;padding:0px;overflow-wrap:break-word;"><tr style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<td valign="top" style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<ol style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">50 Linux Sysadmin Tutorials</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2010/11/50-linux-commands/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">50 Most Frequently Used Linux Commands (With Examples)</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2011/12/linux-performance-monitoring-tools/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Top 25 Best Linux Performance Monitoring and Debugging Tools</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/03/15-practical-linux-find-command-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Mommy, I found it! – 15 Practical Linux Find Command Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/linux-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Linux 101 Hacks 2nd Edition eBook</a> <en-media type="image/png" hash="157b7a4a18066f2a912a9653b4bc205d" title="Linux 101 Hacks Book" alt="Linux 101 Hacks Book" width="40" height="14" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></li>
+</ol>
+</td>
+<td style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;list-style-type:square;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Awk Introduction – 7 Awk Print Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/10/unix-sed-tutorial-advanced-sed-substitution-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Advanced Sed Substitution Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/03/8-essential-vim-editor-navigation-fundamentals/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">8 Essential Vim Editor Navigation Fundamentals</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2011/06/iptables-rules-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">25 Most Frequently Used Linux IPTables Rules Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2008/08/turbocharge-putty-with-12-powerful-add-ons-software-for-geeks-3/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Turbocharge PuTTY with 12 Powerful Add-Ons</a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+<center style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<table style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;margin:0px;padding:0px;overflow-wrap:break-word;border-collapse:collapse;border-spacing:0px;">
+<tbody style="margin:0px;padding:0px;overflow-wrap:break-word;"><tr style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/bash-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="c0a4d32ca58fe39f5b170223a8c8763e" title="Bash 101 Hacks Book" alt="Bash 101 Hacks Book" width="131" height="184" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/sed-awk-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="d930f101d0481ddd0e00d12eddb4f964" title="Sed and Awk 101 Hacks Book" alt="Sed and Awk 101 Hacks Book" width="132" height="185" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/nagios-core-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="52d4cdefa0d0d7b07caf93d50a349aec" title="Nagios Core 3 Book" alt="Nagios Core 3 Book" width="132" height="185" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/vim-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="cf915abf41955498421f4ecfc3571b5c" title="Vim 101 Hacks Book" alt="Vim 101 Hacks Book" width="132" height="185" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+</tr>
+</tbody></table>
+</center>
+<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+				<span style="display:block;height:0px;clear:both;visibility:hidden;">.</span></div>
+				<p style="margin:0px;padding:0px;overflow-wrap:break-word;font-size:x-small;margin-bottom:26px;color:rgb(136, 136, 136);">
+					<span style="margin:0px;padding:0px;overflow-wrap:break-word;">Tagged as:</span>
+					<a href="http://www.thegeekstuff.com/tag/linux-sed-command/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Linux Sed Command</a>,
+					<a href="http://www.thegeekstuff.com/tag/sed-command/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Sed Command</a>,
+					<a href="http://www.thegeekstuff.com/tag/sed-examples-in-unix/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Sed Examples in Unix</a>,
+					<a href="http://www.thegeekstuff.com/tag/sed-examples-linux/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Sed Examples Linux</a>,
+					<a href="http://www.thegeekstuff.com/tag/sed-hold-space-pattern-space/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Sed Hold Space Pattern Space</a>,
+					<a href="http://www.thegeekstuff.com/tag/sed-tips-and-tricks/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Sed Tips and Tricks</a>,
+					<a href="http://www.thegeekstuff.com/tag/unix-sed-command/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Unix Sed Command</a>
+				</p>
+			<span style="font-size:16px;line-height:26px;display:block;height:0px;clear:both;visibility:hidden;">.</span></div></div></div></div></div></div></div><br/></div></en-note>

@@ -1,0 +1,1 @@
+ZFS Basics # To create a dataset: => sudo zfs create Pool_Name/Dataset => sudo zfs create zkfh/opt # To mount a dataset to different location: => sudo zfs set mountpoint=/opt zkfh/opt 

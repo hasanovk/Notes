@@ -1,0 +1,286 @@
+2018/05/06 03:01:20:702 I|*   50853 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 03:04:35:768 I|*   50864 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 03:04:35:813 I|*   50864 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 05:49:15:323 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/06 05:49:19:820 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/06 05:49:19:820 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/06 05:49:29:895 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/06 05:49:29:995 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/06 05:49:32:092 I|*   50923 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/06 05:49:36:596 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/06 05:49:36:596 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/06 06:29:49:127 I|*   51577 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 07:29:56:924 I|*   52473 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 08:29:48:785 I|*   54007 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 09:04:36:787 I|*   54847 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 09:04:36:832 I|*   54847 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 09:29:50:648 I|*   55257 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 10:29:50:510 I|*   55405 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 11:29:56:373 I|*   55552 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 12:29:47:044 I|*   main  -[ENContactIntegrationManager refetchTimerFired:] | Extractor type=3 is disconnected, try to deactivate all contacts from it
+2018/05/06 12:29:52:217 I|*   55695 -[ENContactIntegrationManager _enqueueContactExtraction:]_block_invoke | Extractor type=1 will extract contacts
+2018/05/06 12:29:52:217 I|*   55695 -[ENEvernoteContactExtractor extractContacts] | Begin extracting Evernote contacts
+2018/05/06 12:29:52:217 I|*   55695 -[ENEvernoteContactExtractor extractContacts] | End fetching Evernote contacts
+2018/05/06 12:29:52:221 I|*   main  -[ENIncentiveManager refreshTimerFired:] | Refresh fired for incentive: (null)
+2018/05/06 12:29:52:241 I|*   55695 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 12:29:52:468 I|*   main  -[ENIncentiveManager refreshIncentive]_block_invoke | Removed current incentive
+2018/05/06 12:30:06:234 I|*   55695 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 13:29:52:098 I|*   55865 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 14:29:47:957 I|*   56014 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 14:30:07:886 I|*   main  -[ENTierSelectionEligibilityController checkEligibilityTimerFired:] | Check-TSD-eligibility timer fired; checking with service
+2018/05/06 14:30:08:086 I|*   56016 -[ENTierSelectionEligibilityController handleEligibilityResult:] | TSD-eligibility result: <EDAMTierSelectionDisplayEligibilityResult: 0x7f8f062058b0; shouldShowTsd = 0; timeToLive = 86400000; tsdType = (null); tsdTiming = (null); tsdVariation = (null); subscriptionInfo = <EDAMSubscriptionInfo: 0x7f8f0752be00; currentTime = 1525631408049; currentlySubscribed = 0; subscriptionRecurring = 0; subscriptionExpirationDate = (null); subscriptionPending = 0; subscriptionCancellationPending = 0; serviceLevelsEligibleForPurchase = {(
+    3,
+    2
+)}; currentSku = (null); validUntil = 1557167408049; itunesReceiptRequested = 0;>; teamStarterPackResult = (null);>
+2018/05/06 14:30:08:088 I|*   56016 -[ENTierSelectionEligibilityController startCheckEligibilityTimer] | Waiting for 86399.999655 seconds before checking TSD eligibility with the service
+2018/05/06 15:04:44:162 I|*   56178 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 15:04:44:203 I|*   56178 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 16:38:04:167 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/06 16:38:04:167 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/06 16:38:08:817 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/06 16:38:08:817 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/06 16:38:08:850 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/06 16:38:17:975 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/06 16:38:17:975 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/06 16:38:18:014 I|*   56258 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 16:38:18:237 I|*   56268 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/06 17:38:14:412 I|*   56757 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 19:01:19:012 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/06 19:01:19:021 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/06 19:01:23:025 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/06 19:01:23:025 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/06 19:01:23:060 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/06 19:01:24:189 I|*   57952 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/06 19:01:24:191 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/06 19:01:28:686 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/06 19:01:28:686 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/06 19:01:28:725 E|*** 57952 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7f8f059e8690 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/06 19:01:28:725 E|*** 57952 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7f8f059e8690 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/06 19:01:45:265 I|*   57964 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 20:01:41:302 I|*   58344 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 21:01:49:174 I|*   58498 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 21:04:47:477 I|*   58505 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 21:04:47:520 I|*   58505 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 21:14:18:825 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/06 21:14:18:836 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/06 21:14:22:830 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/06 21:14:22:830 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/06 21:14:22:864 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/06 21:14:24:151 I|*   58517 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/06 21:14:24:151 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/06 21:14:28:643 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/06 21:14:28:643 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/06 21:14:28:682 E|*** 58517 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7f8f065c9fb0 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/06 21:14:28:682 E|*** 58517 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7f8f065c9fb0 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/06 21:52:32:786 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/06 21:52:32:786 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=0 usn=1312 | <ENMacNoteMO 0x7f8f05e04200> MOID:0x4480002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p274> GUID:7161a7e4-4caf-45e9-ba49-6eedc5169235 Title:[Bash] Android Shell Tutorial - adb July 2014 - Pastebin.com Account:(null) USN:1312 Hash:<75afccf7 63932b2f e021dfc1 aed5863f> Length:43376 <ENCommonEditorWebView: 0x7f8f05d12ad0>
+2018/05/06 21:52:32:786 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p274 <ENCommonEditorWebView: 0x7f8f05d12ad0>
+2018/05/06 21:52:32:786 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=0 usn=1312 <ENCommonEditorWebView: 0x7f8f05d12ad0> <ENMacNoteMO 0x7f8f05e04200> MOID:0x4480002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p274> GUID:7161a7e4-4caf-45e9-ba49-6eedc5169235 Title:[Bash] Android Shell Tutorial - adb July 2014 - Pastebin.com Account:(null) USN:1312 Hash:<75afccf7 63932b2f e021dfc1 aed5863f> Length:43376
+2018/05/06 21:52:33:132 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7f8f05d12ad0> <ENMacNoteMO 0x7f8f05e04200> MOID:0x4480002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p274> GUID:7161a7e4-4caf-45e9-ba49-6eedc5169235 Title:[Bash] Android Shell Tutorial - adb July 2014 - Pastebin.com Account:(null) USN:1312 Hash:<75afccf7 63932b2f e021dfc1 aed5863f> Length:43376
+2018/05/06 21:52:33:144 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7f8f05e04200> MOID:0x4480002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p274> GUID:7161a7e4-4caf-45e9-ba49-6eedc5169235 Title:[Bash] Android Shell Tutorial - adb July 2014 - Pastebin.com Account:(null) USN:1312 Hash:<75afccf7 63932b2f e021dfc1 aed5863f> Length:43376
+2018/05/06 21:52:33:178 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/06 21:52:33:178 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7f8f05af32e0> MOID:0x1780002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p94> GUID:[local] Title:Docker Account:(null) USN:0 Hash:<e96491f9 7cca79f2 3ba0b4f7 68a3bc93> Length:8342 <ENCommonEditorWebView: 0x7f8f06784110>
+2018/05/06 21:52:33:178 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p94 <ENCommonEditorWebView: 0x7f8f06784110>
+2018/05/06 21:52:33:179 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7f8f06784110> <ENMacNoteMO 0x7f8f05af32e0> MOID:0x1780002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p94> GUID:[local] Title:Docker Account:(null) USN:0 Hash:<e96491f9 7cca79f2 3ba0b4f7 68a3bc93> Length:8342
+2018/05/06 21:52:33:208 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7f8f05af32e0> MOID:0x1780002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p94> GUID:[local] Title:Docker Account:(null) USN:0 Hash:<e96491f9 7cca79f2 3ba0b4f7 68a3bc93> Length:8342
+2018/05/06 21:52:33:220 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/06 21:52:33:221 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7f8f0674f9f0> MOID:0xc680002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p794> GUID:[local] Title:Jenkins Account:(null) USN:0 Hash:<04f11aae 5a8f31d9 e3d881c6 38e7bd31> Length:266 <ENCommonEditorWebView: 0x7f8f05e7ca50>
+2018/05/06 21:52:33:221 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p794 <ENCommonEditorWebView: 0x7f8f05e7ca50>
+2018/05/06 21:52:33:221 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7f8f05e7ca50> <ENMacNoteMO 0x7f8f0674f9f0> MOID:0xc680002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p794> GUID:[local] Title:Jenkins Account:(null) USN:0 Hash:<04f11aae 5a8f31d9 e3d881c6 38e7bd31> Length:266
+2018/05/06 21:52:33:402 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7f8f05e7ca50> <ENMacNoteMO 0x7f8f0674f9f0> MOID:0xc680002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p794> GUID:[local] Title:Jenkins Account:(null) USN:0 Hash:<04f11aae 5a8f31d9 e3d881c6 38e7bd31> Length:266
+2018/05/06 21:52:33:402 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Loaded noteID 0x1780002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p94> but editor is now using (null) <ENCommonEditorWebView: 0x7f8f06784110>
+2018/05/06 21:53:06:490 I|*   main  -[ENLinkCollectionController saveWithCompletion:] | Saving in local pref 'recentNotebooks' with 6 items, previously 7 items
+2018/05/06 21:53:06:492 I|*   main  -[ENLinkCollectionController saveWithCompletion:] | Saving in local pref 'recentNotebooks' with 7 items, previously 6 items
+2018/05/06 21:53:06:521 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7f8f0674f9f0> MOID:0xc680002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p794> GUID:[local] Title:Jenkins Account:(null) USN:0 Hash:<04f11aae 5a8f31d9 e3d881c6 38e7bd31> Length:266
+2018/05/06 21:53:06:559 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/06 21:53:06:559 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7f8f0375e310> MOID:0xb900002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p740> GUID:[local] Title:Dictionary Account:(null) USN:0 Hash:<0aaabce9 7223e749 72b92ca1 52a5a0e4> Length:200 <ENCommonEditorWebView: 0x7f8f075ab2f0>
+2018/05/06 21:53:06:559 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p740 <ENCommonEditorWebView: 0x7f8f075ab2f0>
+2018/05/06 21:53:06:559 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7f8f075ab2f0> <ENMacNoteMO 0x7f8f0375e310> MOID:0xb900002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p740> GUID:[local] Title:Dictionary Account:(null) USN:0 Hash:<0aaabce9 7223e749 72b92ca1 52a5a0e4> Length:200
+2018/05/06 21:53:06:592 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7f8f075ab2f0> <ENMacNoteMO 0x7f8f0375e310> MOID:0xb900002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p740> GUID:[local] Title:Dictionary Account:(null) USN:0 Hash:<0aaabce9 7223e749 72b92ca1 52a5a0e4> Length:200
+2018/05/06 21:53:10:466 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7f8f0375e310> MOID:0xb900002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p740> GUID:[local] Title:Dictionary Account:(null) USN:0 Hash:<0aaabce9 7223e749 72b92ca1 52a5a0e4> Length:200
+2018/05/06 21:53:10:482 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/06 21:53:10:482 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7f8f0641a160> MOID:0x1a80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p106> GUID:[local] Title:Philosphy Account:(null) USN:0 Hash:<12c4e4f6 46179529 5c77dabd 10afdbdb> Length:961 <ENCommonEditorWebView: 0x7f8f05e64d50>
+2018/05/06 21:53:10:482 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p106 <ENCommonEditorWebView: 0x7f8f05e64d50>
+2018/05/06 21:53:10:482 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7f8f05e64d50> <ENMacNoteMO 0x7f8f0641a160> MOID:0x1a80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p106> GUID:[local] Title:Philosphy Account:(null) USN:0 Hash:<12c4e4f6 46179529 5c77dabd 10afdbdb> Length:961
+2018/05/06 21:53:10:597 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7f8f05e64d50> <ENMacNoteMO 0x7f8f0641a160> MOID:0x1a80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p106> GUID:[local] Title:Philosphy Account:(null) USN:0 Hash:<12c4e4f6 46179529 5c77dabd 10afdbdb> Length:961
+2018/05/06 21:53:16:214 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7f8f0641a160> MOID:0x1a80002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p106> GUID:[local] Title:Philosphy Account:(null) USN:0 Hash:<12c4e4f6 46179529 5c77dabd 10afdbdb> Length:961
+2018/05/06 21:53:16:230 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/06 21:53:16:230 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=726 | <ENMacNoteMO 0x7f8f05869cd0> MOID:0x37c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p223> GUID:[local] Title:Morning Thoughts Account:(null) USN:726 Hash:<1f6958be d7f04de0 2b2fc76c 1f0fbfa5> Length:2502 <ENCommonEditorWebView: 0x7f8f07440980>
+2018/05/06 21:53:16:230 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p223 <ENCommonEditorWebView: 0x7f8f07440980>
+2018/05/06 21:53:16:230 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=726 <ENCommonEditorWebView: 0x7f8f07440980> <ENMacNoteMO 0x7f8f05869cd0> MOID:0x37c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p223> GUID:[local] Title:Morning Thoughts Account:(null) USN:726 Hash:<1f6958be d7f04de0 2b2fc76c 1f0fbfa5> Length:2502
+2018/05/06 21:53:16:340 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7f8f07440980> <ENMacNoteMO 0x7f8f05869cd0> MOID:0x37c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p223> GUID:[local] Title:Morning Thoughts Account:(null) USN:726 Hash:<1f6958be d7f04de0 2b2fc76c 1f0fbfa5> Length:2502
+2018/05/06 21:53:24:205 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2553 bytes:
+2018/05/06 21:53:24:208 I|*   main  -[ENLinkCollectionController saveWithCompletion:] | Saving in local pref 'recentNotes' with 5 items, previously 5 items
+2018/05/06 21:53:27:204 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2557 bytes:
+2018/05/06 21:53:34:206 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2576 bytes:
+2018/05/06 21:53:41:208 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2585 bytes:
+2018/05/06 21:53:47:209 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2595 bytes:
+2018/05/06 21:53:59:207 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2621 bytes:
+2018/05/06 21:54:05:211 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2636 bytes:
+2018/05/06 21:54:15:211 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2649 bytes:
+2018/05/06 21:54:31:212 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2666 bytes:
+2018/05/06 21:54:33:212 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2665 bytes:
+2018/05/06 21:54:44:215 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2689 bytes:
+2018/05/06 21:54:52:219 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2706 bytes:
+2018/05/06 21:54:58:220 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2708 bytes:
+2018/05/06 21:55:05:221 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2721 bytes:
+2018/05/06 21:55:13:222 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2734 bytes:
+2018/05/06 21:55:24:223 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2741 bytes:
+2018/05/06 21:55:28:224 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2752 bytes:
+2018/05/06 21:55:37:226 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2771 bytes:
+2018/05/06 21:55:41:226 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2779 bytes:
+2018/05/06 21:55:43:226 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2783 bytes:
+2018/05/06 21:55:48:227 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2797 bytes:
+2018/05/06 21:55:53:234 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2813 bytes:
+2018/05/06 21:56:02:238 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2844 bytes:
+2018/05/06 21:56:10:238 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2850 bytes:
+2018/05/06 21:56:15:239 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2857 bytes:
+2018/05/06 21:56:26:240 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2872 bytes:
+2018/05/06 21:56:29:241 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2876 bytes:
+2018/05/06 21:56:32:244 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2879 bytes:
+2018/05/06 21:56:36:244 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2889 bytes:
+2018/05/06 21:56:42:248 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2903 bytes:
+2018/05/06 21:57:11:244 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2914 bytes:
+2018/05/06 21:57:13:245 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2920 bytes:
+2018/05/06 21:57:20:249 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2945 bytes:
+2018/05/06 21:57:22:248 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2950 bytes:
+2018/05/06 21:57:28:249 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2964 bytes:
+2018/05/06 21:57:30:249 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2971 bytes:
+2018/05/06 21:57:37:252 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2989 bytes:
+2018/05/06 21:57:39:252 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 2992 bytes:
+2018/05/06 21:57:46:254 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3013 bytes:
+2018/05/06 21:57:49:254 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3019 bytes:
+2018/05/06 21:57:54:257 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3048 bytes:
+2018/05/06 21:58:45:270 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3102 bytes:
+2018/05/06 21:58:50:192 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3111 bytes:
+2018/05/06 21:58:53:193 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3111 bytes:
+2018/05/06 21:58:53:193 W|**  59037 -[ENNoteMO setENMLContent:fromServer:error:] | ENML has not changed!
+2018/05/06 21:58:57:193 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3120 bytes:
+2018/05/06 21:59:01:191 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3127 bytes:
+2018/05/06 21:59:07:192 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3135 bytes:
+2018/05/06 21:59:14:193 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3147 bytes:
+2018/05/06 21:59:21:196 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3164 bytes:
+2018/05/06 21:59:29:192 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3181 bytes:
+2018/05/06 21:59:41:193 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3194 bytes:
+2018/05/06 21:59:43:193 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3195 bytes:
+2018/05/06 21:59:54:190 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3216 bytes:
+2018/05/06 22:00:08:192 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3223 bytes:
+2018/05/06 22:00:10:192 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3224 bytes:
+2018/05/06 22:00:22:192 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3226 bytes:
+2018/05/06 22:00:30:189 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3239 bytes:
+2018/05/06 22:00:34:190 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3248 bytes:
+2018/05/06 22:00:37:190 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3251 bytes:
+2018/05/06 22:00:39:190 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3252 bytes:
+2018/05/06 22:01:03:188 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3278 bytes:
+2018/05/06 22:01:07:190 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3292 bytes:
+2018/05/06 22:01:16:195 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3306 bytes:
+2018/05/06 22:01:18:196 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3305 bytes:
+2018/05/06 22:01:24:185 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3312 bytes:
+2018/05/06 22:01:33:186 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3317 bytes:
+2018/05/06 22:01:38:188 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3316 bytes:
+2018/05/06 22:01:40:188 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3319 bytes:
+2018/05/06 22:01:43:186 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3324 bytes:
+2018/05/06 22:01:51:189 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3352 bytes:
+2018/05/06 22:01:53:189 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3355 bytes:
+2018/05/06 22:01:57:191 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3379 bytes:
+2018/05/06 22:02:03:186 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3396 bytes:
+2018/05/06 22:02:05:187 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3403 bytes:
+2018/05/06 22:02:09:187 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3409 bytes:
+2018/05/06 22:02:14:189 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3418 bytes:
+2018/05/06 22:02:16:190 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3423 bytes:
+2018/05/06 22:02:28:188 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3457 bytes:
+2018/05/06 22:02:33:184 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3478 bytes:
+2018/05/06 22:02:41:184 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3492 bytes:
+2018/05/06 22:02:44:185 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3494 bytes:
+2018/05/06 22:02:58:187 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3512 bytes:
+2018/05/06 22:03:08:185 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3539 bytes:
+2018/05/06 22:03:16:186 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3548 bytes:
+2018/05/06 22:03:20:188 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3558 bytes:
+2018/05/06 22:03:26:183 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3585 bytes:
+2018/05/06 22:03:29:184 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3592 bytes:
+2018/05/06 22:03:33:186 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3605 bytes:
+2018/05/06 22:03:36:186 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3613 bytes:
+2018/05/06 22:03:38:181 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3614 bytes:
+2018/05/06 22:03:57:181 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3618 bytes:
+2018/05/06 22:04:00:181 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3624 bytes:
+2018/05/06 22:04:05:181 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3639 bytes:
+2018/05/06 22:04:09:182 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3644 bytes:
+2018/05/06 22:04:12:181 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p223 length of 3645 bytes:
+2018/05/06 22:09:09:207 I|*   59198 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/06 22:09:20:166 I|*   main  -[ENNoteEditorViewController inactivityTimerFired:] | NoteLockCat editor is inactive <ENMacNoteMO 0x7f8f05869cd0> MOID:0x37c0002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p223> GUID:[local] Title:Morning Thoughts Account:(null) USN:726 Hash:<46a3efda c12ecb83 ae15a380 fe13edc1> Length:3645
+2018/05/06 23:28:02:492 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/06 23:28:02:495 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/06 23:28:04:206 I|*   59479 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/06 23:28:04:206 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/06 23:28:07:032 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/06 23:28:07:032 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/06 23:28:07:071 E|*** 59479 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7f8f0366ebb0 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/06 23:28:07:071 E|*** 59479 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7f8f0366ebb0 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/06 23:28:08:828 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/06 23:28:08:828 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/06 23:28:08:866 E|*** 59479 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7f8f0750fd80 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/06 23:28:08:866 E|*** 59479 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7f8f0750fd80 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/06 23:34:13:311 I|*   59743 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/07 00:34:15:175 I|*   60064 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/07 06:10:30:341 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/07 06:10:34:372 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/07 06:10:34:372 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/07 06:10:43:953 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/07 06:10:43:961 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/07 06:10:46:112 I|*   60180 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/07 06:10:46:408 I|*   60180 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/07 06:10:46:450 I|*   60180 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/07 06:10:50:630 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/07 06:10:50:630 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/07 06:34:12:012 I|*   60527 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/07 09:35:13:924 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/07 09:35:13:936 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/07 09:35:17:819 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/07 09:35:17:819 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/07 09:35:17:853 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/07 09:35:18:865 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/07 09:35:18:865 I|*   main  -[ENUXPScriptManager fetchScriptsIfNeeded] | >UXPuppetmaster< Object: <ENUXPScriptManager: 0x7f8f037ad1a0> Scripts not reachable
+2018/05/07 09:35:18:865 I|*   60730 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/07 09:35:23:551 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/07 09:35:23:551 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/07 09:55:52:251 I|*   main  -[ENRelatedNotesHelper startCleanupCacheIfNecessary:] | Start to cleanup relatedcontent cache
+2018/05/07 09:55:52:290 I|*   61785 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/07 10:55:57:129 I|*   62438 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/07 11:55:50:934 I|*   62587 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/07 12:10:49:156 I|*   62621 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/07 12:10:49:199 I|*   62621 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/07 12:55:50:789 I|*   62754 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/07 13:55:52:645 I|*   62901 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180
+2018/05/07 14:55:48:502 I|*   63049 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7f8f037acb00> Evaluated script version: mac.180

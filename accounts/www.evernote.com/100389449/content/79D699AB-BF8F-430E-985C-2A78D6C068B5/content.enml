@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="box-sizing:border-box;font-family:sans-serif;font-size:10px;"><div style="box-sizing:border-box;font-family:&quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:16px;line-height:1.42857;color:rgb(51, 51, 51);background-color:rgb(255, 255, 255);"><div style="box-sizing:border-box;"><span style="box-sizing:border-box;"><div style="box-sizing:border-box;"><div style="box-sizing:border-box;">
+                <div style="box-sizing:border-box;display:block;border:1px solid rgb(170, 170, 170);width:350px;float:right;margin-left:10px;margin-bottom:10px;font-size:95%;padding:10px;">
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;padding-left:0px;list-style:outside none none;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:left;"><a href="https://blog.philipphauer.de/tutorial-continuous-delivery-with-docker-jenkins/#introduction-to-continuous-delivery" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Introduction to Continuous Delivery</a>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:0px;list-style:outside none none;padding-left:15px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:left;"><a href="https://blog.philipphauer.de/tutorial-continuous-delivery-with-docker-jenkins/#traditional-release-cycle" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Traditional Release Cycle</a></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:left;"><a href="https://blog.philipphauer.de/tutorial-continuous-delivery-with-docker-jenkins/#continuous-delivery" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Continuous Delivery</a></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:left;"><a href="https://blog.philipphauer.de/tutorial-continuous-delivery-with-docker-jenkins/#continuous-delivery-using-docker" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Continuous Delivery using Docker</a></li>
+</ul></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:left;"><a href="https://blog.philipphauer.de/tutorial-continuous-delivery-with-docker-jenkins/#setting-up-a-simple-continuous-delivery-pipeline-with-docker" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Setting up a Simple Continuous Delivery Pipeline with Docker</a>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:0px;list-style:outside none none;padding-left:15px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:left;"><a href="https://blog.philipphauer.de/tutorial-continuous-delivery-with-docker-jenkins/#update-october-2016" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Update October 2016</a></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:left;"><a href="https://blog.philipphauer.de/tutorial-continuous-delivery-with-docker-jenkins/#preconditions" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Preconditions</a></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:left;"><a href="https://blog.philipphauer.de/tutorial-continuous-delivery-with-docker-jenkins/#sources" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Sources</a></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:left;"><a href="https://blog.philipphauer.de/tutorial-continuous-delivery-with-docker-jenkins/#the-example-application-and-the-advantage-of-using-runnable-fat-jars" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">The Example Application and the Advantage of Using Runnable Fat Jars</a></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:left;"><a href="https://blog.philipphauer.de/tutorial-continuous-delivery-with-docker-jenkins/#big-picture" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Big Picture</a></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:left;"><a href="https://blog.philipphauer.de/tutorial-continuous-delivery-with-docker-jenkins/#warning-technical-spike" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Warning: Technical Spike</a></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:left;"><a href="https://blog.philipphauer.de/tutorial-continuous-delivery-with-docker-jenkins/#step-by-step" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Step by Step</a>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:0px;list-style:outside none none;padding-left:30px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:left;"><a href="https://blog.philipphauer.de/tutorial-continuous-delivery-with-docker-jenkins/#the-commit-stage" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">The Commit Stage</a></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:left;"><a href="https://blog.philipphauer.de/tutorial-continuous-delivery-with-docker-jenkins/#acceptance-test-stage" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Acceptance Test Stage</a></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:left;"><a href="https://blog.philipphauer.de/tutorial-continuous-delivery-with-docker-jenkins/#deployment-stage" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Deployment Stage</a></li>
+</ul></li>
+</ul></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:left;"><a href="https://blog.philipphauer.de/tutorial-continuous-delivery-with-docker-jenkins/#further-readings" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Further Readings</a></li>
+</ul>
+</div>
+
+                <p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Introducing Continuous Delivery means to automate the delivery process and to release our application frequently. This way, we improve the reliability of the release process, reduce the risk and get feedback faster. However, setting up a Continuous Delivery pipeline can be difficult in the beginning. In this step by step tutorial I will show you how to configure a simple Continuous Delivery pipeline using Git, Docker, Maven and Jenkins.
+</p>
+
+<h1 style="box-sizing:border-box;margin:0.67em 0px;font-size:36px;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;margin-top:60px;margin-bottom:20px;">Introduction to Continuous Delivery</h1>
+
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin-top:40px;margin-bottom:20px;">Traditional Release Cycle</h2>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Following the “old-school” release approach means to ship a release after a certain amount of time (let’s say 6 months). We have to package the release, test it, set up or update the necessary infrastructure and finally deploy it on the server.</p>
+
+
+<div style="box-sizing:border-box;display:block;margin:30px auto 10px;max-width:400px;">
+    <a href="https://blog.philipphauer.de/blog/2015/1107-tutorial-continuous-delivery-with-docker-jenkins/Overview1-Traditional-Release-Cycle.png" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">
+        <en-media type="image/png" hash="bb52fc5150dbcc6826d6ede981036bb8" alt="Traditional release cycle: rare releases and manual release process" width="400" height="448" style="box-sizing:border-box;border:0px none;vertical-align:middle;display:block;margin:30px auto 10px;max-width:100%;width:400px;"></en-media>
+    </a>
+    
+    <div style="box-sizing:border-box;display:block;">
+        <p style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;margin:5px 5px 20px;text-align:center;font-size:90%;">
+        Traditional release cycle: rare releases and manual release process
+        
+            
+        
+        </p> 
+    </div>
+    
+</div>
+
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">What are the problems about this approach?</p>
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">The release process is done rarely. Consequently, we are barely practiced in releasing. Mistakes can happen more easily.</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Manual steps. The release process consists of a lot of steps which have to be performed manually (shutdown, set up/update infrastructure, deployment, restart and manual tests). The consequences:
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:0px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Mistakes are more likely to happen when executing these steps manually.</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">The whole release process is more laborious, cumbersome and takes more time.</li>
+</ul></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">There have been a lot of changes performed since the last release 6 months ago. It’s likely that
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:0px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">something will go wrong when trying to put the different components together (e.g. version conflicts, side-effects, incompatible components) or</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">that there are bugs in the application itself.</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">But it is hard to see what change is causing the problem, because there have been a lot of changes. The point is that those problems are discovered too late. We are getting feedback too late, because we are trying to release the application too late in the development process and not regularly. We are only trying to release, when we really want to create a release.</li>
+</ul></li>
+</ul>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">All in all, we have a high risk that something will go wrong during our release process or that the application will contain bugs. Releases are dangerous and scary, aren’t they? That’s probably why releases are done so rarely. But doing them rarely makes them even more dangerous and scary. What can we do instead?</p>
+
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin-top:40px;margin-bottom:20px;">Continuous Delivery</h2>
+
+<blockquote style="box-sizing:border-box;padding:10px 20px;font-size:16px;margin:0px 0px 20px 10px;border-left:5px solid rgb(66, 139, 202);">
+<p style="box-sizing:border-box;margin:0px 0px 10px;margin-bottom:0px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">“If it hurts do it more often and bring the pain forward.”</p>
+</blockquote>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">We reduce the pain of releasing by releasing more often. Therefore, we have to automate the whole release process (including package release, set up/update infrastructure, deploy, final tests) and eliminate all manual steps. This way we can increase the release frequency.</p>
+
+
+<div style="box-sizing:border-box;display:block;margin:30px auto 10px;max-width:350px;">
+    <a href="https://blog.philipphauer.de/blog/2015/1107-tutorial-continuous-delivery-with-docker-jenkins/Overview2-ContinuousDelivery.png" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">
+        <en-media type="image/png" hash="a3eb0c067e8299a362a3ece829889a59" alt="Continuous Delivery: Increased release frequency and automation of the release process." width="350" height="468" style="box-sizing:border-box;border:0px none;vertical-align:middle;display:block;margin:30px auto 10px;max-width:100%;width:350px;"></en-media>
+    </a>
+    
+    <div style="box-sizing:border-box;display:block;">
+        <p style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;margin:5px 5px 20px;text-align:center;font-size:90%;">
+        Continuous Delivery: Increased release frequency and automation of the release process.
+        
+            
+        
+        </p> 
+    </div>
+    
+</div>
+
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">What are the benefits of this approach?</p>
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Fewer mistakes can happen during an automated process in comparison to a manual one.</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">There are fewer changes done between two releases. The danger of mistakes is quite small and we can easily track them back to the causing change.</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">We don’t package and ship our application at the end of a development phase. We are doing it early and frequently. This way we’ll discover problems in the release process very soon.</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Due to the automated release process we can bring business value faster into production and therefore reduce the time-to-market.</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Deploying our application into production is low-risk, because we just execute the same automated process for the production as we did for the tests or the pre-production system.</li>
+</ul>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">All in all, Continuous Delivery is about</p>
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;"><strong style="box-sizing:border-box;font-weight:700;">reduced risks,</strong></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;"><strong style="box-sizing:border-box;font-weight:700;">increased reliability,</strong></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">faster feedback,</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">accelerated release speed and time-to-market.</li>
+</ul>
+
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin-top:40px;margin-bottom:20px;">Continuous Delivery using Docker</h2>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">From the technical point of view Continuous Delivery revolves around the automation and optimization of the delivery pipeline. A simple delivery pipeline could look like this:</p>
+
+
+<div style="box-sizing:border-box;display:block;margin:30px auto 10px;">
+    <a href="https://blog.philipphauer.de/blog/2015/1107-tutorial-continuous-delivery-with-docker-jenkins/Simple-Delivery-Pipeline.png" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">
+        <en-media type="image/png" hash="7f75641f9c6d27aa8bc9dca12dd2f04d" alt="A Delivery Pipeline" width="780" height="167" style="box-sizing:border-box;border:0px none;vertical-align:middle;display:block;margin:30px auto 10px;max-width:100%;"></en-media>
+    </a>
+    
+    <div style="box-sizing:border-box;display:block;">
+        <p style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;margin:5px 5px 20px;text-align:center;font-size:90%;">
+        A Delivery Pipeline
+        
+            
+        
+        </p> 
+    </div>
+    
+</div>
+
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">The big challenge is the automated setup of the infrastructure and environment, our application needs to run. And we need this infrastructure for _every stage_ of our delivery pipeline. Fortunately, <a href="https://blog.philipphauer.de/discussing-docker-pros-and-cons/" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Docker is great at creating reproducible infrastructures</a>. Using Docker we create an image that contains our application and the <a href="https://blog.philipphauer.de/discussing-docker-pros-and-cons/#Advantages_for_the_Development_Team" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">necessary infrastructure</a> (for instance the application server, JRE, VM arguments, files, permissions). The only thing we have to do is to execute the image in every stage of the delivery pipeline and our application will be up and running. Moreover, Docker is a (lightweight) virtualization, so we can easily clean up old versions of the application <em style="box-sizing:border-box;">and its infrastructure</em> just by stopping the Docker container.</p>
+
+<h1 style="box-sizing:border-box;margin:0.67em 0px;font-size:36px;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;margin-top:60px;margin-bottom:20px;">Setting up a Simple Continuous Delivery Pipeline with Docker</h1>
+
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin-top:40px;margin-bottom:20px;">Update October 2016</h2>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Please mind that some information in this post are a little bit dated. Some points:</p>
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Please take a look at my post about <a href="https://blog.philipphauer.de/improving-continuous-integration-setup-docker-gitlab-ci/" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Improving your Continuous Integration Setup with Docker and GitLab-CI</a></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Jenkins 1.0 doesn’t support delivery pipelines as a first class citizen. Consider using <a href="https://jenkins.io/2.0/" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Jenkins 2.0</a> or <a href="https://about.gitlab.com/gitlab-ci/" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">GitLab-CI</a> instead.</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Use <a href="https://docs.docker.com/compose/" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Docker-Compose</a> instead of the clumsy shell scripts calling <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">docker run</code> .</li>
+</ul>
+
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin-top:40px;margin-bottom:20px;">Preconditions</h2>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">I used Ubuntu 14.04 LTS and Docker 1.8.2 for this tutorial. I highly recommend to use a Linux distribution in order to run Docker natively. Sure, you can try docker-toolbox/boot2docker for Windows and Mac OS X. But I wasn´t happy with this tool and the additional VM layer in daily use.</p>
+
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin-top:40px;margin-bottom:20px;">Sources</h2>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">You can find all sources I used for this tutorial on my <a href="https://github.com/phauer/continuous-delivery-playground" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Github repository</a>.</p>
+
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin-top:40px;margin-bottom:20px;">The Example Application and the Advantage of Using Runnable Fat Jars</h2>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Our example application “hello-world-app” is a simple <a href="https://blog.philipphauer.de/microservices-nutshell-pros-cons/" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">RESTful microservice</a> created with Dropwizard. Dropwizard let us create a runnable fat jar which already includes an embedded jetty. So we only need to execute the jar in order to start our microservice. This simplifies the necessary infrastructure (no servlet container has to be installed in advance; no deployment of the war into the servlet container) and the deployment process (just copy the jar and execute it). Consequently the architectural decision to use runnable fat jars significantly <a href="https://blog.philipphauer.de/microservices-nutshell-pros-cons/#Benefits_when_Going_Without_anApplication_Server" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">eases the setup of a Continuous Delivery pipeline</a>.</p>
+
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin-top:40px;margin-bottom:20px;">Big Picture</h2>
+
+
+<div style="box-sizing:border-box;display:block;margin:30px auto 10px;">
+    <a href="https://blog.philipphauer.de/blog/2015/1107-tutorial-continuous-delivery-with-docker-jenkins/Big-Picture-Example-Continuous-Delivery-Pipeline.png" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">
+        <en-media type="image/png" hash="7dbc92d94adf4240033dc1b6a89050d1" alt="Big Picture for our simple Continuous Delivery pipeline" width="780" height="293" style="box-sizing:border-box;border:0px none;vertical-align:middle;display:block;margin:30px auto 10px;max-width:100%;"></en-media>
+    </a>
+    
+    <div style="box-sizing:border-box;display:block;">
+        <p style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;margin:5px 5px 20px;text-align:center;font-size:90%;">
+        Big Picture for our simple Continuous Delivery pipeline
+        
+            
+        
+        </p> 
+    </div>
+    
+</div>
+
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">We will need the following projects:</p>
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">hello-world-app: creates the <a href="https://blog.philipphauer.de/building-dropwizard-microservice-docker-maven/" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Docker image with the microservice jar using Maven</a> and push the image to our Docker Registry.</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">hello-world-app-acceptance: runs some tests against the Docker image, which is retrieved from the Docker Registry</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">hello-world-app-deployment: runs the Docker image from the Docker Registry</li>
+</ul>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">During this tutorial we will set up</p>
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">a Git repository (using GitLab) for our sources,</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">a Docker Registry to store our built images and</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">a Jenkins to create our Continuous Delivery pipeline.</li>
+</ul>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">We won’t clutter up our local machine by installing these components directly. Instead, we start them as Docker containers. This way, we can easily clean up once we are done. We see that besides using Docker to ship our application itself, it is also a great tool to create infrastructure for build and development.</p>
+
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin-top:40px;margin-bottom:20px;">Warning: Technical Spike</h2>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Please note, that this tutorial is a <strong style="box-sizing:border-box;font-weight:700;">simplified demonstration</strong> of a Continuous Delivery pipeline. It’s just a technical spike. Some important issues (databases, blue/green deployment, canary releasing, security, encryption, IP handling, distribution, communication between the containers, multiple Jenkins nodes) are poorly realized or not covered at all. But consider this spike as a starting point for your own pipeline.</p>
+
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin-top:40px;margin-bottom:20px;">Step by Step</h2>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">First of all, you need the IP of your host machine (like 192.168.35.217). Therefore, run <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">ip route</code> to get the IP of the host machine. Look for the IP after the “src” keyword. You can test the IP by trying to ping the IP within a container by running <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">docker exec -it bash</code> (getting bash inside the container) and then <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">ping &lt;IpOfHostMachine&gt;</code></p>
+
+<h3 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:24px;margin-top:30px;margin-bottom:15px;">The Commit Stage</h3>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Check out my <a href="https://github.com/phauer/continuous-delivery-playground" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Github repository</a> using</p>
+
+<pre style="box-sizing:border-box;overflow:auto;font-family:Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;display:block;padding:9.5px;line-height:1.42857;color:rgb(51, 51, 51);word-break:break-all;overflow-wrap:break-word;background-color:rgb(255, 255, 255);border:1px solid rgb(229, 229, 229);border-radius:4px;margin:15px 0px;"><code style="box-sizing:border-box;font-family:monospace;background:rgb(238, 238, 238) none repeat scroll 0% 0%;background-color:transparent;border-radius:0px;white-space:pre-wrap;font-size:110%;padding:0.5em;color:rgb(51, 51, 51);display:block;overflow-x:auto;font-weight:500;">git <span style="box-sizing:border-box;">clone</span> https://github.com/phauer/continuous-delivery-playground.git
+<span style="box-sizing:border-box;">cd</span> continuous-delivery-playground
+</code></pre>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Let’s start GitLab:</p>
+
+<pre style="box-sizing:border-box;overflow:auto;font-family:Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;display:block;padding:9.5px;line-height:1.42857;color:rgb(51, 51, 51);word-break:break-all;overflow-wrap:break-word;background-color:rgb(255, 255, 255);border:1px solid rgb(229, 229, 229);border-radius:4px;margin:15px 0px;"><code style="box-sizing:border-box;font-family:monospace;background:rgb(238, 238, 238) none repeat scroll 0% 0%;background-color:transparent;border-radius:0px;white-space:pre-wrap;font-size:110%;padding:0.5em;color:rgb(51, 51, 51);display:block;overflow-x:auto;font-weight:500;">./1startGitLab.sh
+</code></pre>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Wait for startup. Create and configure our Git projects:</p>
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Open GitLab on <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">http://localhost:10080/</code> , login as root (password: 5iveL!fe), change password to 12345678</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Create the projects ‘hello-world-app’, ‘hello-world-app-acceptance’ and ‘hello-world-app-deployment’</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">We like to notify Jenkins about changes. Therefore go to <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">http://localhost:10080/root/hello-world-app/hooks</code>  and create a webhook for push events with the URL <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">http://&lt;IpOfHostMachine&gt;:8090/git/notifyCommit?url=http://&lt;IpOfHostMachine&gt;:10080/root/hello-world-app.git</code></li>
+</ul>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Next we commit the projects to our Git repository.</p>
+
+<pre style="box-sizing:border-box;overflow:auto;font-family:Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;display:block;padding:9.5px;line-height:1.42857;color:rgb(51, 51, 51);word-break:break-all;overflow-wrap:break-word;background-color:rgb(255, 255, 255);border:1px solid rgb(229, 229, 229);border-radius:4px;margin:15px 0px;"><code style="box-sizing:border-box;font-family:monospace;background:rgb(238, 238, 238) none repeat scroll 0% 0%;background-color:transparent;border-radius:0px;white-space:pre-wrap;font-size:110%;padding:0.5em;color:rgb(51, 51, 51);display:block;overflow-x:auto;font-weight:500;">./2createProjectsAndCommitToGitLab.sh
+</code></pre>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Next we launch the Docker Registry.</p>
+
+<pre style="box-sizing:border-box;overflow:auto;font-family:Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;display:block;padding:9.5px;line-height:1.42857;color:rgb(51, 51, 51);word-break:break-all;overflow-wrap:break-word;background-color:rgb(255, 255, 255);border:1px solid rgb(229, 229, 229);border-radius:4px;margin:15px 0px;"><code style="box-sizing:border-box;font-family:monospace;background:rgb(238, 238, 238) none repeat scroll 0% 0%;background-color:transparent;border-radius:0px;white-space:pre-wrap;font-size:110%;padding:0.5em;color:rgb(51, 51, 51);display:block;overflow-x:auto;font-weight:500;">./3startDockerRegistry.sh
+</code></pre>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">You can see the saved images in the registry by calling <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">http://localhost:5000/v2/_catalog</code> .</p>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Configure the Docker daemon to use an unsecure connection for accessing our local Docker Registry. Therefore, add <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">–insecure-registry &lt;IpOfHostMachine&gt;:5000</code> to the DOCKER_OPS variable in <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">/etc/default/docker</code>.</p>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Now we are ready to start our Continuous Delivery (!) server Jenkins: :-)</p>
+
+<pre style="box-sizing:border-box;overflow:auto;font-family:Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;display:block;padding:9.5px;line-height:1.42857;color:rgb(51, 51, 51);word-break:break-all;overflow-wrap:break-word;background-color:rgb(255, 255, 255);border:1px solid rgb(229, 229, 229);border-radius:4px;margin:15px 0px;"><code style="box-sizing:border-box;font-family:monospace;background:rgb(238, 238, 238) none repeat scroll 0% 0%;background-color:transparent;border-radius:0px;white-space:pre-wrap;font-size:110%;padding:0.5em;color:rgb(51, 51, 51);display:block;overflow-x:auto;font-weight:500;">./4startJenkins.sh
+</code></pre>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Configure Jenkins as follows:</p>
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Installations:
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:0px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Open Jenkins on <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">http://localhost:8090/configure</code>  and install Maven and JDK if not already done.</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Install the “GIT Plugin” on <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">http://localhost:8090/pluginManager/available</code> if not already done.</li>
+</ul></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Create the Maven job ‘hello-world-app’ and configure it as follows:
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:0px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Configure the Git repository in the job: <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">http://&lt;IpOfHostMachine&gt;:10080/root/hello-world-app.git</code>. Also configure your GitLab credentials here (root, 12345678).</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Build &gt; Goals and options: <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">deploy -Ddocker.registry.name=&lt;IpOfHostMachine&gt;:5000/</code></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Build Triggers &gt; Poll SCM check</li>
+</ul></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Press ‘Build Now’
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:0px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">After the build has finished, you should find the created image in your local Docker Registry. Verify this by calling <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">http://localhost:5000/v2/_catalog</code> in your browser or take a look into the ~/docker-registry-data folder.</li>
+</ul></li>
+</ul>
+
+<h3 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:24px;margin-top:30px;margin-bottom:15px;">Acceptance Test Stage</h3>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">After the Docker image has been created in the Commit Stage, we’ll run acceptance tests against the Docker image.</p>
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">First of all, install “Build Pipeline Plugin” in Jenkins. The plugin provides an overview over our dependent jobs and our Continuous Delivery pipeline.</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Create Job ‘hello-world-app-acceptance’ in Jenkins
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:0px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Git URL: <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">http://&lt;IpOfHostMachine&gt;:10080/root/hello-world-app-acceptance.git</code></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Build &gt; Goals and options: <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">verify -Ddocker.host.address=&lt;IpOfHostMachine&gt;</code></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Build Triggers &gt; Poll SCM check</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;"><em style="box-sizing:border-box;">Build after other project are built</em>: hello-world-app</li>
+</ul></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Create a build pipeline view
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:0px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Create a View and select “Build Pipeline View”</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Select Initial Job: “hello-world-app”</li>
+</ul></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Open the created build pipeline view
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:0px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Hit “Run” and you can see your project is going through the build pipeline consisting of 2 stages. Nice! :-)</li>
+</ul></li>
+</ul>
+
+<h3 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:24px;margin-top:30px;margin-bottom:15px;">Deployment Stage</h3>
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Finally, we want to run our built and tested docker image.</p>
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Create a Jenkins job “hello-world-app-deployment” as a freestyle project</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Git-URL: <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">http://&lt;IpOfHostMachine&gt;:10080/root/hello-world-app-deployment.git</code></li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Build after other projects are built: hello-world-app-acceptance</li>
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Add build step: “Execute shell” and insert <code style="box-sizing:border-box;font-family:monospace;font-size:90%;padding:2px 4px;color:rgb(51, 51, 51);border-radius:4px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;">./runDockerContainer.sh</code></li>
+</ul>
+
+
+<div style="box-sizing:border-box;display:block;margin:30px auto 10px;">
+    <a href="https://blog.philipphauer.de/blog/2015/1107-tutorial-continuous-delivery-with-docker-jenkins/Jenkins-Build-Pipeline.png" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">
+        <en-media type="image/png" hash="45767a5fd772174075137d5014e17130" alt="The Jenkins Plugin 'Build Pipeline' showing our created Continuous Delivery pipeline." width="780" height="275" style="box-sizing:border-box;border:0px none;vertical-align:middle;display:block;margin:30px auto 10px;max-width:100%;"></en-media>
+    </a>
+    
+    <div style="box-sizing:border-box;display:block;">
+        <p style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;margin:5px 5px 20px;text-align:center;font-size:90%;">
+        The Jenkins Plugin 'Build Pipeline' showing our created Continuous Delivery pipeline.
+        
+            
+        
+        </p> 
+    </div>
+    
+</div>
+
+
+<p style="box-sizing:border-box;margin:0px 0px 10px;letter-spacing:0.03rem;line-height:1.5;text-align:justify;">Voila, that’s it! We successfully set up a simple Continuous Delivery pipeline. Every time we push a change to our hello-world-app Git project, the application goes through the whole pipeline and is finally deployed in “production”. This way we get feedback quickly, increase the reliability of our delivery process and reduce the risk of releasing (due to automation).</p>
+
+<h1 style="box-sizing:border-box;margin:0.67em 0px;font-size:36px;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;margin-top:60px;margin-bottom:20px;">Further Readings</h1>
+
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;">
+<li style="box-sizing:border-box;letter-spacing:0.03rem;line-height:1.5;text-align:justify;"><a href="https://blog.philipphauer.de/version-numbers-continuous-delivery-maven-docker/" style="box-sizing:border-box;background-color:transparent;color:rgb(66, 139, 202);text-decoration:none;">Version Numbers for Continuous Delivery with Maven and Docker</a></li>
+</ul>
+            </div></div></span></div></div></div></div><br/></div></en-note>

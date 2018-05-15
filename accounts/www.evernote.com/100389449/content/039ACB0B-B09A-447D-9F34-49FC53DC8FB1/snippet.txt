@@ -1,0 +1,1 @@
+FAQ How to setup autologin: => sudo vim /usr/local/share/config/kdm/kdmrc # Set: AutoLoginUser=khasanov How start the KDE with “startx” # Create the /home/khasanov/.xinitrc file # Add the line: exec /usr/local/bin/startkde 

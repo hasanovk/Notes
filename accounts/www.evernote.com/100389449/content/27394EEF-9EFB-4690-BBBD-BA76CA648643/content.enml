@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="box-sizing:border-box;background-color:rgb(247, 248, 249);font-family:Open\ Sans, sans-serif;color:rgb(68, 93, 110);font-size:13px;"><div style="box-sizing:border-box;font-family:Open\ Sans, sans-serif;color:rgb(68, 93, 110);font-size:13px;cursor:default;"><div style="box-sizing:border-box;"><div style="box-sizing:border-box;flex-direction:column;"><div style="box-sizing:border-box;flex:1 1 auto;"><div style="box-sizing:border-box;"><div style="box-sizing:border-box;flex:1 1 auto;"><div style="box-sizing:border-box;"><div style="box-sizing:border-box;flex-flow:row nowrap;"><div style="box-sizing:border-box;background:rgb(255, 255, 255) none repeat scroll 0% 0%;border-radius:2px;flex:0 0 auto;"><div style="box-sizing:border-box;"><div style="box-sizing:border-box;"><div style="box-sizing:border-box;font-size:14px;line-height:20px;font-weight:400;letter-spacing:normal;background-color:rgb(247, 248, 249);border-radius:2px;font-family:Consolas, Liberation\ Mono, Courier, monospace;"><div style="box-sizing:border-box;overflow-x:auto;white-space:pre-line;color:rgb(51, 60, 74);"><span style="box-sizing:border-box;font-weight:600;">FROM</span> ubuntu:latest
+
+<span style="box-sizing:border-box;font-weight:600;">MAINTAINER</span> mcsaky &lt;mihai.csaky@sysop-consulting.ro&gt;
+
+<span style="box-sizing:border-box;color:rgb(68, 93, 110);"># Set the debconf frontend to Noninteractive</span>
+<span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;"> <span style="box-sizing:border-box;color:rgb(51, 60, 74);">echo</span> <span style="box-sizing:border-box;color:rgb(51, 60, 74);">'debconf debconf/frontend select Noninteractive'</span> | debconf-set-selections
+</span>
+<span style="box-sizing:border-box;font-weight:600;">ENV</span> GTS_HOME /usr/local/gts
+<span style="box-sizing:border-box;font-weight:600;">ENV</span> CATALINA_HOME /usr/local/tomcat
+<span style="box-sizing:border-box;font-weight:600;">ENV</span> GTS_VERSION <span style="box-sizing:border-box;">2.6</span>.<span style="box-sizing:border-box;">5</span>
+<span style="box-sizing:border-box;font-weight:600;">ENV</span> TOMCAT_VERSION <span style="box-sizing:border-box;">8.5</span>.<span style="box-sizing:border-box;">27</span>
+<span style="box-sizing:border-box;font-weight:600;">ENV</span> JAVA_HOME /usr/local/java
+<span style="box-sizing:border-box;font-weight:600;">ENV</span> ORACLE_JAVA_HOME /usr/lib/jvm/java-<span style="box-sizing:border-box;">8</span>-oracle/
+
+<span style="box-sizing:border-box;font-weight:600;">VOLUME</span><span style="box-sizing:border-box;"> /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/gtsconfig
+</span>
+
+<span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;"> apt-get update
+</span><span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;"> apt-get install -y software-properties-common
+</span>
+
+
+<span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;"> \
+  <span style="box-sizing:border-box;color:rgb(51, 60, 74);">echo</span> debconf shared/accepted-oracle-license-v1-1 select <span style="box-sizing:border-box;color:rgb(51, 60, 74);">true</span> | debconf-set-selections &amp;&amp; \
+  <span style="box-sizing:border-box;color:rgb(51, 60, 74);">echo</span> debconf shared/accepted-oracle-license-v1-1 seen <span style="box-sizing:border-box;color:rgb(51, 60, 74);">true</span> | debconf-set-selections &amp;&amp; \
+  add-apt-repository -y ppa:webupd8team/java &amp;&amp; \
+  apt-get update &amp;&amp; \
+  apt-get install -y oracle-java8-installer
+</span>
+<span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;"> ln -s <span style="box-sizing:border-box;">$ORACLE_JAVA_HOME</span> <span style="box-sizing:border-box;">$JAVA_HOME</span>
+</span>
+<span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;"> apt-get -y install  ant curl unzip  sudo tar mysql-server software-properties-common python-jinja2 python-pip
+</span><span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;"> pip install j2cli
+</span>
+
+<span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;"> curl -L http://downloads.sourceforge.net/project/opengts/server-base/<span style="box-sizing:border-box;">$GTS_VERSION</span>/OpenGTS_<span style="box-sizing:border-box;">$GTS_VERSION</span>.zip -o /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/OpenGTS_<span style="box-sizing:border-box;">$GTS_VERSION</span>.zip &amp;&amp; \
+    unzip /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/OpenGTS_<span style="box-sizing:border-box;">$GTS_VERSION</span>.zip -d /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span> &amp;&amp; \
+    ln -s /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/OpenGTS_<span style="box-sizing:border-box;">$GTS_VERSION</span> <span style="box-sizing:border-box;">$GTS_HOME</span>
+</span>
+	<span style="box-sizing:border-box;color:rgb(68, 93, 110);"># http://mirrors.hostingromania.ro/apache.org/tomcat/tomcat-8/v8.0.27/bin/apache-tomcat-8.0.27.tar.gz</span>
+<span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;"> curl -L http://archive.apache.org/dist/tomcat/tomcat-8/v<span style="box-sizing:border-box;">$TOMCAT_VERSION</span>/bin/apache-tomcat-<span style="box-sizing:border-box;">$TOMCAT_VERSION</span>.tar.gz -o /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/tomcat.tar.gz
+</span>
+<span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;">  tar zxf /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/tomcat.tar.gz -C /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span> &amp;&amp; rm /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/tomcat.tar.gz &amp;&amp; ln -s /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/apache-tomcat-<span style="box-sizing:border-box;">$TOMCAT_VERSION</span> <span style="box-sizing:border-box;">$CATALINA_HOME</span>
+</span>
+<span style="box-sizing:border-box;font-weight:600;">ADD</span><span style="box-sizing:border-box;"> tomcat-users.xml /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/apache-tomcat-<span style="box-sizing:border-box;">$TOMCAT_VERSION</span>/conf/
+</span>
+<span style="box-sizing:border-box;color:rgb(68, 93, 110);">#put java.mail in place</span>
+<span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;"> curl -L https://github.com/javaee/javamail/releases/download/JAVAMAIL-1_6_1/javax.mail.jar -o <span style="box-sizing:border-box;">$ORACLE_JAVA_HOME</span>/jre/lib/ext/javax.mail.jar
+</span>
+<span style="box-sizing:border-box;color:rgb(68, 93, 110);"># put mysql.java in place</span>
+<span style="box-sizing:border-box;color:rgb(68, 93, 110);"># https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.45.tar.gz</span>
+<span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;"> curl -L http://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.45.tar.gz  -o /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/OpenGTS_<span style="box-sizing:border-box;">$GTS_VERSION</span>/jlib/jdbc.mysql/mysql-connector-java-5.1.45.tar.gz &amp;&amp; \
+     tar xvf /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/OpenGTS_<span style="box-sizing:border-box;">$GTS_VERSION</span>/jlib/jdbc.mysql/mysql-connector-java-5.1.45.tar.gz mysql-connector-java-5.1.45/mysql-connector-java-5.1.45-bin.jar -O &gt; /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/OpenGTS_<span style="box-sizing:border-box;">$GTS_VERSION</span>/jlib/jdbc.mysql/mysql-connector-java-5.1.45-bin.jar &amp;&amp; \
+     rm -f /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/OpenGTS_<span style="box-sizing:border-box;">$GTS_VERSION</span>/jlib/jdbc.mysql/mysql-connector-java-5.1.45.tar.gz
+</span>
+<span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;"> cp <span style="box-sizing:border-box;">$GTS_HOME</span>/jlib/*/*.jar <span style="box-sizing:border-box;">$CATALINA_HOME</span>/lib
+</span><span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;"> cp <span style="box-sizing:border-box;">$GTS_HOME</span>/jlib/*/*.jar <span style="box-sizing:border-box;">$JAVA_HOME</span>/jre/lib/ext/
+</span>
+<span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;"> <span style="box-sizing:border-box;color:rgb(51, 60, 74);">cd</span> <span style="box-sizing:border-box;">$GTS_HOME</span>; sed -i <span style="box-sizing:border-box;color:rgb(51, 60, 74);">'s/\(mysql-connector-java\).*.jar/\1-5.1.45-bin.jar/'</span> build.xml; \
+    sed -i <span style="box-sizing:border-box;color:rgb(51, 60, 74);">'s/\(&lt;include name="mail.jar"\/&gt;\)/\1\n\t&lt;include name="javax.mail.jar"\/&gt;/'</span> build.xml; \
+    sed -i <span style="box-sizing:border-box;color:rgb(51, 60, 74);">'s/"mail.jar"/"javax.mail.jar"/'</span> src/org/opengts/tools/CheckInstall.java; \
+	sed -i <span style="box-sizing:border-box;color:rgb(51, 60, 74);">'s/\/\/\*\*\/public/public/'</span> src/org/opengts/war/tools/BufferedHttpServletResponse.java
+</span>	
+
+<span style="box-sizing:border-box;font-weight:600;">ADD</span><span style="box-sizing:border-box;"> run.sh /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/apache-tomcat-<span style="box-sizing:border-box;">$TOMCAT_VERSION</span>/bin/
+</span><span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;"> chmod 755 /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/apache-tomcat-<span style="box-sizing:border-box;">$TOMCAT_VERSION</span>/bin/run.sh
+</span>
+
+<span style="box-sizing:border-box;font-weight:600;">RUN</span><span style="box-sizing:border-box;"> rm -rf /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/tomcat/webapps/examples /usr/<span style="box-sizing:border-box;color:rgb(51, 60, 74);">local</span>/tomcat/webapps/docs
+</span><span style="box-sizing:border-box;font-weight:600;">EXPOSE</span> <span style="box-sizing:border-box;">8080</span>
+<span style="box-sizing:border-box;font-weight:600;">CMD</span><span style="box-sizing:border-box;"> [<span style="box-sizing:border-box;color:rgb(51, 60, 74);">"/usr/local/tomcat/bin/run.sh"</span>]
+</span><span style="box-sizing:border-box;color:rgb(68, 93, 110);">#CMD /bin/bash</span>
+
+</div></div></div></div></div></div></div></div></div></div></div></div></div></div></div><br/></div></en-note>

@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div><div style="text-align:center;font-size:10px;background:rgb(248, 248, 248) url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAACXBIWXMAAC4jAAAuIwF4pT92AAAKT2lDQ1BQaG90b3Nob3AgSUNDIHByb2ZpbGUAAHjanVNnVFPpFj333vRCS4iAlEtvUhUIIFJCi4AUkSYqIQkQSoghodkVUcERRUUEG8igiAOOjoCMFVEsDIoK2AfkIaKOg6OIisr74Xuja9a89+bN/rXXPues852zzwfACAyWSDNRNYAMqUIeEeCDx8TG4eQuQIEKJHAAEAizZCFz/SMBAPh+PDwrIsAHvgABeNMLCADATZvAMByH/w/qQplcAYCEAcB0kThLCIAUAEB6jkKmAEBGAYCdmCZTAKAEAGDLY2LjAFAtAGAnf+bTAICd+Jl7AQBblCEVAaCRACATZYhEAGg7AKzPVopFAFgwABRmS8Q5ANgtADBJV2ZIALC3AMDOEAuyAAgMADBRiIUpAAR7AGDIIyN4AISZABRG8lc88SuuEOcqAAB4mbI8uSQ5RYFbCC1xB1dXLh4ozkkXKxQ2YQJhmkAuwnmZGTKBNA/g88wAAKCRFRHgg/P9eM4Ors7ONo62Dl8t6r8G/yJiYuP+5c+rcEAAAOF0ftH+LC+zGoA7BoBt/qIl7gRoXgugdfeLZrIPQLUAoOnaV/Nw+H48PEWhkLnZ2eXk5NhKxEJbYcpXff5nwl/AV/1s+X48/Pf14L7iJIEyXYFHBPjgwsz0TKUcz5IJhGLc5o9H/LcL//wd0yLESWK5WCoU41EScY5EmozzMqUiiUKSKcUl0v9k4t8s+wM+3zUAsGo+AXuRLahdYwP2SycQWHTA4vcAAPK7b8HUKAgDgGiD4c93/+8//UegJQCAZkmScQAAXkQkLlTKsz/HCAAARKCBKrBBG/TBGCzABhzBBdzBC/xgNoRCJMTCQhBCCmSAHHJgKayCQiiGzbAdKmAv1EAdNMBRaIaTcA4uwlW4Dj1wD/phCJ7BKLyBCQRByAgTYSHaiAFiilgjjggXmYX4IcFIBBKLJCDJiBRRIkuRNUgxUopUIFVIHfI9cgI5h1xGupE7yAAygvyGvEcxlIGyUT3UDLVDuag3GoRGogvQZHQxmo8WoJvQcrQaPYw2oefQq2gP2o8+Q8cwwOgYBzPEbDAuxsNCsTgsCZNjy7EirAyrxhqwVqwDu4n1Y8+xdwQSgUXACTYEd0IgYR5BSFhMWE7YSKggHCQ0EdoJNwkDhFHCJyKTqEu0JroR+cQYYjIxh1hILCPWEo8TLxB7iEPENyQSiUMyJ7mQAkmxpFTSEtJG0m5SI+ksqZs0SBojk8naZGuyBzmULCAryIXkneTD5DPkG+Qh8lsKnWJAcaT4U+IoUspqShnlEOU05QZlmDJBVaOaUt2ooVQRNY9aQq2htlKvUYeoEzR1mjnNgxZJS6WtopXTGmgXaPdpr+h0uhHdlR5Ol9BX0svpR+iX6AP0dwwNhhWDx4hnKBmbGAcYZxl3GK+YTKYZ04sZx1QwNzHrmOeZD5lvVVgqtip8FZHKCpVKlSaVGyovVKmqpqreqgtV81XLVI+pXlN9rkZVM1PjqQnUlqtVqp1Q61MbU2epO6iHqmeob1Q/pH5Z/YkGWcNMw09DpFGgsV/jvMYgC2MZs3gsIWsNq4Z1gTXEJrHN2Xx2KruY/R27iz2qqaE5QzNKM1ezUvOUZj8H45hx+Jx0TgnnKKeX836K3hTvKeIpG6Y0TLkxZVxrqpaXllirSKtRq0frvTau7aedpr1Fu1n7gQ5Bx0onXCdHZ4/OBZ3nU9lT3acKpxZNPTr1ri6qa6UbobtEd79up+6Ynr5egJ5Mb6feeb3n+hx9L/1U/W36p/VHDFgGswwkBtsMzhg8xTVxbzwdL8fb8VFDXcNAQ6VhlWGX4YSRudE8o9VGjUYPjGnGXOMk423GbcajJgYmISZLTepN7ppSTbmmKaY7TDtMx83MzaLN1pk1mz0x1zLnm+eb15vft2BaeFostqi2uGVJsuRaplnutrxuhVo5WaVYVVpds0atna0l1rutu6cRp7lOk06rntZnw7Dxtsm2qbcZsOXYBtuutm22fWFnYhdnt8Wuw+6TvZN9un2N/T0HDYfZDqsdWh1+c7RyFDpWOt6azpzuP33F9JbpL2dYzxDP2DPjthPLKcRpnVOb00dnF2e5c4PziIuJS4LLLpc+Lpsbxt3IveRKdPVxXeF60vWdm7Obwu2o26/uNu5p7ofcn8w0nymeWTNz0MPIQ+BR5dE/C5+VMGvfrH5PQ0+BZ7XnIy9jL5FXrdewt6V3qvdh7xc+9j5yn+M+4zw33jLeWV/MN8C3yLfLT8Nvnl+F30N/I/9k/3r/0QCngCUBZwOJgUGBWwL7+Hp8Ib+OPzrbZfay2e1BjKC5QRVBj4KtguXBrSFoyOyQrSH355jOkc5pDoVQfujW0Adh5mGLw34MJ4WHhVeGP45wiFga0TGXNXfR3ENz30T6RJZE3ptnMU85ry1KNSo+qi5qPNo3ujS6P8YuZlnM1VidWElsSxw5LiquNm5svt/87fOH4p3iC+N7F5gvyF1weaHOwvSFpxapLhIsOpZATIhOOJTwQRAqqBaMJfITdyWOCnnCHcJnIi/RNtGI2ENcKh5O8kgqTXqS7JG8NXkkxTOlLOW5hCepkLxMDUzdmzqeFpp2IG0yPTq9MYOSkZBxQqohTZO2Z+pn5mZ2y6xlhbL+xW6Lty8elQfJa7OQrAVZLQq2QqboVFoo1yoHsmdlV2a/zYnKOZarnivN7cyzytuQN5zvn//tEsIS4ZK2pYZLVy0dWOa9rGo5sjxxedsK4xUFK4ZWBqw8uIq2Km3VT6vtV5eufr0mek1rgV7ByoLBtQFr6wtVCuWFfevc1+1dT1gvWd+1YfqGnRs+FYmKrhTbF5cVf9go3HjlG4dvyr+Z3JS0qavEuWTPZtJm6ebeLZ5bDpaql+aXDm4N2dq0Dd9WtO319kXbL5fNKNu7g7ZDuaO/PLi8ZafJzs07P1SkVPRU+lQ27tLdtWHX+G7R7ht7vPY07NXbW7z3/T7JvttVAVVN1WbVZftJ+7P3P66Jqun4lvttXa1ObXHtxwPSA/0HIw6217nU1R3SPVRSj9Yr60cOxx++/p3vdy0NNg1VjZzG4iNwRHnk6fcJ3/ceDTradox7rOEH0x92HWcdL2pCmvKaRptTmvtbYlu6T8w+0dbq3nr8R9sfD5w0PFl5SvNUyWna6YLTk2fyz4ydlZ19fi753GDborZ752PO32oPb++6EHTh0kX/i+c7vDvOXPK4dPKy2+UTV7hXmq86X23qdOo8/pPTT8e7nLuarrlca7nuer21e2b36RueN87d9L158Rb/1tWeOT3dvfN6b/fF9/XfFt1+cif9zsu72Xcn7q28T7xf9EDtQdlD3YfVP1v+3Njv3H9qwHeg89HcR/cGhYPP/pH1jw9DBY+Zj8uGDYbrnjg+OTniP3L96fynQ89kzyaeF/6i/suuFxYvfvjV69fO0ZjRoZfyl5O/bXyl/erA6xmv28bCxh6+yXgzMV70VvvtwXfcdx3vo98PT+R8IH8o/2j5sfVT0Kf7kxmTk/8EA5jz/GMzLdsAADo2aVRYdFhNTDpjb20uYWRvYmUueG1wAAAAAAA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/Pgo8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzAxNCA3OS4xNTY3OTcsIDIwMTQvMDgvMjAtMDk6NTM6MDIgICAgICAgICI+CiAgIDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+CiAgICAgIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiCiAgICAgICAgICAgIHhtbG5zOnhtcD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLyIKICAgICAgICAgICAgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iCiAgICAgICAgICAgIHhtbG5zOnN0RXZ0PSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VFdmVudCMiCiAgICAgICAgICAgIHhtbG5zOmRjPSJodHRwOi8vcHVybC5vcmcvZGMvZWxlbWVudHMvMS4xLyIKICAgICAgICAgICAgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgICAgICAgICAgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iPgogICAgICAgICA8eG1wOkNyZWF0b3JUb29sPkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE0IChNYWNpbnRvc2gpPC94bXA6Q3JlYXRvclRvb2w+CiAgICAgICAgIDx4bXA6Q3JlYXRlRGF0ZT4yMDE2LTAxLTEyVDEyOjI0OjM4LTA2OjAwPC94bXA6Q3JlYXRlRGF0ZT4KICAgICAgICAgPHhtcDpNZXRhZGF0YURhdGU+MjAxNi0wMS0xMlQxMjoyNDozOC0wNjowMDwveG1wOk1ldGFkYXRhRGF0ZT4KICAgICAgICAgPHhtcDpNb2RpZnlEYXRlPjIwMTYtMDEtMTJUMTI6MjQ6MzgtMDY6MDA8L3htcDpNb2RpZnlEYXRlPgogICAgICAgICA8eG1wTU06SW5zdGFuY2VJRD54bXAuaWlkOmQ1M2M3ODQzLWE1ZjItNDg0Ny04YzQzLTZlMmMwYTQ2OGJlYjwveG1wTU06SW5zdGFuY2VJRD4KICAgICAgICAgPHhtcE1NOkRvY3VtZW50SUQ+YWRvYmU6ZG9jaWQ6cGhvdG9zaG9wOjFjMzc2MTgxLWY5ZTgtMTE3OC05YTljLWQ4MjVkZmIwYTQ3MDwveG1wTU06RG9jdW1lbnRJRD4KICAgICAgICAgPHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD54bXAuZGlkOjZiMjRlMjdhLWNmMDctNDlkMS05YjBkLTY4MTMxMWQ3NDAzMTwveG1wTU06T3JpZ2luYWxEb2N1bWVudElEPgogICAgICAgICA8eG1wTU06SGlzdG9yeT4KICAgICAgICAgICAgPHJkZjpTZXE+CiAgICAgICAgICAgICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0iUmVzb3VyY2UiPgogICAgICAgICAgICAgICAgICA8c3RFdnQ6YWN0aW9uPmNyZWF0ZWQ8L3N0RXZ0OmFjdGlvbj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0Omluc3RhbmNlSUQ+eG1wLmlpZDo2YjI0ZTI3YS1jZjA3LTQ5ZDEtOWIwZC02ODEzMTFkNzQwMzE8L3N0RXZ0Omluc3RhbmNlSUQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDp3aGVuPjIwMTYtMDEtMTJUMTI6MjQ6MzgtMDY6MDA8L3N0RXZ0OndoZW4+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpzb2Z0d2FyZUFnZW50PkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE0IChNYWNpbnRvc2gpPC9zdEV2dDpzb2Z0d2FyZUFnZW50PgogICAgICAgICAgICAgICA8L3JkZjpsaT4KICAgICAgICAgICAgICAgPHJkZjpsaSByZGY6cGFyc2VUeXBlPSJSZXNvdXJjZSI+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDphY3Rpb24+c2F2ZWQ8L3N0RXZ0OmFjdGlvbj4KICAgICAgICAgICAgICAgICAgPHN0RXZ0Omluc3RhbmNlSUQ+eG1wLmlpZDpkNTNjNzg0My1hNWYyLTQ4NDctOGM0My02ZTJjMGE0NjhiZWI8L3N0RXZ0Omluc3RhbmNlSUQ+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDp3aGVuPjIwMTYtMDEtMTJUMTI6MjQ6MzgtMDY6MDA8L3N0RXZ0OndoZW4+CiAgICAgICAgICAgICAgICAgIDxzdEV2dDpzb2Z0d2FyZUFnZW50PkFkb2JlIFBob3Rvc2hvcCBDQyAyMDE0IChNYWNpbnRvc2gpPC9zdEV2dDpzb2Z0d2FyZUFnZW50PgogICAgICAgICAgICAgICAgICA8c3RFdnQ6Y2hhbmdlZD4vPC9zdEV2dDpjaGFuZ2VkPgogICAgICAgICAgICAgICA8L3JkZjpsaT4KICAgICAgICAgICAgPC9yZGY6U2VxPgogICAgICAgICA8L3htcE1NOkhpc3Rvcnk+CiAgICAgICAgIDxkYzpmb3JtYXQ+aW1hZ2UvcG5nPC9kYzpmb3JtYXQ+CiAgICAgICAgIDxwaG90b3Nob3A6Q29sb3JNb2RlPjM8L3Bob3Rvc2hvcDpDb2xvck1vZGU+CiAgICAgICAgIDxwaG90b3Nob3A6SUNDUHJvZmlsZT5zUkdCIElFQzYxOTY2LTIuMTwvcGhvdG9zaG9wOklDQ1Byb2ZpbGU+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgICAgIDx0aWZmOlhSZXNvbHV0aW9uPjMwMDAwMDAvMTAwMDA8L3RpZmY6WFJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOllSZXNvbHV0aW9uPjMwMDAwMDAvMTAwMDA8L3RpZmY6WVJlc29sdXRpb24+CiAgICAgICAgIDx0aWZmOlJlc29sdXRpb25Vbml0PjI8L3RpZmY6UmVzb2x1dGlvblVuaXQ+CiAgICAgICAgIDxleGlmOkNvbG9yU3BhY2U+MTwvZXhpZjpDb2xvclNwYWNlPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+NDwvZXhpZjpQaXhlbFhEaW1lbnNpb24+CiAgICAgICAgIDxleGlmOlBpeGVsWURpbWVuc2lvbj40PC9leGlmOlBpeGVsWURpbWVuc2lvbj4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgCjw/eHBhY2tldCBlbmQ9InciPz5cKgaXAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1MAAA6mAAADqYAAAXb5JfxUYAAAAkSURBVHjaPMahAQAwDMCg7P+/KnsPcq4oHqpqdwNmBt3QDX8AeAUmcrZLnM4AAAAASUVORK5CYII=&amp;quot;) repeat scroll 0% 0%;"><div style="font-family:&quot;Century Gothic&quot;, &quot;Trebuchet MS&quot;;text-align:left;background:rgb(255, 255, 255) none repeat scroll 0% 0%;box-shadow:rgb(153, 153, 153) 0px 1em 1em;"><div>
+                <h2 style="clear:both;border-style:none;background:transparent none repeat scroll 0% 0%;box-shadow:none;margin:0px;color:rgb(187, 0, 0);font-size:3em;">The DOM Explained, Quick and Simple</h2>
+                <div style="border-collapse:collapse;border-style:solid;border-width:0.1em;margin:0px 0px 1em;padding:1em;border-color:rgb(204, 204, 204);">
+                    <h3 style="clear:both;font-size:2em;margin:0px;background:transparent none repeat scroll 0% 0%;box-shadow:none;border-style:none;color:rgb(187, 0, 0);">Table of Contents</h3>
+                    <ol style="padding-bottom:1em;">
+                        <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                            <a href="http://prettydiff.com/guide/unrelated_dom.xhtml#intro" style="text-decoration:none;">Introduction</a>
+                            <ol style="padding-bottom:0px;background-color:inherit;border-style:none;margin:0.25em 0.3em 0px 0px;">
+                                <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:0.75em;list-style:outside none lower-alpha;margin:0.5em 0px 1em 3em;">
+                                    <a href="http://prettydiff.com/guide/unrelated_dom.xhtml#intro-scope" style="text-decoration:none;">Scope of this Document</a>
+                                </li>
+                                <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:0.75em;list-style:outside none lower-alpha;margin:0.5em 0px 1em 3em;">
+                                    <a href="http://prettydiff.com/guide/unrelated_dom.xhtml#intro-domis" style="text-decoration:none;">What the DOM Is</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                            <a href="http://prettydiff.com/guide/unrelated_dom.xhtml#history" style="text-decoration:none;">History of the DOM</a>
+                        </li>
+                        <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                            <a href="http://prettydiff.com/guide/unrelated_dom.xhtml#define" style="text-decoration:none;">How HTML Loads in Modern Browsers</a>
+                        </li>
+                        <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                            <a href="http://prettydiff.com/guide/unrelated_dom.xhtml#access" style="text-decoration:none;">Accessing the DOM in JavaScript</a>
+                            <ol style="padding-bottom:0px;background-color:inherit;border-style:none;margin:0.25em 0.3em 0px 0px;">
+                                <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:0.75em;list-style:outside none lower-alpha;margin:0.5em 0px 1em 3em;">
+                                    <a href="http://prettydiff.com/guide/unrelated_dom.xhtml#access-search" style="text-decoration:none;">Methods for Searching the DOM</a>
+                                </li>
+                                <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:0.75em;list-style:outside none lower-alpha;margin:0.5em 0px 1em 3em;">
+                                    <a href="http://prettydiff.com/guide/unrelated_dom.xhtml#access-walking" style="text-decoration:none;">Walking the DOM</a>
+                                </li>
+                                <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:0.75em;list-style:outside none lower-alpha;margin:0.5em 0px 1em 3em;">
+                                    <a href="http://prettydiff.com/guide/unrelated_dom.xhtml#access-changing" style="text-decoration:none;">Changing the DOM</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                            <a href="http://prettydiff.com/guide/unrelated_dom.xhtml#chaining" style="text-decoration:none;">Examples of Method Chaining</a>
+                        </li>
+                    </ol>
+                </div>
+                <div style="border-collapse:collapse;border-style:solid;border-width:0.1em;margin:0px 0px 1em;padding:1em;border-color:rgb(204, 204, 204);">
+                    <h3 style="clear:both;font-size:2em;margin:0px;background:transparent none repeat scroll 0% 0%;box-shadow:none;border-style:none;color:rgb(187, 0, 0);">Introduction</h3>
+                    <div style="border-collapse:collapse;border-style:solid;border-width:0.1em;margin:0px 0px 1em;padding:1em;border-color:rgb(204, 204, 204);">
+                        <h4 style="clear:both;font-size:1.6em;font-family:&quot;Century Gothic&quot;, &quot;Trebuchet MS&quot;;margin:0px;">Scope of this Document</h4>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">This document will only focus upon DOM Level 2. Although DOM Level 1 is still
+                            universally supported this document views it as an expired and purely legacy
+                            artifact. XML namespaces and event execution, as well its memory management,
+                            will not be discussed thereby negating need to dwell upon DOM Level 3 and 4.</p>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">This document is an attempt to explain what the DOM is, how to use it, and
+                            why it is defined the way it is. The intended audience is anybody wanting to
+                            enrich their understanding of the DOM. Although the DOM is language agnostic
+                            this document is writing from the perspective of JavaScript.</p>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">This is not a
+                            <em>how to</em>
+                            article. This document does not discuss abstractions, frameworks, or other
+                            helpers. This document seeks to be educational, which is to say this document
+                            seeks to explain things. This document does not attempt to provide tools or
+                            suggestions.</p>
+                    </div>
+                    <div style="border-collapse:collapse;border-style:solid;border-width:0.1em;margin:0px 0px 1em;padding:1em;border-color:rgb(204, 204, 204);">
+                        <h4 style="clear:both;font-size:1.6em;font-family:&quot;Century Gothic&quot;, &quot;Trebuchet MS&quot;;margin:0px;">What the DOM Is</h4>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">The DOM serves primarily as an API for JavaScript to access and interpret any
+                            markup language based upon the XML syntax, which still includes HTML. API
+                            (Application Programming Interface) is a common term to describe how one piece
+                            of software talks to another unrelated piece of software. The DOM is language
+                            agnostic so that it can be used and defined by a variety of languages in a
+                            variety of ways. As expressed in JavaScript, the DOM is a collection of objects
+                            that inherit from a master object named:
+                            <em>document</em>. Each data facet conveyed by the DOM is an object. The
+                            inheritance and relationships naturally demonstrated through the document
+                            structure of the markup (functional inheritance) is defined in the DOM through
+                            methods inherited from the document object.</p>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">It is important to recognize the DOM is the standard way that web browsers
+                            interact with HTML. Every JavaScript framework, library, and abstraction that
+                            accesses HTML or XML ultimately does so through the standard DOM methods. A
+                            proper understanding of the DOM is critical for accessibility, performance,
+                            semantics, and basic problem solving.</p>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">Every data facet expressed by the DOM is referred to as a
+                            <em>node</em>. Each node represents a single unit of a markup document whether
+                            that unit comprises an HTML tag, attribute, comment, or anything else. Every
+                            node is defined of one of
+                            <a href="http://www.w3.org/TR/DOM-Level-2-Core/core.html">twelve types</a>. Only
+                            the types: element, text, and attribute are commonly used in the web though
+                            every type is available in modern web browsers. The objects representative of
+                            the nodes feature properties that define their relationships or inherit methods
+                            that can define their relationships, such as the parentNode property.</p>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">Because DOM Level 2, and later versions, are based upon XML syntax the DOM is
+                            case-sensitive. When accessing HTML, which is not case-sensitive,
+                            case-sensitivity can vary by browser and browser version. It is recommended to
+                            always use lower case to access HTML from the DOM to eliminate minor conformance
+                            differences by browser and also force HTML elements and attribute names to lower
+                            case when interpreting names returned from the DOM.</p>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">There is a standard alternative to the DOM with a lighter memory footprint
+                            and arguably far faster execution time called XPath. Unfortunately, XPath is not
+                            universally supported cross browser as a natively available method. This further
+                            reinforces the importance of learning the DOM as the only universally supported
+                            and standard API to access a markup document structure.</p>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">The well known
+                            <em>innerHTML</em>
+                            and
+                            <em>outerHTML</em>
+                            properties are not defined in the DOM. As such they will not be discussed here.</p>
+                    </div>
+                </div>
+                <div style="border-collapse:collapse;border-style:solid;border-width:0.1em;margin:0px 0px 1em;padding:1em;border-color:rgb(204, 204, 204);">
+                    <h3 style="clear:both;font-size:2em;margin:0px;background:transparent none repeat scroll 0% 0%;box-shadow:none;border-style:none;color:rgb(187, 0, 0);">History of the DOM</h3>
+                    <div style="border-collapse:collapse;border-style:solid;border-width:0.1em;margin:0px 0px 1em;padding:1em;border-color:rgb(204, 204, 204);">
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">The DOM originally came about as a standard means for accessing HTML from
+                            JavaScript. Prior to the first DOM standard IE and Netscape had separate and
+                            unrelated means of accessing HTML. The first standard is the original
+                            <a href="http://www.w3.org/TR/REC-DOM-Level-1/">DOM Specification</a>, later
+                            called DOM Level 1, from 1997. There was an immediate and vital need for
+                            conformity so this document was released earlier than other
+                            <a href="http://w3.org/">W3C</a>
+                            technologies.</p>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">In 1998 work began on the
+                            <a href="http://www.w3.org/TR/DOM-Level-2-Core/">DOM Level 2</a>
+                            specification that became a recommendation in late 2000. If you compare the
+                            proposed properties of the Level 2 document to the Level 1 document you can see
+                            there are wild differences. For instance DOM Level 1 identifies properties
+                            directly related to tags required in HTML while DOM Level 2 is fully language
+                            agnostic. The DOM Level 2 specification was written in parallel with the
+                            <a href="http://www.w3.org/TR/xmlschema-1/">XML Schema Part 1: Structures</a>
+                            specification. DOM Level 2 specification released revisions shortly after each
+                            XML specification revision and became a formal recommendation only after XML
+                            Schema became a recommendation. DOM Level 2 is primarily concerned with node
+                            definitions, node types, and access to nodes via their relationships.</p>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">In 2004 the
+                            <a href="http://www.w3.org/TR/DOM-Level-3-Core/">DOM Level 3 specification</a>
+                            became a recommendation on the same date DOM Level 2 received its final update.
+                            This was also just three weeks after a major revision to the
+                            <a href="http://www.w3.org/TR/2004/PER-xmlschema-1-20040318/">XML Schema Part 1 Second Edition Edit Recommendation</a>
+                            was released. Notice that DOM Level 3 extends DOM Level 2 but does not extend
+                            DOM Level 1. DOM Level 3 is primarily concerned with namespaces, inheritance,
+                            and extension of node names and definitions.</p>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                            <a href="http://www.w3.org/TR/dom/">DOM Level 4</a>
+                            became a published standard in late 2015. DOM Level 4 is worthy of note in that
+                            it extends DOM Level 2 and 3 but is focused primarily upon interaction and
+                            events instead of anything related to structure or node relationships. A primary
+                            example is that
+                            <em>garbage collection</em>
+                            is described in the specification where in the past these discussions were left
+                            entirely to the implementation of JavaScript interpreters. In a purely desktop
+                            driven experience DOM Level 4 might be considered unnecessarily and excessive.
+                            New platforms like mobile and tablets have proven that standard definitions for
+                            events and interaction is not enough. There must also be standard guidance on
+                            implementation of those events to achieve conformance, such as when the two
+                            largest mobile platform developers cannot produce interfaces that execute to the
+                            standards they helped write.</p>
+			<p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">The DOM Level 4 specification as, published by the W3C, is a snapshot of work from
+			    the <a href="https://dom.spec.whatwg.org/">WHATWG DOM</a> specification. This
+			    snapshot allows an evolving artifact from the WHATWG to be published against a
+			    fixed date and version number such that consuming parties have a static
+			    reference to serve as a standard for conformance.</p>
+                    </div>
+                </div>
+                <div style="border-collapse:collapse;border-style:solid;border-width:0.1em;margin:0px 0px 1em;padding:1em;border-color:rgb(204, 204, 204);">
+                    <h3 style="clear:both;font-size:2em;margin:0px;background:transparent none repeat scroll 0% 0%;box-shadow:none;border-style:none;color:rgb(187, 0, 0);">How HTML Loads in Modern Browsers</h3>
+                    <div style="border-collapse:collapse;border-style:solid;border-width:0.1em;margin:0px 0px 1em;padding:1em;border-color:rgb(204, 204, 204);">
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">It is important to understand how the DOM is created. If a cached JavaScript
+                            file is requested at the top of a document and is well written it is quite
+                            possible that it may request access to DOM objects before they are created,
+                            which can result in unintended errors. For performance reasons it is often
+                            suggested that JavaScript be requested from the bottom of a document, which also
+                            provides the benefit of allowing the DOM to fully render before attempts to
+                            access it are executed.</p>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">The first thing modern browsers do when encountering any markup language,
+                            such as HTML, is parse the markup. Parsing does not imply producing or rendering
+                            the DOM, which is a separate and later process. Parsing is the process of
+                            transform strings of text, which is what is sent across the internet, into
+                            intrepreted code that computers use. As an example people parse language when
+                            they talk to each other or when they read books. All modern documents use XML as
+                            a parsing foundation for any XML similar markup languages. In web browsers
+                            poorly formatted HTML is generally considered close enough to XML to use the
+                            same parsing techniques but with some additional rules. Because XML provides
+                            syntax rules that are terse and specific writing an XML parser is much faster,
+                            easier, and cheaper than writing an HTML parser. This means a smaller and faster
+                            executing parser, but more importantly it means a solid foundation on which to
+                            provide additional rules necessary for parsing HTML. An example of standard
+                            parsing guidance can be found in the
+                            <a href="http://www.w3.org/TR/xml-infoset/">XML Information Set</a>.</p>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">Once the markup is parsed requests for additional resources are identified
+                            and those requests are executed. It is absolutely essential that the requests
+                            for additional resources execute as immediately as possible as the transmission
+                            time necessary to return these resources can occur simultaneously to the DOM
+                            rendering. For performance it is considered a good idea to put requests for
+                            visual artifacts, particularly stylesheets, as high in the document as possible
+                            so that the page can render visually as the DOM renders without repainting
+                            later. Another reason the DOM is created separate from the parsing process is
+                            because it is significantly larger, and thus slower to produce and populate into
+                            memory, than the parse data.</p>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">After the DOM is fully rendered, all requests for additional resources have
+                            executed, and all initially requested JavaScript is interpreted the load of the
+                            page is complete. It is only at this time that the
+                            <em>onload</em>
+                            event executes. As a side note events are not formally addressed in this
+                            document, but are points of user interaction and are formally defined in DOM
+                            Level 3. It is important to take note that older versions of Internet Explorer
+                            require receipt of an HTTP response for all requested resources, which means
+                            that if an HTTP response is never returned the onload event never executes. It
+                            is also important to notice that requests for JavaScript not made from the HTML
+                            have no bearing on the execution of the onload event and neither do any
+                            JavaScript executions that occur outside of initial interpretation or through
+                            any other API.</p>
+                    </div>
+                </div>
+                <div style="border-collapse:collapse;border-style:solid;border-width:0.1em;margin:0px 0px 1em;padding:1em;border-color:rgb(204, 204, 204);">
+                    <h3 style="clear:both;font-size:2em;margin:0px;background:transparent none repeat scroll 0% 0%;box-shadow:none;border-style:none;color:rgb(187, 0, 0);">Accessing the DOM in JavaScript</h3>
+                    <div style="border-collapse:collapse;border-style:solid;border-width:0.1em;margin:0px 0px 1em;padding:1em;border-color:rgb(204, 204, 204);">
+                        <h4 style="clear:both;font-size:1.6em;font-family:&quot;Century Gothic&quot;, &quot;Trebuchet MS&quot;;margin:0px;">Methods for Searching the DOM</h4>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">The DOM is searched using methods defined on the
+                            <em>document</em>
+                            object. Some methods defined in that object are inherited by other DOM objects
+                            and some methods are not. Any DOM access method executed on the document object
+                            search from the
+                            <em>document.documentElement</em>
+                            object that represents the root node of the markup, typically the
+                            <em>&lt;html&gt;</em>
+                            element. The most common methods for accessing the DOM are:</p>
+                        <ul>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>getElementById</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">This method is only available from the document object or documentFragment
+                                    type object and requires a string argument. The method will search the document
+                                    for the first node with an
+                                    <em>id</em>
+                                    attribute whose value matches the value of the provided string argument. This
+                                    method returns either null or the first DOM element node with a matching ID
+                                    attribute value.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">document.getElementById("idValue");
+                                    <span style="display:block;white-space:pre;">//returns null or element node</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>getElementsByTagName</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">This method is inherited to all element node types and requires a string
+                                    argument. This method will search from the object it is executed on for all
+                                    elements with a tag name matching the provided string. A node list is always
+                                    returned. If there are no matching elements a node list with 0 indexes is
+                                    returned.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">document.getElementsByTagName("div");
+                                    <span style="display:block;white-space:pre;">//returns a node list</span>
+                                </code>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myElementNode.getElementsByTagName("div");
+                                    <span style="display:block;white-space:pre;">//returns a node list</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>getElementsByClassName</em>
+                                    - DOM Level 4</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">This method is inherited to all element node types and requires a string
+                                    argument. This method will search from the object it is executed on for all
+                                    elements with a class attribute value matching any class name in the class
+                                    attribute of any element. Class names are represented as a space separated list
+                                    in the class attribute value. A node list is always returned. If there are no
+                                    matching elements a node list with 0 indexes is returned.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">document.getElementsByClassName("classValueToken");
+                                    <span style="display:block;white-space:pre;">//returns a node list</span>
+                                </code>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myElementNode.getElementsByClassName("classValueToken");
+                                    <span style="display:block;white-space:pre;">//returns a node list</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>getAttribute</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">This method is inherited to all element node types and requires a string
+                                    argument. This method will return the string value of the attribute matching the
+                                    attribute name supplied in the string argument. If no matching attribute exists
+                                    it will return null.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myElementNode.getAttribute("attributeName");
+                                    <span style="display:block;white-space:pre;">//returns null or a string</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>cloneNode</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">This method is inherited to all DOM nodes. If this method is used on an
+                                    element node all values, attributes, and properties are cloned. This method
+                                    takes one argument of type boolean, which if true also clones all child and
+                                    descendant nodes.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myNode.cloneNode(true);
+                                    <span style="display:block;white-space:pre;">//returns a copy of a node including all descendants</span>
+                                </code>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myNode.cloneNode();
+                                    <span style="display:block;white-space:pre;">//returns a copy of a node not including descendants</span>
+                                </code>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="border-collapse:collapse;border-style:solid;border-width:0.1em;margin:0px 0px 1em;padding:1em;border-color:rgb(204, 204, 204);">
+                        <h4 style="clear:both;font-size:1.6em;font-family:&quot;Century Gothic&quot;, &quot;Trebuchet MS&quot;;margin:0px;">Walking the DOM</h4>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">Another means of accessing the DOM is by starting from a DOM element node and
+                            moving from node to node using relationships defined in the properties of each
+                            element's DOM object. This is called
+                            <em>walking the DOM</em>. Here are a list of the most common properties to
+                            demonstrate those relationships:</p>
+                        <ul>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>parentNode</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">The parentNode property is available to every DOM node regardless of node
+                                    type. This property returns the element node immediately containing the current
+                                    DOM node. When the parentNode property is executed on the
+                                    document.documentElement object the document object is returned.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myNode.parentNode;
+                                    <span style="display:block;white-space:pre;">//returns an element node</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>childNodes</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">The childNodes property is available to every element node type. When
+                                    executed this property will return a node list of child nodes regardless of
+                                    type, but it will not return descendant nodes, which are nodes that are children
+                                    of the immediate child nodes. The child nodes are always returned in the same
+                                    order in which they occur in the DOM. Versions of Internet Explorer 8, and
+                                    earlier, intentionally omitted text nodes containing only white space characters
+                                    from the childNodes property thereby creating conformance problems. The
+                                    childNodes property does not return attribute nodes.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myElementNode.childNodes;
+                                    <span style="display:block;white-space:pre;">//returns a node list</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>firstChild</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">The firstChild property is available to all element, document, and
+                                    documentFragment node types. It returns the first child node from the childNodes
+                                    node list. If this property is executed on the document element it will return a
+                                    documentType node type.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myElementNode.firstChild;
+                                    <span style="display:block;white-space:pre;">//returns first child node</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>lastChild</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">This property returns the node in position: childNodes[childNodes.lenght -
+                                    1], but is otherwise identical to the firstChild property.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myElementNode.lastChild;
+                                    <span style="display:block;white-space:pre;">//returns last child node</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>nextSibling</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">The nextSibling property is available to every DOM node and returns the next
+                                    child node of the parent node. If the current node is the last child of its
+                                    parent this property will return null.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myNode.nextSibling;
+                                    <span style="display:block;white-space:pre;">//returns next adjacent node</span>
+                                </code>
+                            </li>
+			    <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+		                <h5>
+				    <em>nextElementSibling</em>
+				    - WHATWG DOM</h5>
+				<p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">The nextElementSibling property is available to every DOM node and returns
+				    the next child node of type element of the parent node. If the parent node
+				    contains no element child nodes following the current node this property will
+				    return null.</p>
+				<code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myNode.nextElementSibling;
+				    <span style="display:block;white-space:pre;">//returns next element sibling</span>
+				</code>
+			    </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>previousSibling</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">The previousSibling property is available to every DOM node and returns the
+                                    previous child node of the parent node. If the current node is the first
+                                    child of its parent this property will return null.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myNode.nextSibling;
+                                    <span style="display:block;white-space:pre;">//returns prior adjacent node</span>
+                                </code>
+                            </li>
+			    <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+			        <h5>
+				    <em>previousElementSibling</em>
+				    - WHATWG DOM</h5>
+				<p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">The previousElementSibling property is avialable to every DOM node and returns
+				    the previous child node of type element of the parent node. If the parent node
+				    contains no element child nodes preceding the current node this property will
+				    return null.</p>
+				<code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myNode.previousElementSibling;
+				    <span style="display:block;white-space:pre;">//returns prior element sibling</span>
+		                </code>
+			    </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>attributes</em>
+                                    - DOM Level 3</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">The attributes property is only available to element type nodes. It returns a
+                                    node list of all attributes, as well as their values, represented on that
+                                    element. If an element has no attributes then a list of length 0 is returned.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myElementNode.attributes;
+                                    <span style="display:block;white-space:pre;">//returns a node list of format: attributeName="value"</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>nodeType</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">This property is available to every DOM node. It always returns a number
+                                    depend upon the node type as described in the following list order.</p>
+                                <ol>
+                                    <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">ELEMENT_NODE</li>
+                                    <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">ATTRIBUTE_NODE</li>
+                                    <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">TEXT_NODE</li>
+                                    <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">CDATA_SECTION_NODE</li>
+                                    <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">ENTITY_REFERENCE_NODE</li>
+                                    <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">ENTITY_NODE</li>
+                                    <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">PROCESSING_INSTRUCTION_NODE</li>
+                                    <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">COMMENT_NODE</li>
+                                    <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">DOCUMENT_NODE</li>
+                                    <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">DOCUMENT_TYPE_NODE</li>
+                                    <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">DOCUMENT_FRAGMENT_NODE</li>
+                                    <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">NOTATION_NODE</li>
+                                </ol>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myNode.nodeType;
+                                    <span style="display:block;white-space:pre;">//returns a number 1 - 12</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>nodeName</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">This property always returns either a string or null depending upon the node
+                                    type. Please see this
+                                    <a href="http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-1841493061">table in the specification</a>
+                                    for value definitions. According to conformance with the XML specification the
+                                    value returned this property should always be case sensitive and specifically
+                                    match the node it is applied against. With HTML, however, this is frequently not
+                                    the case and differs by browser and version. I recommend always using the
+                                    JavaScript
+                                    <em>toLowerCase</em>
+                                    against the value returned for nodeType to safely force conformity.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myNode.nodeName;
+                                    <span style="display:block;white-space:pre;">//returns a string of variant definition by node type</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>nodeValue</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">This property always returns either a string or null depending upon the node
+                                    type. Please see this
+                                    <a href="http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-1841493061">table in the specification</a>
+                                    for value definitions.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myNode.nodeValue;
+                                    <span style="display:block;white-space:pre;">//returns either null for a string of variant definition by node type</span>
+                                </code>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="border-collapse:collapse;border-style:solid;border-width:0.1em;margin:0px 0px 1em;padding:1em;border-color:rgb(204, 204, 204);">
+                        <h4 style="clear:both;font-size:1.6em;font-family:&quot;Century Gothic&quot;, &quot;Trebuchet MS&quot;;margin:0px;">Changing the DOM</h4>
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">The DOM can also be manipulated and altered through various means. The
+                            following is a list of common means to change the DOM:</p>
+                        <ul>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>createElement</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">The createElement method is available from the document object or a
+                                    documentFragment type object and takes a single string argument. The value of
+                                    the string argument is the name of an element type node to create, so this
+                                    method will throw an error if the supplied string violates syntax rules for
+                                    element names.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">document.createElement("div");
+                                    <span style="display:block;white-space:pre;">//returns a new element node not bound to the document</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>createTextNode</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">The createTextNode method is available from the document object or a
+                                    documentFragment type object and takes a single string argument. The value of
+                                    the string argument is the text content of the node.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">document.createTextNode("some text here");
+                                    <span style="display:block;white-space:pre;">//returns a new text node not bound to the document</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>appendChild</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">This method is available to every element type node. It takes a single
+                                    argument of a reference to a node object, which is an object node to add to the
+                                    DOM, and adds this node after every other child node. The object node must not
+                                    already have an assigned parent node.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myElementNode.appendChild(newNode);
+                                    <span style="display:block;white-space:pre;">//returns the appended node</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>insertBefore</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">This method is available to every element type node. It takes a two arguments
+                                    which is a reference node and a reference to a new node object, adds this new
+                                    node before the reference node. The object node must not already have an
+                                    assigned parent node.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myElementNode.insertBefore(referenceNode, newNode);
+                                    <span style="display:block;white-space:pre;">//returns the newNode</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>removeChild</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">This method is available to every element type node. It takes a single
+                                    argument of a reference to a node object, which must be a child node of the
+                                    current node. The supplied node is removed from its parent node and so it is
+                                    effectively removed from the document. As long as the JavaScript reference to
+                                    this node can still be accessed the node will remain alive in memory so that it
+                                    can be changed and added back to the document later.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myElementNode.removeChild(anotherNode);
+                                    <span style="display:block;white-space:pre;">//returns anotherNode</span>
+                                </code>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myElementNode.removeChild(myElementNode.lastChild);
+                                    <span style="display:block;white-space:pre;">//returns myElementNode.lastChild</span>
+                                </code>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myElementNode.removeChild(myElementNode.childNodes[3]);
+                                    <span style="display:block;white-space:pre;">//returns myElementNode.childNodes[3]</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>replaceChild</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">This method is available to every element type node. It takes a two
+                                    arguments. The first is a new DOM node and the second is a DOM node to replace.
+                                    The new DOM node cannot have an assigned parentNode and the old DOM node will
+                                    have its parentNode unassigned effectively removing it from the document. The
+                                    old DOM node will continue to reside in memory so long as a variable reference
+                                    to it remains available.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myElementNode.replaceChild(newNode, originalNode);
+                                    <span style="display:block;white-space:pre;">//returns originalNode</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>removeAttribute</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">This method is available to every element type node. It takes a single
+                                    argument representing an attribute name and if that attribute exists it is
+                                    removed from its parent element.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myElementNode.removeAttribute("class");
+                                    <span style="display:block;white-space:pre;">//returns nothing</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <h5>
+                                    <em>setAttribute</em>
+                                    - DOM Level 2</h5>
+                                <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;line-height:1.6em;text-align:left;font-size:1em;">This method is available to every element type node. It takes two arguments
+                                    of which both are strings. The first argument is the name of the attribute and
+                                    the second argument is the value to assign. If an attribute with that name
+                                    already exists it will be over written otherwise a new attribute will be
+                                    created.</p>
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">myElementNode.setAttribute("class", "myAttributeValue");
+                                    <span style="display:block;white-space:pre;">//returns nothing</span>
+                                </code>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="border-collapse:collapse;border-style:solid;border-width:0.1em;margin:0px 0px 1em;padding:1em;border-color:rgb(204, 204, 204);">
+                    <h3 style="clear:both;font-size:2em;margin:0px;background:transparent none repeat scroll 0% 0%;box-shadow:none;border-style:none;color:rgb(187, 0, 0);">Examples of Method Chaining</h3>
+                    <div style="border-collapse:collapse;border-style:solid;border-width:0.1em;margin:0px 0px 1em;padding:1em;border-color:rgb(204, 204, 204);">
+                        <p style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">It is frequently necessary to use multiple DOM methods together to target a
+                            specific node relative some starting point. This process is commonly referred to
+                            as
+                            <em>walking the DOM</em>. This is the only means a web browser uses to access
+                            pieces of an HTML/XML document from JavaScript. All frameworks and querySelector
+                            methods sugar down to the DOM methods, and all modern web browsers provide the
+                            bulk of their optimizations to this API, so learning how these methods are used
+                            together will allow for writing faster executing web applications. I have
+                            provided some brief examples:</p>
+                        <ul>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">document.getElementById("someID").childNodes
+                                    <span style="display:block;white-space:pre;">//get all child nodes from a targeted element</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">document.getElementById("someID").childNodes.length
+                                    <span style="display:block;white-space:pre;">//how many children does the targeted node contain</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">document.getElementById("someID").getElementsByTagName("p")
+                                    <span style="display:block;white-space:pre;">//get all p nodes in the tree of a targeted node</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">document.getElementById("someID").firstChild.nodeType
+                                    <span style="display:block;white-space:pre;">//determine the type of node of a target elements first child node</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">document.getElementById("someID").previousSibling.firstChild
+                                    <span style="display:block;white-space:pre;">//get the first child of a targeted element's previous sibling</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">document.getElementById("someID").nextSibling.childNodes[2]
+                                    <span style="display:block;white-space:pre;">//get the third child of a targeted element's next sibling</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">document.getElementsByTagName("h3")[4].parentNode.parentNode
+                                    <span style="display:block;white-space:pre;">//find the grandfather element of the fifth h3 element</span>
+                                </code>
+                            </li>
+                            <li style="clear:both;font-family:&quot;Palatino Linotype&quot;, &quot;Book Antiqua&quot;, Palatino, serif;font-size:1.6em;line-height:1.6em;text-align:left;">
+                                <code style="font-family:&quot;Courier New&quot;, Courier, &quot;Lucida Console&quot;, monospace;display:block;width:100%;border-style:solid;border-width:0.2em;line-height:1em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-color:rgb(238, 238, 238);color:rgb(0, 0, 153);font-size:1.2em;">document.getElementsByTagName("h3")[4].getAttribute("id")
+                                    <span style="display:block;white-space:pre;">//get the id attribute value of the fifth h3 element in the document</span>
+                                </code>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div></div></div></div></div><br/></div></en-note>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div><div style="background-color:rgb(238, 238, 238);font-family:&quot;Lato&quot;, Arial, sans-serif;line-height:1.6;color:rgb(85, 85, 85);font-size:16px;min-width:480px;"><span style="background:rgb(255, 255, 255) linear-gradient(rgb(249, 249, 249) 0%, rgb(255, 255, 255) 250px) repeat scroll 0% 0%;overflow:hidden;"><div style="background-position:right 32px bottom 0px;background-size:256px auto;box-sizing:border-box;background-image:url(&amp;quot;/images/icon_grey_top.svg&amp;quot;);background-repeat:no-repeat;">
+    
+
+    <h1 style="font-size:34px;line-height:54px;font-weight:normal;margin-top:0.7em;margin-bottom:1em;"><span style="padding:2px 10px 3px;background-color:rgba(0, 0, 0, 0.05);left:-10px;color:rgb(102, 102, 102);border-radius:3px;box-decoration-break:clone;position:relative;padding-top:18px;top:16px;">
+        <a href="https://www.sublimetext.com/docs/3/" style="text-decoration:none;color:rgb(136, 136, 136);font-size:0.85rem;line-height:1.2rem;top:4px;left:10px;position:absolute;text-transform:uppercase;">Documentation</a>
+        Projects
+    </span></h1>
+
+    <div style="max-width:800px;clear:left;">
+        <p style="margin:0.6em 0px;">
+            Projects in Sublime Text are made up of two files: the <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;border-bottom:1px dotted rgb(170, 170, 170);">.sublime-project</span> file, which contains the project definition, and the <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;border-bottom:1px dotted rgb(170, 170, 170);">.sublime-workspace</span> file, which contains user specific data, such as the open files and the modifications to each.
+        </p>
+
+        <p style="margin:0.6em 0px;">
+            As a general rule, the <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;border-bottom:1px dotted rgb(170, 170, 170);">.sublime-project</span> file would be checked into version control, while the <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;border-bottom:1px dotted rgb(170, 170, 170);">.sublime-workspace</span> file would not.
+        </p>
+
+        <h2 style="color:rgb(119, 119, 119);font-size:1.5em;font-weight:normal;margin-top:1em;margin-bottom:0.4em;border-bottom:1px dotted rgb(221, 221, 221);">Project Format</h2>
+
+        <p style="margin:0.6em 0px;">
+            <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;border-bottom:1px dotted rgb(170, 170, 170);">.sublime-project</span> files are JSON, and support three top level sections: <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;background-color:rgb(243, 243, 243);border-radius:2px;padding:1px 5px;">folders</span>, for the included folders, <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;background-color:rgb(243, 243, 243);border-radius:2px;padding:1px 5px;">settings</span>, for file-setting overrides, and <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;background-color:rgb(243, 243, 243);border-radius:2px;padding:1px 5px;">build_systems</span>, for project specific build systems. An example:
+        </p>
+
+        <pre style="background-color:rgb(246, 246, 246);border-radius:3px;padding:3px 8px;overflow-x:auto;"><code style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;border-radius:2px;padding:0px;background-color:transparent;"><span style="color:rgb(68, 68, 68);">{</span>
+    <span style="color:rgb(157, 191, 64);">"folders"</span><span style="color:rgb(68, 68, 68);">:</span>
+    <span style="color:rgb(68, 68, 68);">[</span>
+        <span style="color:rgb(68, 68, 68);">{</span>
+            <span style="color:rgb(157, 191, 64);">"path"</span><span style="color:rgb(68, 68, 68);">:</span> <span style="color:rgb(157, 191, 64);">"src"</span><span style="color:rgb(68, 68, 68);">,</span>
+            <span style="color:rgb(157, 191, 64);">"folder_exclude_patterns"</span><span style="color:rgb(68, 68, 68);">:</span> <span style="color:rgb(68, 68, 68);">[</span><span style="color:rgb(157, 191, 64);">"backup"</span><span style="color:rgb(68, 68, 68);">]</span><span style="color:rgb(68, 68, 68);">,</span>
+            <span style="color:rgb(157, 191, 64);">"follow_symlinks"</span><span style="color:rgb(68, 68, 68);">:</span> <span style="color:rgb(186, 139, 175);">true</span>
+        <span style="color:rgb(68, 68, 68);">}</span><span style="color:rgb(68, 68, 68);">,</span>
+        <span style="color:rgb(68, 68, 68);">{</span>
+            <span style="color:rgb(157, 191, 64);">"path"</span><span style="color:rgb(68, 68, 68);">:</span> <span style="color:rgb(157, 191, 64);">"docs"</span><span style="color:rgb(68, 68, 68);">,</span>
+            <span style="color:rgb(157, 191, 64);">"name"</span><span style="color:rgb(68, 68, 68);">:</span> <span style="color:rgb(157, 191, 64);">"Documentation"</span><span style="color:rgb(68, 68, 68);">,</span>
+            <span style="color:rgb(157, 191, 64);">"file_exclude_patterns"</span><span style="color:rgb(68, 68, 68);">:</span> <span style="color:rgb(68, 68, 68);">[</span><span style="color:rgb(157, 191, 64);">"*.css"</span><span style="color:rgb(68, 68, 68);">]</span>
+        <span style="color:rgb(68, 68, 68);">}</span>
+    <span style="color:rgb(68, 68, 68);">]</span><span style="color:rgb(68, 68, 68);">,</span>
+    <span style="color:rgb(157, 191, 64);">"settings"</span><span style="color:rgb(68, 68, 68);">:</span>
+    <span style="color:rgb(68, 68, 68);">{</span>
+        <span style="color:rgb(157, 191, 64);">"tab_size"</span><span style="color:rgb(68, 68, 68);">:</span> <span style="color:rgb(210, 50, 45);">8</span>
+    <span style="color:rgb(68, 68, 68);">}</span><span style="color:rgb(68, 68, 68);">,</span>
+    <span style="color:rgb(157, 191, 64);">"build_systems"</span><span style="color:rgb(68, 68, 68);">:</span>
+    <span style="color:rgb(68, 68, 68);">[</span>
+        <span style="color:rgb(68, 68, 68);">{</span>
+            <span style="color:rgb(157, 191, 64);">"name"</span><span style="color:rgb(68, 68, 68);">:</span> <span style="color:rgb(157, 191, 64);">"List"</span><span style="color:rgb(68, 68, 68);">,</span>
+            <span style="color:rgb(157, 191, 64);">"shell_cmd"</span><span style="color:rgb(68, 68, 68);">:</span> <span style="color:rgb(157, 191, 64);">"ls -l"</span>
+        <span style="color:rgb(68, 68, 68);">}</span>
+    <span style="color:rgb(68, 68, 68);">]</span>
+<span style="color:rgb(68, 68, 68);">}</span>
+</code></pre>
+
+        <h3 style="font-size:1.2em;color:rgb(119, 119, 119);text-transform:uppercase;letter-spacing:0.5px;font-weight:normal;margin-top:0.7em;margin-bottom:0.4em;">Folders</h3>
+
+        <p style="margin:0.6em 0px;">
+            Each folder must have a path, and may optionally have settings <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;background-color:rgb(243, 243, 243);border-radius:2px;padding:1px 5px;">file_exclude_patterns</span>, <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;background-color:rgb(243, 243, 243);border-radius:2px;padding:1px 5px;">file_include_patterns</span>, <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;background-color:rgb(243, 243, 243);border-radius:2px;padding:1px 5px;">folder_exclude_patterns</span>, <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;background-color:rgb(243, 243, 243);border-radius:2px;padding:1px 5px;">folder_include_patterns</span> and <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;background-color:rgb(243, 243, 243);border-radius:2px;padding:1px 5px;">follow_symlinks</span>. The path may be relative to the project directory, or a fully qualified path. Folders may also be given a <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;background-color:rgb(243, 243, 243);border-radius:2px;padding:1px 5px;">name</span> setting, to set how they're displayed on the side bar.
+        </p>
+
+        <p style="margin:0.6em 0px;">
+            Converted projects from earlier versions may have a <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;background-color:rgb(243, 243, 243);border-radius:2px;padding:1px 5px;">mount_points</span> entry under <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;background-color:rgb(243, 243, 243);border-radius:2px;padding:1px 5px;">folders</span>. If you wish to use the exclude patterns, you'll need to change to the above format.
+        </p>
+
+        <h3 style="font-size:1.2em;color:rgb(119, 119, 119);text-transform:uppercase;letter-spacing:0.5px;font-weight:normal;margin-top:0.7em;margin-bottom:0.4em;">Settings</h3>
+
+        <p style="margin:0.6em 0px;">
+            <a href="https://www.sublimetext.com/docs/3/settings.html" style="color:rgb(102, 144, 204);">Settings</a> may be specified here using the <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;background-color:rgb(243, 243, 243);border-radius:2px;padding:1px 5px;">settings</span> key, and will override regular user settings. Note that they will not override syntax-specific settings.
+        </p>
+
+        <h3 style="font-size:1.2em;color:rgb(119, 119, 119);text-transform:uppercase;letter-spacing:0.5px;font-weight:normal;margin-top:0.7em;margin-bottom:0.4em;">Build Systems</h3>
+
+        <p style="margin:0.6em 0px;">
+            <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;background-color:rgb(243, 243, 243);border-radius:2px;padding:1px 5px;">build_systems</span> specifices a list of inline <a href="http://docs.sublimetext.info/en/latest/file_processing/build_systems.html" style="color:rgb(102, 144, 204);">Build Systems</a> definitions. In addition to the regular build system settings, a <span style="font-family:&quot;Roboto Mono&quot;, monospace;font-size:14px;background-color:rgb(243, 243, 243);border-radius:2px;padding:1px 5px;">name</span> must be specified for each one. Build systems listed here will be available via the regular <span style="background-color:rgb(243, 243, 243);color:rgb(51, 51, 51);border-radius:2px;padding:1px 5px;">Tools <en-media type="image/png" hash="446e41babe9d3b2e3f5e8d680a8d1080" alt="▶" width="10" height="12"></en-media> Build Systems</span> menu.
+        </p>
+    </div>
+
+    <span style="display:table;clear:both;"></span></div></span></div></div></div><br/></div></en-note>

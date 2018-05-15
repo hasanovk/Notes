@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div>The Requirements:</div><ol start="1"><li>Android SDK (android-studio-ide-162.4069837-mac.dmg)</li><li>Phone in the USB debugging Mode must be checked: “Settings” =&gt; “About Phone” </li></ol><div>        and press &quot;Build Number” 7 times till it will say that the</div><div>        Development option is ON. Then go back to the “Settings” =&gt; &quot;Development options”</div><div>        Check the USB debugging.</div><div><br/></div><div>The Tools we need to know:</div><div><br/></div></en-note>

@@ -1,0 +1,1 @@
+To use the PIP with the correct version of Python, make sure that “/usr/local/bin/pip” file is set to the version you want. 

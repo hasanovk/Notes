@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div><div style="font-family:&quot;goudy old style&quot;,&quot;minion pro&quot;,&quot;bell mt&quot;,Georgia,&quot;Hiragino Mincho Pro&quot;,serif;font-size:17px;background-color:white;color:rgb(0, 0, 0);"><div><div><div><div style="background-color:rgb(255, 255, 255);color:rgb(62, 67, 73);"><div style="text-align:left;">
+<span></span><h1 style="font-family:&quot;Garamond&quot;,&quot;Georgia&quot;,serif;font-weight:normal;margin:30px 0px 10px;padding:0px;margin-top:0px;padding-top:0px;font-size:240%;">Virtual Environments<a href="http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/#virtual-environments" title="Permalink to this headline" style="visibility:hidden;color:rgb(221, 221, 221);text-decoration:none;padding:0px 4px;">¶</a></h1>
+<p style="line-height:1.4em;">A Virtual Environment is a tool to keep the dependencies required by different
+projects in separate places, by creating virtual Python environments for them.
+It solves the “Project X depends on version 1.x but, Project Y needs 4.x”
+dilemma, and keeps your global site-packages directory clean and manageable.</p>
+<p style="line-height:1.4em;">For example, you can work on a project which requires Django 1.10 while also
+maintaining a project which requires Django 1.8.</p>
+<div>
+<h2 style="font-family:&quot;Garamond&quot;,&quot;Georgia&quot;,serif;font-weight:normal;margin:30px 0px 10px;padding:0px;font-size:180%;">virtualenv<a href="http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/#virtualenv" title="Permalink to this headline" style="visibility:hidden;color:rgb(221, 221, 221);text-decoration:none;padding:0px 4px;">¶</a></h2>
+<p style="line-height:1.4em;"><a href="http://pypi.python.org/pypi/virtualenv" style="color:rgb(0, 75, 107);text-decoration:none;border-bottom:1px dotted rgb(0, 75, 107);">virtualenv</a> is a tool to create
+isolated Python environments. virtualenv creates a folder which contains all the
+necessary executables to use the packages that a Python project would need.</p>
+<p style="line-height:1.4em;">Install virtualenv via pip:</p>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> pip install virtualenv
+</pre></div>
+</div>
+<p style="line-height:1.4em;">Test your installation</p>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> virtualenv --version
+</pre></div>
+</div>
+<div>
+<h3 style="font-family:&quot;Garamond&quot;,&quot;Georgia&quot;,serif;font-weight:normal;margin:30px 0px 10px;padding:0px;font-size:150%;">Basic Usage<a href="http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/#basic-usage" title="Permalink to this headline" style="visibility:hidden;color:rgb(221, 221, 221);text-decoration:none;padding:0px 4px;">¶</a></h3>
+<ol style="margin:10px 0px 10px 30px;padding:0px;list-style:outside none decimal;">
+<li style="line-height:1.4em;">Create a virtual environment for a project:</li>
+</ol>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> <span style="color:rgb(0, 68, 97);">cd</span> my_project_folder
+<span style="color:rgb(116, 83, 52);">$</span> virtualenv my_project
+</pre></div>
+</div>
+<p style="line-height:1.4em;"><code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>virtualenv</span> <span>my_project</span></code> will create a folder in the current directory which will
+contain the Python executable files, and a copy of the <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>pip</span></code> library which you
+can use to install other packages. The name of the virtual environment (in this
+case, it was <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>my_project</span></code>) can be anything; omitting the name will place the files
+in the current directory instead.</p>
+<p style="line-height:1.4em;">This creates a copy of Python in whichever directory you ran the command in,
+placing it in a folder named <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>my_project</span></code>.</p>
+<p style="line-height:1.4em;">You can also use the Python interpreter of your choice (like
+<code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>python2.7</span></code>).</p>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> virtualenv -p /usr/bin/python2.7 my_project
+</pre></div>
+</div>
+<p style="line-height:1.4em;">or change the interpreter globally with an env variable in <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>~/.bashrc</span></code>:</p>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> <span style="color:rgb(0, 68, 97);">export</span> <span style="color:rgb(0, 0, 0);">VIRTUALENVWRAPPER_PYTHON</span><span style="color:rgb(88, 40, 0);">=</span>/usr/bin/python2.7
+</pre></div>
+</div>
+<ol start="2" style="margin:10px 0px 10px 30px;padding:0px;list-style:outside none decimal;">
+<li style="line-height:1.4em;">To begin using the virtual environment, it needs to be activated:</li>
+</ol>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> <span style="color:rgb(0, 68, 97);">source</span> my_project/bin/activate
+</pre></div>
+</div>
+<p style="line-height:1.4em;">The name of the current virtual environment will now appear on the left of
+the prompt (e.g. <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>(my_project)Your-Computer:your_project</span> <span>UserName$)</span></code> to let you know
+that it’s active. From now on, any package that you install using pip will be
+placed in the <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>my_project</span></code> folder, isolated from the global Python installation.</p>
+<p style="line-height:1.4em;">Install packages as usual, for example:</p>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> pip install requests
+</pre></div>
+</div>
+<ol start="3" style="margin:10px 0px 10px 30px;padding:0px;list-style:outside none decimal;">
+<li style="line-height:1.4em;">If you are done working in the virtual environment for the moment, you can
+deactivate it:</li>
+</ol>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> deactivate
+</pre></div>
+</div>
+<p style="line-height:1.4em;">This puts you back to the system’s default Python interpreter with all its
+installed libraries.</p>
+<p style="line-height:1.4em;">To delete a virtual environment, just delete its folder. (In this case,
+it would be <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>rm</span> <span>-rf</span> <span>my_project</span></code>.)</p>
+<p style="line-height:1.4em;">After a while, though, you might end up with a lot of virtual environments
+littered across your system, and its possible you’ll forget their names or
+where they were placed.</p>
+</div>
+<div>
+<h3 style="font-family:&quot;Garamond&quot;,&quot;Georgia&quot;,serif;font-weight:normal;margin:30px 0px 10px;padding:0px;font-size:150%;">Other Notes<a href="http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/#other-notes" title="Permalink to this headline" style="visibility:hidden;color:rgb(221, 221, 221);text-decoration:none;padding:0px 4px;">¶</a></h3>
+<p style="line-height:1.4em;">Running <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>virtualenv</span></code> with the option <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>--no-site-packages</span></code> will not
+include the packages that are installed globally. This can be useful
+for keeping the package list clean in case it needs to be accessed later.
+[This is the default behavior for <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>virtualenv</span></code> 1.7 and later.]</p>
+<p style="line-height:1.4em;">In order to keep your environment consistent, it’s a good idea to “freeze”
+the current state of the environment packages. To do this, run</p>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> pip freeze &gt; requirements.txt
+</pre></div>
+</div>
+<p style="line-height:1.4em;">This will create a <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>requirements.txt</span></code> file, which contains a simple
+list of all the packages in the current environment, and their respective
+versions. You can see the list of installed packages without the requirements
+format using “pip list”. Later it will be easier for a different developer
+(or you, if you need to re-create the environment) to install the same packages
+using the same versions:</p>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> pip install -r requirements.txt
+</pre></div>
+</div>
+<p style="line-height:1.4em;">This can help ensure consistency across installations, across deployments,
+and across developers.</p>
+<p style="line-height:1.4em;">Lastly, remember to exclude the virtual environment folder from source
+control by adding it to the ignore list.</p>
+</div>
+</div>
+<div>
+<span></span><h2 style="font-family:&quot;Garamond&quot;,&quot;Georgia&quot;,serif;font-weight:normal;margin:30px 0px 10px;padding:0px;font-size:180%;">virtualenvwrapper<a href="http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/#virtualenvwrapper" title="Permalink to this headline" style="visibility:hidden;color:rgb(221, 221, 221);text-decoration:none;padding:0px 4px;">¶</a></h2>
+<p style="line-height:1.4em;"><a href="https://virtualenvwrapper.readthedocs.io/en/latest/index.html" style="color:rgb(0, 75, 107);text-decoration:none;border-bottom:1px dotted rgb(0, 75, 107);">virtualenvwrapper</a>
+provides a set of commands which makes working with virtual environments much
+more pleasant. It also places all your virtual environments in one place.</p>
+<p style="line-height:1.4em;">To install (make sure <strong>virtualenv</strong> is already installed):</p>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> pip install virtualenvwrapper
+<span style="color:rgb(116, 83, 52);">$</span> <span style="color:rgb(0, 68, 97);">export</span> <span style="color:rgb(0, 0, 0);">WORKON_HOME</span><span style="color:rgb(88, 40, 0);">=</span>~/Envs
+<span style="color:rgb(116, 83, 52);">$</span> <span style="color:rgb(0, 68, 97);">source</span> /usr/local/bin/virtualenvwrapper.sh
+</pre></div>
+</div>
+<p style="line-height:1.4em;">(<a href="https://virtualenvwrapper.readthedocs.io/en/latest/install.html" style="color:rgb(0, 75, 107);text-decoration:none;border-bottom:1px dotted rgb(0, 75, 107);">Full virtualenvwrapper install instructions</a>.)</p>
+<p style="line-height:1.4em;">For Windows, you can use the <a href="https://github.com/davidmarble/virtualenvwrapper-win/" style="color:rgb(0, 75, 107);text-decoration:none;border-bottom:1px dotted rgb(0, 75, 107);">virtualenvwrapper-win</a>.</p>
+<p style="line-height:1.4em;">To install (make sure <strong>virtualenv</strong> is already installed):</p>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> pip install virtualenvwrapper-win
+</pre></div>
+</div>
+<p style="line-height:1.4em;">In Windows, the default path for WORKON_HOME is %USERPROFILE%Envs</p>
+<div>
+<h3 style="font-family:&quot;Garamond&quot;,&quot;Georgia&quot;,serif;font-weight:normal;margin:30px 0px 10px;padding:0px;font-size:150%;">Basic Usage<a href="http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/#id3" title="Permalink to this headline" style="visibility:hidden;color:rgb(221, 221, 221);text-decoration:none;padding:0px 4px;">¶</a></h3>
+<ol style="margin:10px 0px 10px 30px;padding:0px;list-style:outside none decimal;">
+<li style="line-height:1.4em;">Create a virtual environment:</li>
+</ol>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> mkvirtualenv my_project
+</pre></div>
+</div>
+<p style="line-height:1.4em;">This creates the <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>my_project</span></code> folder inside <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>~/Envs</span></code>.</p>
+<ol start="2" style="margin:10px 0px 10px 30px;padding:0px;list-style:outside none decimal;">
+<li style="line-height:1.4em;">Work on a virtual environment:</li>
+</ol>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> workon my_project
+</pre></div>
+</div>
+<p style="line-height:1.4em;">Alternatively, you can make a project, which creates the virtual environment,
+and also a project directory inside <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>$PROJECT_HOME</span></code>, which is <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>cd</span></code> -ed into
+when you <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>workon</span> <span>myproject</span></code>.</p>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> mkproject myproject
+</pre></div>
+</div>
+<p style="line-height:1.4em;"><strong>virtualenvwrapper</strong> provides tab-completion on environment names. It really
+helps when you have a lot of environments and have trouble remembering their
+names.</p>
+<p style="line-height:1.4em;"><code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>workon</span></code> also deactivates whatever environment you are currently in, so you
+can quickly switch between environments.</p>
+<ol start="3" style="margin:10px 0px 10px 30px;padding:0px;list-style:outside none decimal;">
+<li style="line-height:1.4em;">Deactivating is still the same:</li>
+</ol>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> deactivate
+</pre></div>
+</div>
+<ol start="4" style="margin:10px 0px 10px 30px;padding:0px;list-style:outside none decimal;">
+<li style="line-height:1.4em;">To delete:</li>
+</ol>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> rmvirtualenv venv
+</pre></div>
+</div>
+</div>
+<div>
+<h3 style="font-family:&quot;Garamond&quot;,&quot;Georgia&quot;,serif;font-weight:normal;margin:30px 0px 10px;padding:0px;font-size:150%;">Other useful commands<a href="http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/#other-useful-commands" title="Permalink to this headline" style="visibility:hidden;color:rgb(221, 221, 221);text-decoration:none;padding:0px 4px;">¶</a></h3>
+<dl style="margin:0px;padding:0px;margin-bottom:15px;">
+<dt><code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>lsvirtualenv</span></code></dt>
+<dd style="margin-top:3px;margin-bottom:10px;margin-left:30px;line-height:1.4em;">List all of the environments.</dd>
+<dt><code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>cdvirtualenv</span></code></dt>
+<dd style="margin-top:3px;margin-bottom:10px;margin-left:30px;line-height:1.4em;">Navigate into the directory of the currently activated virtual environment,
+so you can browse its <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>site-packages</span></code>, for example.</dd>
+<dt><code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>cdsitepackages</span></code></dt>
+<dd style="margin-top:3px;margin-bottom:10px;margin-left:30px;line-height:1.4em;">Like the above, but directly into <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>site-packages</span></code> directory.</dd>
+<dt><code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>lssitepackages</span></code></dt>
+<dd style="margin-top:3px;margin-bottom:10px;margin-left:30px;line-height:1.4em;">Shows contents of <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>site-packages</span></code> directory.</dd>
+</dl>
+<p style="line-height:1.4em;"><a href="https://virtualenvwrapper.readthedocs.io/en/latest/command_ref.html" style="color:rgb(0, 75, 107);text-decoration:none;border-bottom:1px dotted rgb(0, 75, 107);">Full list of virtualenvwrapper commands</a>.</p>
+</div>
+</div>
+<div>
+<h2 style="font-family:&quot;Garamond&quot;,&quot;Georgia&quot;,serif;font-weight:normal;margin:30px 0px 10px;padding:0px;font-size:180%;">virtualenv-burrito<a href="http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/#virtualenv-burrito" title="Permalink to this headline" style="visibility:hidden;color:rgb(221, 221, 221);text-decoration:none;padding:0px 4px;">¶</a></h2>
+<p style="line-height:1.4em;">With <a href="https://github.com/brainsik/virtualenv-burrito" style="color:rgb(0, 75, 107);text-decoration:none;border-bottom:1px dotted rgb(0, 75, 107);">virtualenv-burrito</a>, you
+can have a working virtualenv + virtualenvwrapper environment in a single command.</p>
+</div>
+<div>
+<h2 style="font-family:&quot;Garamond&quot;,&quot;Georgia&quot;,serif;font-weight:normal;margin:30px 0px 10px;padding:0px;font-size:180%;">autoenv<a href="http://python-guide-pt-br.readthedocs.io/en/latest/dev/virtualenvs/#autoenv" title="Permalink to this headline" style="visibility:hidden;color:rgb(221, 221, 221);text-decoration:none;padding:0px 4px;">¶</a></h2>
+<p style="line-height:1.4em;">When you <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>cd</span></code> into a directory containing a <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>.env</span></code>, <a href="https://github.com/kennethreitz/autoenv" style="color:rgb(0, 75, 107);text-decoration:none;border-bottom:1px dotted rgb(0, 75, 107);">autoenv</a>
+automagically activates the environment.</p>
+<p style="line-height:1.4em;">Install it on Mac OS X using <code style="font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background-color:rgb(236, 240, 243);color:rgb(34, 34, 34);"><span>brew</span></code>:</p>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> brew install autoenv
+</pre></div>
+</div>
+<p style="line-height:1.4em;">And on Linux:</p>
+<div><div style="background:rgb(248, 248, 248) none repeat scroll 0% 0%;background-color:white;"><pre style="overflow-x:auto;overflow-y:hidden;font-family:&quot;Consolas&quot;,&quot;Menlo&quot;,&quot;Deja Vu Sans Mono&quot;,&quot;Bitstream Vera Sans Mono&quot;,monospace;font-size:0.9em;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:7px 30px;margin:15px 0px;line-height:1.3em;"><span></span><span style="color:rgb(116, 83, 52);">$</span> git clone git://github.com/kennethreitz/autoenv.git ~/.autoenv
+<span style="color:rgb(116, 83, 52);">$</span> <span style="color:rgb(0, 68, 97);">echo</span> <span style="color:rgb(78, 154, 6);">'source ~/.autoenv/activate.sh'</span> &gt;&gt; ~/.bashrc
+</pre></div>
+</div>
+</div>
+</div></div></div></div></div></div></div></div><br/></div></en-note>

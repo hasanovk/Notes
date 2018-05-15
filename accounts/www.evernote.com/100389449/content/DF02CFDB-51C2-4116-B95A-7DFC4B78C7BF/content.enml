@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="font-size:87.5%;vertical-align:baseline;"><div style="background-color:rgb(230, 230, 230);font-size:1rem;vertical-align:baseline;line-height:1;text-rendering:optimizelegibility;color:rgb(68, 68, 68);font-family:&quot;Open Sans&quot;,Helvetica,Arial,sans-serif;"><div style="font-size:100%;vertical-align:baseline;overflow:hidden;background-color:rgb(255, 255, 255);box-shadow:0px 2px 6px rgba(100, 100, 100, 0.3);"><div style="font-size:100%;vertical-align:baseline;"><div style="font-size:100%;vertical-align:baseline;"><div style="font-size:100%;vertical-align:baseline;"><div style="font-size:100%;vertical-align:baseline;overflow-wrap:break-word;hyphens:auto;">
+				<div style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;display:block;margin-bottom:1.71429rem;">
+			
+						<h1 style="margin:0px;padding:0px;border:0px none;vertical-align:baseline;clear:both;font-size:1.42857rem;line-height:1.2;font-weight:normal;">Control VMware Fusion from the Command Line</h1>
+										<div style="margin:0px;padding:0px;border:0px none;vertical-align:baseline;font-size:0.928571rem;margin-top:1.71429rem;line-height:1.84615;color:rgb(117, 117, 117);">
+					<a href="http://jamesreubenknowles.com/vmrun-fusion-2132#respond" style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;outline:medium none;color:rgb(117, 117, 117);"><span style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;">Leave a reply</span></a>				</div>
+					</div>
+
+				<div style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;line-height:1.71429;">
+			<h2 style="padding:0px;border:0px none;vertical-align:baseline;clear:both;margin:1.71429rem 0px;font-size:1.28571rem;line-height:1.6;">Background</h2>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;">Virtualization has been a key technology for me as a contractor. Because I have multiple clients, keeping their projects sequestered from each other is a snap: one or more VMs (virtual machines) per project. Development, testing, and in some cases deployment is all on separate VMs.</p>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;">I’ve been using VMware Workstation since it first came out 1999. The ability for me to seamlessly move VMs between Windows, Linux, and OS X has been a key reason I’ve stuck with them for so long.</p>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;">Automating tasks via scripting one of many reasons I insist that my workstation run  Un*x of some flavour. I’ve been using OS X for quite a while quite happily as a software developer, however VMware Fusion (for OS X) doesn’t present the full set of features available on VMware Workstation (for Linux and Windows). Fortunately hidden under the hood are the same tools.</p>
+<h2 style="padding:0px;border:0px none;vertical-align:baseline;clear:both;margin:1.71429rem 0px;font-size:1.28571rem;line-height:1.6;">The Executable vmrun</h2>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;">VMware provides a tool called vmrun that allows common operations to be performed on VMs — starting, suspending, taking snapshots, etc. On OS X it’s tucked away in the VMware Fusion bundle under Contents/Library.</p>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;">In my shell startup I add the directory to PATH:</p>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;">[bash]<br/>
+# VMware Fusion<br/>
+if [ -d "/Applications/VMware Fusion.app/Contents/Library" ]; then<br/>
+    export PATH=$PATH:"/Applications/VMware Fusion.app/Contents/Library"<br/>
+fi<br/>
+[/bash]</p>
+<h2 style="padding:0px;border:0px none;vertical-align:baseline;clear:both;margin:1.71429rem 0px;font-size:1.28571rem;line-height:1.6;">Find the Virtual Machine’s .vmx File</h2>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;">To use vmrun you need to have the path to the .vmx file that resides inside of the VM bundle on OS X. For example, I have a VM with an install of RedHat Enterprise Linux 7:</p>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;"><en-media type="image/jpeg" hash="66a10dfa6e4ba39feb5dfa0803c4e417" alt="RHEL7 VM" height="153" width="136" style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;display:block;margin-left:auto;margin-right:auto;max-width:100%;height:auto;border-radius:3px;box-shadow:0px 1px 4px rgba(0, 0, 0, 0.2);clear:both;margin-top:0.857143rem;margin-bottom:0.857143rem;"></en-media></p>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;">This is actually not a single file, but a directory called RHEL7.vmwarevm. The contents can be seen in the Finder by right clicking:</p>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;"><en-media type="image/jpeg" hash="05be5a16334d50e8a5a2110ed823ae37" alt="Show Contents" height="185" width="303" style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;display:block;margin-left:auto;margin-right:auto;max-width:100%;height:auto;border-radius:3px;box-shadow:0px 1px 4px rgba(0, 0, 0, 0.2);clear:both;margin-top:0.857143rem;margin-bottom:0.857143rem;"></en-media></p>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;">This will open up the directory and show the various files that make up the virtual machine.</p>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;"><en-media type="image/jpeg" hash="07ec5bb5e2f5d6fa023d0bad746a812f" alt="Inside the Bundle" height="411" width="557" style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;display:block;margin-left:auto;margin-right:auto;max-width:100%;height:auto;border-radius:3px;box-shadow:0px 1px 4px rgba(0, 0, 0, 0.2);clear:both;margin-top:0.857143rem;margin-bottom:0.857143rem;"></en-media></p>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;">As can be seen, the .vmx file is prominently displayed.</p>
+<h2 style="padding:0px;border:0px none;vertical-align:baseline;clear:both;margin:1.71429rem 0px;font-size:1.28571rem;line-height:1.6;">Put the Pieces Together</h2>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;">To start the VM from the command line one uses the “start” parameter. For example, if the above virtual machine were in one’s home directory one can type:</p>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;">[bash]<br/>
+$ vmrun start ~/RHEL7.vmwarevm/RHEL7.vmx<br/>
+[/bash]</p>
+<h2 style="padding:0px;border:0px none;vertical-align:baseline;clear:both;margin:1.71429rem 0px;font-size:1.28571rem;line-height:1.6;">vmrun Commands</h2>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;">If one runs vmrun without parameters it gives a farily long summary of commands that it accepts. One can:</p>
+<ol style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;list-style:outside none decimal;line-height:1.71429;">
+<li style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 0px 2.57143rem;">control the power state of the VM,</li>
+<li style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 0px 2.57143rem;">control snapshots,</li>
+<li style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 0px 2.57143rem;">perform various operations inside a running VM, and</li>
+<li style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 0px 2.57143rem;">other operations such as installing tools and cloning.</li>
+</ol>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;">A short list of common operations:</p>
+<table style="font-weight:inherit;font-style:inherit;font-variant:inherit;padding:0px;border:0px none;vertical-align:baseline;border-collapse:collapse;border-spacing:0px;font-size:0.857143rem;margin:0px 0px 1.71429rem;border-bottom:1px solid rgb(237, 237, 237);color:rgb(117, 117, 117);line-height:2;width:100%;">
+<tbody style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;">
+<tr style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;">
+<th style="margin:0px;padding:0px;border:0px none;vertical-align:baseline;text-align:left;font-size:0.785714rem;font-weight:bold;line-height:2.18182;text-transform:uppercase;color:rgb(99, 99, 99);">Description</th>
+<th style="margin:0px;padding:0px;border:0px none;vertical-align:baseline;text-align:left;font-size:0.785714rem;font-weight:bold;line-height:2.18182;text-transform:uppercase;color:rgb(99, 99, 99);">Command</th>
+<th style="margin:0px;padding:0px;border:0px none;vertical-align:baseline;text-align:left;font-size:0.785714rem;font-weight:bold;line-height:2.18182;text-transform:uppercase;color:rgb(99, 99, 99);"></th>
+<th style="margin:0px;padding:0px;border:0px none;vertical-align:baseline;text-align:left;font-size:0.785714rem;font-weight:bold;line-height:2.18182;text-transform:uppercase;color:rgb(99, 99, 99);">Parameters</th>
+</tr>
+<tr style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;">
+<td style="margin:0px;border:0px none;font-size:100%;vertical-align:baseline;font-weight:normal;text-align:left;padding:6px 10px 6px 0px;border-top:1px solid rgb(237, 237, 237);">List running VMs</td>
+<td style="margin:0px;border:0px none;font-size:100%;vertical-align:baseline;font-weight:normal;text-align:left;padding:6px 10px 6px 0px;border-top:1px solid rgb(237, 237, 237);">list</td>
+<td style="margin:0px;border:0px none;font-size:100%;vertical-align:baseline;font-weight:normal;text-align:left;padding:6px 10px 6px 0px;border-top:1px solid rgb(237, 237, 237);"></td>
+<td style="margin:0px;border:0px none;font-size:100%;vertical-align:baseline;font-weight:normal;text-align:left;padding:6px 10px 6px 0px;border-top:1px solid rgb(237, 237, 237);"></td>
+</tr>
+<tr style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;">
+<td style="margin:0px;border:0px none;font-size:100%;vertical-align:baseline;font-weight:normal;text-align:left;padding:6px 10px 6px 0px;border-top:1px solid rgb(237, 237, 237);">Start a VM</td>
+<td style="margin:0px;border:0px none;font-size:100%;vertical-align:baseline;font-weight:normal;text-align:left;padding:6px 10px 6px 0px;border-top:1px solid rgb(237, 237, 237);">start</td>
+<td style="margin:0px;border:0px none;font-size:100%;vertical-align:baseline;font-weight:normal;text-align:left;padding:6px 10px 6px 0px;border-top:1px solid rgb(237, 237, 237);">/path/to/vmx/file</td>
+<td style="margin:0px;border:0px none;font-size:100%;vertical-align:baseline;font-weight:normal;text-align:left;padding:6px 10px 6px 0px;border-top:1px solid rgb(237, 237, 237);"></td>
+</tr>
+<tr style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;">
+<td style="margin:0px;border:0px none;font-size:100%;vertical-align:baseline;font-weight:normal;text-align:left;padding:6px 10px 6px 0px;border-top:1px solid rgb(237, 237, 237);">Suspend a VM</td>
+<td style="margin:0px;border:0px none;font-size:100%;vertical-align:baseline;font-weight:normal;text-align:left;padding:6px 10px 6px 0px;border-top:1px solid rgb(237, 237, 237);">suspend</td>
+<td style="margin:0px;border:0px none;font-size:100%;vertical-align:baseline;font-weight:normal;text-align:left;padding:6px 10px 6px 0px;border-top:1px solid rgb(237, 237, 237);">/path/to/vmx/file</td>
+<td style="margin:0px;border:0px none;font-size:100%;vertical-align:baseline;font-weight:normal;text-align:left;padding:6px 10px 6px 0px;border-top:1px solid rgb(237, 237, 237);"></td>
+</tr>
+<tr style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;">
+<td style="margin:0px;border:0px none;font-size:100%;vertical-align:baseline;font-weight:normal;text-align:left;padding:6px 10px 6px 0px;border-top:1px solid rgb(237, 237, 237);">Take a snapshot</td>
+<td style="margin:0px;border:0px none;font-size:100%;vertical-align:baseline;font-weight:normal;text-align:left;padding:6px 10px 6px 0px;border-top:1px solid rgb(237, 237, 237);">snapshot</td>
+<td style="margin:0px;border:0px none;font-size:100%;vertical-align:baseline;font-weight:normal;text-align:left;padding:6px 10px 6px 0px;border-top:1px solid rgb(237, 237, 237);">/path/to/vmx/file</td>
+<td style="margin:0px;border:0px none;font-size:100%;vertical-align:baseline;font-weight:normal;text-align:left;padding:6px 10px 6px 0px;border-top:1px solid rgb(237, 237, 237);">snapshot name</td>
+</tr>
+</tbody>
+</table>
+<h2 style="padding:0px;border:0px none;vertical-align:baseline;clear:both;margin:1.71429rem 0px;font-size:1.28571rem;line-height:1.6;"> Additional Information</h2>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;">VMware has a PDF on vmrun <a href="http://www.vmware.com/pdf/vix180_vmrun_command.pdf" target="_blank" style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;outline:medium none;color:rgb(33, 117, 155);">here</a>.</p>
+<p style="padding:0px;border:0px none;font-size:100%;vertical-align:baseline;margin:0px 0px 1.71429rem;line-height:1.71429;"> </p>
+<div style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;width:100%;min-height:50px;position:relative;clear:both;"><h3 style="padding:0px;border:0px none;vertical-align:baseline;clear:both;margin:0px 0px 1em;font-size:9pt;line-height:1.2;display:inline-block;font-weight:700;"><span style="font-size:9pt;line-height:1.2;font-weight:700;display:block;width:100%;min-width:30px;border-top:1px solid rgb(221, 221, 221);margin-bottom:1em;"></span>Like this:</h3><div style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;max-width:100%;border-width:0px;display:block;width:100%px;height:55pxpx;position:relative;"><div style="font-size: 16px; display: inline-block;"><div style="overflow:hidden;">
+	<div style="margin:0px;height:26px;color:rgb(68, 68, 68);font-family:&quot;Open Sans&quot;,Helvetica,Arial,sans-serif;font-size:14px;direction:ltr;font-weight:400;font-style:normal;text-decoration:none;">
+		<div>
+			<div style="font-size:11px;font-family:&quot;Open Sans&quot;,sans-serif;">
+				
+
+				<div style="min-width:73px;float:left;">
+					<a href="http://widgets.wp.com/likes/#" title="Be the first to like this." rel="nofollow" style="text-decoration:none;display:inline-block;margin:0px 5px 3px 0px;font-size:12px;font-family:&quot;Open Sans&quot;,sans-serif;border-radius:3px;color:rgb(119, 119, 119);background:rgb(248, 248, 248) none repeat scroll 0% 0%;border:1px solid rgb(204, 204, 204);box-shadow:0px 1px 0px rgba(0, 0, 0, 0.08);text-shadow:none;line-height:23px;padding:1px 8px 0px 5px;"><span style="font-size:12px;font-family:&quot;Open Sans&quot;,sans-serif;color:rgb(119, 119, 119);line-height:23px;display:inline-block;-moz-osx-font-smoothing:grayscale;vertical-align:top;position:relative;width:16px;height:16px;text-align:center;font:18px/1 &quot;Noticons&quot;;top:1px;margin-left:-1px;margin-right:1px;"></span>
+						<span>Like</span>
+					</a>
+				</div>
+
+				
+				<div style="clear:both;"><span style="line-height:1.6;">Be the first to like this.</span></div>
+			</div>
+		</div>
+	
+
+</div></div></div></div><span style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;"></span><a style="margin:0px;padding:0px;border:0px none;vertical-align:baseline;outline:medium none;color:rgb(33, 117, 155);font-size:12px;"></a></div>					</div>
+		
+		<div style="margin:0px;padding:0px;border:0px none;vertical-align:baseline;display:block;clear:both;font-size:0.928571rem;margin-top:1.71429rem;line-height:1.84615;color:rgb(117, 117, 117);">
+			This entry was posted in <a href="http://jamesreubenknowles.com/category/computer/sysadmin" rel="category tag" style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;outline:medium none;color:rgb(117, 117, 117);">SysAdmin</a> and tagged <a href="http://jamesreubenknowles.com/tag/command-line" rel="tag" style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;outline:medium none;color:rgb(117, 117, 117);">command line</a>, <a href="http://jamesreubenknowles.com/tag/fusion" rel="tag" style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;outline:medium none;color:rgb(117, 117, 117);">fusion</a>, <a href="http://jamesreubenknowles.com/tag/os-x" rel="tag" style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;outline:medium none;color:rgb(117, 117, 117);">os x</a>, <a href="http://jamesreubenknowles.com/tag/vmrun" rel="tag" style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;outline:medium none;color:rgb(117, 117, 117);">vmrun</a>, <a href="http://jamesreubenknowles.com/tag/vmware" rel="tag" style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;outline:medium none;color:rgb(117, 117, 117);">vmware</a> on <a href="http://jamesreubenknowles.com/vmrun-fusion-2132" title="12:10 pm" rel="bookmark" style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;outline:medium none;color:rgb(117, 117, 117);"><span style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;">23 July 2014</span></a><span style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;"> by <span style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;"><a href="http://jamesreubenknowles.com/author/blackpuma" title="View all posts by James Reuben Knowles" rel="author" style="margin:0px;padding:0px;border:0px none;font-size:100%;vertical-align:baseline;outline:medium none;color:rgb(117, 117, 117);">James Reuben Knowles</a></span></span>.								</div>
+	</div></div></div></div></div></div></div></div><br/></div></en-note>

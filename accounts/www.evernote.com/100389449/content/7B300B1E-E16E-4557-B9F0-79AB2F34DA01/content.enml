@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div>Installation</div><div><br/></div><div># Make sure that you have brew installed. If not read my note on the brew</div><div><br/></div><div>=&gt; brew install tmux</div><div><br/></div><div># Copy the configuration file to the $HOME directory</div><div>=&gt; cp /usr/local/share/tmux/example_tmux.conf ~/.tmux.conf</div><div><br/></div></en-note>

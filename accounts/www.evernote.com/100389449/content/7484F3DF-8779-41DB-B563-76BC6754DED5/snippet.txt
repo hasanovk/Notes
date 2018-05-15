@@ -1,0 +1,1 @@
+Installing the Composer # Update the Ports Tree => sudo portsnap fetch update # Install the composer from the ports => cd /usr/ports/devel/php-composer => sudo make install clean # This will install the Composer # Version: php71-composer-1.6.3 

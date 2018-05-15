@@ -1,0 +1,1 @@
+The Requirements: Android SDK (android-studio-ide-162.4069837-mac.dmg) Phone in the USB debugging Mode must be checked: “Settings” => “About Phone” and press "Build Number” 7 times till it will say that the Development option is ON. Then go back to the “Settings” => "Development options” Check the USB debugging. The Tools we need to know: 

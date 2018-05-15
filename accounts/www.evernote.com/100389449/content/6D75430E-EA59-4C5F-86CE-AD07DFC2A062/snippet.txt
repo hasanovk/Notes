@@ -1,0 +1,1 @@
+Installing the Homebrew Website: https://brew.sh/ # To install the brew => /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" # To install a package => brew install wget 

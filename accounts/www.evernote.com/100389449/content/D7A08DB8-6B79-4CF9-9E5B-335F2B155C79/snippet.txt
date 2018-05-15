@@ -1,0 +1,1 @@
+LibCodes CodeID CodeName CodeType FileName FileLocation 1 SC-PHY-MECH-1 Book 1.Landau_Lifshitz.djvu /Volumes/My_Book_Pro/KFH/KFH_Library/Science/Physics/1.Classical_Machanics SC-PHY-MECH-1 => “SC” - Science, “PHY” - Physics, “MECH” - Mechanics, “index” - The file number 

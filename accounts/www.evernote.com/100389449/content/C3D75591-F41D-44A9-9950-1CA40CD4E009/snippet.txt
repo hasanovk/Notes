@@ -1,0 +1,1 @@
+Import the tracecar Repositroy to IntelliJ IDEA Step 1. Start the IntelliJ and choose “Import Project” Step 2. Select the directory where the “kfh-gts” Repository is located. 

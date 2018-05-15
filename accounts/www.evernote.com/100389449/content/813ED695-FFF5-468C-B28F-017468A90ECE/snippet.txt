@@ -1,0 +1,1 @@
+Evernote FAQ How to create a local Notebook? Click on “Option” (Alt) and then -> File -> New Local Notebook. ( It won’t show up if you just click on File ) 

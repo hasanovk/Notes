@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div><div style="overflow-wrap:break-word;font-size:small;background-color:rgb(245, 245, 245);color:rgb(0, 0, 0);"><div><div><div><div><div style="font:100% &quot;Trebuchet MS&quot;,verdana,sans-serif;overflow-wrap:break-word;overflow:hidden;"><div><div><div><div><div><div style="text-indent:10px;">
+<a name="5637743687501315721" style="text-decoration:none;color:rgb(0, 0, 255);"></a>
+<h3 style="font-size:150%;font-weight:bold;">
+<a href="http://blog.ijun.org/2011/09/install-tmux-on-freebsd-tutorial-step.html" style="text-decoration:none;color:rgb(0, 0, 0);">Install tmux on FreeBSD Tutorial Step by step</a>
+</h3>
+<div>
+<div></div>
+</div>
+<div>
+Install tmux on FreeBSD Tutorial Step by step<br/>
+<br/>
+<b>Install tmux</b><br/>
+# cd /usr/ports/sysutils/tmux/ ; make install clean ; rehash<br/>
+<br/>
+<b>tmux options</b><br/>
+# make showconfig<br/>
+===&gt; The following configuration options are available for tmux-1.5:<br/>
+LIBEVENT2=on "Use libevent version 2"<br/>
+LIBEVENT_STATIC=off "Build with static libevent"<br/>
+BACKSPACE=on "Build with tty/keys patch"<br/>
+===&gt; Use 'make config' to modify these settings<br/>
+<br/>
+<b>Configuration Examples:</b><br/>
+# ls /usr/local/share/examples/tmux<br/>
+<br/>
+By default, tmux loads the system configuration file from /usr/local/etc/tmux.conf, if present, then looks for a user configuration file at ~/.tmux.conf.<br/>
+<br/>
+<b>Add following lines to your tmux.conf:</b><br/>
+# vim /usr/local/etc/tmux.conf<br/>
+or<br/>
+# vim ~/.tmux.conf<br/>
+<br/>
+### Note: key meaning<br/>
+### C- means ctrl-, so C-x is ctrl-x.<br/>
+### M- means meta (generally left-alt or escape)-, so M-x is left-alt-x.<br/>
+<br/>
+### Set the prefix to ^A.<br/>
+### Note: the default prefix is Ctrl-b.<br/>
+unbind C-b<br/>
+set -g prefix ^A<br/>
+bind a send-prefix<br/>
+<br/>
+### Set the maximum number of lines held in window history.<br/>
+set -g history-limit 5000<br/>
+<br/>
+### terminal 256 colors.<br/>
+### As the tmux manual suggests: for tmux to work correctly, this must be set to "screen" or a derivative of it.<br/>
+<span style="color:green;">### Note: modify following line and set it to the terminal supported by your system (run cat /etc/termcap | egrep 'screen-256color|xterm-256color' to verify), and uncomment it.</span><br/>
+###set -g default-terminal screen-256color<br/>
+###set -g default-terminal xterm-256color<br/>
+<br/>
+### Instructs tmux to expect UTF-8 sequences to appear in this window.<br/>
+setw -g utf8 on<br/>
+<br/>
+### Instruct tmux to treat top-bit-set characters in the status-left and status-right strings as UTF-8;<br/>
+set -g status-utf8 on<br/>
+<br/>
+### date format: hostname weekday month day, hour:minute<br/>
+set -g status-right '#H %a %b %d, %H:%M'<br/>
+<br/>
+### Set status line background colour.<br/>
+set -g status-bg black<br/>
+<br/>
+### Set status line foreground colour.<br/>
+set -g status-fg yellow<br/>
+<br/>
+### Set status line background colour for the currently active window.<br/>
+setw -g window-status-current-bg magenta<br/>
+<br/>
+### Set status line foreground colour for the currently active window.<br/>
+setw -g window-status-current-fg white<br/>
+<br/>
+### Reload tmux.conf configuration file<br/>
+### Note: alternative way to reload the configuration file:<br/>
+### Method 1: Run from command line: tmux source-file ~/.tmux.conf<br/>
+### Method 2: In any tmux sessions: [prefix Ctrl-b] : source-file /usr/local/etc/tmux.conf<br/>
+### Method 3: bind the source-file command with a key like following line, then you type: ctrl-b-r<br/>
+bind r source-file /usr/local/etc/tmux.conf<br/>
+<br/>
+### [START] vi- and vim-like bindings<br/>
+### split windows like vim<br/>
+### vim's definition of a horizontal/vertical split is reversed from tmux's<br/>
+bind s split-window -v<br/>
+bind v split-window -h<br/>
+<br/>
+### move around panes with hjkl, as one would in vim after pressing ctrl-w<br/>
+bind h select-pane -L<br/>
+bind j select-pane -D<br/>
+bind k select-pane -U<br/>
+bind l select-pane -R<br/>
+<br/>
+### resize panes like vim<br/>
+### feel free to change the "5" to however many lines you want to resize by, only<br/>
+### one at a time can be slow<br/>
+bind &lt; resize-pane -L 5<br/>
+bind &gt; resize-pane -R 5<br/>
+bind - resize-pane -D 5<br/>
+bind + resize-pane -U 5<br/>
+<br/>
+### bind : to command-prompt like vim<br/>
+### this is the default in tmux already<br/>
+bind : command-prompt<br/>
+<br/>
+### vi-style controls for copy mode<br/>
+setw -g mode-keys vi<br/>
+### [END] vi- and vim-like bindings<br/>
+<br/>
+<b>Add following line to your ~/.cshrc:</b><br/>
+# vim ~/.cshrc<br/>
+<span style="color:green;">### Note: modify following line and set it to the terminal supported by your system (run cat /etc/termcap | egrep 'screen-256color|xterm-256color' to verify), and uncomment it.</span><br/>
+#setenv  TERM screen-256color<br/>
+#setenv  TERM xterm-256color<br/>
+<br/>
+<b>Add following lines to your ~/.vimrc:</b><br/>
+# vim ~/.vimrc<br/>
+" To enable 256 colors in vim, put this your .vimrc before setting the colorscheme.<br/>
+set t_Co=256<br/>
+<br/>
+<b>Use following script to test verify whether your terminal supports 256 colors:</b><br/>
+<br/>
+<a href="http://gala4th.blogspot.com/2011/09/outputs-grid-of-256-colors-for-checking.html" style="text-decoration:none;color:rgb(0, 0, 255);">a small perl script that outputs a grid of 256 colors in your console.</a><br/>
+<br/>
+<b>It should look like this:</b><br/>
+<div style="clear:both;text-align:center;">
+<a href="http://4.bp.blogspot.com/-aoH0rIo6Wko/TnvHs9GT6CI/AAAAAAAACX4/pvTEkVdnKoI/s1600/256colors2.PNG" style="text-decoration:none;color:rgb(0, 0, 255);"><en-media type="image/png" hash="ab2f52f5bd268755652842939c7ebca8" border="0" height="144" width="400" style="border:0px none;"></en-media></a></div>
+<br/>
+<b>To see a list of TERM values supported by the system:</b><br/>
+# cat /etc/termcap<br/>
+<br/>
+# cat /etc/termcap | egrep 'screen-256color|xterm-256color'<br/>
+<br/>
+<b>Determine the terminal capability interface:</b><br/>
+# tput Co<br/>
+8<br/>
+<br/>
+# tput colors<br/>
+115<br/>
+<br/>
+# cap_mkdb<br/>
+<br/>
+# setenv | grep TERM<br/>
+<br/>
+# echo $TERM<br/>
+<br/>
+# tmux<br/>
+<br/>
+# tmux ls<br/>
+<br/>
+# tmux a -d<br/>
+<br/>
+# tmux attach -d -t 1<br/>
+<br/>
+<b>Move window, reorder window</b><br/>
+<br/>
+The 'swap-window' command is closest to what you want. "Prefix :" (that is "Ctrl-B :" by default) brings you to the tmux-command prompt. There you enter 'swap-window -s 3 -t 1' to let window number 3 and window number 1 swap their positions.<br/>
+<br/>
+To move the current window to the top, do 'swap-window -t 0' (if base-index is 0, as it is by default).<br/>
+<br/>
+You can bind that command to a key (T for "top" for example) by adding<br/>
+<br/>
+bind-key T swap-window -t 0<br/>
+<br/>
+to your ~/.tmux.conf.<br/>
+<br/>
+<span style="color:green;font-weight:bold;"><br/>
+Note: if you see following error messages after run the tmux command:<br/>
+csh: Cannot open /etc/termcap.<br/>
+csh: using dumb terminal settings.<br/>
+<br/>
+Make sure you set following line to the terminal supported by your system (run cat /etc/termcap | egrep 'screen-256color|xterm-256color' to verify) in your /usr/local/etc/tmux.conf:<br/>
+set -g default-terminal screen-256color<br/>
+or<br/>
+set -g default-terminal xterm-256color<br/>
+</span><br/>
+<br/>
+<b>Other useful tool:</b><br/>
+<a href="https://github.com/aziz/tmuxinator" style="text-decoration:none;color:rgb(0, 0, 255);">tmuxinator</a> - Manage complex tmux sessions easily<br/>
+<br/>
+<h1 style="font-size:400%;padding-left:15px;text-transform:uppercase;">
+screen and tmux</h1>
+A comparison of the features (or more-so just a table of notes for accessing some of those features) for <a href="http://www.gnu.org/software/screen/" target="_blank" style="text-decoration:none;color:rgb(0, 0, 255);">GNU screen</a> and BSD-licensed <a href="http://tmux.sourceforge.net/" target="_blank" style="text-decoration:none;color:rgb(0, 0, 255);">tmux</a>.<br/>
+This document released for use under the PPL license available at <a href="http://code.dayid.org/ppl/ppl.txt" style="text-decoration:none;color:rgb(0, 0, 255);">http://code.dayid.org/ppl/ppl.txt</a><br/>
+Want more information about tmux and screen? Check out <a href="http://home.roadrunner.com/~computertaijutsu/screentmux.html" style="text-decoration:none;color:rgb(0, 0, 255);">This page also</a><br/>
+<table border="1" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;"><tbody>
+<tr> <td colspan="3"><br/>
+The formatting here is simple enough to understand (I would hope). ^ means ctrl+, so ^x is ctrl+x. M- means meta (generally left-alt or escape)+, so M-x is left-alt+x</td> </tr>
+<tr><td><b>Action</b></td> <td><b>tmux</b></td> <td><b>screen</b></td> </tr>
+<tr><td>start a new session</td> <td>tmux <i>OR</i><br/>
+tmux new <i>OR</i><br/>
+tmux new-session</td> <td>screen</td> </tr>
+<tr><td>re-attach a detached session</td> <td>tmux attach <i>OR</i><br/>
+tmux attach-session</td> <td>screen -r</td> </tr>
+<tr><td>re-attach an attached session (detaching it from elsewhere)</td> <td>tmux attach -d <i>OR</i><br/>
+tmux attach-session -d <i>OR</i><br/>
+<span style="color:red;">tmux a -d<i> </i></span></td> <td>screen -dr <i>OR</i><br/>
+<span style="color:red;">screen -RD</span></td> </tr>
+<tr><td>re-attach an attached session (keeping it attached elsewhere)</td> <td>tmux attach <i>OR</i><br/>
+tmux attach-session</td> <td>screen -x</td> </tr>
+<tr><td>detach from currently attached session</td> <td>^b d <i>OR</i><br/>
+^b :detach</td> <td>^a ^d <i>OR</i><br/>
+^a :detach</td> </tr>
+<tr><td>rename-window to newname</td> <td>^b , &lt;newname&gt; <i>OR</i><br/>
+^b :rename-window &lt;newname&gt;</td> <td>^a A &lt;newname&gt;</td> </tr>
+<tr><td>list windows</td> <td>^b w</td> <td>^a w</td> </tr>
+<tr><td>list windows in chooseable menu</td> <td></td> <td>^a "</td> </tr>
+<tr><td>go to window #</td> <td>^b #</td> <td>^a #</td> </tr>
+<tr><td>go to last-active window</td> <td>^b l</td> <td>^a l</td> </tr>
+<tr><td>go to next window</td> <td>^b n</td> <td>^a n</td> </tr>
+<tr><td>go to previous window</td> <td>^b p</td> <td>^a p</td> </tr>
+<tr><td>see keybindings</td> <td>^b ?</td> <td>^a ?</td> </tr>
+<tr><td>list sessions</td> <td>^b s <i>OR</i><br/>
+tmux ls <i>OR</i><br/>
+tmux list-sessions</td> <td>screen -ls</td> </tr>
+<tr><td>toggle visual bell</td> <td></td> <td>^a ^g</td> </tr>
+<tr><td>create another shell</td> <td>^b c</td> <td>^a c</td> </tr>
+<tr><td>exit current shell</td> <td>^d</td> <td>^d</td> </tr>
+<tr><td>split pane horizontally</td> <td>^b "</td> <td></td> </tr>
+<tr><td>split pane vertically</td> <td>^b %</td> <td></td> </tr>
+<tr><td>switch to another pane</td> <td>^b o</td> <td></td> </tr>
+<tr><td>kill the current pane</td> <td>^b x <i>OR</i> (logout/^D)</td> <td></td> </tr>
+<tr><td>close other panes except the current one</td> <td>^b !</td> <td></td> </tr>
+<tr><td>swap location of panes</td> <td>^b ^o</td> <td></td> </tr>
+<tr><td>show time</td>  <td>^b t</td>  <td></td> </tr>
+<tr><td>show numeric values of panes</td><td>^b q</td> <td></td> </tr>
+</tbody></table>
+<br/>
+<div>
+<a href="http://www.dayid.org/" style="text-decoration:none;color:rgb(0, 0, 255);">dayid.org</a> version 34.1 is <a href="http://validator.w3.org/check?uri=referer" title="Except the Apache 1.3.29 built indexes, which are outside of my control." style="text-decoration:none;color:rgb(0, 0, 255);">Valid HTML 4.01 Transitional</a>.<br/>
+<br/>
+All content purely from <a href="http://blog.ijun.org/2011/09/install-tmux-on-freebsd-tutorial-step.htmlmailto:dayid@dayid.org" title="...except for things that are obviously sourced elsewhere." style="text-decoration:none;color:rgb(0, 0, 255);">Dayid Alan</a><br/>
+<br/>
+<br/>
+Last Modified: Friday, 01-Apr-2011 23:30:46 EDT</div>
+<br/>
+<b>Reference:</b><br/>
+<a href="http://gala4th.blogspot.com/2011/09/install-tmux-on-freebsd-tutorial-step.html" style="text-decoration:none;color:rgb(0, 0, 255);">http://gala4th.blogspot.com/2011/09/install-tmux-on-freebsd-tutorial-step.html</a><br/>
+<a href="http://www.dayid.org/os/notes/tm.html" style="text-decoration:none;color:rgb(0, 0, 255);">http://www.dayid.org/os/notes/tm.html</a>
+<div style="clear:both;"></div>
+</div>
+<div style="margin-bottom:15px;margin-left:0px;font-size:87%;">
+<div><span>
+Posted by
+<span>Jun Hsieh</span>
+</span>
+<span>
+at
+<a href="http://blog.ijun.org/2011/09/install-tmux-on-freebsd-tutorial-step.html" rel="bookmark" title="permanent link" style="text-decoration:none;color:rgb(0, 0, 255);"><abbr title="2013-05-03T15:39:00-07:00" style="border:medium none;">3:39 PM</abbr></a>
+</span>
+<span>
+</span>
+<span>
+<span>
+<a href="https://www.blogger.com/email-post.g?blogID=2361800974999510068&amp;postID=5637743687501315721" title="Email Post" style="color:rgb(0, 0, 255);text-decoration:none;">
+<en-media type="image/gif" hash="36b9f993db1b953f3b9b08040aaf9af4" alt="" height="13" width="18" style="border:0px none;vertical-align:middle;border-style:none;margin:0px 0px 0px 0.5em;"></en-media>
+</a>
+</span>
+
+</span>
+<span>
+</span>
+</div>
+<div><span>
+Labels:
+<a href="http://blog.ijun.org/search/label/FreeBSD" rel="tag" style="text-decoration:none;color:rgb(0, 0, 255);">FreeBSD</a>,
+<a href="http://blog.ijun.org/search/label/Tools" rel="tag" style="text-decoration:none;color:rgb(0, 0, 255);">Tools</a>
+</span>
+</div>
+<div><span>
+</span>
+</div>
+</div>
+</div></div></div></div></div></div></div></div></div></div></div></div></div></div><br/></div></en-note>

@@ -1,0 +1,1 @@
+Boolean Principle True -> True->True->…->False and vice verse {True,False} = TxF - FxT = NOT NULL The Complete Maxwell Equations: Transverse ExH wave + j * [ Langitudinal D & B ] D - Diaelectric field B- Diamagnetism An other words: Real part ( Current Maxwells Equations ) + K-Space part of ( new Maxwell Equations) 

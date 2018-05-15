@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div><div><div><div><h1>Introduction to Unix Kernel</h1><div><div></div></div></div>
+
+    
+        
+        
+                            
+                
+                                        <div>
+                        <div><en-media type="image/jpeg" hash="7ee489a5262c13b4acb332b8fa26c506" width="504" height="491"></en-media></div>                    </div>
+                    <h4><em>It is usually a source of wonderment to PC users, that the Unix operating system as a whole is in one executable. Instead of a hodge-podge of dll’s, drivers, and various occasionally-cooperating executables, everything is done by the Unix kernel.</em></h4>
+<blockquote><p>By Mark Sitkowski, C.Eng. M.I.E.E Design Simulation Systems Ltd</p></blockquote>
+<p>When Unix was first introduced, the operating system was described as having a ‘shell’, or a user interface which surrounded a ‘kernel’ which interpreted the commands passed to it from the shell.<br/>
+With the passage of time and the advent of graphical window systems on Apollo and Sun computers, in 1983, this model became a bit strained at the edges. However, it still provides a useful mental image of the system, and window systems can be thought of as a ‘candy coat’ around the shell. In fact, it isn’t just X-windows which has a direct path to the kernel, TCP/IP also falls into this category.<br/>
+The following is not intended to be an exhaustive treatise on the inner workings of the Unix kernel, nor is it specific to any particular brand of Unix. However, it is essential to broadly understand certain important functions of the kernel before we take advantage of some of its features to improve the way in which it handles our process. The Unix kernel possesses the following functionality, much of which is of interest to us in pursuit of this goal:</p>
+<h2>System calls</h2>
+<p>All of the most basic operating system commands are performed directly by the kernel. These include:</p>
+<pre> open()
+ close()
+ dup()
+ read()
+ write()
+ fcntl()
+ ioctl()
+ fork()
+ exec()
+ kill()
+</pre>
+<p>Since the above commands are executed by the kernel, the ‘C’ compiler doesn’t need to generate any actual machine code to perform the function. It merely places a ‘hook’ in the executable, which instructs the kernel where to find the function. Modern, third party compilers, however, are ported to a variety of operating systems, and will generate machine code for a dummy function, which itself contains the ‘hook’.</p>
+<h2>Process scheduling and control</h2>
+<p>The kernel determines which processes will run, when and for how long. We will examine this mechanism, in detail, later.</p>
+<h2>Networking</h2>
+<p>That which became networking, was originally designed so that processes could communicate. It is this ability, to pass information quickly and efficiently from one running process to another, which makes the Unix operating system uniquely capable of a multi-dimensional operation. All of the most important communication commands are system calls.</p>
+<pre> socket()
+ connect()
+ bind()
+ listen()
+ accept()
+ send()
+ recv()
+</pre>
+<h2>Device drivers for all supported hardware devices</h2>
+<p>Unlike other operating systems, where device drivers are separate programs which are individually loaded into memory, the Unix kernel inherently contains all of the machine’s drivers. Contrary to what may be supposed, the entries in the /dev directory are not drivers, they are just access points into the appropriate kernel routine. We will not concern ourselves unduly with the Unix device drivers, as they are outside the scope of this book.</p>
+<h2>Anatomy of a Process</h2>
+<p>• Single-threaded:</p>
+<table>
+<tbody>
+<tr>
+<td><strong>Data segment</strong></td>
+</tr>
+<tr>
+<td><strong>Text segment</strong></td>
+</tr>
+<tr>
+<td><strong>Stack</strong></td>
+</tr>
+</tbody>
+</table>
+<h6>Figure 1. Anatomy of the process – single-threated</h6>
+<p>• Multi-threaded:</p>
+<table>
+<tbody>
+<tr>
+<td colspan="4"><strong>Data segment</strong></td>
+</tr>
+<tr>
+<td colspan="4"><strong>Text segment</strong></td>
+</tr>
+<tr>
+<td><strong>Thread 1</strong><strong>Stack</strong></td>
+<td><strong>Thread 2</strong><strong>Stack</strong></td>
+<td colspan="2">
+<p><strong>Thread 3 </strong><strong>Stack</strong></p>
+</td>
+</tr>
+</tbody>
+</table>
+<h6>Figure 2. Anatomy of the process – multi-threaded</h6>
+<p>When an executable is invoked, the following events occur, although not necessarily in this order.</p>
+<h2>Process Loading</h2>
+<h4>The loader</h4>
+<p>• Fetches the executable file from the disk.<br/>
+• Allocates memory for all of the global variables and data structures, (‘the data segment’) and loads the variables into that area of memory.<br/>
+• Loads the machine code of the executable itself (‘the text segment’) into the memory. With demand-paged executables, this is not strictly the case, as the amount of code actually loaded into memory is several 4k pages. The remainder is put into the swap area of the disk.<br/>
+• Searches the header portion of the executable for any dynamically-linked libraries or modules.<br/>
+• Checks to see if these are already loaded. If not, the modules are loaded into the memory. Otherwise, their base addresses are noted.<br/>
+• Makes available the base addresses of dynamically-linked modules/libraries to the process.<br/>
+• Allocates an area of memory for the stack. If the process is multi-threaded, a separate stack area is allocated for each thread.</p>
+<h4>The kernel</h4>
+<p>• Sets the program counter to the first byte of executable code.<br/>
+• Allocates a slot in the process table to the new process<br/>
+• Allocates a process ID to the new process.<br/>
+• Allocates table space for any file descriptors.<br/>
+• Allocates table space for any interrupts.<br/>
+• Sets the ‘ready to run’ flag of the process.</p>
+<p>All of the above resources, allocated to a given process, constitute the ‘context’ of a process. Each time the kernel activates a new process, it performs a context switch by replacing the resources of the previously running process with those of the current one.<br/>
+At this point, the scheduling algorithm takes over.</p>
+<h2>The Process Scheduling Algorithm</h2>
+<p>While the process is running, it runs in one of two modes:</p>
+<ul>
+<li><strong>Kernel mode</strong>: All system calls are executed by the kernel, and not by machine code within the process. Kernel mode has one very desirable characteristic, and that is the fact that system calls are atomic and, hence, cannot be interrupted. One of the most important factors in writing code for high-performance applications is to ensure that your process executes as much in kernel mode as possible. This way, you can guarantee the maximum CPU time for a given operation. Kernel threads, such as pthreads, run in the kernel mode. It is sometimes worth using a thread, even when doing so doesn’t constitute parallel operation, purely to get the advantage of running in kernel mode. If an interrupt occurs, while in this mode, the kernel will log the signal in the interrupt table, and examine it after the execution of the current system call. Only then will the signal be actioned.</li>
+<li><strong>User mode</strong>: The ordinary machine code, which makes up much of the executable, runs in user mode. There are no special privileges associated with user mode, and interrupts are handled as they arrive.<br/>
+It may be seen that, during the time that a process runs, it is constantly switching between kernel mode and user mode. Since the mode switch occurs within the same process context, it is not a computational burden.</li>
+</ul>
+<p>A Unix process has one of the following states:</p>
+<p>• Sleep<br/>
+• Run<br/>
+• Ready to Run<br/>
+• Terminated</p>
+<p>A scheduling algorithm is a finite-state machine, which moves the status of the process between states, depending on certain conditions.<br/>
+Basically, what happens is this.<br/>
+A process begins to execute. It runs until it needs to perform I/O, then, having initiated the I/O, puts itself to sleep. At this point, the kernel examines the next process table slot. If the process is ready to run, it enables its execution.<br/>
+If a process never performs I/O, such as processes which perform long series of floating point calculations, the kernel permits it to only run for a specified period, of between 20 and 50 milliseconds, before pre-empting it and enabling the next eligible process.<br/>
+When the time comes for a process to run, an additional algorithm determines the priority of one process over another. The system clock sends the kernel an interrupt, once per second, and it is at this time that the kernel calculates the priorities of each process. Leaving aside the user-level priority weighting, determined by ‘nice’, the kernel determines priority based on several parameters, of which the following considerations are significant:</p>
+<p>• How much CPU time the process has previously used<br/>
+• Whether it is waking up from an I/O wait or not<br/>
+• Whether it is changing from kernel mode to user mode or not</p>
+<h2>Swapping and Paging</h2>
+<p>Of course, the execution of a process is never that straightforward. Only a portion of the code is loaded into memory, meaning that it can only run until another page needs to be fetched from the disk. When this occurs, the process generates a ‘page fault’ which causes the pager to go and fetch the appropriate page. A similar situation occurs when a branch instruction is executed, which takes the execution point to a page other than those stored in memory. The paging mechanism is fairly intelligent, and contains algorithms similar to those found in CPU machine instruction pipeline controllers. It tries to anticipate branch instructions, and pre-fetch the anticipated page, more or less successfully, depending on the code structure.<br/>
+Although there are certain similarities, paging, as described above, which is a natural result of process execution, should not be confused with swapping.<br/>
+If the number of processes grows to an extent that all available memory becomes used up, the addition of another process will trigger the swapper, and cause it to take a complete process out of memory, and place it in the swap area of the disk.<br/>
+This is, computationally, an extremely expensive operation as the entire process, together with its context, has to be written to the disk then, when it is permitted once again to run, another process must be swapped out, to make space for it to be reloaded into memory.<br/>
+So, what does all of this have to do with Performance?<br/>
+As shown above, the processes which are designed for performance-critical applications, should avoid doing physical I/O until they are absolutely necessary, in order to maximize the amount of contiguous CPU time. If it is possible, all of the I/O operations should be saved until when all other processing has completed, and then performed in one operation, preferably, by a separate thread.<br/>
+As far as threads are concerned, let us consider what happens when we launch a number of threads to perform some tasks in parallel.<br/>
+First, the threads are each allocated a separate stack, but they are not allocated a separate process table slot. This means that, although there are several tasks executing in parallel, this only occurs during the active time of that slot. When the kernel preempts the process, execution stops. Multi-threading will not give your application any more system resources.<br/>
+Furthermore, if we consider a situation where we have 100 processes running on a machine, and one of them is ours, then we would expect to use 1% of the CPU time. However, if 25 of them are ours, we would be eligible to use 25% of the CPU time.<br/>
+Thus, if an application can split itself into several processes, running concurrently, then, quite apart from the obvious advantages of parallelism, we will capture more of the machine’s resources, just because each child process occupies a separate process table slot.<br/>
+This also helps when the kernel assigns priorities to processes. Even though we may be penalized for using a lot of CPU time, the priority of each process is rated against that of other processes. If many of these belong to one application, then, even though the kernel may decide to give one process priority over another, the application, as a whole, will still get more CPU time.<br/>
+Additionally, if we are running on a multi-processor machine, then, each child process is almost guaranteed to be allocated a separate CPU. As a part of its load-balancing, the kernel may juggle these processes over different CPU’s. However, each child will still have its processor.<br/>
+The incorporation of the above techniques into our software architecture forms the cornerstone of multi-dimensional programming.</p>
+<h2>In Summary</h2>
+<p>• Each child process gets a CPU different to that used by the parent.<br/>
+• The more processes contributing to the running of your application, the more CPU time it will be allocated.<br/>
+• Multi-threading creates multiple execution paths within one process table slot. It may permit parallel execution paths, but it will not get the application more CPU time, or a new CPU.</p>
+<h4>Therefore</h4>
+<p>• Find parallelism within your application. This will make your software run more efficiently, anyway.<br/>
+• Employ multi-threading where it is not possible to fork a separate process, or where you need to refer to global information, as in the parent process.<br/>
+• Having decided how the children will communicate the data back to the parent, launch a separate child process for every possible parallel function to gain the maximum CPU time.</p>
+                     
+                </div></div></div><br/></div></en-note>

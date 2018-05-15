@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="overflow-wrap:break-word;"><div style="overflow-wrap:break-word;font-family:Georgia, &quot;Times New Roman&quot;, Times, serif;font-size:16px;line-height:26px;color:rgb(17, 17, 17);background-color:rgb(83, 83, 83);"><div style="overflow-wrap:break-word;background:rgb(255, 255, 255) none repeat scroll 0% 0%;"><div style="overflow-wrap:break-word;box-sizing:border-box;"><div style="overflow-wrap:break-word;background-color:rgb(255, 255, 255);box-sizing:border-box;"><div style="overflow-wrap:break-word;font-size:16px;line-height:26px;">
+				<div style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:15px;">
+					<h1 style="padding:0px;overflow-wrap:break-word;font-weight:normal;margin:0px;font-size:26px;line-height:39px;color:rgb(17, 17, 17);">Unix Sed Tutorial: Append, Insert, Replace, and Count File Lines</h1>
+					<div style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(136, 136, 136);font-size:13px;line-height:22px;">
+						<span style="margin:0px;padding:0px;overflow-wrap:break-word;font-style:italic;">by</span> <span style="margin:0px;padding:0px;overflow-wrap:break-word;text-transform:uppercase;letter-spacing:1px;">Sasikala</span>
+						
+						
+						<span style="margin:0px;padding:0px;overflow-wrap:break-word;font-style:italic;">on</span> <span title="2009-11-09" style="margin:0px;padding:0px;overflow-wrap:break-word;text-transform:uppercase;letter-spacing:1px;">November 9, 2009</span>
+					</div>
+				</div>
+				<div style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<div style="margin:7px 0px 6px 0px;padding:5px;overflow-wrap:break-word;">
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;float:left;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;text-indent:0px;background:transparent none repeat scroll 0% 0%;border-style:none;float:none;line-height:normal;font-size:1px;vertical-align:baseline;display:inline-block;width:32px;height:20px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;top:0px;width:100%px;border-style:none;left:0px;visibility:visible;height:20px;"><div style="font-size: 16px; display: inline-block;"><div dir="ltr" lang="en"><div><div><a href="https://plus.google.com/share?app=110&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F11%2Funix-sed-tutorial-append-insert-replace-and-count-file-lines%2F" target="_blank"><div dir="ltr"><span><div style="float:left;white-space:nowrap;"><div title="G+" style="border:1px solid rgba(0, 0, 0, 0.17);border-radius:2px;box-shadow:rgba(0, 0, 0, 0.05) 0px 1px 0px;box-sizing:border-box;transition:background-color 0.218s ease 0s, border-color 0.218s ease 0s, box-shadow 0.218s ease 0s;background-color:rgb(255, 255, 255);background-image:none;color:rgb(38, 38, 38);cursor:pointer;outline:medium none currentcolor;overflow:hidden;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:32px;fill:rgb(219, 68, 55);height:20px;"><div style="height:100%;width:100%;"><div style="float:left;margin:0px 0px 0 0px;"><span style="display:block;fill:rgb(219, 68, 55);"><span></span><span></span></span><div></div></div></div></div></div></span></div></a></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:2px;overflow-wrap:break-word;float:left;width:90px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;border:none;overflow:hidden;width:450px;height:21px;position:relative;"><div style="font-size: 16px; display: inline-block;"><div lang="en"><div dir="ltr" style="color:rgb(29, 33, 41);direction:ltr;margin:0px;padding:0px;unicode-bidi:embed;font-size:11px;background:transparent none repeat scroll 0% 0%;font-family:Helvetica, Arial, sans-serif;line-height:1.28;overflow:hidden;"><div style="overflow:initial;"><div style="font-family:Helvetica, Arial, sans-serif;"><div><table cellspacing="0" cellpadding="0" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;border:0px none;border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style="font-size:11px;font-family:Helvetica, Arial, sans-serif;text-align:center;padding-right:0px;padding-top:0px;padding-bottom:0px;padding-left:0px;"><div><div style="margin:0px;padding:0px;"></div></div></td></tr></tbody></table></div></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;visibility:visible;width:68px;height:20px;"><div style="font-size: 16px; display: inline-block;"><div lang="en" style="font:normal normal normal normal 11px/18px &quot;Helvetica Neue&quot;, Arial, sans-serif;color:rgb(51, 51, 51);">
+<div style="margin:0px;padding:0px;background:rgba(0, 0, 0, 0) none repeat scroll 0px 0px;">
+<div style="display:inline-block;white-space:nowrap;overflow:hidden;text-align:left;">
+  <div style="display:inline-block;vertical-align:top;max-width:100%;width:68px;"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F11%2Funix-sed-tutorial-append-insert-replace-and-count-file-lines%2F&amp;ref_src=twsrc%5Etfw&amp;text=Unix%20Sed%20Tutorial%3A%20Append%2C%20Insert%2C%20Replace%2C%20and%20Count%20File%20Lines&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F11%2Funix-sed-tutorial-append-insert-replace-and-count-file-lines%2F" style="outline:0px none currentcolor;text-decoration:none;display:inline-block;vertical-align:top;position:relative;height:20px;box-sizing:border-box;padding:1px 8px 1px 6px;background-color:rgb(27, 149, 224);color:rgb(255, 255, 255);border-radius:3px;font-weight:500;cursor:pointer;"><i style="position:relative;top:2px;display:inline-block;width:14px;height:14px;background:transparent url(&amp;quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E&amp;quot;) no-repeat scroll 0px 0px;"></i><span style="display:inline-block;vertical-align:top;margin-left:3px;white-space:nowrap;">Tweet</span></a></div>
+</div>
+
+
+
+</div></div></div></div>
+</div>
+
+</div>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><en-media type="image/png" hash="5fa423a7d3bb018e5624e237a3d3b15a" alt="Linux Sed Examples - File Manipulation Commands" title="Linux Sed Examples - File Manipulation Commands" width="300" height="225" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;float:right;margin-bottom:26px;margin-left:26px;"></en-media>This article is part of the on going Unix sed command tutorial series. In our previous articles we learned sed with single commands — <a href="http://www.thegeekstuff.com/2009/09/unix-sed-tutorial-printing-file-lines-using-address-and-patterns/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;"> printing</a>, <a href="http://www.thegeekstuff.com/2009/09/unix-sed-tutorial-delete-file-lines-using-address-and-patterns/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">deletion</a>, <a href="http://www.thegeekstuff.com/2009/09/unix-sed-tutorial-replace-text-inside-a-file-using-substitute-command/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">substitute </a>and <a href="http://www.thegeekstuff.com/2009/10/unix-sed-tutorial-how-to-write-to-a-file-using-sed/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">file write.</a></p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Sed provides lot of commands to perform number of operations with the lines in a file.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">In this article let us review how to append, insert, replace a line in a file and how to get line numbers of a file.</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;"><span style="margin:0px;padding:0px;overflow-wrap:break-word;"></span></p>
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;list-style-type:square;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/#append_lines" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Append Lines</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/#insert_lines" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Insert Lines</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/#replace_lines" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Replace Lines</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/#count_lines" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Count Lines</a></li>
+</ul>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Let us first create thegeekstuff.txt file that will be used in all the examples mentioned below.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">$cat thegeekstuff.txt
+Linux Sysadmin
+Databases - Oracle, mySQL etc.
+Security (Firewall, Network, Online Security etc)
+Storage in Linux
+Productivity (Too many technologies to explore, not much time available)
+Windows- Sysadmin, reboot etc.</pre>
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;"></div>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">Append Lines Using Sed Command</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Sed provides the command “a” which appends a line after every line with the address or pattern.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">Syntax:
+
+#sed 'ADDRESS a\
+	Line which you want to append' filename
+
+#sed '/PATTERN/ a\
+	Line which you want to append' filename</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Append Example 1. Add a line after the 3rd line of the file.</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Add the line “Cool gadgets and websites” after the 3rd line. sed “a” command inserts the line after match.</p>
+    <center style="margin:0px;padding:0px;overflow-wrap:break-word;">
+      <div style="margin:0px;padding:0px;overflow-wrap:break-word;margin-left:2px;margin-top:10px;margin-bottom:10px;">
+
+        
+		
+
+
+<ins style="margin:0px;padding:0px;overflow-wrap:break-word;display:inline-block;width:300px;height:250px;"><ins style="margin:0;padding:0;overflow-wrap:break-word;display:inline-table;border:none;height:250px;position:relative;visibility:visible;width:300px;background-color:transparent;"><ins style="margin:0;padding:0;overflow-wrap:break-word;display:block;border:none;height:250px;position:relative;visibility:visible;width:300px;background-color:transparent;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;left:0;position:absolute;top:0;width:300px;height:250px;"></div></ins></ins></ins>
+
+
+        
+
+	  </div>
+    </center>
+
+
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">$ <strong style="margin:0px;padding:0px;overflow-wrap:break-word;">sed '3 a\
+&gt; Cool gadgets and websites' thegeekstuff.txt</strong>
+
+Linux Sysadmin
+Databases - Oracle, mySQL etc.
+Security (Firewall, Network, Online Security etc)
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;">Cool gadgets and websites</strong>
+Storage in Linux
+Productivity (Too many technologies to explore, not much time available)
+Windows- Sysadmin, reboot etc.</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Append Example 2. Append a line after every line matching the pattern</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The below sed command will add the line “Linux Scripting” after every line that matches the pattern “Sysadmin”.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">$ sed '/Sysadmin/a \
+&gt; Linux Scripting' thegeekstuff.txt</strong>
+
+Linux Sysadmin
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;">Linux Scripting</strong>
+Databases - Oracle, mySQL etc.
+Security (Firewall, Network, Online Security etc)
+Storage in Linux
+Productivity (Too many technologies to explore, not much time available)
+Windows- Sysadmin, reboot etc.
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;">Linux Scripting</strong></pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Append Example 3. Append a line at the end of the file</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The following example, appends the line “Website Design” at the end of the file.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">$ sed '$ a\
+&gt; Website Design' thegeekstuff.txt</strong>
+
+Linux Sysadmin
+Databases - Oracle, mySQL etc.
+Security (Firewall, Network, Online Security etc)
+Storage in Linux
+Productivity (Too many technologies to explore, not much time available)
+Windows- Sysadmin, reboot etc.
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;">Website Design</strong></pre>
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;"></div>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">Insert Lines Using Sed Command</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Sed command “i” is used to insert a line before every line with the range or pattern.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">Syntax:
+
+#sed 'ADDRESS i\
+	Line which you want to insert' filename
+
+#sed '/PATTERN/ i\
+	Line which you want to insert' filename</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Insert Example 1. Add a line before the 4th line of the line.</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Add a line “Cool gadgets and websites” before 4th line. “a” command inserts the line after match whereas “i” inserts before match.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">$ sed '4 i\
+&gt; Cool gadgets and websites' thegeekstuff.txt</strong>
+
+Linux Sysadmin
+Databases - Oracle, mySQL etc.
+Security (Firewall, Network, Online Security etc)
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;">Cool gadgets and websites</strong>
+Storage in Linux
+Productivity (Too many technologies to explore, not much time available)
+Windows- Sysadmin, reboot etc.</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Insert Example 2. Insert a line before every line with the pattern</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The below sed command will add a line “Linux Scripting” before every line that matches with the pattern called ‘Sysadmin”.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">$ sed '/Sysadmin/i \
+&gt; Linux Scripting' thegeekstuff.txt</strong>
+
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;">Linux Scripting</strong>
+Linux Sysadmin
+Databases - Oracle, mySQL etc.
+Security (Firewall, Network, Online Security etc)
+Storage in Linux
+Productivity (Too many technologies to explore, not much time available)
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;">Linux Scripting</strong>
+Windows- Sysadmin, reboot etc.</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Insert Example 3. Insert a line before the last line of the file.</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Append a line “Website Design” before the last line of the file.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">$ sed '$ i\
+&gt; Website Design' thegeekstuff.txt</strong>
+
+Linux Sysadmin
+Databases - Oracle, mySQL etc.
+Security (Firewall, Network, Online Security etc)
+Storage in Linux
+Productivity (Too many technologies to explore, not much time available)
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;">Website Design</strong>
+Windows- Sysadmin, reboot etc.</pre>
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;"></div>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Replace Lines Using Sed Command</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">“c” command in sed is used to replace every line matches with the pattern or ranges with the new given line.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">Syntax:
+
+#sed 'ADDRESS c\
+	new line' filename
+
+#sed '/PATTERN/ c\
+	new line' filename</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Replace Example 1. Replace a first line of the file</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The below command replaces the first line of the file with the “The Geek Stuff”.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">$ sed '1 c\
+&gt; The Geek Stuff' thegeekstuff.txt</strong>
+
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;">The Geek Stuff</strong>
+Databases - Oracle, mySQL etc.
+Security (Firewall, Network, Online Security etc)
+Storage in Linux
+Productivity (Too many technologies to explore, not much time available)
+Windows- Sysadmin, reboot etc.</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Replace Example 2. Replace a line which matches the pattern</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Replace everyline which has a pattern “Linux Sysadmin” to “Linux Sysadmin – Scripting”.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">$ sed '/Linux Sysadmin/c \
+&gt; Linux Sysadmin - Scripting' thegeekstuff.txt</strong>
+
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;">Linux Sysadmin - Scripting</strong>
+Databases - Oracle, mySQL etc.
+Security (Firewall, Network, Online Security etc)
+Storage in Linux
+Productivity (Too many technologies to explore, not much time available)
+Windows- Sysadmin, reboot etc.</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Replace Example 3. Replace the last line of the file</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Sed command given below replaces the last line of the file with “Last Line of the file”.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">$ sed '$ c\
+&gt; Last line of the file' thegeekstuff.txt</strong>
+
+Linux Sysadmin
+Databases - Oracle, mySQL etc.
+Security (Firewall, Network, Online Security etc)
+Storage in Linux
+Productivity (Too many technologies to explore, not much time available)
+<strong style="margin:0px;padding:0px;overflow-wrap:break-word;">Last line of the file</strong></pre>
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;"></div>
+<h2 style="margin:0px;padding:0px;overflow-wrap:break-word;font-weight:normal;font-size:20px;line-height:32px;margin-top:39px;margin-bottom:13px;color:rgb(17, 17, 17);">Print Line Numbers Using Sed Command</h2>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">“=” is a command in sed to print the current line number to the standard output.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">Syntax:
+
+#sed '=' filename</pre>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The above send command syntax prints line number in the first line and the original line from the file in the next line .</p>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">sed ‘=’ command accepts only one address, so if you want to print line number for a range of lines, you must use the curly braces.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;">Syntax:
+
+# sed -n '/PATTERN/,/PATTERN/ {
+=
+p
+}' filename</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Line Number Example 1. Find the line number which contains the pattern</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">The below sed command prints the line number for which matches with the pattern “Databases”</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">$ sed -n '/Databases/=' thegeekstuff.txt</strong>
+
+2</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Line Number Example 2. Printing Range of line numbers</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Print the line numbers for the lines matches from the pattern “Oracle” to “Productivity”.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">$ sed -n '/Oracle/,/Productivity/{
+&gt; =
+&gt; p
+&gt; }' thegeekstuff.txt</strong>
+
+2
+Databases - Oracle, mySQL etc.
+3
+Security (Firewall, Network, Online Security etc)
+4
+Storage in Linux
+5
+Productivity (Too many technologies to explore, not much time available)</pre>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">Sed Line Number Example 3. Print the total number of lines in a file</h3>
+<p style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;">Line number of the last line of the file will be the total lines in a file. Pattern $ specifies the last line of the file.</p>
+<pre style="margin:0px;overflow-wrap:normal;overflow:auto;clear:both;padding:13px;margin-bottom:26px;font-family:Consolas, Monaco, Menlo, Courier, Verdana, sans-serif;background-color:rgb(238, 238, 238);border:1px solid rgb(221, 221, 221);font-size:13px;"><strong style="margin:0px;padding:0px;overflow-wrap:break-word;">$ sed -n '$=' thegeekstuff.txt</strong>
+
+6</pre>
+<div style="margin:7px 0px 3px 0px;padding:5px;overflow-wrap:break-word;background:#F2F0E8;">
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;float:left;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;text-indent:0px;background:transparent none repeat scroll 0% 0%;border-style:none;float:none;line-height:normal;font-size:1px;vertical-align:baseline;display:inline-block;width:32px;height:20px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;top:0px;width:100%px;border-style:none;left:0px;visibility:visible;height:20px;"><div style="font-size: 16px; display: inline-block;"><div dir="ltr" lang="en"><div><div><a href="https://plus.google.com/share?app=110&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F11%2Funix-sed-tutorial-append-insert-replace-and-count-file-lines%2F" target="_blank"><div dir="ltr"><span><div style="float:left;white-space:nowrap;"><div title="G+" style="border:1px solid rgba(0, 0, 0, 0.17);border-radius:2px;box-shadow:rgba(0, 0, 0, 0.05) 0px 1px 0px;box-sizing:border-box;transition:background-color 0.218s ease 0s, border-color 0.218s ease 0s, box-shadow 0.218s ease 0s;background-color:rgb(255, 255, 255);background-image:none;color:rgb(38, 38, 38);cursor:pointer;outline:medium none currentcolor;overflow:hidden;position:relative;text-align:center;vertical-align:middle;white-space:nowrap;width:32px;fill:rgb(219, 68, 55);height:20px;"><div style="height:100%;width:100%;"><div style="float:left;margin:0px 0px 0 0px;"><span style="display:block;fill:rgb(219, 68, 55);"><span></span><span></span></span><div></div></div></div></div></div></span></div></a></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;float:left;">
+<div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;position:relative;visibility:visible;width:68px;height:20px;"><div style="font-size: 16px; display: inline-block;"><div lang="en" style="font:normal normal normal normal 11px/18px &quot;Helvetica Neue&quot;, Arial, sans-serif;color:rgb(51, 51, 51);">
+<div style="margin:0px;padding:0px;background:rgba(0, 0, 0, 0) none repeat scroll 0px 0px;">
+<div style="display:inline-block;white-space:nowrap;overflow:hidden;text-align:left;">
+  <div style="display:inline-block;vertical-align:top;max-width:100%;width:68px;"><a href="https://twitter.com/intent/tweet?original_referer=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F11%2Funix-sed-tutorial-append-insert-replace-and-count-file-lines%2F&amp;ref_src=twsrc%5Etfw&amp;text=Unix%20Sed%20Tutorial%3A%20Append%2C%20Insert%2C%20Replace%2C%20and%20Count%20File%20Lines&amp;tw_p=tweetbutton&amp;url=http%3A%2F%2Fwww.thegeekstuff.com%2F2009%2F11%2Funix-sed-tutorial-append-insert-replace-and-count-file-lines%2F" style="outline:0px none currentcolor;text-decoration:none;display:inline-block;vertical-align:top;position:relative;height:20px;box-sizing:border-box;padding:1px 8px 1px 6px;background-color:rgb(27, 149, 224);color:rgb(255, 255, 255);border-radius:3px;font-weight:500;cursor:pointer;"><i style="position:relative;top:2px;display:inline-block;width:14px;height:14px;background:transparent url(&amp;quot;data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2072%2072%22%3E%3Cpath%20fill%3D%22none%22%20d%3D%22M0%200h72v72H0z%22%2F%3E%3Cpath%20class%3D%22icon%22%20fill%3D%22%23fff%22%20d%3D%22M68.812%2015.14c-2.348%201.04-4.87%201.744-7.52%202.06%202.704-1.62%204.78-4.186%205.757-7.243-2.53%201.5-5.33%202.592-8.314%203.176C56.35%2010.59%2052.948%209%2049.182%209c-7.23%200-13.092%205.86-13.092%2013.093%200%201.026.118%202.02.338%202.98C25.543%2024.527%2015.9%2019.318%209.44%2011.396c-1.125%201.936-1.77%204.184-1.77%206.58%200%204.543%202.312%208.552%205.824%2010.9-2.146-.07-4.165-.658-5.93-1.64-.002.056-.002.11-.002.163%200%206.345%204.513%2011.638%2010.504%2012.84-1.1.298-2.256.457-3.45.457-.845%200-1.666-.078-2.464-.23%201.667%205.2%206.5%208.985%2012.23%209.09-4.482%203.51-10.13%205.605-16.26%205.605-1.055%200-2.096-.06-3.122-.184%205.794%203.717%2012.676%205.882%2020.067%205.882%2024.083%200%2037.25-19.95%2037.25-37.25%200-.565-.013-1.133-.038-1.693%202.558-1.847%204.778-4.15%206.532-6.774z%22%2F%3E%3C%2Fsvg%3E&amp;quot;) no-repeat scroll 0px 0px;"></i><span style="display:inline-block;vertical-align:top;margin-left:3px;white-space:nowrap;">Tweet</span></a></div>
+</div>
+
+
+
+</div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:2px;overflow-wrap:break-word;float:left;width:90px;"><div style="margin:0px;padding:0px;overflow-wrap:break-word;display:block;max-width:100%;border:none;overflow:hidden;width:450px;height:21px;position:relative;"><div style="font-size: 16px; display: inline-block;"><div lang="en"><div dir="ltr" style="color:rgb(29, 33, 41);direction:ltr;margin:0px;padding:0px;unicode-bidi:embed;font-size:11px;background:transparent none repeat scroll 0% 0%;font-family:Helvetica, Arial, sans-serif;line-height:1.28;overflow:hidden;"><div style="overflow:initial;"><div style="font-family:Helvetica, Arial, sans-serif;"><div><table cellspacing="0" cellpadding="0" style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;border:0px none;border-collapse:collapse;border-spacing:0px;"><tbody><tr><td style="font-size:11px;font-family:Helvetica, Arial, sans-serif;text-align:center;padding-right:0px;padding-top:0px;padding-bottom:0px;padding-left:0px;"><div><div style="margin:0px;padding:0px;"></div></div></td></tr></tbody></table></div></div></div></div></div></div></div>
+</div>
+
+<div style="margin:0px;padding:1px;overflow-wrap:break-word;">
+&gt; <a href="http://www.thegeekstuff.com/2009/11/unix-sed-tutorial-append-insert-replace-and-count-file-lines/#commentform" rel="nofollow" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;">Add your comment</a>
+</div>
+
+</div>
+<h3 style="padding:0px;overflow-wrap:break-word;margin:1.833em 0px 0.611em;font-weight:normal;font-size:1.286em;line-height:1.222em;color:rgb(17, 17, 17);">If you enjoyed this article, you might also like..</h3>
+<table style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;margin:0px;padding:0px;overflow-wrap:break-word;border-collapse:collapse;border-spacing:0px;">
+<tbody style="margin:0px;padding:0px;overflow-wrap:break-word;"><tr style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<td valign="top" style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<ol style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2010/12/50-unix-linux-sysadmin-tutorials/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">50 Linux Sysadmin Tutorials</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2010/11/50-linux-commands/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">50 Most Frequently Used Linux Commands (With Examples)</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2011/12/linux-performance-monitoring-tools/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Top 25 Best Linux Performance Monitoring and Debugging Tools</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/03/15-practical-linux-find-command-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Mommy, I found it! – 15 Practical Linux Find Command Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/linux-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Linux 101 Hacks 2nd Edition eBook</a> <en-media type="image/png" hash="157b7a4a18066f2a912a9653b4bc205d" title="Linux 101 Hacks Book" alt="Linux 101 Hacks Book" width="40" height="14" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></li>
+</ol>
+</td>
+<td style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<ul style="margin:0px;padding:0px;overflow-wrap:break-word;margin-bottom:26px;margin-left:26px;list-style-type:square;">
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Awk Introduction – 7 Awk Print Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/10/unix-sed-tutorial-advanced-sed-substitution-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Advanced Sed Substitution Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2009/03/8-essential-vim-editor-navigation-fundamentals/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">8 Essential Vim Editor Navigation Fundamentals</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2011/06/iptables-rules-examples/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">25 Most Frequently Used Linux IPTables Rules Examples</a></li>
+<li style="margin:0px;padding:0px;overflow-wrap:break-word;"><a href="http://www.thegeekstuff.com/2008/08/turbocharge-putty-with-12-powerful-add-ons-software-for-geeks-3/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Turbocharge PuTTY with 12 Powerful Add-Ons</a></li>
+</ul>
+</td>
+</tr>
+</tbody></table>
+<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+<center style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<table style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;margin:0px;padding:0px;overflow-wrap:break-word;border-collapse:collapse;border-spacing:0px;">
+<tbody style="margin:0px;padding:0px;overflow-wrap:break-word;"><tr style="margin:0px;padding:0px;overflow-wrap:break-word;">
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/bash-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="c0a4d32ca58fe39f5b170223a8c8763e" title="Bash 101 Hacks Book" alt="Bash 101 Hacks Book" width="131" height="184" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/sed-awk-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="d930f101d0481ddd0e00d12eddb4f964" title="Sed and Awk 101 Hacks Book" alt="Sed and Awk 101 Hacks Book" width="132" height="185" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/nagios-core-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="52d4cdefa0d0d7b07caf93d50a349aec" title="Nagios Core 3 Book" alt="Nagios Core 3 Book" width="132" height="185" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+<td style="margin:0px;overflow-wrap:break-word;padding:3px 7px 2px;">
+<a rel="nofollow" href="http://www.thegeekstuff.com/vim-101-hacks-ebook/" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:none;"><en-media type="image/png" hash="cf915abf41955498421f4ecfc3571b5c" title="Vim 101 Hacks Book" alt="Vim 101 Hacks Book" width="132" height="185" style="margin:0px;padding:0px;overflow-wrap:break-word;border:0px none;max-width:100%;height:auto;display:block;"></en-media></a>
+</td>
+</tr>
+</tbody></table>
+</center>
+<br style="margin:0px;padding:0px;overflow-wrap:break-word;"/>
+				<span style="display:block;height:0px;clear:both;visibility:hidden;">.</span></div>
+				<p style="margin:0px;padding:0px;overflow-wrap:break-word;font-size:x-small;margin-bottom:26px;color:rgb(136, 136, 136);">
+					<span style="margin:0px;padding:0px;overflow-wrap:break-word;">Tagged as:</span>
+					<a href="http://www.thegeekstuff.com/tag/linux-sed-command/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Linux Sed Command</a>,
+					<a href="http://www.thegeekstuff.com/tag/sed-command/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Sed Command</a>,
+					<a href="http://www.thegeekstuff.com/tag/sed-examples/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Sed Examples</a>,
+					<a href="http://www.thegeekstuff.com/tag/sed-file-manipulation-commands/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Sed File Manipulation Commands</a>,
+					<a href="http://www.thegeekstuff.com/tag/sed-tips-and-tricks/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Sed Tips and Tricks</a>,
+					<a href="http://www.thegeekstuff.com/tag/unix-sed-command/" rel="tag" style="margin:0px;padding:0px;overflow-wrap:break-word;color:rgb(221, 0, 0);text-decoration:underline;">Unix Sed Command</a>
+				</p>
+			<span style="font-size:16px;line-height:26px;display:block;height:0px;clear:both;visibility:hidden;">.</span></div></div></div></div></div></div></div><br/></div></en-note>

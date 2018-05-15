@@ -1,0 +1,1 @@
+Installed Servers Application Name IP Address Port Host Name User Name Password Workstation/Server Name GlassFish-4.1 127.0.0.1 192.168.100.100 4848 (admin) 8585, 8686 iMac admin Old***BASE MAC OS X 10.11.6 GlassFish-4.1 192.168.100.150 4848 (admin) 8080, 8181 freebsd.karshi.ca admin H***3 FreeBSD-11.1 (VM) 

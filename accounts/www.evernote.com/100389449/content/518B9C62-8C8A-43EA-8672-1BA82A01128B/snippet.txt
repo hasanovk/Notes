@@ -1,0 +1,1 @@
+Bell Router Network Local IP: 192.168.100.1 Router (Gateway) : 192.168.100.1 DNS: 192.168.100.1 User Name: khasanov Password: <BASE> + bell Wireless SSID: KFH-Bell, Security: WPA2PSK, AES Wireless Password: AlKFH987y Bell Sagemcom 2864 Mode (old one) How to Reset the Modem Default IP : 192.168.2.1 User: admin Password: admin 

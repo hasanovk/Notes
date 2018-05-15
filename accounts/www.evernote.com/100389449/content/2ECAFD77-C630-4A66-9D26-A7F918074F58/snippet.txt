@@ -1,0 +1,1 @@
+Database Basics # Remember the “postgres” is the default superuser means a king. # To see all databases => su - postgres postgre> psql postgres=# \l ( small “L” , --list) # To the size of a database postgres=# \l+ <database-name> postgres=# \l+ nominatim 

@@ -1,0 +1,1 @@
+FAQ How To Remove the “Last login” Message from the Terminal? # If you don’t to see the messages like this: # "Last login: Tue Jun 22 10:59:29 on ttys003 : khasnaov@imac" => cd => touch .hushlogin How To Remove Adobe Pro 10 plugin for Firefox? => sudo rm -r /Library/Application\ Support/Mozilla/Extensions/Library/web* 

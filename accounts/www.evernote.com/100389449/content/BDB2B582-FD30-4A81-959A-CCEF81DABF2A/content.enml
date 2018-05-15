@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div><div><div><div><h1>The Anatomy of a DNS Zone File: SOA Record</h1><div><div></div></div></div> 
+				
+					
+	    				
+								
+												
+		<div>
+				
+			<div>
+			
+				<div><en-media type="image/jpeg" hash="c476414e6950b4b439e4728f78059133" alt="files-anatomy" width="576" height="360"></en-media></div>						
+								
+			</div>
+	
+		</div>
+			
+	
+	
+		
+			
+		<p><strong>Part ONE What is a Start of Authority (SOA) Record and What Does it Do?</strong> The first resource record in any Domain Name System (DNS) zone file is the Start of Authority (SOA) resource record. The SOA resource record is the most essential part of the DNS zone file, it indicates the basic properties of the domain name server and the zone that the domain is in. Each zone file can contain only one SOA record. The SOA record is broken down into the following fields. (Please refer to the example below: each section is color-coded to match it’s corresponding field definition)  <code>;; QUESTION SECTION: ;no-ip.com. IN SOA</code> <code>;; ANSWER SECTION: no-ip.com. 565 IN SOA <a href="http://ns2.no-ip.com/" title="http://ns2.no-ip.com" target="_blank">ns2.no-ip.com</a>. <a href="http://hostmaster.no-ip.com/" title="http://hostmaster.no-ip.com" target="_blank">hostmaster.no-ip.com</a>. 2036909809 600 300 604800 600</code></p>
+<ol>
+<li><strong>name- The root name of the zone. </strong></li>
+<li><strong>TTL- Time-to-Live, is the length of time for when a zone file is set to expire. This is usually expressed in number of seconds.</strong></li>
+<li><strong>class- Defines the class of record. IN stands for Internet. </strong></li>
+<li><strong>name-server</strong>: The Name of the primary name server for the zone</li>
+<li><strong>email-addr</strong>: The E-mail Address of the individual who is in charge of the domain. This is the person that emails should be directed to in order to report errors or problems with the domain.</li>
+<li><strong>sn = serial number</strong>: The Serial Number for the zone. This number helps keep track of changes that have been made to the DNS zone file. The number has to increment when changes are made. The standard convention is YYYYMMDDnn, where YYYYMMDD is the date of revision and nn is the revision number (incase there are multiple revisions for the day). So, todays first revision would be 2011030200 and the second would be 2011030201.</li>
+<li><strong>refresh</strong>: The time a secondary DNS server waits before checking to see if there are changes to the zone.</li>
+<li><strong>retry</strong>: The time the secondary DNS server should wait before retrying to check if there has been changes to the zone (if the first refresh fails).</li>
+<li><strong>expiry</strong>: The time in seconds before the secondary DNS server should stop responding to queries for the zone.</li>
+<li><strong>min=minimum</strong>: The minimum time-to-live (TTL). This value is supplied in query responses by servers for the zone to inform others how long they should cache a resource record provided in an answer.</li>
+</ol>
+<p>A properly optimized and updated SOA record can reduce bandwidth between nameservers, increase the speed of website access and ensure the site is live, even when the primary DNS server is down.  Please leave any questions or comments below… Check out Part 2 and Part 3 of this series:</p>
+<p><a href="http://www.noip.com/blog/2011/04/08/anatomy-of-a-zone-file-part-two-what-are-ns-records-and-why-are-they-important-to-dns/" title="What are NS Records and Why Are They Important" target="_blank">Part Two: What are NS Records and Why Are They Important to DNS</a></p>
+<p><a href="http://ncms.lax/blog/2011/04/29/anatomy-of-a-dns-zone-file-part-three-mx-records/" title="Part Three: Anatomy of a DNS Zone File: MX Records" target="_blank">Anatomy of a DNS Zone File Part Three: MX Records</a></p>
+	
+	</div></div></div><br/></div></en-note>

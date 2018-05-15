@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note style="zoom: 1.25;"><div><font style="font-size: 18px;"><b>Installing the Homebrew</b></font></div><div><span style="font-size: 18px;">Website: </span><a style="font-size: 18px;" href="https://brew.sh/">https://brew.sh/</a></div><div># To install the brew</div><div>=&gt; /usr/bin/ruby -e &quot;$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install">https://raw.githubusercontent.com/Homebrew/install/master/install</a>)&quot;</div><div><br/></div><div># To install a package</div><div>=&gt; brew install wget</div></en-note>

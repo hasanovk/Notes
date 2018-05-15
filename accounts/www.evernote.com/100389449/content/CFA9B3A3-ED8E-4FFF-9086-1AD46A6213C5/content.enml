@@ -1,0 +1,1348 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="box-sizing:border-box;font-family:sans-serif;font-size:10px;"><div style="box-sizing:border-box;font-family:&quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:14px;line-height:1.42857;color:rgb(51, 51, 51);background-color:rgb(255, 255, 255);"><div style="box-sizing:border-box;transition:left 0.5s ease 0s;"><div style="box-sizing:border-box;background-color:rgb(255, 255, 255);"><div style="box-sizing:border-box;"><div style="box-sizing:border-box;"><div style="box-sizing:border-box;"><div style="box-sizing:border-box;"><div style="box-sizing:border-box;">
+        
+        
+        
+
+
+    
+    <div style="box-sizing:border-box;padding:0px 3px;">
+        <div style="box-sizing:border-box;display:flex;flex-flow:row wrap;padding:15px;margin-bottom:20px;border:1px solid rgb(214, 233, 198);border-radius:20px;background-color:rgb(223, 240, 216);color:rgb(60, 118, 61);"><p style="box-sizing:border-box;line-height:20px;margin:0px;padding:0px;width:100%;margin-bottom:0px;">See also <strong style="box-sizing:border-box;font-weight:bold;"><a href="https://mariadb.com/kb/en/mariadb-vs-mysql-features/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB vs MySQL - Features</a></strong></p>
+</div><div style="box-sizing:border-box;min-height:20px;background-color:rgb(245, 245, 245);border:1px solid rgb(227, 227, 227);box-shadow:rgba(0, 0, 0, 0.05) 0px 1px 1px inset;padding:9px;border-radius:10px;margin-bottom:5px;float:right;width:300px;padding-top:0px;margin-left:5px;overflow-x:hidden;">
+<h3 style="box-sizing:border-box;font-family:inherit;line-height:1.1;color:inherit;font-size:24px;font-weight:bold;margin-top:0px;margin-bottom:0px;border:medium none;">Contents</h3>
+ <ol style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;padding-left:1.3em;">
+    <li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#drop-in-replacement-for-mysql" title="Drop in replacement for MySQL" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Drop in replacement for MySQL</a></li>
+    <li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#replication-compatibility" title="Replication Compatibility" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Replication Compatibility</a></li>
+    <li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#incompatibilities-between-mariadb-51-and-mysql-51" title="Incompatibilities between MariaDB 5.1 and MySQL 5.1" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Incompatibilities between MariaDB 5.1 and MySQL 5.1</a></li>
+    <li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#incompatibilities-between-mariadb-52-and-mysql-51" title="Incompatibilities between MariaDB 5.2 and MySQL 5.1" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Incompatibilities between MariaDB 5.2 and MySQL 5.1</a></li>
+    <li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#incompatibilities-between-mariadb-53-and-mysql-51-and-mariadb-52" title="Incompatibilities between MariaDB 5.3 and MySQL 5.1 and MariaDB 5.2" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Incompatibilities between MariaDB 5.3 and MySQL 5.1 and MariaDB 5.2</a></li>
+    <li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#incompatibilities-between-mariadb-55-and-mariadb-53-and-mysql-55" title="Incompatibilities between MariaDB 5.5 and MariaDB 5.3 and MySQL 5.5" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Incompatibilities between MariaDB 5.5 and MariaDB 5.3 and MySQL 5.5</a></li>
+    <li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#incompatibilities-between-mariadb-100-and-mariadb-55-mysql-55" title="Incompatibilities between MariaDB 10.0 and MariaDB 5.5 / MySQL 5.5" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Incompatibilities between MariaDB 10.0 and MariaDB 5.5 / MySQL 5.5</a></li>
+    <li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#incompatibilities-between-mariadb-100-and-mysql-56" title="Incompatibilities between MariaDB 10.0 and MySQL 5.6" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Incompatibilities between MariaDB 10.0 and MySQL 5.6</a></li>
+    <li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#incompatibilities-between-mariadb-101-and-mysql-57" title="Incompatibilities between MariaDB 10.1 and MySQL 5.7" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Incompatibilities between MariaDB 10.1 and MySQL 5.7</a></li>
+    <li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#incompatibilities-between-mariadb-102-and-mysql-57" title="Incompatibilities between MariaDB 10.2 and MySQL 5.7" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Incompatibilities between MariaDB 10.2 and MySQL 5.7</a></li>
+    <li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#old-unsupported-configuration-options" title="Old, unsupported configuration options" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Old, unsupported configuration options</a></li>
+    <li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#replacing-a-mysql-rpm" title="Replacing a MySQL RPM" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Replacing a MySQL RPM</a></li>
+    <li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#incompatibilities-between-mariadb-and-mysql-proxy" title="Incompatibilities between MariaDB and MySQL-Proxy" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Incompatibilities between MariaDB and MySQL-Proxy</a></li>
+    <li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#related-links" title="Related Links" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Related Links</a></li>
+ </ol>
+</div>
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin:26px 0px 16px;padding-top:0px;margin-top:0px;">Drop in replacement for MySQL</h2>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">For all practical purposes, MariaDB is a binary drop in replacement of the same
+MySQL version (for example MySQL 5.1 -&gt; <a href="https://mariadb.com/kb/en/what-is-mariadb-51/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.1</a>, <a href="https://mariadb.com/kb/en/what-is-mariadb-52/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.2</a> &amp; <a href="https://mariadb.com/kb/en/what-is-mariadb-53/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.3</a>
+are compatible.  MySQL 5.5 is compatible with <a href="https://mariadb.com/kb/en/what-is-mariadb-55/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.5</a> and also in practice with <a href="https://mariadb.com/kb/en/what-is-mariadb-100/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.0</a>). What this means is that:</p>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;"><li style="box-sizing:border-box;">Data and table definition files (.frm) files are binary compatible.
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:0px;"><li style="box-sizing:border-box;">See note below for an incompatibility with views!
+</li></ul>
+</li><li style="box-sizing:border-box;">All client APIs, protocols and structs are identical.
+</li><li style="box-sizing:border-box;">All filenames, binaries, paths, ports, sockets, and etc... should be the
+  same.
+</li><li style="box-sizing:border-box;">All MySQL connectors (PHP, Perl, Python, Java, .NET, MyODBC, Ruby, MySQL C
+  connector etc) work unchanged with MariaDB.
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:0px;"><li style="box-sizing:border-box;">There are some <a href="https://mariadb.com/kb/en/installation-issues-with-php5/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">installation issues with PHP5</a>
+   that you should be aware of (a bug in how the old PHP5 client checks library
+   compatibility).
+</li></ul>
+</li><li style="box-sizing:border-box;">The <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">mysql-client</code> package also works with MariaDB server.
+</li><li style="box-sizing:border-box;">The shared client library is binary compatible with MySQL's client library.
+</li></ul>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">This means that for most cases, you can just uninstall MySQL and
+<a href="https://mariadb.com/kb/en/getting-installing-and-upgrading-mariadb/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">install MariaDB</a> and you are good
+to go. (No need to convert any datafiles if you use same main version, like
+5.1). You must however still run <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;"><a href="https://mariadb.com/kb/en/mysql_upgrade/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">mysql_upgrade</a></code> to finish the upgrade. This is needed to ensure that your mysql privilege and event tables are updated with the new fields MariaDB uses.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">We do monthly merges with the MySQL code base to ensure we keep up our
+compatibility and get any and all features and bug fixes Oracle adds.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">We have also done a lot of work on the upgrade scripts to the point where it is now easier to
+<a href="https://mariadb.com/kb/en/upgrading-to-mariadb-from-mysql/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">upgrade from MySQL 5.0 to MariaDB 5.1</a> than
+from MySQL 5.0 to MySQL 5.1.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">That said, MariaDB has a lot of
+<a href="https://mariadb.com/kb/en/mariadb-versus-mysql-features/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">new options, extension, storage engines and bug fixes</a>
+that are not in MySQL. You can find the feature set for the different MariaDB
+versions on the <a href="https://mariadb.com/kb/en/what-is-in-the-different-mariadb-releases/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">What is in the different MariaDB Releases</a> page.</p>
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin:26px 0px 16px;padding-top:0px;">Replication Compatibility</h2>
+<table style="font-size:inherit;font-weight:inherit;font-style:inherit;font-variant:inherit;box-sizing:border-box;border-collapse:collapse;border-spacing:0px;background-color:transparent;text-align:left;margin-bottom:10px;"><tbody style="box-sizing:border-box;"><tr style="box-sizing:border-box;"><th style="box-sizing:border-box;text-align:left;padding:0.4em;">Slave↓ Master→</th><th style="box-sizing:border-box;text-align:left;padding:0.4em;">MariaDB-5.5</th><th style="box-sizing:border-box;text-align:left;padding:0.4em;">MariaDB-10.0</th><th style="box-sizing:border-box;text-align:left;padding:0.4em;">MariaDB-10.1</th><th style="box-sizing:border-box;text-align:left;padding:0.4em;">MariaDB-10.2</th><th style="box-sizing:border-box;text-align:left;padding:0.4em;">MySQL-5.6</th><th style="box-sizing:border-box;text-align:left;padding:0.4em;">MySQL-5.7</th><th style="box-sizing:border-box;text-align:left;padding:0.4em;">MySQL-8.0</th></tr>
+<tr style="box-sizing:border-box;"><th style="box-sizing:border-box;text-align:left;padding:0.4em;">MariaDB-5.5</th><td style="box-sizing:border-box;padding:0.4em;">Ok</td><td style="box-sizing:border-box;padding:0.4em;">No</td><td style="box-sizing:border-box;padding:0.4em;">No</td><td style="box-sizing:border-box;padding:0.4em;">No</td><td style="box-sizing:border-box;padding:0.4em;">No</td><td style="box-sizing:border-box;padding:0.4em;">No</td><td style="box-sizing:border-box;padding:0.4em;">No</td></tr>
+<tr style="box-sizing:border-box;"><th style="box-sizing:border-box;text-align:left;padding:0.4em;">MariaDB-10.0</th><td style="box-sizing:border-box;padding:0.4em;">Ok</td><td style="box-sizing:border-box;padding:0.4em;">Ok</td><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;">Ok</td><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;"></td></tr>
+<tr style="box-sizing:border-box;"><th style="box-sizing:border-box;text-align:left;padding:0.4em;">MariaDB-10.1</th><td style="box-sizing:border-box;padding:0.4em;">Ok</td><td style="box-sizing:border-box;padding:0.4em;">Ok</td><td style="box-sizing:border-box;padding:0.4em;">Ok</td><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;">Ok</td><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;"></td></tr>
+<tr style="box-sizing:border-box;"><th style="box-sizing:border-box;text-align:left;padding:0.4em;">MariaDB-10.2</th><td style="box-sizing:border-box;padding:0.4em;">Ok</td><td style="box-sizing:border-box;padding:0.4em;">Ok</td><td style="box-sizing:border-box;padding:0.4em;">Ok</td><td style="box-sizing:border-box;padding:0.4em;">Ok</td><td style="box-sizing:border-box;padding:0.4em;">Ok</td><td style="box-sizing:border-box;padding:0.4em;">Ok</td><td style="box-sizing:border-box;padding:0.4em;"></td></tr>
+<tr style="box-sizing:border-box;"><th style="box-sizing:border-box;text-align:left;padding:0.4em;">MySQL-5.6</th><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;">X</td><td style="box-sizing:border-box;padding:0.4em;">X</td><td style="box-sizing:border-box;padding:0.4em;">X</td></tr>
+<tr style="box-sizing:border-box;"><th style="box-sizing:border-box;text-align:left;padding:0.4em;">MySQL-5.7</th><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;">X</td><td style="box-sizing:border-box;padding:0.4em;">X</td><td style="box-sizing:border-box;padding:0.4em;">X</td></tr>
+<tr style="box-sizing:border-box;"><th style="box-sizing:border-box;text-align:left;padding:0.4em;">MySQL-8.0</th><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;"></td><td style="box-sizing:border-box;padding:0.4em;">X</td><td style="box-sizing:border-box;padding:0.4em;">X</td><td style="box-sizing:border-box;padding:0.4em;">X</td></tr>
+</tbody></table>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Note X: Refer to MySQL documentation</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Note: When replication from MySQL in GTID mode, MariaDB will remove the MySQL GTID events and replace them with MariaDB GTID events.</p>
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin:26px 0px 16px;padding-top:0px;">Incompatibilities between <a href="https://mariadb.com/kb/en/what-is-mariadb-51/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.1</a> and MySQL 5.1</h2>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">In some few cases MariaDB has to be incompatible to allow MariaDB to provide
+more and better information than MySQL. </p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Here is the list of all known user level incompatibilities you may see
+when using <a href="https://mariadb.com/kb/en/what-is-mariadb-51/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.1</a> instead of MySQL 5.1.</p>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;"><li style="box-sizing:border-box;">The installation package names start with MariaDB instead of MySQL.
+</li><li style="box-sizing:border-box;">Timings may be different as MariaDB is in many cases faster than MySQL.
+</li><li style="box-sizing:border-box;">mysqld in MariaDB also reads the <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">[mariadb]</code> sections of your
+  my.cnf files.
+</li><li style="box-sizing:border-box;">You can't use a binary only storage engine library with MariaDB if it's not
+  compiled for exactly the same MariaDB version. (This is because the server
+  internal structure THD is different between MySQL and MariaDB. This is common
+  also between different MySQL versions). This should not be a problem as most
+  people don't load new storage engines and MariaDB comes with
+  <a href="https://mariadb.com/kb/en/mariadb-storage-engines/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">more storage engines</a> than MySQL.
+</li><li style="box-sizing:border-box;"><code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">CHECKSUM TABLE</code> may give different result as MariaDB doesn't ignore NULL's
+  in the columns as MySQL 5.1 does (Future MySQL versions should calculate
+  checksums the same way as MariaDB). You can get the 'old style' checksum in
+  MariaDB by starting mysqld with the <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">--old</code> option. Note however that that
+  the MyISAM and Aria storage engines in MariaDB are using the new checksum
+  internally, so if you are using <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">--old</code>, the <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">CHECKSUM</code> command will be
+  slower as it needs to calculate the checksum row by row.
+</li><li style="box-sizing:border-box;">The slow query log has 
+  <a href="https://mariadb.com/kb/en/slow-query-log-extended-statistics/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">more information</a> about the query,
+  which may be a problem if you have a script which parses the slow query log.
+</li><li style="box-sizing:border-box;">MariaDB by default takes a bit more memory than MySQL because we have by
+  default enabled the <a href="https://mariadb.com/kb/en/aria-formerly-known-as-maria/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Aria storage engine</a> for
+  handling internal temporary tables. If you need MariaDB to take very little
+  memory (at the expense of performance), you can set the value
+  of <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">aria_pagecache_buffer_size</code> to <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">1M</code> (the default is <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">128M</code>).
+</li><li style="box-sizing:border-box;">If you are using <a href="https://mariadb.com/kb/en/mysqld-startup-options/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">new command options</a>,
+  <a href="https://mariadb.com/kb/en/mariadb-versus-mysql-features/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">new features of MariaDB</a> or
+  <a href="https://mariadb.com/kb/en/mariadb-storage-engines/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">new storage engines</a>, you can't move easily back
+  and forth between MySQL and MariaDB anymore.
+</li></ul>
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin:26px 0px 16px;padding-top:0px;">Incompatibilities between <a href="https://mariadb.com/kb/en/what-is-mariadb-52/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.2</a> and MySQL 5.1</h2>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">The list is the same as between <a href="https://mariadb.com/kb/en/what-is-mariadb-51/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.1</a> and MySQL 5.1, with one addition:</p>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;"><li style="box-sizing:border-box;">A new <a href="https://mariadb.com/kb/en/sql-mode/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">SQL_MODE</a> value was added:
+  <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">IGNORE_BAD_TABLE_OPTIONS</code>. If it is not set, using a table,
+  field, or index attribute (option) that is not supported by the chosen
+  storage engine will cause an error. This change might cause warnings in the
+  error log about incorrectly defined tables from the <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">mysql</code>
+  database, fix that with <a href="https://mariadb.com/kb/en/mysql_upgrade/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">mysql_upgrade</a>.
+</li></ul>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">For all practical purposes, <a href="https://mariadb.com/kb/en/what-is-mariadb-52/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.2</a> is a drop in replacement for <a href="https://mariadb.com/kb/en/what-is-mariadb-51/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.1</a> and MySQL 5.1.</p>
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin:26px 0px 16px;padding-top:0px;">Incompatibilities between <a href="https://mariadb.com/kb/en/what-is-mariadb-53/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.3</a> and MySQL 5.1 and <a href="https://mariadb.com/kb/en/what-is-mariadb-52/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.2</a></h2>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;"><li style="box-sizing:border-box;"><strong style="box-sizing:border-box;font-weight:bold;">Views with definition ALGORITHM=MERGE or ALGORITHM=TEMPTABLE got accidentally swapped between <a href="https://mariadb.com/kb/en/what-is-mariadb-52/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.2</a> and <a href="https://mariadb.com/kb/en/what-is-mariadb-53/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.3</a>!  You have to re-create views created with either of these definitions!</strong>
+</li><li style="box-sizing:border-box;">A few error messages related to wrong conversions are different as MariaDB
+  provides more information in the message about what went wrong.
+</li><li style="box-sizing:border-box;">Error numbers for MariaDB-specific errors have been moved to start from 1900 so as not to conflict with MySQL errors.
+</li><li style="box-sizing:border-box;">Microseconds now work in all contexts; MySQL, in some contexts, lost the microsecond part from datetime and time.
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/unix_timestamp/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">UNIX_TIMESTAMP</a>(constant-date-string) returns a timestamp with 6 decimals in MariaDB while MySQL returns it without a decimal. This can cause a problem if you are using UNIX_TIMESTAMP() as a partitioning function. You can fix this by using <a href="https://mariadb.com/kb/en/floor/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">FLOOR</a>(UNIX_TIMESTAMP(..)) or changing the date string to a date number, like 20080101000000.
+</li><li style="box-sizing:border-box;">MariaDB performs stricter checking of date, datetime and timestamp values. For example <a href="https://mariadb.com/kb/en/unix_timestamp/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">UNIX_TIMESTAMP</a>('x') now returns NULL instead of 0.
+</li><li style="box-sizing:border-box;">The old <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">--maria-</code> startup options are removed. You should use
+  the <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">--aria-</code> prefix instead. (<a href="https://mariadb.com/kb/en/what-is-mariadb-52/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.2</a> supports both <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">--maria-</code>
+  and <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">--aria-</code>)
+</li><li style="box-sizing:border-box;"><code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;"><a href="https://mariadb.com/kb/en/show-processlist/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">SHOW PROCESSLIST</a></code> has an extra <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">Progress</code> column
+  which shows progress for some commands. You can disable it by
+  starting <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">mysqld</code> with either <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">--old-mode=NO_PROGRESS_INFO</code> or with the <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">--old</code> flag (see <a href="https://mariadb.com/kb/en/old_mode/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">OLD_MODE</a>). 
+</li><li style="box-sizing:border-box;"><code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">INFORMATION_SCHEMA.PROCESSLIST</code> has three new columns for progress
+  reporting: <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">STAGE</code>, <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">MAX_STAGE</code>, and <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">PROGRESS</code>.
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/comment-syntax/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Long comments</a> which start with <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">/*M!</code>
+  or <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">/*M!#####</code> are executed.
+</li><li style="box-sizing:border-box;">If you use <a href="https://mariadb.com/kb/en/server-system-variables/#max_user_connections" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">max_user_connections=0</a> (which means any number of connections) when starting mysqld, you can't change the global variable
+  anymore while mysqld remains running. This is because when mysqld is started
+  with <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">max_user_connections=0</code> it does not allocate counting
+  structures (which also involve a mutex for each connection). This would lead
+  to wrong counters if you later changed the variable. If you want to be able
+  to change this variable at runtime, set it to a high value at startup.
+</li><li style="box-sizing:border-box;">You can set <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">max_user_connections</code> (both the global variable
+  and the <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">GRANT</code> option) to <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">-1</code> to stop users from connecting to the
+  server. The global <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">max_user_connections</code> variable does not
+  affect users with the <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">SUPER</code> privilege.
+</li><li style="box-sizing:border-box;">The <a href="https://mariadb.com/kb/en/ignore/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">IGNORE</a> directive does not ignore all errors (like fatal errors), only things that are safe to ignore.
+</li></ul>
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin:26px 0px 16px;padding-top:0px;">Incompatibilities between <a href="https://mariadb.com/kb/en/what-is-mariadb-55/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.5</a> and <a href="https://mariadb.com/kb/en/what-is-mariadb-53/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.3</a> and MySQL 5.5</h2>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;"><li style="box-sizing:border-box;"><strong style="box-sizing:border-box;font-weight:bold;">Views with definition ALGORITHM=MERGE or ALGORITHM=TEMPTABLE got accidentally swapped between MariaDB and MySQL!  You have to re-create views created with either of these definitions!</strong>
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/ignore/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">INSERT IGNORE</a> also gives warnings for duplicate key errors. You can turn this off by setting <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">OLD_MODE=NO_DUP_KEY_WARNINGS_WITH_IGNORE</code> (see <a href="https://mariadb.com/kb/en/old_mode/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">OLD_MODE</a>).
+</li><li style="box-sizing:border-box;">Before <a href="https://mariadb.com/kb/en/mariadb-5531-release-notes/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.5.31</a>, <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">X'HHHH'</code>, the standard SQL syntax for binary string literals, erroneously worked in the same way as <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">0xHHHH</code>, which could work as a number or string depending on the context. In 5.5.31 this was fixed to behave as a string in all contexts (and never as a number), introducing an incompatibility with previous versions of MariaDB, and all versions of MySQL. See <a href="https://mariadb.com/kb/en/cast/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">CAST</a> and <a href="https://mariadb.com/kb/en/hexadecimal-literals/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Hexadecimal Literals</a> for more details and examples.
+</li><li style="box-sizing:border-box;">MariaDB <a href="https://mariadb.com/kb/en/dynamic-columns-in-mariadb-10/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">dynamic columns</a> are not supported by MySQL.
+</li><li style="box-sizing:border-box;">MariaDB <a href="https://mariadb.com/kb/en/virtual-computed-columns/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">virtual columns</a> are not supported by MySQL.
+</li><li style="box-sizing:border-box;">MariaDB's <a href="https://mariadb.com/kb/en/handlersocket/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">HandlerSocket plugin</a> is not supported by MySQL.
+</li><li style="box-sizing:border-box;">MariaDB's <a href="https://mariadb.com/kb/en/cassandra/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Cassandra Storage Engine</a> is not supported by MySQL.
+</li><li style="box-sizing:border-box;">See also a detailed breakdown of <a href="https://mariadb.com/kb/en/system-variable-differences-between-mariadb-55-and-mysql-55/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">System variable differences between MariaDB 5.5 and MySQL 5.5</a>.
+</li></ul>
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin:26px 0px 16px;padding-top:0px;">Incompatibilities between <a href="https://mariadb.com/kb/en/what-is-mariadb-100/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.0</a> and <a href="https://mariadb.com/kb/en/what-is-mariadb-55/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.5</a> / MySQL 5.5</h2>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;"><li style="box-sizing:border-box;"><code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">SET OPTION</code> syntax is deprecated in <a href="https://mariadb.com/kb/en/what-is-mariadb-100/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.0</a> and MySQL 5.6.  Use just <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;"><a href="https://mariadb.com/kb/en/set/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">SET</a></code>.
+</li></ul>
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin:26px 0px 16px;padding-top:0px;">Incompatibilities between <a href="https://mariadb.com/kb/en/what-is-mariadb-100/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.0</a> and MySQL 5.6</h2>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;"><li style="box-sizing:border-box;">MySQL does not support MariaDB's <a href="https://mariadb.com/kb/en/spider/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Spider Storage Engine</a>.
+</li><li style="box-sizing:border-box;">All MySQL binaries (<code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">mysqld</code>, <a href="https://mariadb.com/kb/en/myisamchk/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">myisamchk</a> etc.) give a warning if one uses a prefix of an option (such as <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">--big-table</code> instead of <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">--big-tables</code>). MariaDB binaries work in the same way as most other Unix commands and don't give warnings when using unique prefixes.
+</li><li style="box-sizing:border-box;">MariaDB GTID is not compatible with MySQL 5.6.  This means that one can't have MySQL 5.6 as a slave for <a href="https://mariadb.com/kb/en/what-is-mariadb-100/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.0</a>. However <a href="https://mariadb.com/kb/en/what-is-mariadb-100/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.0</a> can be a slave of MySQL 5.6 or any earlier MySQL/MariaDB version. Note that MariaDB and MySQL also have different <a href="https://mariadb.com/kb/en/gtid/#system-variables-for-global-transaction-id" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">GTID system variables</a>, so these need to be adjusted when migrating.
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/what-is-mariadb-100/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.0</a> <a href="https://mariadb.com/kb/en/multi-source-replication/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">multi-source replication</a> is not supported in MySQL 5.6.
+</li><li style="box-sizing:border-box;">To make CREATE TABLE ... SELECT work the same way in statement based and row based replication it's by default executed as <a href="https://mariadb.com/kb/en/create-table/#create-or-replace" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">CREATE OR REPLACE TABLE</a> on the slave.  One benefit of this is that if the slave dies in the middle of CREATE ... SELECT it will be able to continue.
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:0px;"><li style="box-sizing:border-box;">One can use the <a href="https://mariadb.com/kb/en/replication-and-binary-log-server-system-variables/#slave_ddl_exec_mode" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">slave-ddl-exec-mode</a> variable to specify how <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">CREATE TABLE</code> and <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">DROP TABLE</code> is replicated.
+</li></ul>
+</li><li style="box-sizing:border-box;">See also a detailed breakdown of <a href="https://mariadb.com/kb/en/system-variable-differences-between-mariadb-100-and-mysql-56/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">System variable differences between MariaDB 10.0 and MySQL 5.6</a>.
+</li><li style="box-sizing:border-box;">MySQL 5.6 has <a href="https://mariadb.com/kb/en/performance-schema/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">performance schema</a> enabled by default. For performance reasons <a href="https://mariadb.com/kb/en/what-is-mariadb-100/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.0</a> has it disabled by default. You can enable it by starting <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">mysqld</code> with the option <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">--performance-schema</code>.
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/what-is-mariadb-100/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.0</a> does not support the MySQL Memcached plugin. However, data stored using memcached can be retrieved because the data is stored as InnoDB tables. MariaDB is able to start successfully with an error message of not being able to find libmemcached.so library.
+</li><li style="box-sizing:border-box;">Users created with MySQL's SHA256 password algorithm cannot be used in <a href="https://mariadb.com/kb/en/what-is-mariadb-100/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.0</a>.
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/what-is-mariadb-100/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.0</a> does not support delayed replication - <a href="https://jira.mariadb.org/browse/MDEV-7145" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MDEV-7145</a>.
+</li><li style="box-sizing:border-box;">Also see a detailed breakdown of <a href="https://mariadb.com/kb/en/system-variable-differences-between-mariadb-100-and-mysql-56/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">System variable differences between MariaDB 10.0 and MySQL 5.6</a>.
+</li><li style="box-sizing:border-box;">The low-level temporal format used by TIME, DATETIME and TIMESTAMP is different in MySQL 5.6 and <a href="https://mariadb.com/kb/en/what-is-mariadb-100/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.0</a>. (In <a href="https://mariadb.com/kb/en/what-is-mariadb-101/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.1</a>, the MySQL implementation is used by default - see <a href="https://mariadb.com/kb/en/server-system-variables/#mysql56_temporal_format" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">mysql56_temporal_format</a>.)
+</li></ul>
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin:26px 0px 16px;padding-top:0px;">Incompatibilities between <a href="https://mariadb.com/kb/en/what-is-mariadb-101/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.1</a> and MySQL 5.7</h2>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;"><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/what-is-mariadb-101/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.1</a> and above does not support MySQL 5.7's JSON.  MariaDB follows the SQL standard and stores the JSON as a normal TEXT/BLOB.  If you want to replicate JSON columns from MySQL to MariaDB, you should store JSON objects in MySQL in a TEXT column or use statement based replication.  If you are using JSON columns and want to upgrade to MariaDB, you need to use <a href="https://mariadb.com/kb/en/mysqldump/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">mysqldump</a> to copy these tables to MariaDB.
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/what-is-mariadb-101/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.1</a>'s InnoDB encryption is implemented differently than MySQL 5.7's InnoDB encryption.
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/what-is-mariadb-101/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.1</a> does not support the ngram and MeCab full-text parser plugins - <a href="https://jira.mariadb.org/browse/MDEV-10267" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MDEV-10267</a>, <a href="https://jira.mariadb.org/browse/MDEV-10268" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MDEV-10268</a>.
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/what-is-mariadb-101/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.1</a> does not support multiple triggers for a table - <a href="https://jira.mariadb.org/browse/MDEV-6112" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MDEV-6112</a>.
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/what-is-mariadb-101/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.1</a> does not support <a href="https://mariadb.com/kb/en/create-tablespace/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">CREATE TABLESPACE</a> for InnoDB.
+</li><li style="box-sizing:border-box;">Also see Incompatibilities between <a href="https://mariadb.com/kb/en/what-is-mariadb-100/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.0</a> and MySQL 5.6.
+</li><li style="box-sizing:border-box;">Also see a detailed breakdown of <a href="https://mariadb.com/kb/en/system-variable-differences-between-mariadb-101-and-mysql-57/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">System variable differences between MariaDB 10.1and MySQL 5.7</a>.
+</li><li style="box-sizing:border-box;">MariaDB does not support MySQL 5.7's X protocol.
+</li></ul>
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin:26px 0px 16px;padding-top:0px;">Incompatibilities between <a href="https://mariadb.com/kb/en/what-is-mariadb-102/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.2</a> and MySQL 5.7</h2>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;"><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/system-variable-differences-between-mariadb-102-and-mysql-57/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">System variable differences between MariaDB 10.2 and MySQL 5.7</a>.
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/function-differences-between-mariadb-102-and-mysql-57/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Function differences between MariaDB 10.2 and MySQL 5.7</a>.
+</li><li style="box-sizing:border-box;"><code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">Note</code>: Multiple triggers per table was added in 10.2
+</li><li style="box-sizing:border-box;">The ROWS and RECURSIVE keywords are <a href="https://mariadb.com/kb/en/reserved-words/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">reserved words</a> in <a href="https://mariadb.com/kb/en/what-is-mariadb-102/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.2</a>, but not in MySQL 5.7.
+</li><li style="box-sizing:border-box;">MariaDB InnoDB encryption is implemented differently than MySQL 5.7's InnoDB encryption.
+</li><li style="box-sizing:border-box;">MariaDB stores <a href="https://mariadb.com/kb/en/json-functions/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">JSON</a> as true text, not in binary format as MySQL.  The reason is that our JSON functions are much faster than MySQL's so we didn't need to see a need for storing things in binary format as it adds a lot of complexity when manipulating JSON objects.  If you want to replicate JSON columns from MySQL to MariaDB, you should store JSON objects in MySQL in a TEXT column or use statement based replication.  If you are using JSON columns and want to upgrade to MariaDB, you need to use <a href="https://mariadb.com/kb/en/mysqldump/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">mysqldump</a> to copy these tables to MariaDB.
+</li><li style="box-sizing:border-box;">For the same reason, MariaDB's <a href="https://mariadb.com/kb/en/json-data-type/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">JSON data type</a> is an alias for <a href="https://mariadb.com/kb/en/longtext/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">LONGTEXT</a>.
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/what-is-mariadb-102/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.2</a> does not support MySQL's JSON operators (<code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">-&gt;</code> and <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">-&gt;&gt;</code>).
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/what-is-mariadb-102/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.2</a> supports the standard by producing null and a warning for <a href="https://mariadb.com/kb/en/json_search/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">JSON_SEARCH</a> when given invalid data, while MySQL produces an error.
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/what-is-mariadb-102/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.2</a> does not support the ngram and MeCab full-text parser plugins - <a href="https://jira.mariadb.org/browse/MDEV-10267" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MDEV-10267</a>, <a href="https://jira.mariadb.org/browse/MDEV-10268" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MDEV-10268</a>.
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/what-is-mariadb-102/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.2</a> does not support the <a href="https://dev.mysql.com/doc/refman/5.7/en/x-plugin.html" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MySQL X plugin</a>.
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/what-is-mariadb-102/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.2</a> does not support the <a href="http://dev.mysql.com/doc/refman/8.0/en/general-tablespaces.html" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MySQL general table spaces</a>.
+</li><li style="box-sizing:border-box;">Also see Incompatibilities between <a href="https://mariadb.com/kb/en/what-is-mariadb-101/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.1</a> and MySQL 5.7.
+</li></ul>
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin:26px 0px 16px;padding-top:0px;">Old, unsupported configuration options</h2>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">If you are using any of the following options in your <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">/etc/my.cnf</code> or other
+<code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">my.cnf</code> file you should remove them.  This is also true for MySQL 5.1 or
+newer:</p>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;"><li style="box-sizing:border-box;"><code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">skip-bdb</code>
+</li></ul>
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin:26px 0px 16px;padding-top:0px;">Replacing a MySQL RPM</h2>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">If you uninstalled a MySQL RPM to install MariaDB, note that the MySQL RPM on
+uninstall renames <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">/etc/my.cnf</code> to <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;white-space:pre-wrap;">/etc/my.cnf.rpmsave</code>.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">After installing MariaDB you should do the following to restore your old
+configuration options:</p>
+<pre style="box-sizing:border-box;overflow:auto;font-family:Menlo, Monaco, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;margin:0px 0px 10px;line-height:1.42857;word-break:break-all;color:rgb(51, 51, 51);display:block;padding:9px;overflow-wrap:normal;background-color:rgb(245, 245, 245);border:1px solid rgb(227, 227, 227);border-radius:4px;min-height:20px;margin-bottom:20px;box-shadow:rgba(0, 0, 0, 0.05) 0px 1px 1px inset;white-space:pre;overflow-x:auto;">mv -vi /etc/my.cnf.rpmsave /etc/my.cnf
+</pre><h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin:26px 0px 16px;padding-top:0px;">Incompatibilities between MariaDB and MySQL-Proxy</h2>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">A MySQL client API is able to connect to MariaDB using MySQL-Proxy but a MariaDB client API will receive progress reporting informations that MySQL-Proxy does not implement, to get full compatibility in all case just disable progress reporting on the client or server side. </p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Another option is to use the <a href="https://mariadb.com/kb/en/maxscale/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB MaxScale proxy</a>, that works with both MySQL and MariaDB.</p>
+<h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;font-size:30px;margin:26px 0px 16px;padding-top:0px;">Related Links</h2>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;"><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/mariadb-vs-mysql-features/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB vs MySQL - Features</a>
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/moving-from-mysql/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Moving from MySQL</a>
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/troubleshooting-installation-issues/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Troubleshooting Installation Issues</a>
+</li><li style="box-sizing:border-box;"><a href="https://mariadb.com/kb/en/works-with-mariadb/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Projects and applications that works with MariaDB</a></li></ul>
+
+    </div>
+
+
+        
+            <div style="box-sizing:border-box;min-height:20px;margin-bottom:20px;background-color:rgb(245, 245, 245);border:1px solid rgb(227, 227, 227);box-shadow:rgba(0, 0, 0, 0.05) 0px 1px 1px inset;padding:9px;border-radius:10px;display:block;margin-top:20px;">
+
+<div style="box-sizing:border-box;">
+
+
+
+
+
+
+    
+        
+            <span style="box-sizing:border-box;">
+            
+                <a href="https://mariadb.com/kb/user/login/?next=/kb/en/library/mariadb-vs-mysql-compatibility/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Login</a> or <a href="https://www.mariadb.com/user/register?next=/kb/en/library/mariadb-vs-mysql-compatibility/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">signup</a> to receive
+                    notifications when this page changes.
+                
+            
+            </span>
+        
+    
+
+</div>
+</div>
+        
+
+        
+    
+        <div style="box-sizing:border-box;text-align:center;">
+            <ul style="box-sizing:border-box;margin-top:0px;margin-bottom:0px;padding-left:0px;list-style:outside none none;display:inline-block;"><span style="list-style:outside none none;display:table;"> </span>
+                
+                    <li style="box-sizing:border-box;position:relative;display:block;float:left;"><a href="https://mariadb.com/kb/en/improvements-to-order-by/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);position:relative;display:block;padding:10px 15px;border-radius:20px;">
+                        ← Improvements to ORDER BY Optimization
+                    </a>
+                    </li>
+                
+                
+                    <li style="box-sizing:border-box;position:relative;display:block;float:left;margin-left:2px;"><a href="https://mariadb.com/kb/en/compatibility-differences/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);position:relative;display:block;padding:10px 15px;border-radius:20px;">
+                        ↑ Compatibility &amp; Differences ↑
+                    </a>
+                    </li>
+                
+                
+                    <li style="box-sizing:border-box;position:relative;display:block;margin-left:2px;float:right;"><a href="https://mariadb.com/kb/en/mariadb-vs-mysql-features/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);position:relative;display:block;padding:10px 15px;border-radius:20px;">
+                        MariaDB versus MySQL - Features →
+                    </a>
+                    </li>
+                
+            <span style="list-style:outside none none;display:table;clear:both;"> </span></ul>
+        </div>
+    
+
+
+        
+        <h2 style="box-sizing:border-box;font-family:inherit;font-weight:500;line-height:1.1;color:inherit;margin-top:20px;margin-bottom:10px;font-size:30px;">Comments</h2>
+        
+    
+    <div style="box-sizing:border-box;">
+
+
+
+<div style="box-sizing:border-box;">
+
+
+
+
+
+
+<div style="box-sizing:border-box;">
+<div style="box-sizing:border-box;"> 
+            <div style="box-sizing:border-box;float:right;">
+                <span style="box-sizing:border-box;display:inline-block;max-width:100%;margin-bottom:5px;font-weight:bold;">
+                    Include Archived
+                    
+                </span>
+            </div>
+        </div>
+        <a name="comment_2278" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:0px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2016-06-09 13:01" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">1 year, 6 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/4227" title="Tim Gokcen" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Tim Gokcen</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_2278" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">The global variable innodb_default_row_format, introduced in MySQL 5.7.9, also seems to be missing from InnoDB/XtraDB at this time.</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/2278/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        
+    
+
+    
+        <a name="comment_1339" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:0px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2014-10-20 09:04" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">3 years, 2 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/2459" title="Robert Horgan" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Robert Horgan</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_1339" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">I have installed MariaDB on fresh Ubuntu 14.04 server using apt-get and have no problems.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">One month later I am prompted by the system that the following packages need to be installed:</p>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;"><li style="box-sizing:border-box;">libmysqlclient18
+</li><li style="box-sizing:border-box;">libssl1.0.0
+</li><li style="box-sizing:border-box;">mysql-client
+</li><li style="box-sizing:border-box;">mysql-client-5.5
+</li><li style="box-sizing:border-box;">mysql-client-core-5.5
+</li><li style="box-sizing:border-box;">mysql-common
+</li><li style="box-sizing:border-box;">mysql-server
+</li><li style="box-sizing:border-box;">mysql-server-5.5
+</li><li style="box-sizing:border-box;">mysql-server-core-5.5
+</li></ul>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">I am concerned these will overwrite MariaDB files (or libraries) and may downgrade my system or make the DB server inoperable.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Should I go ahead with the updates or not, and if not, is there somewhere I can tell the system that I am not using MySQL, but MariaDB.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">As mentioned above the sever installed was plain vanilla Ubuntu, and only other packages added were MariaDB, PHP and Apache (and webmin).  In my google searches I have not found other discussions relating to this.</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/1339/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        <a name="comment_1340" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:10px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2014-10-20 09:49" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">3 years, 2 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/1029" title="Elena Stepanova" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Elena Stepanova</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_1340" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Your concern is valid. Installing these packages would cause removal of MariaDB server. </p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Could you please specify which repository you use to install/upgrade MariaDB server? With Trusty, there are options -- MariaDB can be taken from the Ubuntu repo or from MariaDB repo. From what I see, currently Ubuntu repo contains <a href="https://mariadb.com/kb/en/mariadb-5539-release-notes/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.5.39</a> and MySQL 5.5.40, which most likely causes the problem. MariaDB repo offers <a href="https://mariadb.com/kb/en/mariadb-5540-release-notes/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.5.40</a> already.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">But even with this version difference in the Ubuntu repo, it's not quite clear why the system forces you to install mysql* packages, could you please provide more details on how you got there? Was it a regular automatic system upgrade? Did you run <code style="box-sizing:border-box;font-size:90%;padding:2px 4px;border-radius:20px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;color:rgb(67, 83, 99);background-color:inherit;">apt-get install &lt;something&gt;</code> and it attempted to pull mysql* as dependencies? Or was it something else? </p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Depending on which repo you use and which operation caused this, we'll try to suggest how to avoid it in future. </p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/1340/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        <a name="comment_1341" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:20px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2014-10-20 12:13" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">3 years, 2 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/2459" title="Robert Horgan" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Robert Horgan</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_1341" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">I am not sure whether I am pointing at the correct repositories, however here is my detail.
+Our first steps on Ubuntu install is to install webmin (perhaps this is where mysql imports are first initiated, I will ask a question on their support pages).  Anyway after that is done and prior to any configuration we then install MariaDB.  My commands are as follows:</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">apt-get install software-properties-common<br style="box-sizing:border-box;"/>
+apt-key adv --recv-keys --keyserver hkp:<em style="box-sizing:border-box;">keyserver.ubuntu.com:80 0xcbcb082a1bb943db<br style="box-sizing:border-box;"/>
+add-apt-repository 'deb <a href="http://mirrors.hustunique.com/mariadb/repo/10.0/ubuntu" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">http://mirrors.hustunique.com/mariadb/repo/10.0/ubuntu</a> trusty main'<br style="box-sizing:border-box;"/>
+apt-get update<br style="box-sizing:border-box;"/>
+apt-get install mariadb-server<br style="box-sizing:border-box;"/></em></p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">The list of further updates are later reported in webmin, but presumably as a result of an apt-get update script, not through any specific script on webmins part.<br style="box-sizing:border-box;"/>
+I will see if I can get comment from their support.<br style="box-sizing:border-box;"/>
+Is it possible that something could be done by MariaDB to protect its installation?<br style="box-sizing:border-box;"/>
+Thanks for your quick response.</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/1341/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        <a name="comment_1343" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:30px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2014-10-20 13:49" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">3 years, 2 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/1029" title="Elena Stepanova" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Elena Stepanova</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_1343" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">The whole thing is a bit mysterious, and I would really want to figure out what exactly is going on. 
+Technically, you can have a similar problem during the period when MySQL 5.5.x is already in the Ubuntu repo, while <a href="https://mariadb.com/kb/en/what-is-mariadb-55/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.5</a>.x is not released yet. But it has not happened for a while, even for 5.5.40 -- MySQL 5.5.40 was uploaded to the Trusty repo on Oct 10, while MariaDB was released on Oct 9. </p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">And even if you do catch the moment when the versions are different this way, apt-get upgrade just should not cause this effect. If it does, it might be a bug. </p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Still, assuming that somehow version mismatch is to blame, please refer to the KB page <a href="https://mariadb.com/kb/en/installing-mariadb-deb-files/#version-mismatch-between-mariadb-and-ubuntudebian-repositories" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Version mismatch between MariaDB and Ubuntu/Debian Repositories</a>. A few workarounds are described there, in your case the most suitable is probably <a href="https://mariadb.com/kb/en/installing-mariadb-deb-files/#pinning-the-mariadb-repository" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Pinning the MariaDB repository</a>. 
+I cannot guarantee it will solve the problem for you, because as I said before, it's not quite clear what exactly causes it; but you can try, it shouldn't hurt. </p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">If you have more information, please share it here or create an issue at <a href="https://mariadb.atlassian.net/secure/Dashboard.jspa" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">our JIRA</a>.</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/1343/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        
+    
+
+    
+        <a name="comment_1342" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:30px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2014-10-20 12:35" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">3 years, 2 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/2459" title="Robert Horgan" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Robert Horgan</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_1342" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">One thing which may be of relevance is that the installations were on Windows Azure and the Ubuntu was from the Windows Azure install.  FWIW.</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/1342/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        
+    
+
+    
+
+    
+
+    
+
+    
+        <a name="comment_1235" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:0px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2014-05-21 23:53" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">3 years, 7 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/1846" title="Charlie Hoy" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Charlie Hoy</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_1235" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">I am in the process of changing things over form MySQL to MariaDB. I am currently running MySQL 5.1.31 and have a new server that I have done a clean RPM install of <a href="https://mariadb.com/kb/en/mariadb-10011-release-notes/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.0.11</a> . Hoping this is not too big a leap to take?</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">We are running Apache / PHP on separate web-servers and I would like to know if I need to change anything on them in order for them to connect properly from Apache / PHP to the MariaDB server? Not sure if I need to update or install anything on the web-servers, such as newer libmysqlclient.so.x or? If so, what RPM should I install on the web-heads and will this cause an issue with them continuing to connect to the MySQL DB server? </p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">What I have done on the new DB server is imported a dump file of our production DB from MySQL into the new test server runningMariaDB which appears to have went good. I have already discovered that some queries that work in the MySQL DB come up empty in MariaDB. So the next question is, where can I find a list of differences/changes/deprecated items between MySQL 5.1.31 and <a href="https://mariadb.com/kb/en/mariadb-10011-release-notes/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.0.11</a> .  Or am I going to need to look at the differences noted on this page between MySQL 5.x and MariaDB 5.x and work my way towards MySQL 5.6 and <a href="https://mariadb.com/kb/en/what-is-mariadb-100/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 10.0</a>?</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Thanks!!!</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/1235/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        
+    
+
+    
+        <a name="comment_958" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:0px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2013-12-21 17:17" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">4 years ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/982" title="Federico Razzoli" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Federico Razzoli</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_958" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Yes, you can install any number of forks/versions. Install from generic Linux binaries, as explained here:
+<a href="https://mariadb.com/kb/en/installing-mariadb-binary-tarballs/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">https://mariadb.com/kb/en/installing-mariadb-binary-tarballs/</a>
+By running those commands, 2 different dirs will be created, so each software will have its own datadir, config files, etc.
+If you are going to run them together (but why?), just change the port of one for them in my.cnf.
+If you are going to run them separately (sounds more reasonable), just create a symlink which points to the server you are going to run, so you can always use the same scripts/menu items/guis:
+sudo rm /usr/local/mysql
+sudo ln /usr/local/mariadb-5.5 mysql</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Similar steps for Windows. Use the noinstall package.</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/958/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        
+    
+
+    
+        <a name="comment_957" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:0px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2013-12-21 17:07" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">4 years ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/27" title="Sergei Golubchik" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Sergei Golubchik</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_957" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">One of the easiest ways is, probably, the MySQL Sandbox: <a href="http://mysqlsandbox.net/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">http://mysqlsandbox.net/</a></p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/957/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        
+    
+
+    
+        <a name="comment_956" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:0px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2013-12-21 16:47" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">4 years ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/1991" title="Jacques Dejean" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Jacques Dejean</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_956" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Is there a way that I can run MySQL and MariaDB side-by-side either on a Red Hat Linux 6 or Windows XP environment?  I am using this scenario to compare and to learn both products.  Thanks!!</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/956/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        
+    
+
+    
+        <a name="comment_693" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:0px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2013-07-05 16:41" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">4 years, 5 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/1634" title="vipin raj" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">vipin raj</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_693" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Which one is good in terms of performance level: MySQL, MariaDB or <a href="http://technobytz.com/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">PostgreSQL</a> ?
+My application includes a map module, with self hosted map server(planning to use open street maps). Will need to query on very large sized geom tables.</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/693/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        
+    
+
+    
+        <a name="comment_652" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:0px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2013-06-24 13:47" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">4 years, 6 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/1604" title="Mark Carrara" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Mark Carrara</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_652" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility - Zabbix</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">I am looking at a network monitoring program called Zabbix.  Instead of MySQL I wanted to use MariaDB.  When I try to install Zabbix I get this error:</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">The following packages have unmet dependencies:
+zabbix-server-mysql : Depends: libmysqlclient16 (&gt;= 5.1.21-1) but it is not installable
+Recommends: mysql-server (&gt;= 4.0.16-2)
+Recommends: snmpd but it is not going to be installed
+Recommends: snmptt but it is not going to be installed
+E: Unable to correct problems, you have held broken packages.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Posting on the Zabbix forum yielded nothing except "use MySQL".  Does anyone have any ideas?</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/652/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        <a name="comment_653" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:10px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2013-06-24 14:00" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">4 years, 6 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/27" title="Sergei Golubchik" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Sergei Golubchik</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_653" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility - Zabbix</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">What distribution? What version of it?
+What MariaDB version? Generally for libmysqlclient16 you need mariadb-5.2 or 5.3. Configure your system to use the appropriate repository.</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/653/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        <a name="comment_654" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:20px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2013-06-24 14:09" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">4 years, 6 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/1604" title="Mark Carrara" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Mark Carrara</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_654" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility - Zabbix</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Ubuntu 12.04LTS
+MariaDB I downloaded the latest version on last Thursday 5.5.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">I will try an older version of MariaDB and see if that helps.</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/654/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        
+    
+
+    
+
+    
+
+    
+        <a name="comment_587" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:0px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2013-05-24 16:46" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">4 years, 7 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/1538" title="Michael Cash" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Michael Cash</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_587" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">We installed <a href="https://mariadb.com/kb/en/mariadb-5529-release-notes/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.5.29</a> over MySQL 5.5.12 - both 64 bit on Windows.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">MariaDB is returning int64 instead of int32 for a literal value, i.e. </p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Select 103, name, address from employee; </p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">In MySQL the 103 was being returned as an int32 value and in MariaDB it is an int64 value.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Also, we are having some strange character set issues for some fields.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">We are using a rather old .net connector 6.1.2.0. </p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Suggestions?
+Thank you.</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/587/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        <a name="comment_588" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:10px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2013-05-24 18:09" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">4 years, 7 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/363" title="Vladislav Vaintroub" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Vladislav Vaintroub</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_588" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Can you check against more recent version of MySQL?</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">I have not tried  .NET yet, however I do know it uses result set metadata to infer types. So I checked metadata, and for that I ran mysql command line client so it outputs result set metadata with (mysql --column-type-info )</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">"SELECT &lt;Integer constant&gt;" returns LONGLONG type for both MYSQL and MariaDB, that should translate to int64 if I understand correctly. I cannot comment on character set issues, because the description is not very specific.</p>
+<div style="box-sizing:border-box;margin-left:2em;"><p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">mysql -uroot --column-type-info -e "select 1" </p>
+</div>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Field   1:  `1`
+Catalog:    `def`
+Database:   ``
+Table:      ``
+Org_table:  ``
+Type:       LONGLONG
+Collation:  binary (63)
+Length:     1
+Max_length: 1
+Decimals:   0
+Flags:      NOT_NULL BINARY NUM</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/588/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        <a name="comment_590" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:20px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2013-05-24 18:34" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">4 years, 7 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/363" title="Vladislav Vaintroub" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Vladislav Vaintroub</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_590" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Addendum: </p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">I tried now also Connector/NET test (latest version of C/NET) .</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">I ran MySQLCommand.ExecuteScalar() for command "SELECT 1", on both MariaDB and MYSQL, both on version 5.5.31.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">In both cases the object returned by ExecuteScalar was  System.Int64, which I also would expect. So, I do not see incompatibilities here.</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/590/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        
+    
+
+    
+
+    
+
+    
+        <a name="comment_582" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:0px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2013-05-22 06:50" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">4 years, 7 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/1527" title="Paul Simmons" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Paul Simmons</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_582" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">I have loaded MariaDB onto a fresh computer along with Apache and PHP. It works OK. On another computer I have an AMP system with a heap of data - MYISAM. I was hoping to be able to copy the data files across; both being MYISAM. Seems this won't work; or am I missing something?</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Do I have to load MySQL onto the new computer first and then MariaDB on top of it; then data files get converted to a slightly differnt format? 
+Thanks 
+Paul</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/582/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        <a name="comment_584" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:10px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2013-05-22 11:25" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">4 years, 7 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/27" title="Sergei Golubchik" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Sergei Golubchik</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_584" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">No, you don't. You should be able to copy MyISAM tables.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">To understand why it didn't work for you I'd need more details about how exactly it "won't work". But please don't start a discussion here, send an email with the exact error message that you've got to maria-discuss@lists.launchpad.net</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/584/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        
+    
+
+    
+
+    
+        <a name="comment_507" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:0px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2013-03-13 15:14" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">4 years, 9 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/1387" title="Cristiano Guadagnino" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Cristiano Guadagnino</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_507" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">First of all: I'm not sure this is the right place for questions, but I haven't found a better place.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Since replacing mysql 5.1 with <a href="https://mariadb.com/kb/en/what-is-mariadb-55/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.5</a> several of my perl scripts don't work anymore.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Today I was trying to configure SPhinx with RT (Request Tracker from Best Practical), but when i launch the rt-setup-fulltext-index script I get this output:</p>
+<div style="box-sizing:border-box;margin-left:2em;"><p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;"> ------------------------------------<br style="box-sizing:border-box;"/>
+ root@dvopendb2:/opt/rt4# ./sbin/rt-setup-fulltext-index <br style="box-sizing:border-box;"/>
+ install_driver(mysql) failed: Can't load '/usr/perl5/site_perl/5.10.0&gt; /i86pc-solaris-64int/auto/DBD/mysql/mysql.so' for module DBD::mysql: ld.so.1: perl: fatal: libmysqlclient.so.16: open failed: No such file or directory at /usr/perl5/5.10.0/lib/i86pc-solaris-64int/DynaLoader.pm line 203.<br style="box-sizing:border-box;"/>
+  at (eval 85) line 3.<br style="box-sizing:border-box;"/>
+ Compilation failed in require at (eval 85) line 3.<br style="box-sizing:border-box;"/>
+ Perhaps a required shared library or dll isn't installed where expected
+  at /usr/perl5/site_perl/5.10.0/DBIx/SearchBuilder/Handle.pm line 103.<br style="box-sizing:border-box;"/>
+ BEGIN failed--compilation aborted at ./sbin/rt-setup-fulltext-index line 81.<br style="box-sizing:border-box;"/>
+ ------------------------------------</p>
+</div>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">How can I solve this problem?</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Thank you in advance.
+Bye
+Cris</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/507/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        <a name="comment_508" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:10px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2013-03-13 15:28" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">4 years, 9 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/27" title="Sergei Golubchik" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Sergei Golubchik</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_508" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;"><a href="https://launchpad.net/~maria-discuss" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">maria-discuss@lists.launchpad.net</a> would be a good place to ask questions like that.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Anyway...</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">It looks like your problem is not caused by MySQL-&gt;MariaDB migration, but by 5.1-&gt;5.5 migration. You would've had the same issue if you'd upgraded to MySQL-5.5.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Your DBD::mysql is linked with the old libmysqlclient library. You can either recompile it against the new client library (libmysqlclient.so.18) or install MariaDB-compat package with the 5.1-compatible client library.</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/508/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        <a name="comment_509" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:20px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2013-03-14 08:14" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">4 years, 9 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/1387" title="Cristiano Guadagnino" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Cristiano Guadagnino</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_509" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">Thank you Sergii for your help.<br style="box-sizing:border-box;"/>
+There's no MariaDB-compat in OpenIndiana's repositories. Actually I had to install MariaDB from the binary release for Solaris 10 on MariaDB web site.<br style="box-sizing:border-box;"/>
+I think I'll try to recompile.<br style="box-sizing:border-box;"/>
+Bye<br style="box-sizing:border-box;"/>
+Cris</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/509/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        
+    
+
+    
+
+    
+
+    
+        <a name="comment_249" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:0px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2012-02-19 22:51" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">5 years, 10 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/1029" title="Elena Stepanova" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Elena Stepanova</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_249" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">If you are replacing MySQL 5.1 with <a href="https://mariadb.com/kb/en/what-is-mariadb-52/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.2</a> or <a href="https://mariadb.com/kb/en/what-is-mariadb-53/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.3</a> (e.g. MySQL 5.1.61, <a href="https://mariadb.com/kb/en/mariadb-5210-release-notes/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.2.10</a> or 5.3.4 which are latest at the moment), it is wise to run mysql_upgrade even although MariaDB server includes the same MySQL version. MariaDB has a slightly different structure of mysql.event table, which causes event scheduler to be disabled on server startup, with the corresponding message in the error log file. Running mysql_upgrade and restarting the server afterwards fixes that.</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/249/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        
+    
+
+    
+        <a name="comment_204" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);"></a>
+        <div style="box-sizing:border-box;margin-top:5px;padding-top:0px;border-radius:4px;border:1px solid rgb(238, 238, 238);margin-left:0px;">
+            <div style="box-sizing:border-box;float:right;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;border-radius:0px 0px 0px 3px;">
+                
+
+<span title="2011-12-26 01:34" style="box-sizing:border-box;color:gray;font-size:0.8em;font-style:italic;">5 years, 12 months ago</span>
+                
+<span style="box-sizing:border-box;">
+<a href="https://mariadb.com/kb/user/id/1029" title="Elena Stepanova" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Elena Stepanova</a>
+</span>
+            </div>
+            <div style="box-sizing:border-box;font-weight:bold;padding:2px 10px;">
+                <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/#comment_204" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">Re: MariaDB versus MySQL - Compatibility</a>
+                
+            </div><div style="box-sizing:border-box;padding:2px 10px;">
+                <p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">While uninstalling a MySQL-server RPM and installing MariaDB-server, you can encounter some dependency errors. As of <a href="https://mariadb.com/kb/en/mariadb-5160-release-notes/" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">MariaDB 5.1.60</a>, 5.2.10 and 5.3.3 RHEL RPMs comparing to MySQL 5.1.60, these dependencies are:</p>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;"><li style="box-sizing:border-box;">perl-DBI
+</li><li style="box-sizing:border-box;">libmysqlclient.so.16
+</li><li style="box-sizing:border-box;">libmysqlclient_r.so.16
+</li><li style="box-sizing:border-box;">libhsclient.so.0 (5.3 only)
+</li></ul>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">perl-DBI is used in scripts:</p>
+<ul style="box-sizing:border-box;margin-top:0px;margin-bottom:10px;"><li style="box-sizing:border-box;">mysql_convert_table_format 
+</li><li style="box-sizing:border-box;">mysql_setpermission
+</li><li style="box-sizing:border-box;">mysqlhotcopy
+</li></ul>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">If you are not planning to use the scripts, it can be ignored. It is in fact the same for MySQL-server-5.1.60, but dependencies seem to be suppressed there; so chances are, if you did not need them before, you don't need to worry about it.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">libmysqlclient_r is needed for mysqltest. If you are not going to run tests, it should not matter.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">libmysqlclient is needed for mysql_upgrade. It is an important tool for server upgrades, so it is better to install the library from the MariaDB-shared package. It will resolve the previous problem, too.</p>
+<p style="box-sizing:border-box;margin:0px 0px 10px;line-height:20px;">libhsclient is required by <a href="http://kb.askmonty.org/en/handlersocket-installation" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">HandlerSocket</a> plugin. If you are planning to use the plugin, see <a href="http://kb.askmonty.org/en/handlersocket-installation" style="box-sizing:border-box;background-color:transparent;text-decoration:none;color:rgb(48, 160, 213);">installation instructions</a> for more details; otherwise the dependency error can also be suppressed by the '--nodeps' rpm option.</p>
+
+            </div>
+            <div style="box-sizing:border-box;background:rgb(238, 238, 238) none repeat scroll 0% 0%;padding:2px 10px;">
+                
+                
+                 
+
+                <div style="box-sizing:border-box;float:right;">
+                    
+                    <a href="https://mariadb.com/kb/en/library/mariadb-vs-mysql-compatibility/+comments/204/flag" title="Flag as Spam/Inappropriate" style="box-sizing:border-box;text-decoration:none;display:inline-block;font-weight:normal;text-align:center;vertical-align:middle;touch-action:manipulation;cursor:pointer;background-image:none;border:1px solid transparent;white-space:nowrap;background-color:rgb(255, 255, 255);color:rgb(51, 51, 51);margin-bottom:0px;padding:1px 5px;font-size:12px;line-height:1.5;border-color:rgb(204, 204, 204);border-radius:40px;">
+                        <span style="box-sizing:border-box;position:relative;top:1px;display:inline-block;font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"><span style="font-family:&quot;Glyphicons Halflings&quot;;font-style:normal;font-weight:normal;line-height:1;"></span></span>
+                        </a>
+                    
+                    
+                    
+                </div>
+                <div style="box-sizing:border-box;"><span style="display:table;"> </span><span style="display:table;clear:both;"> </span></div>
+            </div>
+        </div>
+        
+    
+
+    
+
+</div>
+
+</div>
+</div>
+
+        
+
+    </div></div></div></div></div></div></div></div></div></div><br/></div></en-note>

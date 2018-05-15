@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd"><en-note><div style="-evernote-webclip:true"><br/><div><div><div><div><h1> Orchestrating Workflows With Jenkins and Docker </h1><div><div></div></div></div>
+
+                    
+
+                    <div>
+                        <h3>Learn how to use Docker with the Jenkins Workflow plugin to build/release Docker images and leverage Docker for customized and reproducible environments.</h3>
+                    </div>
+
+                    
+
+                    
+
+                
+            
+
+
+            <div>
+                <div>
+                    <span>
+    <div>
+        <a href="https://dzone.com/articles/orchestrating-workflows-with-jenkins-and-docker#" target="_blank">
+            <span>(9)</span>
+        </a>
+    </div>
+</span>
+                </div>
+
+                <div>
+                    <p>
+                        
+                        Comment ()
+                    </p>
+                    
+                </div>
+
+                <div>
+                    <span>
+    <div><span>Save</span></div>
+</span>
+            </div>
+
+            <div><a href="https://dzone.com/articles/orchestrating-workflows-with-jenkins-and-docker#" target="_blank">
+                </a>
+            </div>
+
+            
+        </div>
+                <div>
+                    <p>Join the DZone community and get the full member experience.</p>
+                    <a href="https://dzone.com/articles/orchestrating-workflows-with-jenkins-and-docker#" target="_blank">Join For Free</a>
+                </div>
+                
+
+            <div><a href="https://dzone.com/go?i=250324&amp;u=http%3A%2F%2Fblog.scalyr.com%2F2017%2F08%2Fcareerbuilder-resolves-customer-issues-5x-faster-scalyr%2F" target="_blank">Learn more</a> about how CareerBuilder was able to resolve customer issues 5x faster by using Scalyr, the fastest log management tool on the market. </div>
+
+            
+                
+                    <p><img src="" width="624px;" height="217px;" alt="docker-workflow.png"/></p>
+<p>Most real world pipelines are more complex than the canonical BUILD→TEST→STAGE→PRODUCTION flow. These pipelines often have stages which should not be triggered unless certain conditions are met, while others should trigger only if the first’s conditions fall through. <a href="http://jenkins-cookbook.cloudbees.com/docs/jenkins-cookbook/_continuous_delivery_with_jenkins_workflow.html" target="_blank">Jenkins Workflow</a> helps writes these pipelines, allowing complex deployments to be better represented and served by Jenkins.</p>
+<p>The Jenkins Workflow Docker plugin extends these workflows even further to provide first class support for Docker images and containers. This plugin allows Jenkins to build/release Docker images and leverage Docker containers for customized and reproducible slave environments. </p>
+<h3>What is Docker?</h3>
+<p>Docker is an open-source project that provides a platform for building and shipping applications using containers. This platform enables developers to easily create standardized environments that ensure that a testing environment is the same as the production environment, as well as providing a lightweight solution for virtualizing applications.</p>
+<p>Docker containers are lightweight runtime environments that consist of an application and its dependencies. These containers run “on the metal” of a machine, allowing them to avoid the 1-5% of CPU overhead and 5-10% of memory overhead associated with traditional virtualization technologies. They can also be created from a read-only template called a Docker image.  </p>
+<p>Docker images can be created from an environment definition called a Dockerfile or from a running Docker container which has been committed as an image. Once a Docker image exists, it can be pushed to a registry like Docker Hub and a container can be created from that image, creating a runtime environment with a guaranteed set of tools and applications installed to it. Similarly, containers can be committed to images which are then committed to Docker Hub. </p>
+<h3>What is Workflow?</h3>
+<p>Jenkins Workflow is a new plugin which allows Jenkins to treat continuous delivery as a first class job type in Jenkins. Workflow allows users to define workflow processes in a single place, avoiding the need to coordinate flows across multiple build jobs. This can be particularly important in complex enterprise environments, where work, releases and dependencies must be coordinated across teams. Workflows are defined as a Groovy script either within a Workflow job or checked into the workspace from an external repository like Git.</p>
+<h3>Docker For Simplicity</h3>
+<p>In a nutshell, the CloudBees Docker Workflow plugin adds a special entry point named Docker that can be used in any Workflow Groovy script. It offers a number of functions for creating and using Docker images and containers, which in turn can be used to package and deploy applications or as build environments for Jenkins.</p>
+<p>Broadly speaking, there are two areas of functionality: using Docker images of your own, or created by the worldwide community, to simplify build automation; and creating and testing new images. Some projects will need both aspects and you can follow along with a complete project that does use both: see the <a href="https://github.com/jenkinsci/docker-workflow-plugin/blob/master/demo/README.md" target="_blank">demonstration guide</a>. </p>
+<h3>Jenkins Build Environments and Workflow</h3>
+<p>Before getting into the details, it is helpful to know the history of configuring build environments in Jenkins. Most project builds have some kind of restrictions on the computer which can run the build. Even if a build script (e.g. an Ant build.xml) is theoretically self-contained and platform-independent, you have to start somewhere and say what tools you expect to use.</p>
+<p>Since a lot of people needed to do this, back in 2009 I worked with Kohsuke Kawaguchi and Tom Huybrechts to add a facility to Jenkins’ predecessor - Hudson - for “tools”. Now a Jenkins administrator can go the system configuration page and say that Ant 1.9.0 and JDK 1.7.0_67 should be offered to projects which want them, so download and install them from public sites on demand.</p>
+<p>From a traditional job, this becomes a pulldown option in the project configuration screen, and from a Workflow, you can use the tool step:</p>
+<div><div><div><div><div><div><div><div><pre>node(‘libqwerty’) {</pre></div><div><pre> withEnv([“PATH=${tool ‘Ant 1.9.0’}/bin:${env.PATH}”]) {</pre></div><div><pre>   sh ‘ant dist-package’</pre></div><div><pre> }</pre></div><div><pre> archive ‘app.zip’</pre></div><div><pre>}</pre></div></div></div></div></div></div></div></div>
+<p>While this is a little better, this still leaves a lot of room for error. What if you need Ant 1.9.3—do you wait for a Jenkins administrator? If you want to scale up to hundreds of builds a day, who is going to maintain all those machines?</p>
+<h3>Clear, Reproducible Build Environments With Docker</h3>
+<p>Docker makes it very easy for the project developer to try a stock development-oriented image on Docker Hub or write a customized one with a short Dockerfile:</p>
+<div><div><div><div><div><div><div><div><pre>FROM webratio/ant:1.9.4</pre></div><div><pre>RUN apt-get install libqwerty-devel=1.4.0</pre></div></div></div></div></div></div></div></div>
+<p>Now the project developer is in full control of the build environment. Gone are the days of “huh, that change compiled on my machine”; anyone can run the Docker image on their laptop to get an environment identical to what Jenkins uses to run the build.</p>
+<p>Unfortunately, if other projects need different images, the Jenkins administrator will have to get involved again to set up additional clouds. Also there is the annoyance that before using an image you will need to tweak it a bit to make sure it is running the SSH daemon with a predictable user login, and a version of Java new enough to run Jenkins slaves.</p>
+<p>What if all this hassle just went away? Let us say the Jenkins administrators guaranteed one thing only:</p>
+<p><em>If you ask to build on a slave with the label docker, then Docker will be installed.</em></p>
+<p>and proceeded to attach a few dozen beefy but plain-vanilla Linux cloud slaves. With CloudBees Docker Workflow, you can use these build servers as they come.</p>
+<div><div><div><div><div><div><div><div><pre>// OK, here we come</pre></div><div><pre>node(‘docker’) {</pre></div><div><pre> // My project sources include both build.xml and a Dockerfile to run it in.</pre></div><div><pre> git ‘https://git.mycorp.com/myproject.git’</pre></div><div><pre> // Ready?</pre></div><div><pre> docker.build(‘mycorp/ant-qwerty:latest’).inside {</pre></div><div><pre>   sh ‘ant dist-package’</pre></div><div><pre> }</pre></div><div><pre> archive ‘app.zip’</pre></div><div><pre>}</pre></div></div></div></div></div></div></div></div>
+<p>Embedded in a few lines of Groovy instructions is a lot of power. First we used docker.build to create a fresh image from a Dockerfile definition. If you are happy with a stock image, there is no need for even this:</p>
+<div><div><div><div><div><div><div><div><pre>node(‘docker’) {</pre></div><div><pre> git ‘https://git.mycorp.com/myproject.git’</pre></div><div><pre> docker.image(‘webratio/ant:1.9.4’).inside {</pre></div><div><pre>   sh ‘ant dist-package’</pre></div><div><pre> }</pre></div><div><pre> archive ‘app.zip’</pre></div><div><pre>}</pre></div></div></div></div></div></div></div></div>
+<p>docker.image just asks to load a named image from a registry, in this case the public Hub. .inside asks to start the image in a new throwaway container, then run other build steps inside it. So Jenkins is really running docker exec abc123 ant dist-package behind the scenes. The neat bit is that your single project workspace directory is transparently available inside or outside the container, so you do not need to copy in sources, nor copy out build products. The container does not need to run a Jenkins slave agent, so it need not be “contaminated” with a Java installation or a jenkins user account.</p>
+<h3>Easily Adaptable CD Pipelines</h3>
+<p>The power of Workflow is that structural changes to your build are just a few lines of script away. Need to try building the same sources twice, at the same time, in different environments?</p>
+<div><div><div><div><div><div><div><div><pre>def buildIn(env) {</pre></div><div><pre> node(‘docker’) {</pre></div><div><pre>   git ‘https://git.mycorp.com/myproject.git’</pre></div><div><pre>   docker.image(env).inside {</pre></div><div><pre>     sh ‘ant dist-package’</pre></div><div><pre>   }</pre></div><div><pre> }</pre></div><div><pre>}</pre></div><div><pre>parallel older: {</pre></div><div><pre> buildIn ‘webratio/ant:1.9.3’</pre></div><div><pre>}, newer: {</pre></div><div><pre> buildIn ‘webratio/ant:1.9.4’</pre></div><div><pre>}</pre></div></div></div></div></div></div></div></div>
+<h3>Simplified Application Deployments</h3>
+<p>So far everything I have talked about assumes that Docker is “just” the best way to set up a clear, reproducible, fast build environment, but the main use for Docker is to simplify deployment of applications to production. We already saw docker.build creating images, but you will want to test them from Jenkins, too. To that end, you can .run an image while you perform some tests against it. And you can .push an image to the public or an internal, password-protected Docker registry, where it is ready for production systems to deploy it.</p>
+<h3>Try It Yourself</h3>
+<p>Look at <a href="https://gist.github.com/jglick/0aa389c053196e38e2a1" target="_blank">the demo script</a> to see all of the above-mentioned use-cases in action. This demo highlights that you can use multiple containers running concurrently to test the interaction between systems.</p>
+<p>In the future, we may want to build on <a href="https://docs.docker.com/compose/#overview" target="_blank">Docker Compose</a> to make it even easier to setup and tear-down complex assemblies of software, all from a simple Jenkins workflow script making use of freestanding technologies. You can even keep that flow script in source control, too, so everything interesting about how the project is built is controlled by a handful of small text files.</p>
+<h3>Closing Thoughts</h3>
+<p>By this point you should see how Jenkins and Docker can work together to empower developers to define their exact build environment and reliably reproduce application binaries ready for operations to use, all with minimal configuration of Jenkins itself.</p>
+<p>Download CJE 15.05 or install CloudBees Docker Workflow on any Jenkins 1.596+ server and get started today!</p>
+                </div></div></div><br/></div></en-note>

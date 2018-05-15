@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd"><en-note><div style="-evernote-webclip:true"><br/><div><div><div><div><h1>Learn to code using the C programming language on your Mac</h1><div><div></div></div></div>
+
+
+
+
+
+
+
+<h3>Mastering the C programming language - a classic code environment used to build software, apps, and whole operating systems - is a great skill, and Mac OS X makes it easy to learn. Here's how to get started</h3>
+<div>
+<p>
+by
+
+<a href="https://www.macworld.co.uk/author/lou-hattersley/" title="see more by lucy hattersley" target="_blank">Lucy Hattersley</a>
+
+
+<span>| 26 May 16</span>
+
+</p>
+</div>
+<div>
+<div>
+<div><en-media type="image/webp" hash="063fe449cf4df9409f7aebe99012a763" title="Click for slideshow" width="576" height="324"></en-media></div>
+</div>
+</div>
+
+<span>
+
+
+<p><em>How do I learn the C programming language on my Apple Mac?</em></p> 
+<p>The C programming language has been around since the 1970s, but it has never gone out of style, and learning C is one of the best computer skills you can acquire. Mac OS X comes with C built into it, and Apple has used C while making every aspect of OS X and iOS.</p> 
+<p>Because C is such a popular language, it even forms the basis of many other programming languages, including two big names: C++ and Objective-C. And even though Apple is migrating from Objective-C to <a href="http://www.macworld.co.uk/how-to/mac-software/best-way-learn-swift-2-iphone-app-development-advice-resources-3597812/" title="Learn to build apps using Swift" target="_blank">Swift</a>, guess what languages Apple used to build Swift? Throughout the Swift code, you'll find C and C++ files.</p> 
+<p><strong>More coding tutorials:</strong> <a href="http://www.macworld.co.uk/how-to/mac/how-learn-c-sharp-in-os-x-3640347/" title="Learn to code in C# on Mac" target="_blank">Learn to code in C# on Mac</a> | <a href="http://www.macworld.co.uk/how-to/mac/how-learn-html-css-web-design-on-your-mac-3639294/" target="_blank">Learn HTML &amp; web design on Mac</a> | <a href="http://www.macworld.co.uk/how-to/mac/learn-set-up-java-programming-environment-in-os-x-3636924/" target="_blank">Learn how to code in Java on Mac</a> | <a href="http://www.macworld.co.uk/how-to/mac/coding-with-python-on-mac-3635912/" target="_blank">Learn Python coding on Mac</a> | <a href="http://www.macworld.co.uk/how-to/mac-software/how-set-up-learn-sql-in-mac-os-x-3638150/" title="Learn to code in SQL on Mac" target="_blank">Learn to code in SQL on Mac</a></p> 
+<h2>How to learn C in Mac OS X: Why you should learn C in Mac OS X</h2> 
+<p>You're almost sure never to use C professionally, but learning it is a rite of passage for programmers.</p> 
+<p>The C programming language has influenced many other languages. Learning C enables you to understand what's going inside a computer in general.</p>   
+<p>C is also a curious creature, in that it's a high-level language (these are the easy ones to understand), but with low-level elements (so-called because they are "close to the metal"). The C syntax is similar to many modern programming languages. However, you have to learn how to allocate memory, free up memory to prevent leaks and use memory addresses and pointers (memory blocks that point to other memory blocks). All of this memory management will most likely drive you to tears at some point, but it's superb for understanding what a programming language is doing.</p> 
+<p>This complexity is why C is used in courses such as Harvard's CS50: Introduction to Computer Science. More modern languages, like Python, take care of memory for you; which is better for day-to-day use, but not as good educationally.</p> 
+<p><strong>Read next:</strong> <a href="http://www.macworld.co.uk/how-to/mac/how-to-set-up-raspberry-pi-3-with-mac-3637490/" title="How to set up and use a Raspberry Pi 3 with a Mac" target="_blank">How to set up and use a Raspberry Pi 3 with a Mac</a></p> 
+<h2>How to learn C in Mac OS X: How to set up C in OS X</h2> 
+<p></p><div><en-media type="image/webp" hash="b653cdbb3b005a6b55485fd1afd7177d" alt="Learn to code using the C programming language on your Mac: Set up C in OS X" title="Click for slideshow" width="576" height="324"></en-media></div>
+<p></p> 
+<p>Like Python, it's easy to set up C in OS X. Mostly because it's already packaged in the system and you don't need to install anything.</p> 
+<p>Open terminal and enter clang --version. Clang is the compiler built by Apple to compile C and a bunch of other languages. We get Apple LLVM version 7.3.0 (clang-703.0.29) but whatever version you're using is good enough to compile beginner's code.</p> 
+<p>There are multiple standards for C, and the two you'll come across most are C99 and C11. As a newcomer, you don't need to worry too much about these, and you'll almost certainly learn C99 then discover the new features in C11.</p> 
+<p>You'll need a good text editor or IDE (Integrated Developer Environment) to write your C programs. TextEdit isn't a good choice because it doesn't use the plain text by default. <a href="https://itunes.apple.com/gb/app/textwrangler/id404010395?mt=12" title="TextWrangler on Mac App Store" target="_blank">TextWrangler</a> is a free program from the App Store, or you can download <a href="https://www.sublimetext.com/" title="Sublime Text" target="_blank">Sublime Text</a>, which has an indefinite trial mode (this is our current favourite text editor).</p> 
+<h2>How to learn C in Mac OS X: How to create a Hello World program in C</h2> 
+<p></p><div><en-media type="image/webp" hash="d1f453418b67076bf72bd3308b252133" alt="Learn to code using the C programming language on your Mac: Create Hello World program" title="Click for slideshow" width="576" height="324"></en-media></div>
+<p></p> 
+<p>C differs from other programming languages, like Python, in that you need to compile programs before you can run them. You'll typically do this in C using the command "make". C programs end with the ".c" extension, and you'll run make to build a second file, that is the compiled program. The compiled file is what you run.</p> 
+<p>You can do all this from the command line, so let's see how to make a traditional "Hello, World!" program.</p> 
+<p>Open your text editor and save a file called "hello.c" in your Home folder.</p>
+
+
+		
+		
+			
+			<h5>Content continues below</h5>
+			
+			 
+<p>Enter the following code:</p> 
+<p>#import</p> 
+<p>int main()</p> 
+<p>{</p> 
+<p>    printf("Hello, World!\n");</p> 
+<p>    return 0;</p> 
+<p>}</p> 
+<p>Note that we use four single spaces ("    ") to indent the "printf" and "return" lines. You can also use a single Tab space, and there are plenty of vibrant arguments as to which is better. My stance is always to use spaces unless I'm working on somebody else's code that uses tabs. What's most important is not to mix and match styles. Either press the Space bar four times or press the Tab key.</p> 
+<ol> 
+<li>With the "hello.c" file saved in your Home folder, it's time to compile it.</li> 
+<li>Return to Terminal and enter cd ~ to make sure you're working in the Home directory.</li> 
+<li>Enter make hello and press Return. Note that you don't include the ".c" extension.</li> 
+<li>Terminal will display "cc     hello.c   -o hello". If it displays any errors, then go back and check your code.</li> 
+<li>When it compiles, there will be a second file called just "hello" in the home folder.</li> 
+<li>Enter ./hello to run the hello program. You will see "Hello, World!" at the command line.</li> 
+</ol> 
+<p>This process is how you build and make programs in C, at least when you're starting. You write a C program in a text editor, and then compile it using make, and then run the compiled program to see the result.</p> 
+<p></p><div><en-media type="image/gif" hash="cbb99dd1b0d65a90c8bbccf8780c1627" alt="Learn to code using the C programming language on your Mac: Run Hello World program" title="Click for slideshow" width="1" height="1"></en-media></div>
+<p></p> 
+<p>Enter rm hello.c hello to get rid of both files from your Home directory.</p> 
+<h2>How to learn C in Mac OS X: The best C resources and training programs</h2> 
+<p>Now that you've created your first C program, you'll be keen to get on and learn the C language. Fortunately, there are lots of different resources available for learning C. Here are some of the best places to get started.</p> 
+<ul> 
+<li><a href="https://click.linksynergy.com/fs-bin/click?id=5iaySSWYq9k&amp;subid=0&amp;u1=41-3639920-11-0000000&amp;offerid=323057.1&amp;type=10&amp;tmpid=14538&amp;RD_PARM1=https%3A%2F%2Fwww%2Eudemy%2Ecom%2Fc%2Dprogramming%2Dfor%2Dbeginners%2F" target="_blank">C Programming for beginners</a>. A popular course on Udemy, you'll start from the very beginning in this 73 lecture course with 8 hours of video.</li> 
+<li><a href="https://click.linksynergy.com/fs-bin/click?id=5iaySSWYq9k&amp;subid=0&amp;u1=41-3639920-11-0000000&amp;offerid=323057.1&amp;type=10&amp;tmpid=14538&amp;RD_PARM1=https%3A%2F%2Fwww%2Eudemy%2Ecom%2Fc%2Dprogramming%2Dfor%2Dbeginners%2Dgo%2Dfrom%2Dzero%2Dto%2Dhero%2F" target="_blank">C Programming for beginners - Zero to Hero!</a> A shorter Udemy alternative with 31 lectures and 3.5 hours of video.</li> 
+<li><a href="http://c.learncodethehardway.org/book/" target="_blank">Learn C the hard way</a>. This classic course keeps you in the command line and teaches you the basics.</li> 
+<li><a href="http://www.learn-c.org/" target="_blank">Learn C:</a> This interactive tutorial walks you through the basics of C programming in an interactive website.</li> 
+<li><a href="http://www.tutorialspoint.com/cprogramming/" target="_blank">TutorialsPoint C</a>. This is a great site to bookmark for looking up C functions and modules.</li> 
+<li><a href="https://buy.geni.us/Proxy.ashx?TSID=13305&amp;GR_URL=http%3A%2F%2Fwww.amazon.com%2FC-Programming-Language-2nd-Edition%2Fdp%2F0131103628%3Fascsubtag%3D41-3639920-11-0000000" target="_blank">The C programming language</a>. Straight from the horse's mouth. This book was written by the people who originally created the C programming language.</li> 
+</ul>
+</span>
+</div></div></div><br/></div></en-note>

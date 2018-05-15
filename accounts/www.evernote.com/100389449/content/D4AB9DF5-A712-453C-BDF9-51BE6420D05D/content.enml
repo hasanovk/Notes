@@ -1,0 +1,1 @@
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd"><en-note><div>Commands</div><div><br /></div><div>=&gt; apt-cache search &lt;pkg_name&gt;</div><div>=&gt; apt-cache show &lt;pkg_name&gt;</div><div><br /></div></en-note>

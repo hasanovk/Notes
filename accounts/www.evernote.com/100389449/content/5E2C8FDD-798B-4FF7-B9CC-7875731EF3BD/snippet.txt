@@ -1,0 +1,1 @@
+Simple Menu : The HTML Part: The CSS Part: Note: The <li> is the “inline” element , so if you want to add the padding around (vertical) you have to make it the “block” element first ! The “hover” effect makes look like this: If you want a background for the whole menu, set: #nav { background-color: #58ACFA; } 

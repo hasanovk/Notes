@@ -1,0 +1,1 @@
+How to start as Target Mode To leave safe mode, restart your computer without pressing any keys during startup. If neither of those work, find another Mac, connect it to your Mac with Firewire or Thunderbolt cable. Then reboot the non-bootable Mac holding down the 't' key, which puts it in Target Disk Mode.May 8, 2017 

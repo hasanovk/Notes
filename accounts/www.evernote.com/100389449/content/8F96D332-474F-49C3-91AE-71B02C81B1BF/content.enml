@@ -1,0 +1,1541 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div><div style="background-color:rgb(243, 243, 255);color:rgb(0, 0, 0);"><table><tbody><tr><td valign="top">
+<center>
+<a href="https://www.gsp.com/support/man/"><en-media type="image/png" hash="fe7d6b7a56c16a684aadd9835882c23f" alt="Man Pages" width="537" border="0" height="77"></en-media></a>
+</center>
+<center>
+<h1><hr/><i>Manual Reference Pages  - </i><span> VM (8)</span><hr/></h1>
+</center>
+<a name="top"></a>
+
+
+
+
+<a name="0">
+
+     <h3>NAME</h3>
+
+</a>
+<blockquote>
+
+<b> vm</b>
+
+- utility to manage bhyve virtual machines
+
+</blockquote>
+<a name="contents"></a><h3>CONTENTS</h3>
+<blockquote>
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=vm#1">Synopsis</a><br/>
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=vm#2">Description</a><br/>
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=vm#3">Basic Setup</a><br/>
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=vm#4">Zfs</a><br/>
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=vm#5">Quickstart</a><br/>
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=vm#6">Windows Support</a><br/>
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=vm#7">Subcommands</a><br/>
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=vm#8">Configuration Format</a><br/>
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=vm#9">See Also</a><br/>
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=vm#10">Bugs</a><br/>
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=vm#11">Author</a><br/>
+</blockquote>
+<a name="12">
+
+     <h3>SYNOPSIS</h3>
+
+</a>
+<blockquote>
+
+<b>vm</b>
+
+<b> init</b>
+
+<p>
+
+<b>vm</b>
+
+<b> switch list</b>
+
+<b>vm</b>
+
+<b> switch info</b>
+
+[<i>name</i>]
+
+<b>vm</b>
+
+<b> switch create</b>
+
+<i> name</i>
+
+<b>vm</b>
+
+<b> switch import</b>
+
+<i> name bridge</i>
+
+<b>vm</b>
+
+<b> switch vlan</b>
+
+<i> name vlan-id</i>
+
+<b>vm</b>
+
+<b> switch nat</b>
+
+<i> name on|off</i>
+
+<b>vm</b>
+
+<b> switch add</b>
+
+<i> name interface</i>
+
+<b>vm</b>
+
+<b> switch remove</b>
+
+<i> name interface</i>
+
+<b>vm</b>
+
+<b> switch destroy</b>
+
+<i> name</i>
+
+</p><p>
+
+<b>vm</b>
+
+<b> create</b>
+
+[-<b>t</b><i> template</i>]
+
+[-<b>s</b><i> size</i>]
+
+<i> name</i>
+
+<b>vm</b>
+
+<b> destroy</b>
+
+<i> name</i>
+
+<b>vm</b>
+
+<b> list</b>
+
+<b>vm</b>
+
+<b> info</b>
+
+[<i>name</i>]
+
+<b>vm</b>
+
+<b> install</b>
+
+<i> name iso</i>
+
+<b>vm</b>
+
+<b> start</b>
+
+<i> name</i>
+
+<b>vm</b>
+
+<b> stop</b>
+
+<i> name</i>
+
+<b>vm</b>
+
+<b> console</b>
+
+<i> name</i>
+
+[<i>com1|com2</i>]
+
+<b>vm</b>
+
+<b> rename</b>
+
+<i> name</i>
+
+<i> new-name</i>
+
+<b>vm</b>
+
+<b> add</b>
+
+[-<b>d</b><i> device</i>]
+
+[-<b>t</b><i> type</i>]
+
+[-<b>s</b><i> size|switch</i>]
+
+<i> name</i>
+
+<b>vm</b>
+
+<b> reset</b>
+
+<i> name</i>
+
+<b>vm</b>
+
+<b> poweroff</b>
+
+<i> name</i>
+
+<b>vm</b>
+
+<b> startall</b>
+
+<b>vm</b>
+
+<b> stopall</b>
+
+<b>vm</b>
+
+<b> configure</b>
+
+<i> name</i>
+
+<b>vm</b>
+
+<b> clone</b>
+
+<i> name</i>
+
+<i> new-name</i>
+
+<b>vm</b>
+
+<b> snapshot</b>
+
+[-<b>f</b>]
+
+<i> name|name@snapshot</i>
+
+<b>vm</b>
+
+<b> rollback</b>
+
+[-<b>r</b>]
+
+<i> name@snapshot</i>
+
+</p><p>
+
+<b>vm</b>
+
+<b> iso</b>
+
+[<i>url</i>]
+
+</p><p>
+
+<b>vm</b>
+
+<b> image list</b>
+
+<b>vm</b>
+
+<b> image create</b>
+
+[-<b>d</b><i> description</i>]
+
+<i> name</i>
+
+<b>vm</b>
+
+<b> image provision</b>
+
+<i> uuid</i>
+
+<i> new-name</i>
+
+<b>vm</b>
+
+<b> image destroy</b>
+
+<i> uuid</i>
+
+
+</p></blockquote>
+<a name="2">
+
+     <h3>DESCRIPTION</h3>
+
+</a>
+<blockquote>
+The
+
+<b>vm</b>
+utility is used to provide simplified management of
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=bhyve">bhyve</a>(8)
+virtual machines,
+including networking and console access.
+
+<p>
+Networking is handled by creating one or more virtual switches. Each switch
+has a simple name which is referenced in the virtual machine configuration file.
+The
+
+<b>vm</b>
+utility automatically creates a
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=bridge">bridge</a>(4)
+device for each virtual switch and assigns virtual machine
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=tap">tap</a>(4)
+interfaces dynamically.
+
+</p><p>
+All configuration for virtual machines is stored in a simple rc style configuration
+file. When virtual machines are first created, the configuration file is copied from
+a template which can be specified by the user. Multiple templates can be created providing
+an easy way to provision guests with specific configurations.
+
+</p><p>
+
+<b>vm</b>
+gracefully handles reboot and shutdown commands from inside the guests, whilst providing
+full management of the virtual machine from the host system.
+
+
+</p></blockquote>
+<a name="3">
+
+     <h3>BASIC SETUP</h3>
+
+</a>
+<blockquote>
+Once
+
+<b>vm</b>
+is installed, create the directory which will store your virtual machine configuration and data.
+This directory will be referred to as
+
+<tt> $vm_dir</tt>
+throughput this man page.
+
+<p>
+Add the following into
+
+<tt> /etc/rc.conf</tt>
+
+</p><pre>vm_enable="YES"
+vm_dir="/your/vm/path"
+vm_list=""
+vm_delay="5"
+
+</pre>
+
+<p>
+The first and second lines are required to enable the
+
+<b>vm</b>
+utiltity. Please see the
+
+<b> startall</b>
+command description for more information on the third and fourth settings.
+
+</p><p>
+Now run the
+
+<b> vm</b>
+
+<b> init</b>
+command to finish initialisation. This will create subdirectories inside
+
+<tt> $vm_dir</tt>
+to hold configuration and templates. It will also load any required kernel modules.
+This command needs to be run on each boot, which is normally handled by the rc.d script.
+
+</p><p>
+Copy the sample templates into the directory
+
+<tt> $vm_dir/.templates/</tt>.
+You can create and edit the templates as required. It is recommended to keep a template called
+
+<tt> default.conf</tt>,
+as this will be used when no template is manually specified.
+
+
+</p></blockquote>
+<a name="4">
+
+     <h3>ZFS</h3>
+
+</a>
+<blockquote>
+If you are using a ZFS dataset to store your virtual machines, and want a new child dataset created
+for each one, specify the dataset to use in
+
+<tt> /etc/rc.conf</tt>
+as follows:
+
+<pre>$vm_dir="zfs:pool/dataset"
+
+</pre>
+
+<p>
+In contrast to earlier versions, if
+
+<tt> $vm_dir</tt>
+is a normal path, a standard subdirectory will be created for each virtual machine, regardless
+of the file system type. However,
+
+<b>vm</b>
+is now able to handle situations where the dataset mountpoint does not match the dataset name.
+
+
+</p></blockquote>
+<a name="5">
+
+     <h3>QUICKSTART</h3>
+
+</a>
+<blockquote>
+Create a virtual switch called
+
+<b> public</b>
+(which is the switch name specified in the default templates) and attach it to a real interface.
+Use your own interface in place of
+
+<b> em0</b>
+as required.
+
+<pre># vm switch create public
+# vm switch add public em0
+
+</pre>
+
+<p>
+Download an ISO file to use for installation:
+
+</p><pre># vm iso <a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=vmftp://ftp.freebsd.org/pub/FreeBSD/releases/ISO-IMAGES/10.1/FreeBSD-10.1-RELEASE-amd64-disc1.iso">ftp://ftp.freebsd.org/pub/FreeBSD/releases/ISO-IMAGES/10.1/FreeBSD-10.1-RELEASE-amd64-disc1.iso</a>
+
+</pre>
+
+<p>
+Create a new guest using the default template and disk size, then start the installation. The
+
+<i> install</i>
+subcommand will pause while the guest boot loader completes. Once successfully loaded, use the
+
+<i> console</i>
+command to complete the installation.
+
+</p><pre># vm create my-guest
+# vm install my-guest FreeBSD-10.1-RELEASE-amd64-disc1.iso
+# vm console my-guest
+
+</pre>
+
+<p>
+Please note that Linux guests currently require the
+
+<b> sysutils/grub2-bhyve</b>
+package to be installed. This is use in place of
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=bhyveload">bhyveload</a>(8)
+to load the guest kernel into memory.
+
+
+</p></blockquote>
+<a name="6">
+
+     <h3>WINDOWS SUPPORT</h3>
+
+</a>
+<blockquote>
+Windows guests are supported on versions of FreeBSD that have UEFI
+support in
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=bhyve">bhyve</a>(8).
+As of October 2015, this is only FreeBSD-CURRENT, so you will first need
+to build and install the head FreeBSD branch manually.
+
+<p>
+You will also need a copy of the UEFI firmware (see URL below), which needs to be placed in
+
+<tt> $vm_dir/.config/BHYVE_UEFI.fd</tt>.
+
+</p><p>
+As there is no VGA console in
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=bhyve">bhyve</a>(8),
+an unattended installation ISO is required which allows Windows to install and
+boot without any user interaction. Instructions for creating a suitable ISO can
+be found at the URL below.
+
+</p><p>
+Once the installation ISO is ready, has been placed in the
+
+<tt> $vm_dir/.iso</tt>
+directory, and you have the UEFI firmware, installation can be performed as normal.
+
+</p><pre># vm create -t windows -s 30G winguest
+# vm install winguest win_repack.iso
+
+</pre>
+
+<p>
+Windows installation has been tested with 2012r2 and takes around 20-25 minutes.
+During install, the guest will reboot twice (three runs in total). You can see
+the guest reboot by watching the log file
+
+<tt> $vm_dir/guestname/vm-bhyve.log</tt>.
+The third run should boot fully into Windows. The
+
+<b> virtio</b>
+network adapter will request an IP address using DHCP. Connect to the guest console
+and press
+
+<b> i</b>
+to see the IP address that has been assigned. The default unattended installation files
+should make RDP available, using Administrator and Test123 as the default login details.
+
+</p><p>
+The UEFI firmware (BHYVE_UEFI_20151002.fd), as well as instructions for creating an
+unattended installation ISO can currently be obtained from
+
+<tt> https://people.freebsd.org/~grehan/bhyve_uefi/</tt>
+
+
+</p></blockquote>
+<a name="7">
+
+     <h3>SUBCOMMANDS</h3>
+
+</a>
+<blockquote>
+
+
+<table cellpadding="3">
+<tbody><tr valign="top"><td><b> init</b>
+</td><td>
+
+This should be run once after each host reboot before running any other
+
+<b>vm</b>
+commands. The main function of the
+
+<b> init</b>
+command is as follows:
+
+<p>
+o Load all necessary kernel modules if not already loaded
+
+<br/>
+o Set tap devices to come up automatically when opened
+
+<br/>
+o Create any configured virtual switches
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"><b> switch list</b>
+</td></tr><tr><td> </td><td>
+List virtual switches. This reads all configured virtual switches from the
+
+<tt> $vm_dir/.config/switch</tt>
+file and displays them. If the virtual switches are loaded, it also tries
+to display the
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=bridge">bridge</a>(4)
+interface that has been assigned to each one.
+
+</td></tr>
+<tr valign="top"><td colspan="2"><b> switch info </b>[<i>name</i>]
+</td></tr><tr><td> </td><td>
+This command shows detailed information about the specified virtual switch.
+If no switch name is provided, information is output for all configured switches.
+Information displayed includes the following:
+
+<p>
+o Basic switch settings
+
+<br/>
+o Overall bytes sent and received via this switch
+
+<br/>
+o Physical ports connected
+
+<br/>
+o Virtual ports, including the associated virtual machine
+
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"><b> switch create</b><i> name</i>
+</td></tr><tr><td> </td><td>
+Create a new virtual switch. The name must be supplied and may only contain
+letters, numbers and dashes. However, it may not contain a dash at the beginning
+or end.
+
+<p>
+When a new virtual switch is created, the persistent configuration file is updated
+and a new
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=bridge">bridge</a>(4)
+interface is provisioned.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"><b> switch import</b><i> name</i><i> bridge</i>
+</td></tr><tr><td> </td><td>
+This command allows you to import an existing bridge interface that has been created
+manually and use it for virtual machines. Once a bridge is imported, you can use
+the switch
+
+<tt> name</tt>
+in guest configuration. Ideally the manual bridge should be configured in
+
+<tt> /etc/rc.conf</tt>,
+so that it is available on each host boot.
+
+<p>
+Please note that this creates a ’manual’ switch and is designed to allow you to configure your
+own bridge. None of the
+
+<tt> add</tt>,
+
+<tt> remove</tt>,
+
+<tt> vlan</tt>
+or
+
+<tt> nat</tt>
+commands are supported on manual switches.
+
+</p><p>
+If a manual switch is destroyed using the
+
+<tt> destroy</tt>
+command, we remove all vm-bhvye configuration, but leave the
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=bridge">bridge</a>(4)
+interface intact.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"><b> switch vlan</b><i> name</i><i> vlan-id</i>
+</td></tr><tr><td> </td><td>
+Assign a VLAN number to a virtual switch. The VLAN number must be between 0-4094.
+
+<p>
+When adding an interface to a VLAN enabled virtual switch, a new
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=vlan">vlan</a>(4)
+interface is created. This interface has the relevent parent interface and VLAN tag
+configured. This vlan interface is then added to the virtual switch. As such, all
+traffic between guests on the same switch is untagged and travels freely. However,
+all traffic exiting via physical interfaces is tagged.
+
+</p><p>
+If the virtual switch already has physical interfaces assigned, they are all removed
+from the bridge, reconfigured, then re-added.
+
+</p><p>
+To remove the VLAN configuration from a virtual switch, specify a
+
+<i> vlan-id</i>
+of 0.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"><b> switch nat</b><i> name</i><i> on|off</i>
+</td></tr><tr><td> </td><td>
+Enable or disable NAT functionality on the specified switch. Please note that
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=&amp;topic=pf">pf</a>
+is required for this functionality and must be enabled in
+
+<tt> /etc/rc.conf</tt>.
+If DHCP is desired, please install the
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=&amp;topic=dnsmasq">dnsmasq</a>
+pacakge. vm-bhyve will generate a sample dnsmasq configuration in
+
+<tt> /usr/local/etc/dnsmasq.conf.bhyve</tt>,
+but it is up to the user to either use this configuration directly, or merge with
+any existing dnsmasq settings you have configured.
+
+<p>
+The switch should have no host ports assigned, as these will end up on the private side
+of the NAT network.
+
+<b>vm</b>
+automatically detects the hosts default gateway, which is used as the forwarding interface
+for NAT connections.
+
+</p><p>
+Once enabled, a 172.16.X.0/24 network is assigned to the switch (bridge) interface.
+
+<i> X</i>
+is chosen based on the ID of the bridge interface. For example, if the switch is using
+bridge10, the network will be 172.16.10.0/24.
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=&amp;topic=dnsmasq">dnsmasq</a>
+can be used to provide DHCP to the guests, and
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=&amp;topic=pf">pf</a>
+rules are inserted to provide the NAT translation.
+
+</p><p>
+
+<tt> /etc/pf.conf</tt>
+is created if it doesn’t exist, and a single include statement is added. This
+include statement can be moved within the file if required.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"><b> switch add</b><i> name</i><i> interface</i>
+</td></tr><tr><td> </td><td>
+Add the specified interface to the named virtual switch.
+
+<p>
+The interface will immediately be added to the relevant bridge if possible, and
+stored in the persistent switch configuration file. If a
+
+<i> vlan-id</i>
+is specified on the virtual switch, this will cause a new
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=vlan">vlan</a>(4)
+interface to be created.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"><b> switch remove</b><i> name</i><i> interface</i>
+</td></tr><tr><td> </td><td>
+Removes the specified interface from the named virtual switch and updates the
+persistent configuration file.
+
+</td></tr>
+<tr valign="top"><td colspan="2"><b> switch destroy</b><i> name</i>
+</td></tr><tr><td> </td><td>
+Completely remove the named virtual switch and all configuration. The associated
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=bridge">bridge</a>(4)
+interface will be removed, as well as any
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=vlan">vlan</a>(4)
+interfaces if they are not in use by other virtual switches.
+
+</td></tr>
+<tr valign="top"><td colspan="2">
+<b> create</b>
+
+[-<b>t</b><i> template</i>]
+
+[-<b>s</b><i> size</i>]
+
+<i> name</i>
+
+</td></tr><tr><td> </td><td>
+Create a new virtual machine.
+
+<p>
+Unless specified, the
+
+<tt> default.conf</tt>
+template will be used and a 20GB virtual disk image is created. This command will
+created the virtual machine directory
+
+<tt> $vm_dir/$name</tt>,
+and create the configuration file and empty disk image within.
+
+
+</p></td></tr>
+<tr valign="top"><td colspan="2">-<b>t</b> <i> template</i>
+</td></tr><tr><td> </td><td>
+Specifies the template to use from within the
+
+<tt> $vm_dir/.templates</tt>
+directory. The
+
+<b> .conf</b>
+suffix is not required.
+
+</td></tr>
+<tr valign="top"><td colspan="2">-<b>s</b> <i> size</i>
+</td></tr><tr><td> </td><td>
+The size of disk image to create in GB. Unless specified, the guest image will
+be a sparse file 20GB in size.
+
+</td></tr>
+<tr></tr></tbody></table>
+<table cellpadding="3">
+<tbody><tr valign="top"><td colspan="2"><b> destroy</b><i> name</i>
+</td></tr><tr><td> </td><td>
+Removes the specified virtual machine from the system, deleting all associated
+disk images &amp; configuration.
+
+</td></tr>
+<tr valign="top"><td><b> list</b>
+</td><td>
+
+List all the virtual machines in the
+
+<tt> $vm_dir</tt>
+directory. This will show the basic configuration for each virtual machine, and whether
+they are currently running.
+
+</td></tr>
+<tr valign="top"><td colspan="2"><b> info </b>[<i>name</i>]
+</td></tr><tr><td> </td><td>
+Shows detailed information about the specified virtual machine. If no name is given,
+information for all virtual machines is displayed.
+
+<p>
+This output includes detailed information about network and disk devices, including
+the space usage for all virtual disks (exluding custom disk devices). If the guest
+is running, the output also shows the amount of host memory curently in use,
+and additional network details including bytes sent/received for each virtual interface.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"><b> install</b><i> name</i><i> iso</i>
+</td></tr><tr><td> </td><td>
+Start a guest installation for the named virtual machine, using the specified ISO file.
+The
+
+<i> iso</i>
+argument should be the filename of an ISO file already downloaded into the
+
+<tt> $vm_dir/.iso</tt>
+directory. ISO files in this directory can be managed using the
+
+<i> iso</i>
+subcommand described below.
+
+<p>
+Once started, the guest loader will be booted in the foreground. This allows you to choose
+the
+
+<b> Install</b>
+boot option for guests that require it. Once the loader has completed, you will be returned
+to the shell and bhyve will continue running in the background. Use the
+
+<i> console</i>
+subcommand to connect to the guest and complete installation.
+
+</p><p>
+After installation, the guest can be rebooted and will restart using its own disk image to boot.
+At this point the installation ISO file is still attached, allowing you to use the CD/DVD image
+for any post installation tasks. The ISO file will remain attached after each reboot until the
+guest is fully stopped.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"><b> start</b><i> name</i>
+</td></tr><tr><td> </td><td>
+Start the named virtual machine. The guest will boot and run completely in the background. Use
+the
+
+<i> console</i>
+subcommand to connect to it if required.
+
+<p>
+For each network adapter specified in the guest configuration, a
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=tap">tap</a>(4)
+interface will be created. If possible, the tap interface will be attached the relevent
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=bridge">bridge</a>(4)
+interface, based on the virtual switch specified in the guest configuration.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"><b> stop</b><i> name</i>
+</td></tr><tr><td> </td><td>
+Stop a named virtual machine. All
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=tap">tap</a>(4)
+and
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=nmdm">nmdm</a>(4)
+devices will be automatically cleaned up once the guest has exited.
+
+</td></tr>
+<tr valign="top"><td colspan="2"><b> console</b><i> name </i>[<i>com1|com2</i>]
+</td></tr><tr><td> </td><td>
+Connect to the console of the named virtual machine. Without network access, this is the primary
+way of connecting to the guest once it is running.
+
+<p>
+By default this will connect to the first com port specified in the client configuration, which
+is usually com1. Alternatively you can specify the com port to connect to.
+
+</p><p>
+This looks for the
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=nmdm">nmdm</a>(4)
+device associated with the virtual machine, and connects to it with
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=1&amp;topic=cu">cu</a>(1).
+Use ~+Ctrl-D to exit the console and return to the host.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"><b> rename</b><i> name</i><i> new-name</i>
+</td></tr><tr><td> </td><td>
+Renames the specified virtual machine. The guest must be stopped to use this function.
+
+</td></tr>
+<tr valign="top"><td colspan="2">
+<b> add</b>
+
+[-<b>d</b><i> device</i>]
+
+[-<b>t</b><i> type</i>]
+
+[-<b>s</b><i> size|switch</i>]
+
+<i> name</i>
+
+</td></tr><tr><td> </td><td>
+Add a new network or disk device to the named virtual machine. The options depend on
+the type of device that is being added:
+
+
+</td></tr>
+<tr valign="top"><td colspan="2">-<b>d</b> <i> device</i>
+</td></tr><tr><td> </td><td>
+The type of device to add. Currently this can either be
+
+<tt> disk</tt>
+or
+
+<tt> network</tt>
+
+</td></tr>
+<tr valign="top"><td colspan="2">-<b>t</b> <i> type</i>
+</td></tr><tr><td> </td><td>
+For disk devices, this specifies the type of disk device to create.
+Valid options for this are
+
+<tt> zvol</tt>,
+
+<tt> sparse-zvol</tt>
+and
+
+<tt> file</tt>.
+If not specified, this defaults to
+
+<tt> file</tt>.
+
+</td></tr>
+<tr valign="top"><td colspan="2">-<b>s</b> <i> size|switch</i>
+</td></tr><tr><td> </td><td>
+For disk devices, this is used to specify the size of the disk image to create. For
+network devices, use this option to specify the virtual switch to connect the network interface to.
+
+</td></tr>
+<tr></tr></tbody></table>
+<p>
+For both types of device, the emulation type will be chosen automatically based on the
+emulation used for the existing guest devices.
+
+<table cellpadding="3">
+<tbody><tr valign="top"><td colspan="2"><b> reset</b><i> name</i>
+</td></tr><tr><td> </td><td>
+Forcefully reset the named virtual machine. This can cause corruption to the guest file system just
+as with real hardware and should only be used if necessary.
+
+</td></tr>
+<tr valign="top"><td colspan="2"><b> poweroff</b><i> name</i>
+</td></tr><tr><td> </td><td>
+Forcefully power off the named virtual machine. As with
+
+<i> reset</i>
+above, this does not inform the guest to shutdown gracefully and should only be used if the guest
+can not be shut down using normal methods.
+
+</td></tr>
+<tr valign="top"><td colspan="2"><b> startall</b>
+</td></tr><tr><td> </td><td>
+Start all virtual machines configured for auto-start. This is the command used by the rc.d scripts
+to start all machines on boot.
+
+<p>
+The list of virtual machines should be specified using the
+
+<tt> $vm_list</tt>
+variable in
+
+<tt> /etc/rc.conf</tt>.
+This allows you to use shared storage for virtual machine data, whilst making sure that the correct
+guests are started automatically on each host. (Or to just make sure your required guests start on boot
+whilst leaving test/un-needed guests alone)
+
+</p><p>
+The delay between starting guests can be set using the
+
+<tt> $vm_delay</tt>
+variable, which defaults to 5 seconds. Too small a delay can cause problems, as each guest doesn’t
+have enough time to claim a null modem device before the next guest starts. Increasing this value
+can be useful if you have disk-intensive guests and want to give each guest a chance to fully
+boot before the next starts.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"><b> stopall</b>
+</td></tr><tr><td> </td><td>
+Stop all running virtual machines. This sends a stop command to all
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=bhyve">bhyve</a>(8)
+instances, regardless of whether they were starting using
+
+<b>vm</b>
+or not.
+
+</td></tr>
+<tr valign="top"><td colspan="2"><b> configure</b><i> name</i>
+</td></tr><tr><td> </td><td>
+The
+
+<b> configure</b>
+command simply opens the virtual machine configuration file in your default editor,
+allowing you to easily make changes. Please note, changes do not take effect until
+the virtual machine is fully shutdown and restarted.
+
+</td></tr>
+<tr valign="top"><td colspan="2"><b> clone</b><i> name</i><i> new-name</i>
+</td></tr><tr><td> </td><td>
+Create a clone of the virtual machine
+
+<tt> name</tt>,
+as long as it is currently powered off. The new machine will be called
+
+<tt> new-name</tt>,
+and will be ready to boot with a newly assigned UUID and empty log file.
+
+<p>
+Please note that this function requires ZFS, and a snapshot will be taken of the original
+guest, along with any descendant datasets.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2">
+<b> snapshot</b>
+
+[-<b>f</b>]
+
+<i> name|name@snapshot</i>
+
+</td></tr><tr><td> </td><td>
+Create a snapshot of the names virtual machine. This command is only supported with ZFS
+and will take a snapshot of the guest dataset and any descendent ZVOL devices.
+
+<p>
+The guest and snapshot name can be specified in the normal
+
+<tt> name@snapshot</tt>
+way familiar to ZFS users. If no snapshot name is given, the snapshot is based on the current timestamp in
+
+<tt> Y-m-d-H:M:S</tt>
+format.
+
+</p><p>
+By default the guest must be stopped to use this command, although you can force a snapshot
+of a running guest by using the
+
+-<b>f</b> 
+option.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2">
+<b> rollback</b>
+
+[-<b>r</b>]
+
+<i> name@snapshot</i>
+
+</td></tr><tr><td> </td><td>
+Rollback the guest to the specified snapshot. This will roll back the guest dataset and all
+descendent ZVOL devices.
+
+<p>
+Normally, ZFS will only allow you to roll back to the most recent snapshot.
+If the snapshot given is not the most recent, ZFS will produce a warning detailing that you
+need to use the
+
+-<b>r</b> 
+option to remove the more recent snapshots. It will also produce a list of the snapshots that
+will be destroyed if you use this option. The
+
+-<b>r</b> 
+option can be passed directly into
+
+<b>vm</b>
+
+<b> rollback</b>
+
+</p><p>
+The guest must always be stopped to use this command.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"><b> iso </b>[<i>url</i>]
+</td></tr><tr><td> </td><td>
+List all the ISO files currently stored in the
+
+<tt> $vm_dir/.iso</tt>
+directory. This is often useful during guest installation, allowing you to copy and paste the ISO
+filename.
+
+<p>
+If a
+
+<b> url</b>
+is specified, instead of listing ISO files, it attempts to download the given file using
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=1&amp;topic=fetch">fetch</a>(1).
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"><b> image list</b>
+</td></tr><tr><td> </td><td>
+List available images. Any virtual machine can be packaged into an image, which can then be
+used to create additional machines. All images have a globally unique ID (UUID) which is
+used to identify them. The list command shows the UUID, the original machine name, the
+date it was created and a short description of the image.
+
+<p>
+Please note that these commands rely on using ZFS featured to package/unpackage the images,
+and as such are only available when using a ZFS dataset as the storage location.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2">
+<b> image create</b>
+
+[-<b>d</b><i> description</i>]
+
+<i> name</i>
+
+</td></tr><tr><td> </td><td>
+Create a new image from the named virtual machine. This will create a compressed copy of
+the original guest dataset, which is stored in the
+
+<tt> $vm_dir/images</tt>
+directory. It also creates a
+
+<tt> UUID.manifest</tt>
+file which contains details about the image.
+
+<p>
+Once complete, it will display the UUID which has been assigned to this image.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"><b> image provision</b><i> uuid</i><i> new-name</i>
+</td></tr><tr><td> </td><td>
+Create a new virtual machine, named
+
+<tt> new-name</tt>,
+from the specified image UUID.
+
+</td></tr>
+<tr valign="top"><td colspan="2"><b> image destroy</b><i> uuid</i>
+</td></tr><tr><td> </td><td>
+Destroy the specified image.
+
+</td></tr>
+<tr></tr></tbody></table>
+
+</p></blockquote>
+<a name="8">
+
+     <h3>CONFIGURATION FORMAT</h3>
+
+</a>
+<blockquote>
+Each virtual machine has a configuration file that specifies the hardware configuration. This
+uses a similar format to the
+
+<b> rc</b>
+files, making them easy to edit by hand. The settings for each guest are stored in
+
+<tt> $vm_dir/$vm_name/$vm_name.conf</tt>.
+An overview of the available configuration options is listed below.
+
+
+<table cellpadding="3">
+<tbody><tr valign="top"><td> guest
+</td><td>
+Specify the type of guest to be installed in this virtual machine. Current valid options
+for this are generic, freebsd, netbsd, openbsd, windows, centos, ubuntu, debian &amp; alpine linux.
+
+</td></tr>
+<tr valign="top"><td> uefi
+</td><td>
+Set this (any non-empty value) for guests that need UEFI firmware.
+
+</td></tr>
+<tr valign="top"><td> cpu
+</td><td>
+A numeric value specifying the number of virtual CPU cores to assign to the guest.
+
+</td></tr>
+<tr valign="top"><td colspan="2"> memory
+</td></tr><tr><td> </td><td>
+The amount of memory to assign to the guest. This can be specified in megabytes or
+gigabytes using the
+
+<b> M</b>
+and
+
+<b> G</b>
+suffixes.
+
+</td></tr>
+<tr valign="top"><td colspan="2"> hostbridge
+</td></tr><tr><td> </td><td>
+This option allows you to specify the type of hostbridge used for the guest hardware.
+Normally you can leave this as default, which is to use a standard bhyve hostbridge.
+
+<p>
+There are two other options.
+
+<b> amd</b>,
+which is almost identical to the standard hostbridge, but advertises itself with a
+vendor ID of AMD. There are also some special cases where you may require no
+hostbridge at all, which can be achieved using the
+
+<b> none</b>
+value.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"> comports
+</td></tr><tr><td> </td><td>
+This option allows you to specify which com ports to create for the guest. The default
+is to create a single
+
+<b> com1</b>
+port. Valid values for this are
+
+<b> com1</b>
+and
+
+<b> com2</b>.
+You can also connect two com ports by specifying both, separated by a space.
+
+</td></tr>
+<tr valign="top"><td colspan="2"> utctime
+</td></tr><tr><td> </td><td>
+Set this option to
+
+<b> yes</b>
+if the guest RTC should keep UTC time.
+
+</td></tr>
+<tr valign="top"><td> debug
+</td><td>
+If this is set to
+
+<b> yes</b>,
+all output from the
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=bhyve">bhyve</a>(8)
+process will be written to
+
+<b> ${vm_dir}/guest/bhyve.log</b>.
+This is useful for debugging purposes as it allows you to see any error messages
+that are being produced by
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=bhyve">bhyve</a>(8)
+itself.
+
+</td></tr>
+<tr valign="top"><td colspan="2"> network0_type
+</td></tr><tr><td> </td><td>
+The emulation to use for the first network adapter. This option can be unspecified
+if no guest networking is required. The recommended value for this is
+
+<b> virtio-net</b>.
+Additional network interfaces can be configured by adding additional
+
+<b> networkX_type</b>
+and
+
+<b> networkX_switch</b>
+values, replacing
+
+<b> X</b>
+with the next available integer.
+
+</td></tr>
+<tr valign="top"><td colspan="2"> network0_switch
+</td></tr><tr><td> </td><td>
+The virtual switch to connect interface
+
+<b> 0</b>
+to. This should correspond to a virtual switch created using the
+
+<tt> vm switch create</tt>
+subcommand. If the virtual switch is not found, an interface will still be assigned,
+but not connected to any bridge.
+
+<p>
+Note that this field is no longer strictly required. If you are using a custom device
+for the networking that is already configured, you may not need the interface connected
+to a virtual switch. See the
+
+<b> network0_device</b>
+configuration option.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"> network0_device
+</td></tr><tr><td> </td><td>
+Normally vm-bhyve will create a
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=tap">tap</a>(4)
+device at run-time for each virtual network interface. This may be an issue in more advanced
+configurations where you want to pre-configure the networking manually in a way unsupported by
+vm-bhyve. This option allows you to instruct vm-bhyve to use an existing network device for
+this virtual interface, rather than creating one dynamically.
+
+</td></tr>
+<tr valign="top"><td colspan="2"> network0_mac
+</td></tr><tr><td> </td><td>
+This option allows you to specify a mac address to use for this interface. If not
+provided,
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=bhyve">bhyve</a>(8)
+will generate a mac address.
+
+</td></tr>
+<tr valign="top"><td colspan="2"> disk0_type
+</td></tr><tr><td> </td><td>
+The emulation type for the first virtual disk. At least one virtual disk is required.
+Valid options for this are currently
+
+<b> virtio-blk</b>
+and
+
+<b> ahci-hd</b>.
+Additional disks can be added by adding additional
+
+<b> diskX_type</b>
+and
+
+<b> diskX_name</b>
+values, replacing
+
+<b> X</b>
+with the next available integer.
+
+</td></tr>
+<tr valign="top"><td colspan="2"> disk0_name
+</td></tr><tr><td> </td><td>
+The filename for the first virtual disk. The first disk is created automatically when
+provisioning a new virtual machine. If additional disks are added manually, the image will need
+to be created, usually done using the
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=1&amp;topic=truncate">truncate</a>(1)
+or
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=zfs">zfs</a>(8)
+commands. Alternatively, you can use the
+
+<tt> vm add</tt>
+command, which will create the disk image for you.
+
+<p>
+Normally disk images or zvols are stored directly inside the guest. To use a disk
+image that is stored anywhere else, you can specify the full path in this option,
+and configure the device as
+
+<b> custom</b>
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"> disk0_dev
+</td></tr><tr><td> </td><td>
+The type of device to use for the disk. If not specified, this will default to
+
+<b> file</b>,
+and a sparse file, located in the guest directory, will be used as the disk image.
+Other options include
+
+<b> zvol</b>
+&amp;
+
+<b> sparse-zvol</b>,
+which will used a ZVOL as the disk image, created directly under the guest dataset.
+Alternatively you can specify
+
+<b> custom</b>,
+in which case
+
+<tt> diskX_name</tt>
+should be the full path to the image file or device.
+
+</td></tr>
+<tr valign="top"><td colspan="2"> disk0_opts
+</td></tr><tr><td> </td><td>
+Any additional options to use for this disk device. Multiple options can be specified,
+separated by a comma. Please see the
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=bhyve">bhyve</a>(8)
+man page for more details on supported options.
+
+</td></tr>
+<tr valign="top"><td> uuid
+</td><td>
+This option allows you to specify a fixed UUID for the guests SMBIOS. Normally, the
+UUID is generated by
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=bhyve">bhyve</a>(8)
+based on the hostname and guest name. Because this may change if guests are moved
+between systems, the
+
+<tt> vm create</tt>
+command automatically assigns a UUID to all newly created guests.
+
+</td></tr>
+<tr valign="top"><td colspan="2"> passthruX
+</td></tr><tr><td> </td><td>
+Specify a device to pass through to the guest. You will need to reserve the device first
+so that is it claimed by the ppt driver on boot.
+
+<p>
+Once the device is successfully reserved, you can add it to the guest by adding
+
+<b> passthruX= 1/2/3</b>
+to the guest configuration file, where
+
+<b> X</b>
+is an integer starting at 0, and
+
+<b> 1/2/3</b>
+is the Base/Slot/Function of the device. If you are passing through multiple functions on
+the same device, make sure they are specified together in the configuration file in the
+same sequence as the original device.
+
+</p><p>
+Please see https://wiki.freebsd.org/bhyve/pci_passthru for more details on how this works.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"> virt_random
+</td></tr><tr><td> </td><td>
+Set this option to
+
+<b> yes</b>
+if you want to create a
+
+<b> virtio-rnd</b>
+device for this guest.
+
+</td></tr>
+<tr valign="top"><td colspan="2"> grub_commands
+</td></tr><tr><td> </td><td>
+Sometimes you may need to provide grub commands that differ from those generated by
+
+<tt> vm-bhyve</tt>.
+In this case, create a text file inside the guest’s directory containing the commands
+you need to run. Usually the last entry in the file should be
+
+<tt> boot</tt>,
+followed by a newline. The newline is important, otherwise the last command may not
+actually be executed.
+
+<p>
+Once you have created the file, set this option to the name of the file. From that point
+on, during a normal boot
+
+<tt> vm-bhyve</tt>
+will use the commands from this file rather than attempting to generate them automatically.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"> zfs_dataset_opts
+</td></tr><tr><td> </td><td>
+This allows you to specify one or more ZFS properties to set on the dataset when a
+guest is created. Because properties are assigned as the dataset is created, this option
+is most useful when specified inside a template. As a guest is created, all properties
+listed in this option will be applied to the guest dataset.
+
+<p>
+Multiple properties can be specified, separated by a space. Please note that spaces
+are not currently supported in the property values.
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"> zfs_zvol_opts
+</td></tr><tr><td> </td><td>
+Allows you to specify ZFS properties that should be assigned to any ZVOLs that are
+created for a guest. As with
+
+<tt> zfs_dataset_opts</tt>,
+this makes most sense when entered into a template, as the properties can be assigned
+while a guest is being created. Some ZVOL options, such as
+
+<tt> volblocksize</tt>
+can only be set at creation time.
+
+<p>
+Multiple properties can be specified, separated by a space. For example, the following
+will configure the ZVOL block size to 128k, and turn compression off.
+
+</p><p>
+zfs_zvol_opts="volblocksize=128k compress=off"
+
+</p></td></tr>
+<tr valign="top"><td colspan="2"> linux_kernel
+</td></tr><tr><td> </td><td>
+CentOS guests require the kernel to be loaded inside the boot loader. This option is
+required for these guests and specifies the kernel version number to load. Hopefully
+this requirement will be relaxed as
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=bhyve">bhyve</a>(8)
+development continues.
+
+</td></tr>
+<tr></tr></tbody></table>
+
+</blockquote>
+<a name="9">
+
+     <h3>SEE ALSO</h3>
+
+</a>
+<blockquote>
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=bhyve">bhyve</a>(8),
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=bhyveload">bhyveload</a>(8),
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=tap">tap</a>(4),
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=bridge">bridge</a>(4),
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=vlan">vlan</a>(4),
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=4&amp;topic=nmdm">nmdm</a>(4),
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=1&amp;topic=cu">cu</a>(1),
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=1&amp;topic=fetch">fetch</a>(1),
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=1&amp;topic=truncate">truncate</a>(1),
+
+<a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=zfs">zfs</a>(8)
+
+
+</blockquote>
+<a name="10">
+
+     <h3>BUGS</h3>
+
+</a>
+<blockquote>
+Please report all bugs/issues/feature requests to the github project at
+https://github.com/churchers/vm-bhyve
+
+
+</blockquote>
+<a name="11">
+
+     <h3>AUTHOR</h3>
+
+</a>
+<blockquote>
+
+<br/>.An Matt Churchyard Aq Mt <a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=vmmailto:churchers@gmail.com">churchers@gmail.com</a>
+</blockquote>
+<div>
+Search for    or go to <a href="https://www.gsp.com/cgi-bin/man.cgi?section=8&amp;topic=vm#top">Top of page</a> | 
+<a href="http://www.gsp.com/support/man/section-8.html">Section 8</a> | 
+<a href="http://www.gsp.com/support/man/">Main Index</a>
+</div>
+<p></p><hr/>
+<table width="100%"><tbody><tr> <td width="33%"><i></i></td> <td width="33%" align="center"></td> <td width="33%" align="right"><i></i></td> </tr></tbody></table><p><a href="http://www.gsp.com/"><en-media type="image/gif" hash="ad6c3f0982280ebbde854e6536192ac2" alt="Powered by GSP" width="88" border="1" align="right" height="31"></en-media></a> Visit the GSP <a href="http://www.gsp.com/support/man/">FreeBSD Man Page Interface</a>.<br/>Output converted with <a href="https://github.com/silviuvulcan/manServer">manServer 1.07</a>.</p></td></tr></tbody></table></div></div></div><br/></div></en-note>

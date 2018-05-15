@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;outline:0px none currentcolor;vertical-align:baseline;"><div style="font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;outline:0px none currentcolor;vertical-align:baseline;background:rgb(226, 226, 226) none repeat scroll 0% 0%;line-height:1;color:rgb(55, 55, 55);font:normal normal 300 normal 15px/1.625 &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;"><div style="font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;outline:0px none currentcolor;vertical-align:baseline;background:rgb(255, 255, 255) none repeat scroll 0% 0%;"><div style="font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;outline:0px none currentcolor;vertical-align:baseline;"><div style="font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;outline:0px none currentcolor;vertical-align:baseline;"><div style="font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;outline:0px none currentcolor;vertical-align:baseline;">
+
+				
+					<div style="display:block;float:right;position:relative;top:-0.3em;text-align:right;z-index:1;clear:both;overflow:hidden;padding:0px 0px 1.625em;">
+						<h3 style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;clear:both;text-transform:none;letter-spacing:0px;clip:rect(1px, 1px, 1px, 1px);position:absolute;">Post navigation</h3>
+						<span style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;float:left;width:auto;padding-right:0.5em;position:relative;right:10px;top:10px;"><a href="http://www.kodecrash.com/javascript/javascript-animations-part-i/" rel="prev" style="border:0px none;font-family:inherit;font-style:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;color:rgb(25, 130, 209);text-decoration:none;font-size:12px;font-weight:bold;line-height:2.2em;"><span style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;font-weight:normal;">←</span> Previous</a></span>
+						<span style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;float:right;text-align:right;width:auto;padding-left:0.5em;position:relative;right:10px;top:10px;"><a href="http://www.kodecrash.com/jquery/map-jquery-function/" rel="next" style="border:0px none;font-family:inherit;font-style:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;color:rgb(25, 130, 209);text-decoration:none;font-size:12px;font-weight:bold;line-height:2.2em;">Next <span style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;font-weight:normal;">→</span></a></span>
+					</div>
+
+					
+<div style="display:block;margin:0px 0px 1.625em;border-bottom:medium none;padding:4.875em 0px 0px;position:relative;border:1px solid rgb(255, 196, 197);">
+	<div style="display:block;position:relative;margin:0px auto;width:68.9%;">
+		<h1 style="border:0px none;font-style:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;clear:both;padding-bottom:0.3em;text-decoration:none;padding-left:30px;font-size:36px;font-weight:bold;padding-right:0px;color:rgb(0, 0, 0);line-height:48px;padding-top:0px;font-family:Arial;">Read-Write JSON file using PHP</h1>
+
+				<div style="border:0px none;font-family:inherit;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;font-size:12px;color:rgb(102, 102, 102);clear:both;line-height:18px;padding-left:30px;padding-right:0px;position:absolute;top:0px;left:0px;">
+			<a href="http://www.kodecrash.com/javascript/read-write-json-file-using-php/" title="6:04 am" rel="bookmark" style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;color:rgb(25, 130, 209);text-decoration:none;font-weight:bold;"><span style="width:50px;height:57px;background:rgb(68, 68, 68) none repeat scroll 0% 0%;padding:10px;border:1px solid rgb(255, 196, 197);position:absolute;right:96%;"><span style="border:0px none;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;font-family:&quot;SketchRockwellRegular&quot;;display:block;text-align:center;color:rgb(235, 235, 235);font-size:34px;line-height:1em;">8</span><span style="border:0px none;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;font-family:&quot;SketchRockwellRegular&quot;;display:block;text-align:center;color:rgb(235, 235, 235);font-size:15px;">9/2015</span></span></a></div>
+			</div>
+
+	<div style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;outline:0px none currentcolor;vertical-align:baseline;padding:1.625em 0px 0px;margin:0px auto;width:68.9%;">
+		<p style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;margin-bottom:1.625em;">With reference to my previous post <a href="http://www.kodecrash.com/category/tutorials/json-tutorial/" target="_blank" style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;color:rgb(25, 130, 209);text-decoration:none;">JSON Tutorial</a> in this posts we will see how to read/write data into JSON file.</p>
+<pre style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0.75em 1.625em;vertical-align:baseline;background:rgb(244, 244, 244) none repeat scroll 0% 0%;font:normal normal normal normal 13px/1.5 &quot;Courier 10 Pitch&quot;, Courier, monospace;overflow:auto;margin-bottom:1.625em;">[
+    {
+        "firstName": "Vijay",
+        "lastName": "reddy",
+        "email": "asdv@ymail.com",
+        "mobile": ""
+    },
+    {
+        "firstName": "ggdggg",
+        "lastName": "nvnvnv",
+        "email": "asddd@xmail.com",
+        "mobile": ""
+    },
+    {
+        "firstName": "ggdggg",
+        "lastName": "nvnvnv",
+        "email": "asddd@xmail.com",
+        "mobile": ""
+    },
+    {
+        "firstName": "ggdggg",
+        "lastName": "nvnvnv",
+        "email": "asddd@xmail.com",
+        "mobile": ""
+    }
+]
+
+</pre>
+<p style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;margin-bottom:1.625em;">We will use above user’s data to read and write it into JSON file.  Consider we have a form and we will use this form information to write data into JSON file.</p>
+<pre style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0.75em 1.625em;vertical-align:baseline;background:rgb(244, 244, 244) none repeat scroll 0% 0%;font:normal normal normal normal 13px/1.5 &quot;Courier 10 Pitch&quot;, Courier, monospace;overflow:auto;margin-bottom:1.625em;">&lt;form action="process.php" method="POST"&gt;
+	First name:&lt;br&gt;
+	&lt;input type="text" name="firstName"&gt;
+	&lt;br&gt;&lt;br/&gt;
+	Last name:&lt;br&gt;
+	&lt;input type="text" name="lastName"&gt;
+	&lt;br&gt;&lt;br&gt;
+	  
+	Email:&lt;br&gt;
+	&lt;input type="text" name="email"&gt;
+	&lt;br&gt;&lt;br&gt;
+	  
+	Mobile:&lt;br&gt;
+	&lt;input type="text" name="mobile"&gt;
+	&lt;br&gt;&lt;br&gt;
+	&lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;
+</pre>
+<p style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;margin-bottom:1.625em;">Our form has action attribute which is pointing to process.php file. In process.php we will write below code.</p>
+<pre style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0.75em 1.625em;vertical-align:baseline;background:rgb(244, 244, 244) none repeat scroll 0% 0%;font:normal normal normal normal 13px/1.5 &quot;Courier 10 Pitch&quot;, Courier, monospace;overflow:auto;margin-bottom:1.625em;">&lt;?php
+   	
+   $myFile = "data.json";
+   $arr_data = array(); // create empty array
+
+  try
+  {
+	   //Get form data
+	   $formdata = array(
+	      'firstName'=&gt; $_POST['firstName'],
+	      'lastName'=&gt; $_POST['lastName'],
+	      'email'=&gt;$_POST['email'],
+	      'mobile'=&gt; $_POST['mobile']
+	   );
+
+	   //Get data from existing json file
+	   $jsondata = file_get_contents($myFile);
+
+	   // converts json data into array
+	   $arr_data = json_decode($jsondata, true);
+
+	   // Push user data to array
+	   array_push($arr_data,$formdata);
+
+       //Convert updated array to JSON
+	   $jsondata = json_encode($arr_data, JSON_PRETTY_PRINT);
+	   
+	   //write json data into data.json file
+	   if(file_put_contents($myFile, $jsondata)) {
+	        echo 'Data successfully saved';
+	    }
+	   else 
+	        echo "error";
+
+   }
+   catch (Exception $e) {
+            echo 'Caught exception: ',  $e-&gt;getMessage(), "\n";
+   }
+
+?&gt;
+
+
+</pre>
+<p style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;margin-bottom:1.625em;">In above code there is <strong style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:bold;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">$formdata</strong> array in which we are storing form data send by the user. As we have used <strong style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:bold;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">POST</strong>  method in our form we are using  <strong style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:bold;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">$POST</strong> method in php to get form data. <strong style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:bold;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">file_get_contents()</strong> is PHP function which is used to read data from file. Next we have used <strong style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:bold;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">json_decode()</strong> function to convert JSON data into array. Note this is not a normal text file it’s a JSON file. That’s why we have used json_decode function to convert data into an array. array_push  function will add formdata array into existing json array (arr_data). <strong style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:bold;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">json_encode()</strong>  will convert array into JSON format, so that we can write this json into json file. Note, we have used <strong style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:bold;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">JSON_PRETTY_PRINT</strong> parameter in json_encode function. This parameter will format our JSON object and store it in json file. If we don’t use this parameter then output which is stored in JSON file will not be well formatted it will be a one line string. <strong style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:bold;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">JSON_PRETTY_PRINT</strong> will work only in <strong style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:bold;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">PHP version 5.3</strong> and above.</p>
+<p style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;margin-bottom:1.625em;"><a href="http://www.kodecrash.com/demos/examples/write_json/source-code.zip" target="_blank" style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;color:rgb(25, 130, 209);text-decoration:none;">Download source code here</a></p>
+<p style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;margin-bottom:1.625em;"></p>			</div>
+
+	<div style="display:block;color:rgb(102, 102, 102);clear:both;font-size:12px;line-height:18px;z-index:9;margin:0px auto;width:68.9%;position:relative;">
+		This entry was posted in <a href="http://www.kodecrash.com/category/javascript/" rel="category tag" style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;color:rgb(25, 130, 209);text-decoration:none;font-weight:bold;">Javascript</a>, <a href="http://www.kodecrash.com/category/tutorials/" rel="category tag" style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;color:rgb(25, 130, 209);text-decoration:none;font-weight:bold;">Tutorials</a> by <a href="http://www.kodecrash.com/author/admin/" style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;color:rgb(25, 130, 209);text-decoration:none;font-weight:bold;">admin</a>. Bookmark the <a href="http://www.kodecrash.com/javascript/read-write-json-file-using-php/" title="Permalink to Read-Write JSON file using PHP" rel="bookmark" style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;color:rgb(25, 130, 209);text-decoration:none;font-weight:bold;">permalink</a>.		
+			</div>
+</div>
+
+						<div style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">
+	
+	
+			<h2 style="border:0px none;font-family:inherit;font-style:inherit;outline:0px none currentcolor;vertical-align:baseline;clear:both;font-size:10px;font-weight:500;padding:0px 0px 2.6em;color:rgb(102, 102, 102);line-height:2.6em;text-transform:uppercase;margin:0px auto;width:68.9%;">
+			One thought on “<span style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">Read-Write JSON file using PHP</span>”		</h2>
+
+		
+		<ol style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;outline:0px none currentcolor;padding:0px;vertical-align:baseline;list-style-type:decimal;margin:0px auto;list-style:outside none none;width:68.9%;">
+				<li style="font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;outline:0px none currentcolor;vertical-align:baseline;border:1px solid rgb(221, 221, 221);margin:0px 0px 1.625em;padding:1.625em;background:rgb(246, 246, 246) none repeat scroll 0% 0%;border-radius:3px;position:relative;"><span style="font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;left:-21px;position:absolute;"><img src="&quot;http://www.kodecrash.com/wp-content/themes/twentyeleven/images/comment-arrow.png&quot;"/></span>
+		<div style="display:block;">
+			<div style="display:block;color:rgb(102, 102, 102);font-size:12px;line-height:2.2em;">
+				<div style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">
+					<en-media type="image/png" hash="f66cb2927b77fa2f355cb073e3109535" alt="" width="68" height="68" style="border-radius:3px;box-shadow:rgb(204, 204, 204) 0px 1px 2px;left:-102px;padding:0px;position:absolute;top:0px;"></en-media><span style="border:0px none;font-family:inherit;font-size:100%;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;font-style:normal;"><a href="http://danceheads.me/" rel="external nofollow" style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;color:rgb(25, 130, 209);text-decoration:none;font-weight:bold;">Ostap Bregin</a></span> on <a href="http://www.kodecrash.com/javascript/read-write-json-file-using-php/#comment-408" style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;color:rgb(25, 130, 209);text-decoration:none;font-weight:bold;"><span>April 30, 2017 at 11:20 am</span></a> <span style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">said:</span>
+									</div>
+
+				
+			</div>
+
+			<div style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;"><p style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;margin-bottom:1.625em;">cool! like! thanks!!!!!!!!</p>
+</div>
+
+			<div style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">
+				<a href="http://www.kodecrash.com/javascript/read-write-json-file-using-php/?replytocom=408#respond" style="border:0px none;font-family:inherit;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;vertical-align:baseline;font-size:12px;padding:0px 8px;color:rgb(102, 102, 102);text-decoration:none;background:rgb(238, 238, 238) none repeat scroll 0% 0%;border-radius:3px;display:inline-block;">Reply <span style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;display:inline-block;position:relative;top:-1px;">↓</span></a>			</div>
+		</div>
+
+	</li>
+		</ol>
+
+		
+		
+	
+									<div style="font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;outline:0px none currentcolor;vertical-align:baseline;border:1px solid rgb(211, 211, 211);margin:0px auto 1.625em;padding:1.625em;background:rgb(221, 221, 221) none repeat scroll 0% 0%;border-radius:3px;position:relative;width:68.9%;">
+				<h3 style="border:0px none;font-style:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;clear:both;text-transform:none;letter-spacing:0px;font-family:&quot;HandOfSeanRegular&quot;;font-size:24px;font-weight:bold;color:rgb(55, 55, 55);line-height:30px;">Leave a Reply <small style="border:0px none;font-family:inherit;font-size:smaller;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;"></small></h3>
+									<div style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">
+																			<p style="border:0px none;font-family:inherit;font-style:inherit;font-weight:inherit;outline:0px none currentcolor;padding:0px;vertical-align:baseline;margin:10px 0px;font-size:13px;"><span style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">Your email address will not be published.</span> Required fields are marked <span style="border:0px none;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;">*</span></p>							<p style="border:0px none;font-family:inherit;font-style:inherit;font-weight:inherit;outline:0px none currentcolor;padding:0px;vertical-align:baseline;font-size:12px;margin:10px 0px;position:relative;"><span style="border:0px none;font-family:inherit;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;vertical-align:baseline;line-height:2.2em;font-size:13px;padding:4px 10px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;box-shadow:rgba(204, 204, 204, 0.8) 1px 2px 2px;color:rgb(85, 85, 85);display:inline-block;left:4px;min-width:60px;position:relative;top:40px;z-index:1;">Name <span style="border:0px none;font-family:inherit;font-style:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;font-size:22px;font-weight:bold;color:rgb(189, 53, 0);left:75%;position:absolute;z-index:1;">*</span></span> </p>
+<p style="border:0px none;font-family:inherit;font-style:inherit;font-weight:inherit;outline:0px none currentcolor;padding:0px;vertical-align:baseline;font-size:12px;margin:10px 0px;position:relative;"><span style="border:0px none;font-family:inherit;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;vertical-align:baseline;line-height:2.2em;font-size:13px;padding:4px 10px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;box-shadow:rgba(204, 204, 204, 0.8) 1px 2px 2px;color:rgb(85, 85, 85);display:inline-block;left:4px;min-width:60px;position:relative;top:40px;z-index:1;">Email <span style="border:0px none;font-family:inherit;font-style:inherit;margin:0px;outline:0px none currentcolor;padding:0px;vertical-align:baseline;font-size:22px;font-weight:bold;color:rgb(189, 53, 0);left:75%;position:absolute;z-index:1;">*</span></span> </p>
+<p style="border:0px none;font-family:inherit;font-style:inherit;font-weight:inherit;outline:0px none currentcolor;padding:0px;vertical-align:baseline;font-size:12px;margin:10px 0px;position:relative;"><span style="border:0px none;font-family:inherit;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;vertical-align:baseline;line-height:2.2em;font-size:13px;padding:4px 10px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;box-shadow:rgba(204, 204, 204, 0.8) 1px 2px 2px;color:rgb(85, 85, 85);display:inline-block;left:4px;min-width:60px;position:relative;top:40px;z-index:1;">Website</span> </p>
+												<p style="border:0px none;font-family:inherit;font-style:inherit;font-weight:inherit;outline:0px none currentcolor;padding:0px;vertical-align:baseline;font-size:12px;margin:10px 0px;position:relative;"><span style="border:0px none;font-family:inherit;font-style:inherit;font-weight:inherit;margin:0px;outline:0px none currentcolor;vertical-align:baseline;line-height:2.2em;font-size:13px;padding:4px 10px;background:rgb(238, 238, 238) none repeat scroll 0% 0%;box-shadow:rgba(204, 204, 204, 0.8) 1px 2px 2px;color:rgb(85, 85, 85);display:inline-block;left:4px;min-width:60px;position:relative;top:40px;z-index:1;">Comment</span> </p>												<p style="border:0px none;font-family:inherit;font-style:inherit;font-weight:inherit;outline:0px none currentcolor;padding:0px;vertical-align:baseline;font-size:12px;margin:-20px 0px 10px;float:right;">
+							
+							
+
+						</p>
+								
+		
+					</div>
+							</div>
+			
+</div>
+
+							</div></div></div></div></div></div></div><br/></div></en-note>

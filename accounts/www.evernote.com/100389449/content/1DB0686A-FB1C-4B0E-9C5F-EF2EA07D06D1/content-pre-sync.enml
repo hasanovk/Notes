@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div style="font-size: 16px; display: inline-block;"><div style="font-size:100%;"><div style="font-family:&quot;HelveticaNeue&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif;font-size:12px;line-height:20px;color:rgb(102, 102, 102);background:rgb(244, 244, 244) url(&amp;quot;http://www.javacreed.com/wp-content/themes/PressGrid-3.3.1/images/bg/bg1.png&amp;quot;) repeat scroll 0px 0px;"><div><div style="border-radius:0px;background:rgba(0, 0, 0, 0) none repeat scroll 0% 0%;box-shadow:none;"><div><div><div><div><div><div style="font-size:13px;background:rgb(255, 255, 255) none repeat scroll 0% 0%;"><div> <div style="margin:30px 0px 0px;padding:0px;">
+<div><span style="display:table;line-height:0;"></span>
+<div style="position:relative;float:left;width:100%;"> <en-media type="image/png" hash="60c48f18f373afff60c4dc814a5fe277" alt="" width="639" height="236" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;float:left;width:100%;"></en-media>
+</div>
+<span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div> <div style="margin:30px 0px;font-size:12px;">
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Java objects can be converted into JSON strings using the Gson API (<a href="https://code.google.com/p/google-gson/" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Homepage</a>). In this article we will see how we can convert Java objects into JSON strings using both the default Gson implementation and custom implementation.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">The readers of this article are encouraged to read the articles: <a href="http://www.javacreed.com/simple-gson-example/" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Simple Gson Example</a> and <a href="http://www.javacreed.com/gson-deserialiser-example/" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Gson Deserialiser Example</a>, if they are not familiar with Gson. Furthermore, this article is structured in the same way as the article <a href="http://www.javacreed.com/gson-deserialiser-example/" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Gson Deserialiser Example</a> and the same examples are used here.</p>
+<h4 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:20px;color:inherit;text-rendering:optimizelegibility;font-size:18px;">Observation</h4><div><p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">
+Please note the we will use the terms <em style="font-style:italic;">format</em> or <em style="font-style:italic;">serialise</em> interchangeably in this article.</p>
+</div>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">All code listed below is available at: <a href="http://java-creed-examples.googlecode.com/svn/gson/Gson%20Serialiser%20Example/" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">http://java-creed-examples.googlecode.com/svn/gson/Gson Serialiser Example/</a>. Most of the examples will not contain the whole code and may omit fragments which are not relevant to the example being discussed. The readers can download or view all code from the above link.</p>
+<h2 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:40px;color:inherit;text-rendering:optimizelegibility;font-size:30px;">Simple Example</h2>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Consider the following Java object.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part1;
+
+public class Book {
+
+  private String[] authors;
+  private String isbn10;
+  private String isbn13;
+  private String title;
+
+  <span style="color:rgb(63, 127, 95);">// Methods removed for brevity</span>
+
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">This is a simple Java class representing a book. Say that we need to serialise this class into the following JSON object.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">{
+  "title": "Java Puzzlers: Traps, Pitfalls, and Corner Cases",
+  "isbn-10": "032133678X",
+  "isbn-13": "978-0321336781",
+  "authors": [
+    "Joshua Bloch",
+    "Neal Gafter"
+  ]
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Gson can seriliase the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Book</code> class without any special configuration, just using the default configuration. Gson uses the Java field names as the JSON names and will serialise their values accordingly. If we take a closer look to the JSON sample shown above, we will see that the ISBN fields contain a minus sign: <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">isbn-10</code> and <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">isbn-13</code>. Unfortunately, we cannot obtain these field names using teh default Gson configuration. One way to address this problem is to use annotations as described in the article: <a href="http://www.javacreed.com/gson-annotations-example/" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Gson Annotations Example</a>. Using annotations we can define the JSON field names and Gson will take case of the rest. Another approach is to use a <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonSerialiser</code> (<a href="http://www.javacreed.com/gson-serialiser-example/" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>) as shown in the following example.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part1;
+
+import java.lang.reflect.Type;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+
+public class BookSerialiser implements JsonSerializer<span> {
+
+    @Override
+    public JsonElement serialize(final Book book, final Type typeOfSrc, final JsonSerializationContext context) {
+        final JsonObject jsonObject = new JsonObject();
+        <span style="color:rgb(63, 127, 95);">//The serialisation code is missing
+
+        return jsonObject;
+    }
+}
+</span></span></pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">The above example is not complete and we still need to add the most important thing, which is the serialisation. Let’s understand this class before we make it more complex by adding more code to it. </p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">The interface <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonSerializer</code> requires a type, which is the type of object that we will be serialised. In this case, we are serialising the Java object of type <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Book</code> into JSON object. The return type of the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">serialize()</code> method must be an instance of type <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonElement</code> (<a href="http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/JsonElement.html" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>). As described in more detail in the article: <a href="http://www.javacreed.com/gson-deserialiser-example/" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Gson Deserialiser Example</a>, the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonElement</code> has four concrete types listed below:</p>
+<ul style="padding:0px;margin:0px 0px 10px 25px;">
+<li style="line-height:20px;"><code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonPrimitive</code> (<a href="http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/JsonPrimitive.html" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>) – such as a string or integer</li>
+<li style="line-height:20px;"><code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonObject</code> (<a href="http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/JsonObject.html" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>) – a collection of <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonElement</code>s indexed by thier name (of type <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">String</code>). This is similar to a <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Map&lt;String, JsonElement&gt;</code> (<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>) </li>
+<li style="line-height:20px;"><code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonArray</code> (<a href="http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/JsonArray.html" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>) – a collection of <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonElement</code>s. Note that the array elements can be any of the four types and mixed types are supported.</li>
+<li style="line-height:20px;"><code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonNull</code> (<a href="http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/JsonArray.html" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>) – a <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">null</code> value</li>
+</ul>
+<div style="background:rgb(255, 255, 255) none repeat scroll 0% 0%;border:1px solid rgb(240, 240, 240);max-width:96%;padding:10px 5px 5px;text-align:center;display:block;margin:5px auto;margin-bottom:20px;width:656px;"><a href="http://www.javacreed.com/wp-content/uploads/2012/12/Types-of-JsonElement.png" rel="prettyphoto" title="Types of JsonElement" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;"><en-media type="image/png" hash="95eefb8e3ec6542793f616a2223175b0" alt="Types of JsonElement" title="" width="646" height="487" style="vertical-align:middle;height:auto;max-width:100%;border:0px none;margin:0px;padding:0px;width:auto;visibility:visible;opacity:1;"></en-media></a><p style="margin:0px;font-size:11px;line-height:17px;padding:5px 0px;font-style:italic;">Types of JsonElement</p></div>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">The above image shows all types of <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonElement</code>. The <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonObject</code> can be thought of a collection of name/value pairs where the values are of type <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonElement</code>. Therefore, the values can yet be other objects.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Following is a complete example of our serialiser.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part1;
+
+import java.lang.reflect.Type;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+
+public class BookSerialiser implements JsonSerializer<span> {
+
+    @Override
+    public JsonElement serialize(final Book book, final Type typeOfSrc, final JsonSerializationContext context) {
+        final JsonObject jsonObject = new JsonObject();
+        <span style="color:red;">jsonObject.addProperty("title", book.getTitle());
+        jsonObject.addProperty("isbn-10", book.getIsbn10());
+        jsonObject.addProperty("isbn-13", book.getIsbn13());
+
+        final JsonArray jsonAuthorsArray = new JsonArray();
+        for (final String author : book.getAuthors()) {
+            final JsonPrimitive jsonAuthor = new JsonPrimitive(author);
+            jsonAuthorsArray.add(jsonAuthor);
+        }
+        jsonObject.add("authors", jsonAuthorsArray);</span>
+
+        return jsonObject;
+    }
+}
+</span></pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">We added some code here. Let us break this into smaller parts and understand each individual part before understanding the whole picture.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">If we are to serialise this Java object, we first need to create the correct instance of the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonElement</code>. In our example we are returning an instance of <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonObject</code> as our <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Book</code> is an object as shown next.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">    final JsonObject jsonObject = new JsonObject();
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">This object will be populated with our fields using the names we like as shown next</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">    <span style="color:rgb(63, 127, 95);">// The variable 'book' is passed as a parameter to the serialize() method</span>
+    final JsonObject jsonObject = new JsonObject();
+    <span style="color:red;">jsonObject.addProperty("title", book.getTitle());
+    jsonObject.addProperty("isbn-10", book.getIsbn10());
+    jsonObject.addProperty("isbn-13", book.getIsbn13());</span>
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Using the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">addProperty()</code> (<a href="http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/JsonObject.html#addProperty(java.lang.String,%20java.lang.String)" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>) method we can add any Java primitive together with <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">String</code>s and <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Number</code>s. Note that the property name must be unique, otherwise it will replace the previous value. This can be thought of a <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Map</code> (<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Map.html" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>) holding all values index by their name.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">More complex objects such as Java objects and arrays cannot be added using the method shown above. The <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonObject</code> has another method called <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">add()</code> (<a href="http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/JsonObject.html#add(java.lang.String,%20com.google.gson.JsonElement)" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>), which can be used instead as shown below.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">    <span style="color:rgb(63, 127, 95);">// The variable 'book' is passed as a parameter to the serialize() method</span>
+    jsonObject.addProperty("title", book.getTitle());
+    jsonObject.addProperty("isbn-10", book.getIsbn10());
+    jsonObject.addProperty("isbn-13", book.getIsbn13());
+
+    <span style="color:red;">final JsonArray jsonAuthorsArray = new JsonArray();
+    for (final String author : book.getAuthors()) {
+      final JsonPrimitive jsonAuthor = new JsonPrimitive(author);
+      jsonAuthorsArray.add(jsonAuthor);
+    }
+    jsonObject.add("authors", jsonAuthorsArray);</span>
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">We first create the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonArray</code> and added all authors to it. Different from Java, we do not need to define the size of the array when initialising it. In fact, despite its name, we can think of the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonArray</code> class more as a list rather than array. Finally the variable <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">jsonAuthorsArray</code> is added to the json object. Note that we can add the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">jsonAuthorsArray</code> to the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">jsonObject</code> before adding its elements.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Before we can use our serialiser, we need to register it with Gson as shown below.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part1;
+
+import java.io.IOException;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+public class Main {
+
+  public static void main(final String[] args) throws IOException {
+    <span style="color:rgb(63, 127, 95);">// Configure GSON</span>
+    final GsonBuilder gsonBuilder = new GsonBuilder();
+    <span style="color:red;">gsonBuilder.registerTypeAdapter(Book.class, new BookSerialiser());</span>
+    gsonBuilder.setPrettyPrinting();
+    final Gson gson = gsonBuilder.create();
+
+    final Book javaPuzzlers = new Book();
+    javaPuzzlers.setTitle("Java Puzzlers: Traps, Pitfalls, and Corner Cases");
+    javaPuzzlers.setIsbn10("032133678X");
+    javaPuzzlers.setIsbn13("978-0321336781");
+    javaPuzzlers.setAuthors(new String[] { "Joshua Bloch", "Neal Gafter" });
+
+    <span style="color:rgb(63, 127, 95);">// Format to JSON</span>
+    final String json = gson.toJson(javaPuzzlers);
+    System.out.println(json);
+  }
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">By registering our serialiser, we are instructing Gson to using this serialiser whenever an object of type <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Book</code> is serialised.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">In the example shown above, we also instructed Gson to format the JSON object, by invoking the set pretty printing shown next.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">    gsonBuilder.setPrettyPrinting();
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">While this is useful for tutorials and debugging, please avoid this in production environment as this may produce larger JSON objects (in terms of text size) due to the formatting. Furthermore, pretty printing has a <em style="font-style:italic;">slight</em> performance cost as Gson has to format the JSON objects and indent these accordingly.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Running the above code will produce the desired JSON object. This concludes our first example of how to use a custom Gson serialiser to serialise Java objects into JSON objects. In the following section we will se how to serialise nested objects using Gson.</p>
+<h2 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:40px;color:inherit;text-rendering:optimizelegibility;font-size:30px;">Nested Objects</h2>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">In this example we will describe how to serialise nested objects, that is, objects within other objects. Here we will introduce a new entity, the author. A book, together with the title and ISBN can have a list of authors. The JSON object that will be produced in this example differs from the previous one to cater for the new entity as shown next:</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">{
+  "title": "Java Puzzlers: Traps, Pitfalls, and Corner Cases",
+  "isbn": "032133678X",
+  <span style="color:red;">"authors": [
+    {
+      "id": 1,
+      "name": "Joshua Bloch"
+    },
+    {
+      "id": 2,
+      "name": "Neal Gafter"
+    }
+  ]</span>
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Note that in the previous example the authors were simply an array of strings as shown next:</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">  "authors": [
+    "Joshua Bloch",
+    "Neal Gafter"
+  ]
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">In this example, the authors are JSON objects, not just primitives as shown next.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">    {
+      "id": 1,
+      "name": "Joshua Bloch"
+    }
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">The JSON author has an <em style="font-style:italic;">id</em> and a <em style="font-style:italic;">name</em>. Following is an example of the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Author</code> class.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part2;
+
+public class Author {
+
+  private int id;
+  private String name;
+
+  <span style="color:rgb(63, 127, 95);">// Methods removed for brevity</span>
+
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">This class is very straightforward. It comprise two fields, both <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonPrimitive</code>s. The <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Book</code> class was modified to make use of the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Author</code>, as shown below.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part2;
+
+public class Book {
+
+  <span style="color:red;">private Author[] authors;</span>
+  private String isbn;
+  private String title;
+
+  <span style="color:rgb(63, 127, 95);">// Methods removed for brevity</span>
+
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">The authors field was changed from an array of integers to an array of <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Author</code>s. The <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">BookSerialiser</code> class has to be modified too in order to accommodate this change, as shown below.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part2;
+
+import java.lang.reflect.Type;
+
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+
+public class BookSerialiser implements JsonSerializer&lt;Book&gt; {
+
+  @Override
+  public JsonElement serialize(final Book book, final Type typeOfSrc, final JsonSerializationContext context) {
+    final JsonObject jsonObject = new JsonObject();
+    jsonObject.addProperty("title", book.getTitle());
+    jsonObject.addProperty("isbn", book.getIsbn());
+
+    <span style="color:red;">final JsonElement jsonAuthros = context.serialize(book.getAuthors());
+    jsonObject.add("authors", jsonAuthros);</span>
+
+    return jsonObject;
+  }
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">The serialisation of the authors is delegated to the context (an instance of <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonSerializationContext</code> (<a href="http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/JsonSerializationContext.html" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>) passed as a parameter to the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">serialize()</code> method). The context will serialise the given objects and return a <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonElement</code>. In turn the context will try to locate a serialiser that can serialise the given object and if none are found, it uses the default mechanism. For the time being we will not write a serialiser for the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Author</code> class, but instead we will use the default one.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part2;
+
+import java.io.IOException;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+public class Main {
+
+  public static void main(final String[] args) throws IOException {
+    <span style="color:rgb(63, 127, 95);">// Configure GSON</span>
+    final GsonBuilder gsonBuilder = new GsonBuilder();
+    gsonBuilder.registerTypeAdapter(Book.class, new BookSerialiser());
+    gsonBuilder.setPrettyPrinting();
+    final Gson gson = gsonBuilder.create();
+
+    final Author joshuaBloch = new Author();
+    joshuaBloch.setId(1);
+    joshuaBloch.setName("Joshua Bloch");
+
+    final Author nealGafter = new Author();
+    nealGafter.setId(2);
+    nealGafter.setName("Neal Gafter");
+
+    final Book javaPuzzlers = new Book();
+    javaPuzzlers.setTitle("Java Puzzlers: Traps, Pitfalls, and Corner Cases");
+    javaPuzzlers.setIsbn("032133678X");
+    javaPuzzlers.setAuthors(new Author[] { joshuaBloch, nealGafter });
+
+    final String json = gson.toJson(javaPuzzlers);
+    System.out.println(json);
+  }
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">The above example, creates and configures Gson to use our <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">BookSerialiser</code>. We created two authors and a book and serialised the book. This will produce the JSON object shown at the beginning of this section.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">For completeness we will also include a serialiser for the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Author</code> class as shown below.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part2;
+
+import java.lang.reflect.Type;
+
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+
+public class AuthorSerialiser implements JsonSerializer&lt;Author&gt; {
+
+  @Override
+  public JsonElement serialize(final Author author, final Type typeOfSrc, final JsonSerializationContext context) {
+    final JsonObject jsonObject = new JsonObject();
+    jsonObject.addProperty("id", author.getId());
+    jsonObject.addProperty("name", author.getName());
+
+    return jsonObject;
+  }
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">The above serialiser introduces no new features and thus requires no explanation. In order to use this new serialiser we need to register it with the <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">GsonBuilder</code> (<a href="http://google-gson.googlecode.com/svn/trunk/gson/docs/javadocs/com/google/gson/GsonBuilder.html" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Java Doc</a>).</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">This concludes the section about nested objects. Using the context, we can delegate the serialisation of nested objects to the context which will in turn locate the proper serialiser and produce the respective <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">JsonElement</code>. In the next and final section we will see how to deal with object references.</p>
+<h2 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:40px;color:inherit;text-rendering:optimizelegibility;font-size:30px;">Object References</h2>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Objects refer to other objects and the books and authors classes are no exception. The same author can have many books. For example author <em style="font-style:italic;">Joshua Bloch</em> (<a href="http://www.amazon.com/Joshua-Bloch/e/B001CDCVUG" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Author at Amazon</a>), has several books. Using the serialiser described before, we will end up in duplicate authors. </p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Consider the following example:</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part3;
+
+import java.io.IOException;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+public class Example1 {
+
+  public static void main(final String[] args) throws IOException {
+    // Configure GSON
+    final GsonBuilder gsonBuilder = new GsonBuilder();
+    gsonBuilder.setPrettyPrinting();
+    final Gson gson = gsonBuilder.create();
+
+    final Author joshuaBloch = new Author();
+    joshuaBloch.setId(1);
+    joshuaBloch.setName("Joshua Bloch");
+
+    final Author nealGafter = new Author();
+    nealGafter.setId(2);
+    nealGafter.setName("Neal Gafter");
+
+    final Book javaPuzzlers = new Book();
+    javaPuzzlers.setTitle("Java Puzzlers: Traps, Pitfalls, and Corner Cases");
+    javaPuzzlers.setIsbn("032133678X");
+    javaPuzzlers.setAuthors(new Author[] { joshuaBloch, nealGafter });
+
+    final Book effectiveJava = new Book();
+    effectiveJava.setTitle("Effective Java (2nd Edition)");
+    effectiveJava.setIsbn("0321356683");
+    effectiveJava.setAuthors(new Author[] { joshuaBloch });
+
+    final Book[] books = new Book[] { javaPuzzlers, effectiveJava };
+
+    final String json = gson.toJson(books);
+    System.out.println(json);
+  }
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Here we have two authors and two books. One of the author is shared between two books. Note that we have two author objects not three, as the instance representing <em style="font-style:italic;">Joshua Bloch</em> is shared between both books. Finally note that we are not using any custom serialisers on purpose. The following is produced when executing the above code.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">[
+  {
+    "authors": [
+      {
+        "id": 1,
+        "name": "Joshua Bloch"
+      },
+      {
+        "id": 2,
+        "name": "Neal Gafter"
+      }
+    ],
+    "isbn": "032133678X",
+    "title": "Java Puzzlers: Traps, Pitfalls, and Corner Cases"
+  },
+  {
+    "authors": [
+      {
+        "id": 1,
+        "name": "Joshua Bloch"
+      }
+    ],
+    "isbn": "0321356683",
+    "title": "Effective Java (2nd Edition)"
+  }
+]
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">We have two JSON books and three JSON authors. The author: <em style="font-style:italic;">Joshua Bloch</em>, shown below, is duplicated.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">      {
+        "id": 1,
+        "name": "Joshua Bloch"
+      }
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">This increases the size of the JSON object considerable, especially with more complex objects. Ideally, the book JSON object only contains the authors’ ids rather than the whole object. This resembles relational databases (<a href="http://en.wikipedia.org/wiki/Relational_database" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Wiki</a>) where the book has a foreign key (<a href="http://en.wikipedia.org/wiki/Foreign_key" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Wiki</a>) to the authors table.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">The <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">Book</code> class is modified to include a method that return just the authors’ ids as shown below.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part3;
+
+public class Book {
+
+  private Author[] authors;
+  private String isbn;
+  private String title;
+
+  public Author[] getAuthors() {
+    return authors;
+  }
+
+  <span style="color:red;">public int[] getAuthorsIds() {
+    final int[] ids = new int[authors.length];
+    for (int i = 0; i &lt; ids.length; i++) {
+      ids[i] = authors[i].getId();
+    }
+    return ids;
+  }</span>
+
+  <span style="color:rgb(63, 127, 95);">// Other methods removed for brevity</span>
+
+}
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">When serialising the books we will use the authors’ id instead of the authors as shown next.</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">package com.javacreed.examples.gson.part3;
+
+import java.lang.reflect.Type;
+
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+
+public class BookSerialiser implements JsonSerializer<span> {
+
+  @Override
+  public JsonElement serialize(final Book book, final Type typeOfSrc, final JsonSerializationContext context) {
+    final JsonObject jsonObject = new JsonObject();
+    jsonObject.addProperty("title", book.getTitle());
+    jsonObject.addProperty("isbn", book.getIsbn());
+
+    final JsonElement jsonAuthros = context.serialize(<span style="color:red;">book.getAuthorsIds()</span>);
+    jsonObject.add("authors", jsonAuthros);
+
+    return jsonObject;
+  }
+}
+</span></pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Using this serialiser we will obtain the following:</p>
+<pre style="padding:9.5px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:13px;color:rgb(51, 51, 51);border-radius:4px;display:block;margin:0px 0px 10px;line-height:20px;word-break:break-all;overflow-wrap:break-word;white-space:pre-wrap;background-color:rgb(245, 245, 245);border:1px solid rgba(0, 0, 0, 0.15);">[
+  {
+    "title": "Java Puzzlers: Traps, Pitfalls, and Corner Cases",
+    "isbn": "032133678X",
+    <span style="color:red;">"authors": [
+      1,
+      2
+    ]</span>
+  },
+  {
+    "title": "Effective Java (2nd Edition)",
+    "isbn": "0321356683",
+    <span style="color:red;">"authors": [
+      1
+    ]</span>
+  }
+]
+</pre>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">Now instead of the whole author object we have just the author’s ids. This approach requires less space than the previous one where the whole author is serialised. This will have a huge effect on larger object graphs.</p>
+<p style="margin:0px 0px 10px;font-size:13px;line-height:18px;">This example concludes this article about serialisation. Here we saw how we can serialise Java objects into JSON strings using default and custom serialisation options.</p>
+<div style="clear:both;margin:10px 0px;"><h2 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:40px;color:inherit;text-rendering:optimizelegibility;font-size:30px;">Related Posts</h2><ul style="list-style:outside none none;float:left;padding:0px;margin:0px;"><li style="line-height:20px;float:left;overflow:hidden;position:relative;text-align:center;border:1px solid rgb(221, 221, 221);padding:6px;vertical-align:bottom;box-shadow:rgba(0, 0, 0, 0.4) 0px 1px 2px;border-radius:7px;margin:5px;"><a href="http://www.javacreed.com/software-transactional-memory-example-using-multiverse/" style="cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;text-decoration:none;float:left;overflow:hidden;text-align:center;color:rgb(255, 255, 255);position:absolute;height:inherit;bottom:6px;left:6px;padding:3px;font-size:0.9em;background:rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%;vertical-align:bottom;box-shadow:rgba(0, 0, 0, 0.4) 0px 1px 2px;border-radius:7px;width:44px;">Software Transactional Memory Example using Multiverse</a></li><li style="line-height:20px;float:left;overflow:hidden;position:relative;text-align:center;border:1px solid rgb(221, 221, 221);padding:6px;vertical-align:bottom;box-shadow:rgba(0, 0, 0, 0.4) 0px 1px 2px;border-radius:7px;margin:5px;"><a href="http://www.javacreed.com/5362-2/" style="cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;text-decoration:none;float:left;overflow:hidden;text-align:center;color:rgb(255, 255, 255);position:absolute;height:inherit;bottom:6px;left:6px;padding:3px;font-size:0.9em;background:rgba(0, 0, 0, 0.5) none repeat scroll 0% 0%;vertical-align:bottom;box-shadow:rgba(0, 0, 0, 0.4) 0px 1px 2px;border-radius:7px;width:44px;">Compress Large Text Data in Table</a></li></ul><div style="clear:both;"></div></div> </div>
+
+<div style="margin:0px -30px 20px;padding:30px;border:1px solid white;background:rgb(244, 244, 244) none repeat scroll 0% 0%;"><span style="display:table;line-height:0;"></span>
+<div style="float:left;width:80%;"><en-media type="image/png" hash="308e6c202f70b1d39097773019fc5de9" alt="Albert Attard" width="66" height="70" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;"></en-media><h3 style="margin:10px 0px;font-family:inherit;font-weight:bold;color:inherit;text-rendering:optimizelegibility;line-height:14px;font-size:14px;margin-top:0px;margin-bottom:10px;margin-left:85px;"><a href="http://www.javacreed.com/author/albert/" title="Posts by Albert Attard" rel="author" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;text-transform:capitalize;">Albert Attard</a></h3>
+<p style="margin:0px 0px 10px;margin-left:85px;font-size:12px;margin-top:5px;">Albert Attard is a Java passionate and technical lead at a research group. You can find him on <a rel="author" href="https://plus.google.com/+AlbertAttard" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Google+</a>. Over the past years Albert worked on various Java projects including traditional server/client applications, modular applications, large data handling applications and concurrent data manipulation applications to name a few. He has a BSc degree from the University of London (<a href="http://www.lon.ac.uk/" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Homepage</a>) and an MSc Information Security with the same university. His MSc thesis (<a href="http://www.amazon.com/Novel-Card-Present-Payment-Scheme-Technology/dp/3659114529" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Book</a>) received the 2012 SearchSecurity.co.UK award (<a href="http://www.computerweekly.com/feature/Royal-Holloway-2012-Designing-a-secure-contactless-payment-system" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Website</a>). </p>
+<ul style="padding:0px;margin:0px 0px 10px 25px;margin-top:10px;margin-left:85px;list-style:outside none none;"><span style="list-style:outside none none;display:table;line-height:0;"></span><li style="line-height:10px;float:left;margin-right:15px;font-size:12px;"><span>Published:</span> 69 posts</li><li style="line-height:10px;float:left;margin-right:15px;font-size:12px;"><span>Web:</span> <a href="http://www.javacreed.com/" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">http://www.javacreed.com</a></li> <span style="list-style:outside none none;display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></ul>
+</div>
+<ul style="padding:0px;margin:0px 0px 10px 25px;float:right;width:15%;text-align:right;"> <li style="line-height:20px;display:inline-block;list-style:outside none none;">
+<a href="http://www.javacreed.com/gson-serialiser-example/albertattard" target="_blank" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;float:left;width:30px;height:30px;"><en-media type="image/png" hash="de9d4671c96d012d12d062781700dc81" alt="" width="30" height="30" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;float:left;"></en-media></a>
+</li> </ul>
+<span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div> <div style="margin-top:30px;border-bottom:medium none;">  <h4 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:20px;color:inherit;text-rendering:optimizelegibility;font-size:18px;">
+14 Responses to “GSON Serialiser Example” </h4><hr style="margin:20px 0px;border-color:rgb(238, 238, 238) currentcolor rgb(255, 255, 255);border-style:solid none;border-width:1px 0px;border-image:none 100% / 1 / 0 stretch;"/>
+<div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="4233b924b193778ba2110fba3a60305c" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+Anonymous</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">February 7, 2013</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/gson-serialiser-example/?replytocom=34#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Really liked what you had to say in your post, thanks for the good read! </p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.critiware.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">domenico</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">February 17, 2015</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/gson-serialiser-example/?replytocom=780#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Hi,<br/>
+just a comment that might help others.<br/>
+With reference to the first example (before the Nested Object paragraph) the method<br/>
+gsonBuilder.registerTypeAdapter(Book.class, new BookSerialiser());<br/>
+is not going to register the new serialiser, at least in my case.<br/>
+I had to use the method registerTypeHierarchyAdapter.<br/>
+Regards,<br/>
+Domenico</p>
+</div>
+</div></div>
+</div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="4233b924b193778ba2110fba3a60305c" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+Randal</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">February 14, 2013</span>
+ <span><a rel="nofollow" href="http://www.javacreed.com/gson-serialiser-example/?replytocom=37#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Excellent write-up. I certainly love this site.<br/>
+Keep writing!</p>
+</div>
+</div></div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+Abdullah</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">May 31, 2013</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/gson-serialiser-example/?replytocom=148#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Great tutorial. Thanks.</p>
+</div>
+</div></div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.pearltrees.com/desaivaibhavi/json/id8330080#pearl81216703&amp;show=reveal,6" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">JSON | Pearltrees</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">June 17, 2013</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/gson-serialiser-example/?replytocom=186#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">[…] GSON Serialiser Example | Java Creed […]</p>
+</div>
+</div></div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+kavitha</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">November 5, 2013</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/gson-serialiser-example/?replytocom=363#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Great tutorial…It helped me a lot…Thank u somuch.plz keep posting gson examples</p>
+</div>
+</div></div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+Treble Snake</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">June 30, 2014</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/gson-serialiser-example/?replytocom=564#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Hi!<br/>
+Great article, thanks a lot.<br/>
+But in the example code JsonSerializer parametrization () is missing. Maybe it was done by purpose, but I guess it’s a misprint, as it’s one of the key features.</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+ <div style="margin-bottom:20px;">
+<en-media type="image/png" hash="f0ed87adc72b7f002dd787e13fa32b42" alt="Albert Attard" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.javacreed.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Albert Attard</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">June 30, 2014</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/gson-serialiser-example/?replytocom=565#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Thank you for pointing this out. Will look into the code and revert where necessary.</p>
+</div>
+</div></div>
+</div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+Aibol</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">August 20, 2014</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/gson-serialiser-example/?replytocom=628#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">I have some question: I used a set instead of an array error issues. How to solve it? i use nested objects. thank you</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="f0ed87adc72b7f002dd787e13fa32b42" alt="Albert Attard" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.javacreed.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Albert Attard</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">August 20, 2014</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/gson-serialiser-example/?replytocom=629#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">I did not quite understand your question. Can you please provide an example?</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+ Aibol</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">August 20, 2014</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/gson-serialiser-example/?replytocom=630#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Thank you! I have resolved my problem.</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="f0ed87adc72b7f002dd787e13fa32b42" alt="Albert Attard" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.javacreed.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Albert Attard</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">August 20, 2014</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/gson-serialiser-example/?replytocom=631#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">That’s great.</p>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+<div>
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="fd41a33e6af23f9a27746fed60fd4667" alt="" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+Simon</span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">March 19, 2015</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/gson-serialiser-example/?replytocom=807#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Hi! Thanks for you good article! Can you just fix the declaration of the class <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">implements JsonSerializer</code> to <code style="padding:2px 4px;font-family:Monaco, Menlo, Consolas, &quot;Courier New&quot;, monospace;font-size:12px;color:rgb(221, 17, 68);border-radius:3px;background-color:rgb(247, 247, 249);border:1px solid rgb(225, 225, 232);">implements JsonSerializer</code> to fix the example (in you first serializer example)</p>
+<p style="margin:0px 0px 10px;font-size:12px;">Thanks!</p>
+</div>
+</div><div style="padding-left:30px;border-left:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:30px;padding-bottom:20px;border-bottom:1px dotted rgb(233, 233, 233);">
+<div style="margin-bottom:20px;">
+<en-media type="image/png" hash="f0ed87adc72b7f002dd787e13fa32b42" alt="Albert Attard" width="28" height="28" style="height:auto;max-width:100%;vertical-align:middle;border:0px none;margin:5px 20px 20px 0px;float:left;border-radius:14px;"></en-media> <span><span style="float:left;min-height:1px;top:0px;text-transform:capitalize;font-weight:bold;font-size:12px;line-height:14px;margin-left:10px;">
+<a href="http://www.javacreed.com/" rel="external nofollow" style="color:rgb(0, 136, 204);text-decoration:none;cursor:pointer;transition:background 0s ease 0s, color 0.2s linear 0s;">Albert Attard</a></span>
+</span>
+<div style="position:relative;">
+<span style="position:absolute;top:14px;left:38px;display:block;text-transform:uppercase;font-weight:bold;font-size:9px;opacity:0.7;">March 22, 2015</span>
+<span><a rel="nofollow" href="http://www.javacreed.com/gson-serialiser-example/?replytocom=811#respond" style="text-decoration:none;transition:background 0s ease 0s, color 0.2s linear 0s;color:rgb(51, 51, 51);display:inline-block;padding:2px 6px;margin-bottom:0px;font-size:11px;line-height:17px;text-align:center;text-shadow:rgba(255, 255, 255, 0.75) 0px 1px 1px;vertical-align:middle;cursor:pointer;background-color:rgb(245, 245, 245);background-image:-moz-linear-gradient(rgb(255, 255, 255), rgb(230, 230, 230));background-repeat:repeat-x;border-style:solid;border-width:1px;border-image:none 100% / 1 / 0 stretch;border-color:rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);border-radius:4px;box-shadow:rgba(255, 255, 255, 0.2) 0px 1px 0px inset, rgba(0, 0, 0, 0.05) 0px 1px 2px;float:right;">Reply</a></span>
+</div>
+<div><span style="display:table;line-height:0;"></span><span style="display:table;line-height:0;clear:both;visibility:hidden;height:0px;"></span></div>
+</div>
+<div>
+<p style="margin:0px 0px 10px;font-size:12px;">Thank you for pointing this out. I am moving the examples to GitHub and will update this during the transition.</p>
+</div>
+</div></div>
+</div>
+</div>
+<div>
+<div></div>
+<div></div>
+</div> <div>
+<h3 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:40px;color:inherit;text-rendering:optimizelegibility;font-size:24px;"></h3><h4 style="margin:10px 0px;font-family:inherit;font-weight:bold;line-height:20px;color:inherit;text-rendering:optimizelegibility;font-size:12px;position:relative;left:0px;">Leave a Comment</h4><hr style="margin:20px 0px;border-color:rgb(238, 238, 238) currentcolor rgb(255, 255, 255);border-style:solid none;border-width:1px 0px;border-image:none 100% / 1 / 0 stretch;"/> <small style="font-size:85%;"></small> <div style="margin:0px 0px 20px;">
+<div style="margin-bottom:10px;position:relative;margin-right:3px;width:100%;"><span style="font-size:14px;font-weight:normal;line-height:20px;display:block;margin-bottom:5px;position:absolute;top:5px;left:10px;z-index:1;color:rgb(153, 153, 153);">Comment (*)</span></div><div style="margin-bottom:10px;position:relative;margin-right:3px;width:100%;"><span style="font-size:14px;font-weight:normal;line-height:20px;display:block;margin-bottom:5px;position:absolute;top:5px;left:10px;z-index:1;color:rgb(153, 153, 153);">Name (*)</span></div>
+<div style="margin-bottom:10px;position:relative;margin-right:3px;width:100%;"><span style="font-size:14px;font-weight:normal;line-height:20px;display:block;margin-bottom:5px;position:absolute;top:5px;left:10px;z-index:1;color:rgb(153, 153, 153);">Email (*)</span>
+</div>
+<div style="margin-bottom:10px;position:relative;margin-right:3px;width:100%;"><span style="font-size:14px;font-weight:normal;line-height:20px;display:block;margin-bottom:5px;position:absolute;top:5px;left:10px;z-index:1;color:rgb(153, 153, 153);">Website</span></div>
+<p style="margin:0px 0px 10px;direction:ltr;width:100%;max-width:100%;box-sizing:border-box;display:block;"><br/><span style="position:relative;clear:both;display:table-row;">
+<span style="font-size:14px;font-weight:normal;line-height:1;display:table-cell;margin:5px 0px;vertical-align:middle;overflow-wrap:break-word;">
+<span style="float:left;min-height:1px;margin-left:20px;display:inline-block;vertical-align:middle;line-height:1;"></span>
+<span style="float:left;min-height:1px;margin-left:20px;display:inline-block;vertical-align:middle;line-height:1;"> − </span>
+<span style="float:left;min-height:1px;margin-left:20px;display:inline-block;vertical-align:middle;line-height:1;"><en-media type="image/png" hash="19b034bfe499614f127298c4da7caf18" width="40" height="40" style="vertical-align:middle;border:0px none;height:auto;width:40px;top:0px;z-index:2;max-width:40px;"></en-media></span>
+<span style="float:left;min-height:1px;margin-left:20px;display:inline-block;vertical-align:middle;line-height:1;"> = </span>
+<span style="float:left;min-height:1px;margin-left:20px;display:inline-block;vertical-align:middle;line-height:1;">three</span>
+
+
+
+</span><span style="display:table-cell;margin:5px 0px;vertical-align:middle;line-height:1;">
+
+<span style="width:20px;height:20px;margin:0px 15px;font-size:20px;display:inline-block;line-height:1;font-family:dashicons;text-decoration:inherit;font-weight:400;font-style:normal;vertical-align:top;text-align:center;"><span style="font-size:20px;line-height:1;font-family:dashicons;font-weight:400;font-style:normal;text-align:center;display:inline-block;width:20px;height:20px;text-decoration:inherit;vertical-align:top;-moz-osx-font-smoothing:grayscale;"></span></span>
+</span></span></p><p style="margin:0px 0px 10px;"> 
+
+</p> </div>
+</div>
+</div> </div></div></div></div></div></div></div></div></div></div></div></div><br/></div></en-note>

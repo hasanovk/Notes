@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE en-note SYSTEM "http://xml.evernote.com/pub/enml2.dtd">
+<en-note><div style="-evernote-webclip:true"><br/><div><div><div><div><h1>The Anatomy of a DNS Zone File – Part Two: What are NS Records and Why Are They Important to DNS?</h1><div><div></div></div></div> 
+				
+					
+	    <div>
+		    
+		    <ul>
+		    	<li>April 8, 2011·</li><li><a href="https://plus.google.com/113084022306398496929?rel=author" target="_blank">by Natalie Goguen</a>·</li>		    			   
+		    	
+	    </ul></div>				
+								
+												
+		<div>
+				
+			<div>
+			
+				<div><en-media type="image/gif" hash="ebbf4331ba1e46c0f3f7795c0ba5388b" alt="What-are-NS-Records-Important-DNS" width="576" height="360"></en-media></div>						
+								
+			</div>
+	
+		</div>
+			
+	
+	
+	<div>	
+			
+		<p>An NS record or (name server record) tells recursive nameservers which name servers are authoritative for a zone.  Recursive nameservers look at the NS records to work out who to ask next when resolving a name.</p>
+<p>You can have as many NS records as you would like in your zone file.   The benefit of having multiple NS records is the redundancy of your DNS service.  It is important to note that in order to get the most redundancy out of your NS records, they should be hosted on different network segments.  If they are not hosted on different networks segments and the network goes down, your DNS goes down with it. Check out <a href="http://www.noip.com/managed-dns" target="_blank">No-IP Plus Managed DNS</a> if you are interested in redundancy and reliability for your domain.</p>
+<p>NS records help to ensure that all of the domains on your server are available at all times. Multiple NS records ensure that your customers are able to reach your site each and every time without any problems, even if one or more of your nameservers are unreachable. (Again only if they are hosted on different network segments.)</p>
+<p>An example of this is if your business is located in an area that is hit by a natural disaster and your web servers at that location are down, your NS records will point to an additional name server that is hosted elsewhere (where mother nature has not wreaked havoc) and the customers are still able to reach your site and will never suspect anything is awry.</p>
+<p>Another great example is if your website is attacked by a DDoS (Distributed Denial of Service) attack your entire website will not be down. Traffic will be routed to the other name server location that has the backup of the primary name server.</p>
+<p>Please see the following example of the NS records for No-IP.com<br/>
+<code>no-ip.com. 73002 IN NS ns1.no-ip.com.<br/>
+no-ip.com. 73002 IN NS ns2.no-ip.com.<br/>
+no-ip.com. 73002 IN NS ns3.no-ip.com.<br/>
+no-ip.com. 73002 IN NS ns4.no-ip.com.<br/>
+no-ip.com. 73002 IN NS ns5.no-ip.com.<br/>
+no-ip.com. 73002 IN NS ns1.no-ip.com.</code></p>
+<p>Check out Part 1 and Part 3 of this series:</p>
+<p><a href="http://www.noip.com/blog/2011/03/15/part-one-what-is-a-start-of-authority-soa-record-and-what-does-it-do/" title="The Anatomy of a DNS Zone File: SOA Record" target="_blank">The Anatomy of a DNS Zone File: SOA Record</a></p>
+<p><a href="http://ncms.lax/blog/2011/04/29/anatomy-of-a-dns-zone-file-part-three-mx-records/" title="Part Three: Anatomy of a DNS Zone File: MX Records" target="_blank">Anatomy of a DNS Zone File Part Three: MX Records</a></p>
+<p>Questions or Comments? Please leave them below.</p>
+	
+	</div>	
+
+</div></div></div><br/></div></en-note>
