@@ -1,0 +1,147 @@
+2018/05/16 23:44:09:381 I|*   11784 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/17 00:22:50:840 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/17 00:22:50:840 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/17 00:23:01:100 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/17 00:23:03:257 I|*   11821 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/17 00:23:07:833 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/17 00:23:07:833 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/17 01:11:32:036 I|*   12339 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/17 05:54:24:225 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/17 05:54:24:225 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/17 05:54:33:878 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/17 05:54:36:211 I|*   12632 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/17 05:54:40:745 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/17 05:54:40:745 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/17 06:51:41:366 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/17 06:51:41:367 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/17 06:51:41:399 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/17 06:51:51:327 I|*   12656 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/17 06:51:51:424 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/17 06:51:51:424 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/17 06:57:08:544 I|*   12757 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/17 16:28:41:832 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/17 16:28:41:832 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/17 16:28:41:867 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/17 16:28:48:619 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/17 16:28:48:619 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/17 16:28:48:660 E|*** 12919 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe361f1f5d0 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/17 16:28:48:660 E|*** 12919 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe361f1f5d0 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/17 16:28:52:602 I|*   12931 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/17 16:32:56:243 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 31 days, only maintaining 30 days of data
+2018/05/17 16:32:56:244 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 31 days, only maintaining 30 days of data
+2018/05/17 16:32:56:266 I|*   13078 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/17 17:33:03:947 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 31 days, only maintaining 30 days of data
+2018/05/17 17:33:03:947 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 31 days, only maintaining 30 days of data
+2018/05/17 17:33:03:972 I|*   13987 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/17 19:19:26:365 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/17 19:19:26:365 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/17 19:19:26:396 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/17 19:19:36:126 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/17 19:19:36:126 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/17 19:19:36:270 I|*   14031 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/17 19:30:57:041 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/17 19:30:57:041 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=0 usn=93 | <ENMacNoteMO 0x7fe36432e450> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702 <ENCommonEditorWebView: 0x7fe364671920>
+2018/05/17 19:30:57:041 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p12 <ENCommonEditorWebView: 0x7fe364671920>
+2018/05/17 19:30:57:041 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=0 usn=93 <ENCommonEditorWebView: 0x7fe364671920> <ENMacNoteMO 0x7fe36432e450> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702
+2018/05/17 19:30:57:254 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7fe36432e450> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702
+2018/05/17 19:30:57:309 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/17 19:30:57:309 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7fe3640c5580> MOID:0xb340002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p717> GUID:[local] Title:WordPress Theme Account:(null) USN:0 Hash:<37be6956 51278edc 18b46431 b26bde18> Length:7669 <ENCommonEditorWebView: 0x7fe36683cae0>
+2018/05/17 19:30:57:310 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p717 <ENCommonEditorWebView: 0x7fe36683cae0>
+2018/05/17 19:30:57:310 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7fe36683cae0> <ENMacNoteMO 0x7fe3640c5580> MOID:0xb340002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p717> GUID:[local] Title:WordPress Theme Account:(null) USN:0 Hash:<37be6956 51278edc 18b46431 b26bde18> Length:7669
+2018/05/17 19:30:57:341 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7fe3640c5580> MOID:0xb340002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p717> GUID:[local] Title:WordPress Theme Account:(null) USN:0 Hash:<37be6956 51278edc 18b46431 b26bde18> Length:7669
+2018/05/17 19:30:57:374 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/17 19:30:57:374 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7fe366808ea0> MOID:0xa640002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p665> GUID:[local] Title:WordPress on FreeBSD Account:(null) USN:0 Hash:<96e42476 f1c74133 1cb80973 7ee907da> Length:25116 <ENCommonEditorWebView: 0x7fe365dc5240>
+2018/05/17 19:30:57:374 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p665 <ENCommonEditorWebView: 0x7fe365dc5240>
+2018/05/17 19:30:57:374 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7fe365dc5240> <ENMacNoteMO 0x7fe366808ea0> MOID:0xa640002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p665> GUID:[local] Title:WordPress on FreeBSD Account:(null) USN:0 Hash:<96e42476 f1c74133 1cb80973 7ee907da> Length:25116
+2018/05/17 19:30:57:535 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Loaded noteID 0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> but editor is now using (null) <ENCommonEditorWebView: 0x7fe364671920>
+2018/05/17 19:30:57:535 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7fe365dc5240> <ENMacNoteMO 0x7fe366808ea0> MOID:0xa640002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p665> GUID:[local] Title:WordPress on FreeBSD Account:(null) USN:0 Hash:<96e42476 f1c74133 1cb80973 7ee907da> Length:25116
+2018/05/17 19:30:57:535 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Loaded noteID 0xb340002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p717> but editor is now using (null) <ENCommonEditorWebView: 0x7fe36683cae0>
+2018/05/17 19:30:59:922 I|*   main  -[ENLinkCollectionController saveWithCompletion:] | Saving in local pref 'recentNotebooks' with 8 items, previously 8 items
+2018/05/17 19:30:59:954 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7fe366808ea0> MOID:0xa640002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p665> GUID:[local] Title:WordPress on FreeBSD Account:(null) USN:0 Hash:<96e42476 f1c74133 1cb80973 7ee907da> Length:25116
+2018/05/17 19:31:00:011 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/17 19:31:00:011 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=2273 | <ENMacNoteMO 0x7fe365eb2b50> MOID:0x8380002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p526> GUID:[local] Title:Top DevOps Interview Questions You Must Prepare For in 2017 | Edureka Blog Account:(null) USN:2273 Hash:<08e6c2c2 670cc26c 3cadf5c4 b56d8d7f> Length:93011 <ENCommonEditorWebView: 0x7fe365fdf240>
+2018/05/17 19:31:00:011 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p526 <ENCommonEditorWebView: 0x7fe365fdf240>
+2018/05/17 19:31:00:011 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=2273 <ENCommonEditorWebView: 0x7fe365fdf240> <ENMacNoteMO 0x7fe365eb2b50> MOID:0x8380002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p526> GUID:[local] Title:Top DevOps Interview Questions You Must Prepare For in 2017 | Edureka Blog Account:(null) USN:2273 Hash:<08e6c2c2 670cc26c 3cadf5c4 b56d8d7f> Length:93011
+2018/05/17 19:31:00:117 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7fe365fdf240> <ENMacNoteMO 0x7fe365eb2b50> MOID:0x8380002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p526> GUID:[local] Title:Top DevOps Interview Questions You Must Prepare For in 2017 | Edureka Blog Account:(null) USN:2273 Hash:<08e6c2c2 670cc26c 3cadf5c4 b56d8d7f> Length:93011
+2018/05/17 19:31:13:669 I|*   main  -[ENLinkCollectionController saveWithCompletion:] | Saving in local pref 'recentNotebooks' with 8 items, previously 8 items
+2018/05/17 19:31:13:697 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7fe365eb2b50> MOID:0x8380002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p526> GUID:[local] Title:Top DevOps Interview Questions You Must Prepare For in 2017 | Edureka Blog Account:(null) USN:2273 Hash:<08e6c2c2 670cc26c 3cadf5c4 b56d8d7f> Length:93011
+2018/05/17 19:31:13:753 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/17 19:31:13:754 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7fe3642314d0> MOID:0xc800002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p800> GUID:[local] Title:Visual Studio Code Account:(null) USN:0 Hash:<0f21ce05 ced6b614 e17c3964 650b7fe5> Length:134 <ENCommonEditorWebView: 0x7fe36452cf40>
+2018/05/17 19:31:13:754 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p800 <ENCommonEditorWebView: 0x7fe36452cf40>
+2018/05/17 19:31:13:754 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7fe36452cf40> <ENMacNoteMO 0x7fe3642314d0> MOID:0xc800002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p800> GUID:[local] Title:Visual Studio Code Account:(null) USN:0 Hash:<0f21ce05 ced6b614 e17c3964 650b7fe5> Length:134
+2018/05/17 19:31:13:908 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7fe36452cf40> <ENMacNoteMO 0x7fe3642314d0> MOID:0xc800002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p800> GUID:[local] Title:Visual Studio Code Account:(null) USN:0 Hash:<0f21ce05 ced6b614 e17c3964 650b7fe5> Length:134
+2018/05/17 19:31:23:714 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 151 bytes:
+2018/05/17 19:31:23:716 I|*   main  -[ENLinkCollectionController saveWithCompletion:] | Saving in local pref 'recentNotes' with 4 items, previously 5 items
+2018/05/17 19:31:23:718 I|*   main  -[ENLinkCollectionController saveWithCompletion:] | Saving in local pref 'recentNotes' with 5 items, previously 4 items
+2018/05/17 19:31:46:714 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 140 bytes:
+2018/05/17 19:31:48:715 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 130 bytes:
+2018/05/17 19:31:50:715 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 134 bytes:
+2018/05/17 19:31:57:715 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 166 bytes:
+2018/05/17 19:32:12:714 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 164 bytes:
+2018/05/17 19:32:19:714 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 176 bytes:
+2018/05/17 19:32:25:714 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 202 bytes:
+2018/05/17 19:32:29:714 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 199 bytes:
+2018/05/17 19:32:33:714 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 227 bytes:
+2018/05/17 19:32:42:714 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 232 bytes:
+2018/05/17 19:32:45:715 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 224 bytes:
+2018/05/17 19:32:51:715 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 233 bytes:
+2018/05/17 19:32:53:715 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 236 bytes:
+2018/05/17 19:32:59:715 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 250 bytes:
+2018/05/17 19:33:16:714 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 279 bytes:
+2018/05/17 19:33:23:715 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 278 bytes:
+2018/05/17 19:33:30:715 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 296 bytes:
+2018/05/17 19:33:36:715 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 302 bytes:
+2018/05/17 19:33:50:709 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 322 bytes:
+2018/05/17 19:33:52:710 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 322 bytes:
+2018/05/17 19:33:52:710 W|**  14331 -[ENNoteMO setENMLContent:fromServer:error:] | ENML has not changed!
+2018/05/17 19:34:09:709 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 420 bytes:
+2018/05/17 19:34:18:709 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 462 bytes:
+2018/05/17 19:34:45:976 I|*   main  +[ENMLPasteboardUtils chooseTypeFromPasteboard:dragInfo:plainTextOnly:] | Offered pasteboard types: (
+    "Apple HTML pasteboard type",
+    NSStringPboardType,
+    "public.html",
+    "public.utf8-plain-text"
+)
+2018/05/17 19:34:45:976 I|*   main  +[ENMLPasteboardUtils chooseTypeFromPasteboard:dragInfo:plainTextOnly:] | Using 'Apple HTML pasteboard type'
+2018/05/17 19:34:45:976 I|*   14380 +[ENMLPasteboardUtils chooseTypeFromPasteboard:dragInfo:plainTextOnly:] | Offered pasteboard types: (
+    "Apple HTML pasteboard type",
+    NSStringPboardType,
+    "public.html",
+    "public.utf8-plain-text"
+)
+2018/05/17 19:34:45:976 I|*   14380 +[ENMLPasteboardUtils chooseTypeFromPasteboard:dragInfo:plainTextOnly:] | Using 'Apple HTML pasteboard type'
+2018/05/17 19:34:45:991 I|*   14380 +[NSString(NSStringAdditions) stringFromData:textEncodingName:] | Archive encoding name: 'UTF-8'
+2018/05/17 19:34:45:991 I|*   14380 -[ENMLConverter parseHTMLFragment:usedHTMLTidy:] | HTML fragment has no XML declaration and no DOCTYPE declaration.
+2018/05/17 19:34:45:991 I|*   14380 -[ENMLConverter parseHTMLFragment:usedHTMLTidy:] | Parse failed w/o HTML tidy.
+2018/05/17 19:34:46:024 I|*   14380 -[ENMLConverter cleanupDTDForDocument:] | Document has no DTD node, creating.
+2018/05/17 19:34:47:708 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 2674 bytes:
+2018/05/17 19:34:57:707 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 2719 bytes:
+2018/05/17 19:35:02:707 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 2726 bytes:
+2018/05/17 19:35:17:707 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p800 length of 2764 bytes:
+2018/05/17 19:40:22:280 I|*   main  -[ENNoteEditorViewController inactivityTimerFired:] | NoteLockCat editor is inactive <ENMacNoteMO 0x7fe3642314d0> MOID:0xc800002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p800> GUID:[local] Title:Visual Studio Code Account:(null) USN:0 Hash:<1a35e038 4700a55a 0bc8da3b 47e009b1> Length:2764
+2018/05/17 19:41:26:721 I|*   main  -[ENLinkCollectionController saveWithCompletion:] | Saving in local pref 'recentNotebooks' with 7 items, previously 8 items
+2018/05/17 19:41:26:724 I|*   main  -[ENLinkCollectionController saveWithCompletion:] | Saving in local pref 'recentNotebooks' with 8 items, previously 7 items
+2018/05/17 19:41:26:753 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7fe3642314d0> MOID:0xc800002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p800> GUID:[local] Title:Visual Studio Code Account:(null) USN:0 Hash:<1a35e038 4700a55a 0bc8da3b 47e009b1> Length:2764
+2018/05/17 19:41:26:831 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/17 19:41:26:831 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=2273 | <ENMacNoteMO 0x7fe365eb2b50> MOID:0x8380002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p526> GUID:[local] Title:Top DevOps Interview Questions You Must Prepare For in 2017 | Edureka Blog Account:(null) USN:2273 Hash:<08e6c2c2 670cc26c 3cadf5c4 b56d8d7f> Length:93011 <ENCommonEditorWebView: 0x7fe365eb3d50>
+2018/05/17 19:41:26:831 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p526 <ENCommonEditorWebView: 0x7fe365eb3d50>
+2018/05/17 19:41:26:831 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=2273 <ENCommonEditorWebView: 0x7fe365eb3d50> <ENMacNoteMO 0x7fe365eb2b50> MOID:0x8380002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p526> GUID:[local] Title:Top DevOps Interview Questions You Must Prepare For in 2017 | Edureka Blog Account:(null) USN:2273 Hash:<08e6c2c2 670cc26c 3cadf5c4 b56d8d7f> Length:93011
+2018/05/17 19:41:26:871 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7fe365eb3d50> <ENMacNoteMO 0x7fe365eb2b50> MOID:0x8380002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p526> GUID:[local] Title:Top DevOps Interview Questions You Must Prepare For in 2017 | Edureka Blog Account:(null) USN:2273 Hash:<08e6c2c2 670cc26c 3cadf5c4 b56d8d7f> Length:93011
+2018/05/17 19:41:28:457 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7fe365eb2b50> MOID:0x8380002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p526> GUID:[local] Title:Top DevOps Interview Questions You Must Prepare For in 2017 | Edureka Blog Account:(null) USN:2273 Hash:<08e6c2c2 670cc26c 3cadf5c4 b56d8d7f> Length:93011
+2018/05/17 19:41:28:494 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/05/17 19:41:28:494 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7fe365baa9b0> MOID:0x1740002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p93> GUID:[local] Title:Git Account:(null) USN:0 Hash:<ea1a8290 dc9ebc0a 4341977b f3c86068> Length:35298 <ENCommonEditorWebView: 0x7fe365a14b50>
+2018/05/17 19:41:28:494 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p93 <ENCommonEditorWebView: 0x7fe365a14b50>
+2018/05/17 19:41:28:494 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7fe365a14b50> <ENMacNoteMO 0x7fe365baa9b0> MOID:0x1740002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p93> GUID:[local] Title:Git Account:(null) USN:0 Hash:<ea1a8290 dc9ebc0a 4341977b f3c86068> Length:35298
+2018/05/17 19:41:28:592 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7fe365a14b50> <ENMacNoteMO 0x7fe365baa9b0> MOID:0x1740002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p93> GUID:[local] Title:Git Account:(null) USN:0 Hash:<ea1a8290 dc9ebc0a 4341977b f3c86068> Length:35298
+2018/05/17 19:41:57:361 I|*   main  +[NSString(NSStringAdditions) stringFromData:textEncodingName:] | Archive encoding name: 'UTF-8'
+2018/05/17 19:41:57:362 I|*   main  -[ENMLConverter parseHTMLFragment:usedHTMLTidy:] | HTML fragment has no XML declaration and no DOCTYPE declaration.
+2018/05/17 19:41:57:362 I|*   main  -[ENMLConverter parseHTMLFragment:usedHTMLTidy:] | Parse failed w/o HTML tidy.
+2018/05/17 19:41:57:362 I|*   main  +[NSString(NSStringAdditions) stringFromData:textEncodingName:] | Archive encoding name: 'UTF-8'
