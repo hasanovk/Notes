@@ -1,0 +1,134 @@
+2018/05/22 14:15:16:505 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 14:15:16:505 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 14:15:16:532 I|*   42300 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/22 15:15:11:645 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 15:15:11:645 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 15:15:11:671 I|*   42440 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/22 16:15:11:502 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 16:15:11:502 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 16:15:11:527 I|*   43787 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/22 17:15:11:362 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 17:15:11:362 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 17:15:11:456 I|*   45380 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/22 18:15:15:227 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 18:15:15:227 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 18:15:15:324 I|*   46873 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/22 19:15:13:092 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 19:15:13:092 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 19:15:13:117 I|*   47310 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/22 21:34:58:369 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/22 21:34:58:369 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/22 21:35:08:223 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/22 21:35:10:106 I|*   47390 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/22 21:35:14:619 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/22 21:35:14:620 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/22 22:12:06:991 I|*   main  -[ENContactIntegrationManager refetchTimerFired:] | Extractor type=3 is disconnected, try to deactivate all contacts from it
+2018/05/22 22:12:07:598 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 22:12:07:598 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 22:12:07:625 I|*   47645 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/22 22:12:11:597 I|*   47645 -[ENContactIntegrationManager _enqueueContactExtraction:]_block_invoke | Extractor type=1 will extract contacts
+2018/05/22 22:12:11:597 I|*   47645 -[ENEvernoteContactExtractor extractContacts] | Begin extracting Evernote contacts
+2018/05/22 22:12:11:597 I|*   47645 -[ENEvernoteContactExtractor extractContacts] | End fetching Evernote contacts
+2018/05/22 22:12:17:878 I|*   main  -[ENIncentiveManager refreshTimerFired:] | Refresh fired for incentive: (null)
+2018/05/22 22:12:18:061 I|*   main  -[ENIncentiveManager refreshIncentive]_block_invoke | Removed current incentive
+2018/05/22 22:12:23:061 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 22:12:23:061 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 22:12:23:086 I|*   47645 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/22 23:12:07:462 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 23:12:07:462 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/22 23:12:07:487 I|*   48119 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/23 00:12:11:327 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/23 00:12:11:327 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/23 00:12:11:354 I|*   48474 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/23 00:12:37:955 I|*   main  -[ENTierSelectionEligibilityController checkEligibilityTimerFired:] | Check-TSD-eligibility timer fired; checking with service
+2018/05/23 00:12:38:159 I|*   48475 -[ENTierSelectionEligibilityController handleEligibilityResult:] | TSD-eligibility result: <EDAMTierSelectionDisplayEligibilityResult: 0x7fe361fae1d0; shouldShowTsd = 0; timeToLive = 86400000; tsdType = (null); tsdTiming = (null); tsdVariation = (null); subscriptionInfo = <EDAMSubscriptionInfo: 0x7fe365b21770; currentTime = 1527048758122; currentlySubscribed = 0; subscriptionRecurring = 0; subscriptionExpirationDate = (null); subscriptionPending = 0; subscriptionCancellationPending = 0; serviceLevelsEligibleForPurchase = {(
+    3,
+    2
+)}; currentSku = (null); validUntil = 1558584758122; itunesReceiptRequested = 0;>; teamStarterPackResult = (null);>
+2018/05/23 00:12:38:161 I|*   48475 -[ENTierSelectionEligibilityController startCheckEligibilityTimer] | Waiting for 86399.999649 seconds before checking TSD eligibility with the service
+2018/05/23 01:12:13:190 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/23 01:12:13:190 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/23 01:12:13:215 I|*   48726 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/23 02:12:16:858 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/23 02:12:16:858 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/23 02:12:16:883 I|*   48866 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/23 03:12:06:915 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/23 03:12:06:916 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/23 03:12:06:941 I|*   49005 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/23 04:12:08:780 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/23 04:12:08:780 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/23 04:12:08:805 I|*   49145 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/23 05:12:06:641 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/23 05:12:06:641 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/23 05:12:06:666 I|*   49291 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/23 06:12:06:505 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/23 06:12:06:505 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 36 days, only maintaining 30 days of data
+2018/05/23 06:12:06:530 I|*   49612 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/23 06:59:22:375 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/23 06:59:22:375 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/23 06:59:22:412 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/23 06:59:29:218 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/23 06:59:29:218 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/23 06:59:29:258 E|*** 49815 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe365ef3910 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/23 06:59:29:258 E|*** 49815 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe365ef3910 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/23 06:59:32:510 I|*   49830 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/23 07:31:54:398 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 07:31:54:399 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 07:31:54:423 I|*   50460 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/23 07:39:22:374 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/23 07:39:22:374 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/23 07:39:22:406 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/23 07:39:23:500 I|*   50478 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/23 07:39:28:123 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/23 07:39:28:123 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/23 07:39:28:162 E|*** 50482 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe3668c1cd0 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/23 07:39:28:163 E|*** 50482 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe3668c1cd0 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/23 15:50:35:273 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/23 15:50:35:273 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/23 15:50:44:936 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/23 15:50:47:117 I|*   50538 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/23 15:50:51:613 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/23 15:50:51:613 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/23 16:29:04:854 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 16:29:04:854 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 16:29:04:881 I|*   50975 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/23 17:29:04:721 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 17:29:04:721 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 17:29:04:746 I|*   51129 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/23 18:29:04:582 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 18:29:04:582 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 18:29:04:607 I|*   51418 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/23 19:29:14:248 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 19:29:14:248 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 19:29:14:274 I|*   51571 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/23 20:29:14:111 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 20:29:14:111 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 20:29:14:136 I|*   52533 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/23 21:29:06:170 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 21:29:06:170 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 21:29:06:194 I|*   52746 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/23 22:29:04:031 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 22:29:04:031 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 22:29:04:057 I|*   52921 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/23 23:29:05:893 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 23:29:05:893 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/23 23:29:05:919 I|*   53101 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/24 00:29:03:755 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/24 00:29:03:755 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 37 days, only maintaining 30 days of data
+2018/05/24 00:29:03:780 I|*   53953 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
