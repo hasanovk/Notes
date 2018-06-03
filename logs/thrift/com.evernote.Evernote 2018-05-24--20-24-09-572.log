@@ -179,3 +179,13 @@
 2018/05/26 09:15:21:483  https://www.evernote.com/shard/s561/notestore getSyncState 200 137 139 0.1735000610351562
 2018/05/26 09:15:33:973  https://www.evernote.com/shard/s561/notestore getSyncState 200 137 139 0.1152520179748535
 2018/05/26 09:16:04:083  https://www.evernote.com/shard/s561/notestore getSyncState 200 137 139 0.1093459129333496
+2018/05/26 12:47:10:976  https://www.evernote.com/edam/user checkVersion xxx 87 0 10.13344395160675
+2018/05/26 12:47:17:790  https://www.evernote.com/shard/s561/notestore getSyncState 200 137 139 0.2078609466552734
+2018/05/26 16:13:05:865  https://www.evernote.com/edam/user checkVersion xxx 87 0 0.03476691246032715
+2018/05/26 16:13:16:143  https://www.evernote.com/shard/s561/notestore getSyncState 200 137 139 0.2171590328216553
+2018/05/26 18:56:27:247  https://www.evernote.com/edam/user checkVersion 200 87 29 10.19369792938232
+2018/05/26 18:56:27:379  https://www.evernote.com/shard/s561/notestore getSyncState 200 137 139 0.1320459842681885
+2018/05/26 18:56:32:387  https://www.evernote.com/shard/s561/notestore getSyncState 200 137 139 0.1355360746383667
+2018/05/26 22:09:16:391  https://www.evernote.com/edam/user checkVersion xxx 87 0 0.03337609767913818
+2018/05/26 22:09:22:129  https://www.evernote.com/shard/s561/notestore getSyncState xxx 137 0 0.0390620231628418
+2018/05/26 22:12:18:921  https://www.evernote.com/shard/s561/communicationengine syncMessages 200 253 95 0.2613030672073364

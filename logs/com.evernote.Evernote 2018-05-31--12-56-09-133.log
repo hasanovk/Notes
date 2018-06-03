@@ -1,0 +1,279 @@
+2018/05/31 08:56:09:131 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 08:56:09:131 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 08:56:09:199 I|*   96613 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/31 09:56:08:486 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 09:56:08:486 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 09:56:08:565 I|*   98034 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/31 10:18:05:340 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/31 10:18:05:340 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/31 10:18:05:383 E|*** 98062 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe361fa5b70 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/31 10:18:05:383 E|*** 98062 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe361fa5b70 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/31 10:18:05:384 I|*   98062 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/31 10:18:10:004 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/31 10:18:10:004 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/31 10:18:10:044 E|*** 98062 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe36697ddf0 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/31 10:18:10:044 E|*** 98062 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe36697ddf0 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/31 11:10:21:905 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 11:10:21:906 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 11:10:21:933 I|*   98646 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/31 12:10:13:007 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 12:10:13:007 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 12:10:13:106 I|*   10024 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/31 13:34:07:364 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/31 13:34:07:364 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/31 13:34:07:398 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/31 13:34:08:488 I|*   10063 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/31 13:34:13:090 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/31 13:34:13:091 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/31 13:34:13:130 E|*** 10063 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe3668d9c50 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/31 13:34:13:131 E|*** 10063 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe3668d9c50 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/31 13:40:40:049 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 13:40:40:049 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 13:40:40:103 I|*   10070 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/31 14:00:42:904 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/31 14:00:42:904 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/31 14:00:42:941 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/31 14:00:43:880 I|*   10074 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/31 14:00:48:473 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/31 14:00:48:474 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/31 14:00:48:512 E|*** 10074 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe361d43c50 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/31 14:00:48:512 E|*** 10074 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe361d43c50 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/31 18:22:11:018 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/31 18:22:11:018 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/31 18:22:11:050 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/31 18:22:20:937 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/31 18:22:20:937 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/31 18:22:21:491 I|*   10149 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/31 18:25:21:019 I|*   main  -[ENContactIntegrationManager refetchTimerFired:] | Extractor type=3 is disconnected, try to deactivate all contacts from it
+2018/05/31 18:25:21:630 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 18:25:21:630 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 18:25:21:721 I|*   10154 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/31 18:25:23:628 I|*   10154 -[ENContactIntegrationManager _enqueueContactExtraction:]_block_invoke | Extractor type=1 will extract contacts
+2018/05/31 18:25:23:629 I|*   10154 -[ENEvernoteContactExtractor extractContacts] | Begin extracting Evernote contacts
+2018/05/31 18:25:23:629 I|*   10154 -[ENEvernoteContactExtractor extractContacts] | End fetching Evernote contacts
+2018/05/31 18:25:36:106 I|*   main  -[ENIncentiveManager refreshTimerFired:] | Refresh fired for incentive: (null)
+2018/05/31 18:25:36:283 I|*   main  -[ENIncentiveManager refreshIncentive]_block_invoke | Removed current incentive
+2018/05/31 18:25:51:283 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 18:25:51:283 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 18:25:51:308 I|*   10155 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/31 20:48:42:835 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/31 20:48:42:835 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/31 20:48:42:867 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/31 20:48:43:886 I|*   10195 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/31 20:48:48:477 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/31 20:48:48:477 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/31 20:48:48:516 E|*** 10195 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe3680e2cb0 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/31 20:48:48:516 E|*** 10195 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe3680e2cb0 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/31 21:11:08:366 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/31 21:11:08:366 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/31 21:11:08:400 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/31 21:11:15:037 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/31 21:11:15:038 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/31 21:11:15:077 E|*** 10206 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe366d02c60 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/31 21:11:15:077 E|*** 10206 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe366d02c60 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/31 21:11:18:623 I|*   10206 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/31 21:15:40:997 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 21:15:40:997 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 21:15:41:041 I|*   10217 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/31 22:15:41:266 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 22:15:41:266 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/05/31 22:15:41:344 I|*   10243 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/05/31 22:16:22:184 I|*   main  -[ENTierSelectionEligibilityController checkEligibilityTimerFired:] | Check-TSD-eligibility timer fired; checking with service
+2018/05/31 22:16:22:388 I|*   10243 -[ENTierSelectionEligibilityController handleEligibilityResult:] | TSD-eligibility result: <EDAMTierSelectionDisplayEligibilityResult: 0x7fe364425d90; shouldShowTsd = 0; timeToLive = 86400000; tsdType = (null); tsdTiming = (null); tsdVariation = (null); subscriptionInfo = <EDAMSubscriptionInfo: 0x7fe366963810; currentTime = 1527819382351; currentlySubscribed = 0; subscriptionRecurring = 0; subscriptionExpirationDate = (null); subscriptionPending = 0; subscriptionCancellationPending = 0; serviceLevelsEligibleForPurchase = {(
+    3,
+    2
+)}; currentSku = (null); validUntil = 1559355382351; itunesReceiptRequested = 0;>; teamStarterPackResult = (null);>
+2018/05/31 22:16:22:389 I|*   10243 -[ENTierSelectionEligibilityController startCheckEligibilityTimer] | Waiting for 86399.999624 seconds before checking TSD eligibility with the service
+2018/05/31 23:32:05:363 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/31 23:32:05:363 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/05/31 23:32:05:395 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/05/31 23:32:06:686 I|*   10248 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/05/31 23:32:11:194 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/05/31 23:32:11:194 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/05/31 23:32:11:241 E|*** 10249 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe3680be530 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/05/31 23:32:11:241 E|*** 10249 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe3680be530 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/06/01 00:14:44:257 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/06/01 00:14:44:257 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/06/01 00:14:44:349 I|*   10267 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/06/01 01:39:15:015 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/06/01 01:39:15:015 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/06/01 01:39:15:047 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/06/01 01:39:25:041 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/06/01 01:39:25:041 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/06/01 01:39:25:401 I|*   10274 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/06/01 02:18:30:002 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/06/01 02:18:30:002 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/06/01 02:18:30:100 I|*   10291 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/06/01 04:26:18:355 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/06/01 04:26:18:355 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/06/01 04:26:18:388 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/06/01 04:26:19:541 I|*   10295 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/06/01 04:26:24:252 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/06/01 04:26:24:252 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/06/01 04:26:24:306 E|*** 10295 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe3679c29f0 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/06/01 04:26:24:306 E|*** 10295 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe3679c29f0 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/06/01 04:58:18:030 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/06/01 04:58:18:030 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/06/01 04:58:18:066 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/06/01 04:58:24:744 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/06/01 04:58:24:744 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/06/01 04:58:24:790 E|*** 10307 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe3646859b0 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/06/01 04:58:24:790 E|*** 10307 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe3646859b0 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/06/01 04:58:28:896 I|*   10307 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/06/01 04:58:52:223 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/06/01 04:58:52:223 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=0 usn=93 | <ENMacNoteMO 0x7fe36432e450> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702 <ENCommonEditorWebView: 0x7fe36687f8d0>
+2018/06/01 04:58:52:223 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p12 <ENCommonEditorWebView: 0x7fe36687f8d0>
+2018/06/01 04:58:52:223 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=0 usn=93 <ENCommonEditorWebView: 0x7fe36687f8d0> <ENMacNoteMO 0x7fe36432e450> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702
+2018/06/01 04:58:52:466 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7fe36432e450> MOID:0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> GUID:5c48b0b7-1988-4c81-90e7-07e91fc0df41 Title:ZFS: You should use mirror vdevs, not RAIDZ. | JRS Systems: the blog Account:(null) USN:93 Hash:<a7ac89af c5b9af79 ba90de4b 20e74a72> Length:82702
+2018/06/01 04:58:52:500 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/06/01 04:58:52:500 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7fe365ba7610> MOID:0xae00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p696> GUID:[local] Title:Wordpress-Theme Account:(null) USN:0 Hash:<7105cbc5 ade7a69e 253aa268 3e354fdc> Length:44550 <ENCommonEditorWebView: 0x7fe367f489b0>
+2018/06/01 04:58:52:500 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p696 <ENCommonEditorWebView: 0x7fe367f489b0>
+2018/06/01 04:58:52:500 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7fe367f489b0> <ENMacNoteMO 0x7fe365ba7610> MOID:0xae00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p696> GUID:[local] Title:Wordpress-Theme Account:(null) USN:0 Hash:<7105cbc5 ade7a69e 253aa268 3e354fdc> Length:44550
+2018/06/01 04:58:52:529 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7fe365ba7610> MOID:0xae00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p696> GUID:[local] Title:Wordpress-Theme Account:(null) USN:0 Hash:<7105cbc5 ade7a69e 253aa268 3e354fdc> Length:44550
+2018/06/01 04:58:52:541 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/06/01 04:58:52:541 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7fe3644c9000> MOID:0xc840002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p801> GUID:[local] Title:JavaScript Advance Account:(null) USN:0 Hash:<6bda7612 e1a8f4dc 34767359 37a59b8e> Length:1031 <ENCommonEditorWebView: 0x7fe367cbcb80>
+2018/06/01 04:58:52:541 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p801 <ENCommonEditorWebView: 0x7fe367cbcb80>
+2018/06/01 04:58:52:541 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7fe367cbcb80> <ENMacNoteMO 0x7fe3644c9000> MOID:0xc840002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p801> GUID:[local] Title:JavaScript Advance Account:(null) USN:0 Hash:<6bda7612 e1a8f4dc 34767359 37a59b8e> Length:1031
+2018/06/01 04:58:52:546 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Loaded noteID 0x300002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p12> but editor is now using (null) <ENCommonEditorWebView: 0x7fe36687f8d0>
+2018/06/01 04:58:52:660 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Loaded noteID 0xae00002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p696> but editor is now using (null) <ENCommonEditorWebView: 0x7fe367f489b0>
+2018/06/01 04:58:52:661 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7fe367cbcb80> <ENMacNoteMO 0x7fe3644c9000> MOID:0xc840002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p801> GUID:[local] Title:JavaScript Advance Account:(null) USN:0 Hash:<6bda7612 e1a8f4dc 34767359 37a59b8e> Length:1031
+2018/06/01 04:59:05:230 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note <ENMacNoteMO 0x7fe3644c9000> MOID:0xc840002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p801> GUID:[local] Title:JavaScript Advance Account:(null) USN:0 Hash:<6bda7612 e1a8f4dc 34767359 37a59b8e> Length:1031
+2018/06/01 04:59:05:244 I|*   main  -[ENCommonEditorWebView closeNote:] | Close note (null)
+2018/06/01 04:59:05:244 I|*   main  -[ENCommonEditorWebView openNote:] | Prepare note view for: dirty=1 usn=0 | <ENMacNoteMO 0x7fe365bc8210> MOID:0xc600002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p792> GUID:[local] Title:Framework: ExpressJS Account:(null) USN:0 Hash:<cfd09769 a29cf37c 1f518cdb c060fa99> Length:28099 <ENCommonEditorWebView: 0x7fe367dd8ec0>
+2018/06/01 04:59:05:244 I|*   main  -[ENCommonEditorWebView openNote:] | Loading web view frame from URL evernotecid://6B042D32-6611-46E6-A847-601106F4A699/wwwevernotecom/100389449/ENNote/p792 <ENCommonEditorWebView: 0x7fe367dd8ec0>
+2018/06/01 04:59:05:245 I|*   main  -[ENCommonEditorWebView updateViewFromNoteContent] | Prepare loading note content, dirty=1 usn=0 <ENCommonEditorWebView: 0x7fe367dd8ec0> <ENMacNoteMO 0x7fe365bc8210> MOID:0xc600002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p792> GUID:[local] Title:Framework: ExpressJS Account:(null) USN:0 Hash:<cfd09769 a29cf37c 1f518cdb c060fa99> Length:28099
+2018/06/01 04:59:05:346 W|**  main  -[ENCommonEditorWebView updateViewFromNoteContent]_block_invoke_2 | Editor not setup, caching enml <ENCommonEditorWebView: 0x7fe367dd8ec0> <ENMacNoteMO 0x7fe365bc8210> MOID:0xc600002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p792> GUID:[local] Title:Framework: ExpressJS Account:(null) USN:0 Hash:<cfd09769 a29cf37c 1f518cdb c060fa99> Length:28099
+2018/06/01 04:59:45:230 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p792 length of 28489 bytes:
+2018/06/01 04:59:45:252 I|*   main  -[ENLinkCollectionController saveWithCompletion:] | Saving in local pref 'recentNotes' with 5 items, previously 5 items
+2018/06/01 04:59:49:226 I|*   main  -[ENCommonEditorWebView commitEditingWithCompletion:savedByRealtimeServer:] | Saving note [no guid]/p792 length of 28496 bytes:
+2018/06/01 05:04:48:055 I|*   main  -[ENNoteEditorViewController inactivityTimerFired:] | NoteLockCat editor is inactive <ENMacNoteMO 0x7fe365bc8210> MOID:0xc600002b <x-coredata://6B042D32-6611-46E6-A847-601106F4A699/ENNote/p792> GUID:[local] Title:Framework: ExpressJS Account:(null) USN:0 Hash:<89bcc5e1 80a5585f 89cccd46 9e3242e9> Length:28496
+2018/06/01 05:12:24:030 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/06/01 05:12:24:031 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/06/01 05:12:24:083 I|*   10355 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/06/01 06:19:23:362 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/06/01 06:19:23:363 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: no
+2018/06/01 06:19:23:396 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Exception checking connectivity via EDAM: Internet connection appears to be offline.
+2018/06/01 06:19:24:352 I|*   10405 -[ENCoreMessageSyncEngine considerPendingMessages]_block_invoke | 0 messages pending
+2018/06/01 06:19:29:039 I|*   conn  -[ENConnectivityMonitor checkReachabilityForHost:] | Checking reachability for www.evernote.com...
+2018/06/01 06:19:29:039 I|*   conn  +[ENConnectivityMonitor internetIsReachable] |   reachability result: OK
+2018/06/01 06:19:29:079 E|*** 10406 -[ENAccountContext serverSyncStateForEdamClient:]_block_invoke | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe36430cf10 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/06/01 06:19:29:079 E|*** 10406 -[ENAccountContext reconsiderChoiceScreenTrigger] | caught TTransportException: Error loading HTTP request
+  userInfo = {
+    error = "Error Domain=NSURLErrorDomain Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSUnderlyingError=0x7fe36430cf10 {Error Domain=kCFErrorDomainCFNetwork Code=-1003 \"A server with the specified hostname could not be found.\" UserInfo={NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorCodeKey=8, _kCFStreamErrorDomainKey=12, NSLocalizedDescription=A server with the specified hostname could not be found.}}, NSErrorFailingURLStringKey=https://www.evernote.com/shard/s561/notestore, NSErrorFailingURLKey=https://www.evernote.com/shard/s561/notestore, _kCFStreamErrorDomainKey=12, _kCFStreamErrorCodeKey=8, NSLocalizedDescription=A server with the specified hostname could not be found.}";
+    url = "https://www.evernote.com/shard/s561/notestore";
+}
+2018/06/01 06:34:53:713 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/06/01 06:34:53:713 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 45 days, only maintaining 30 days of data
+2018/06/01 06:34:53:744 I|*   10451 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/06/01 07:34:55:654 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 07:34:55:654 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 07:34:55:794 I|*   10509 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/06/01 08:34:53:757 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 08:34:53:757 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 08:34:53:837 I|*   10637 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/06/01 09:34:55:788 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 09:34:55:789 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 09:34:55:814 I|*   10691 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/06/01 10:34:55:803 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 10:34:55:803 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 10:34:55:828 I|*   10707 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/06/01 11:34:53:548 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 11:34:53:548 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 11:34:53:574 I|*   10722 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/06/01 12:34:57:604 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 12:34:57:604 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 12:34:57:629 I|*   10736 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/06/01 13:34:55:317 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 13:34:55:317 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 13:34:55:422 I|*   10774 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/06/01 14:34:53:181 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 14:34:53:181 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 14:34:53:207 I|*   10788 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/06/01 15:34:53:053 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 15:34:53:054 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 15:34:53:079 I|*   10801 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/06/01 16:34:56:919 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 16:34:56:919 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 16:34:56:945 I|*   10816 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/06/01 17:34:54:784 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 17:34:54:784 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 17:34:54:887 I|*   10853 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180
+2018/06/01 18:34:54:649 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 18:34:54:649 W|**  main  -[EDAMUsage sessionCountInPreviousDays:] | Requested session count for 46 days, only maintaining 30 days of data
+2018/06/01 18:34:54:675 I|*   10877 -[ENUXPuppetmaster evaluateRules] | >UXPuppetmaster< Object: <ENUXPuppetmaster: 0x7fe361ec6bd0> Evaluated script version: mac.180

@@ -1,1 +1,1 @@
-Syntax Parser A program that readrs your code , checks if its grammer is valid and determines what it does. First-Class Functions: Definitions amd Arguments 
+Syntax Parser A program that readrs your code , checks if its grammer is valid and determines what it does. First-Class Functions: Definitions amd Arguments Function Invocations 
